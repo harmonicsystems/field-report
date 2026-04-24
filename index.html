@@ -472,6 +472,94 @@
     color: var(--ink-soft);
   }
 
+  /* Cross-references */
+  .crossref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 8px;
+  }
+
+  .crossref-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+
+  .crossref-head h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    font-variation-settings: 'SOFT' 30;
+  }
+
+  .crossref-endpoint {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .crossref-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .xr {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .xr:last-child { border-bottom: none; }
+
+  .xr .xr-name {
+    font-family: var(--display);
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .xr .xr-name a { color: var(--ink); text-decoration: none; }
+  .xr .xr-name a:hover { color: var(--accent); }
+
+  .xr .xr-kind {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .xr .xr-id {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .xr-group {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 18px 0 4px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 6px;
+  }
+  .xr-group:first-child { padding-top: 0; }
+
+  @media (max-width: 760px) {
+    .crossref-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
   /* Generated JSON-LD */
   .jsonld-wrap {
     position: relative;
@@ -668,10 +756,40 @@
     </div>
   </section>
 
-  <!-- ============================================ §VI SCHEMA === -->
+  <!-- ============================================ §VI CROSSREFS  -->
+  <section class="plate" id="sec-crossrefs">
+    <div class="section-head">
+      <div class="section-num">§ VI · Cross-references</div>
+      <h2 class="section-title">What the <em>wider commons</em> already knows</h2>
+      <div class="endpoint">wikidata · overpass</div>
+    </div>
+    <p class="dek">Before we write new identifiers, we look for existing ones. Wikidata carries structured civic knowledge; OpenStreetMap carries the ground truth of named places. Both are authorities we can link to with <span style="font-family:var(--mono);">sameAs</span>.</p>
+
+    <div class="crossref-grid">
+      <div class="crossref-col">
+        <div class="crossref-head">
+          <h3>Wikidata</h3>
+          <div class="crossref-endpoint">query.wikidata.org/sparql</div>
+        </div>
+        <div class="status" id="wd-status">Querying…</div>
+        <div id="wd-list" class="crossref-list"></div>
+      </div>
+      <div class="crossref-col">
+        <div class="crossref-head">
+          <h3>OpenStreetMap</h3>
+          <div class="crossref-endpoint">overpass-api.de</div>
+        </div>
+        <div class="status" id="osm-status">Querying…</div>
+        <div id="osm-list" class="crossref-list"></div>
+      </div>
+    </div>
+    <p class="jsonld-note" id="crossref-note" style="margin-top:28px;"></p>
+  </section>
+
+  <!-- ============================================ §VII SCHEMA == -->
   <section class="plate" id="sec-schema">
     <div class="section-head">
-      <div class="section-num">§ VI · Proposed Schema</div>
+      <div class="section-num">§ VII · Proposed Schema</div>
       <h2 class="section-title">What we <em>would publish</em> instead</h2>
       <div class="endpoint">schema.org · JSON-LD</div>
     </div>
@@ -940,6 +1058,171 @@ async function renderPosts(town, ontology) {
   }
 }
 
+/* =============================================== §VI : CROSSREFS  */
+
+/* Per-town registry. Start with Kinderhook; extend by hand as the
+   corpus grows. Wikidata Q-IDs resolved via wbsearchentities, bboxes
+   eyeballed from OSM place nodes. */
+const PLACES = {
+  kinderhook: {
+    wikidata: ['Q3478629', 'Q3710663'], // village, town
+    bbox: [42.35, -73.72, 42.42, -73.65], // S, W, N, E — includes Lindenwald
+    wikipedia: 'Kinderhook_(village),_New_York',
+  },
+};
+
+async function wikidataQuery(sparql) {
+  const url = 'https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(sparql);
+  const res = await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } });
+  if (!res.ok) throw new Error(`WDQS ${res.status}`);
+  const data = await res.json();
+  return data.results.bindings;
+}
+
+async function overpassQuery(bbox) {
+  const [s, w, n, e] = bbox;
+  const q = `[out:json][timeout:30];
+    (
+      node["name"]["historic"](${s},${w},${n},${e});
+      node["name"]["tourism"](${s},${w},${n},${e});
+      node["name"]["amenity"~"restaurant|cafe|bar|pub|library|place_of_worship|school|theatre|townhall|community_centre|arts_centre|fire_station|post_office"](${s},${w},${n},${e});
+      node["name"]["shop"](${s},${w},${n},${e});
+      node["name"]["memorial"](${s},${w},${n},${e});
+      way["name"]["historic"](${s},${w},${n},${e});
+      way["name"]["tourism"](${s},${w},${n},${e});
+    );
+    out center tags 200;`;
+  const url = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(q);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Overpass ${res.status}`);
+  const data = await res.json();
+  return data.elements || [];
+}
+
+function osmKind(tags) {
+  return tags.historic || tags.tourism || tags.amenity || tags.shop || tags.memorial || '—';
+}
+
+function osmGroup(tags) {
+  if (tags.historic || tags.memorial || tags.tourism === 'museum') return 'Historic';
+  if (tags.amenity === 'place_of_worship') return 'Religious';
+  if (tags.amenity === 'school') return 'Civic';
+  if (['library','townhall','post_office','fire_station','community_centre','arts_centre','theatre'].includes(tags.amenity)) return 'Civic';
+  if (['restaurant','cafe','bar','pub'].includes(tags.amenity)) return 'Food & Drink';
+  if (tags.shop) return 'Commerce';
+  if (tags.tourism) return 'Lodging / Info';
+  return 'Other';
+}
+
+async function renderCrossrefs(town) {
+  const wdStatus = $('#wd-status');
+  const wdList = $('#wd-list');
+  const osmStatus = $('#osm-status');
+  const osmList = $('#osm-list');
+  const note = $('#crossref-note');
+
+  const cfg = PLACES[town];
+  if (!cfg) {
+    wdStatus.className = 'status';
+    wdStatus.textContent = `Cross-references currently pinned to Kinderhook.`;
+    osmStatus.className = 'status';
+    osmStatus.textContent = `Extend the PLACES registry to include ${town}.`;
+    wdList.innerHTML = ''; osmList.innerHTML = ''; note.textContent = '';
+    return { wikidata: [], osm: [] };
+  }
+
+  // ---------- Wikidata ----------
+  let wd = [];
+  try {
+    const values = cfg.wikidata.map(q => `wd:${q}`).join(' ');
+    const sparql = `SELECT DISTINCT ?item ?itemLabel ?instanceLabel ?article WHERE {
+      VALUES ?place { ${values} }
+      ?item wdt:P131 ?place .
+      ?item wdt:P31 ?instance .
+      OPTIONAL { ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+    } LIMIT 60`;
+    const bindings = await wikidataQuery(sparql);
+    // Dedupe by Q-ID, keep first instance label.
+    const seen = new Map();
+    for (const b of bindings) {
+      const qid = b.item.value.split('/').pop();
+      if (!seen.has(qid)) seen.set(qid, {
+        qid,
+        name: b.itemLabel?.value || qid,
+        instance: b.instanceLabel?.value || '',
+        article: b.article?.value || null,
+      });
+    }
+    wd = [...seen.values()];
+
+    wdList.innerHTML = wd.length === 0
+      ? `<p style="font-family:var(--display);font-style:italic;color:var(--ink-soft);margin:8px 0 0;">Wikidata knows the municipality but holds no directly-linked entities. This is the kind of structural gap the project fills.</p>`
+      : wd.map(r => `
+          <div class="xr">
+            <div>
+              <div class="xr-name"><a href="https://www.wikidata.org/wiki/${r.qid}" target="_blank" rel="noopener">${esc(r.name)}</a></div>
+              <span class="xr-kind">${esc(r.instance)}</span>
+            </div>
+            <div class="xr-id">${r.qid}</div>
+          </div>
+        `).join('');
+
+    wdStatus.className = 'status ok';
+    wdStatus.textContent = `✓ ${wd.length} entit${wd.length === 1 ? 'y' : 'ies'} linked to ${cfg.wikidata.join(' / ')}`;
+  } catch (e) {
+    wdStatus.className = 'status err';
+    wdStatus.textContent = `✗ WDQS: ${e.message}`;
+  }
+
+  // ---------- OSM ----------
+  let osm = [];
+  try {
+    const els = await overpassQuery(cfg.bbox);
+    osm = els
+      .filter(e => e.tags?.name)
+      .map(e => ({
+        id: e.id,
+        type: e.type,
+        name: e.tags.name,
+        kind: osmKind(e.tags),
+        group: osmGroup(e.tags),
+        lat: e.lat ?? e.center?.lat,
+        lon: e.lon ?? e.center?.lon,
+        tags: e.tags,
+      }));
+
+    const order = ['Historic','Civic','Religious','Food & Drink','Commerce','Lodging / Info','Other'];
+    const grouped = {};
+    for (const g of order) grouped[g] = [];
+    for (const r of osm) (grouped[r.group] ||= []).push(r);
+    for (const g of order) grouped[g].sort((a,b) => a.name.localeCompare(b.name));
+
+    osmList.innerHTML = order.filter(g => grouped[g].length).map(g => `
+      <div class="xr-group">${g} · <span style="color:var(--accent);">${grouped[g].length}</span></div>
+      ${grouped[g].map(r => `
+        <div class="xr">
+          <div>
+            <div class="xr-name"><a href="https://www.openstreetmap.org/${r.type}/${r.id}" target="_blank" rel="noopener">${esc(r.name)}</a></div>
+            <span class="xr-kind">${esc(r.kind)}</span>
+          </div>
+          <div class="xr-id">${r.type[0]}${r.id}</div>
+        </div>
+      `).join('')}
+    `).join('');
+
+    osmStatus.className = 'status ok';
+    osmStatus.textContent = `✓ ${osm.length} named features in a ${(cfg.bbox[2]-cfg.bbox[0]).toFixed(2)}° × ${(cfg.bbox[3]-cfg.bbox[1]).toFixed(2)}° window`;
+  } catch (e) {
+    osmStatus.className = 'status err';
+    osmStatus.textContent = `✗ Overpass: ${e.message}`;
+  }
+
+  note.textContent = `The municipality itself is known to Wikidata; its contents are not. OSM holds the ground truth — every named feature has a stable identifier we can cite.`;
+
+  return { wikidata: wd, osm, config: cfg };
+}
+
 /* =============================================== §V : DIAGNOSTIC  */
 function renderGaps(town, data) {
   const { events, venues, posts, ontology } = data;
@@ -1002,6 +1285,15 @@ function renderGeneratedSchema(town, data) {
   const venues = data.venues || [];
   const primaryVenue = venues.find(v => (v.venue || '').toLowerCase().includes('market')) || venues[0];
   const matchingEvent = (data.events?.matching || [])[0];
+  const xr = data.crossrefs || { wikidata: [], osm: [], config: null };
+
+  // Try to match the primary venue to an OSM node by name.
+  const normalize = (s) => String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'');
+  const venueOsm = primaryVenue
+    ? xr.osm.find(o => normalize(o.name) === normalize(primaryVenue.venue)
+                    || normalize(o.name).includes(normalize(primaryVenue.venue))
+                    || normalize(primaryVenue.venue).includes(normalize(o.name)))
+    : null;
 
   const place = primaryVenue ? {
     "@type": "Place",
@@ -1015,8 +1307,14 @@ function renderGeneratedSchema(town, data) {
       "postalCode": primaryVenue.zip || "",
       "addressCountry": "US"
     },
-    "containedInPlace": { "@id": `https://kinderhook.node/places/${town}` },
-    "sameAs": [primaryVenue.url].filter(Boolean)
+    "containedInPlace": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+    "sameAs": [
+      primaryVenue.url,
+      venueOsm ? `https://www.openstreetmap.org/${venueOsm.type}/${venueOsm.id}` : null,
+    ].filter(Boolean),
+    ...(venueOsm?.lat && venueOsm?.lon ? {
+      "geo": { "@type": "GeoCoordinates", "latitude": venueOsm.lat, "longitude": venueOsm.lon }
+    } : {})
   } : null;
 
   const schema = {
@@ -1024,18 +1322,19 @@ function renderGeneratedSchema(town, data) {
     "@graph": [
       {
         "@type": "Place",
-        "@id": `https://kinderhook.node/places/${town}`,
+        "@id": `https://fieldreports.harmonic-systems.org/${town}/`,
         "name": town.charAt(0).toUpperCase() + town.slice(1),
         "alternateName": town === 'kinderhook' ? ["Kinderhoeck", "Old Kinderhook"] : [],
         "containedInPlace": {
           "@type": "AdministrativeArea",
           "name": "Columbia County",
-          "sameAs": "https://en.wikipedia.org/wiki/Columbia_County,_New_York"
+          "sameAs": "https://www.wikidata.org/wiki/Q245071"
         },
         "sameAs": [
+          ...(xr.config?.wikidata || []).map(q => `https://www.wikidata.org/wiki/${q}`),
+          xr.config?.wikipedia ? `https://en.wikipedia.org/wiki/${xr.config.wikipedia}` : null,
           `https://columbiacountytourism.org/?s=${town}`,
-          `https://en.wikipedia.org/wiki/${town.charAt(0).toUpperCase() + town.slice(1)}_(village),_New_York`
-        ]
+        ].filter(Boolean)
       },
       ...(place ? [place] : []),
       ...(matchingEvent ? [{
@@ -1074,13 +1373,14 @@ async function audit(town) {
 
   try {
     const ontology = await renderOntology(t);
-    const [events, venues, posts] = await Promise.all([
+    const [events, venues, posts, crossrefs] = await Promise.all([
       renderEvents(t),
       renderVenues(t),
       renderPosts(t, ontology),
+      renderCrossrefs(t),
     ]);
     renderGaps(t, { events, venues, posts, ontology });
-    renderGeneratedSchema(t, { events, venues, posts, ontology });
+    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs });
   } catch (err) {
     console.error('Audit failed:', err);
     document.querySelectorAll('.status').forEach(s => {
