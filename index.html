@@ -862,7 +862,7 @@
   <section class="plate" id="sec-ontology">
     <div class="section-head">
       <div class="section-num">§ I · Ontology</div>
-      <h2 class="section-title">How the county <em>categorises itself</em></h2>
+      <h2 class="section-title">How the county <em>categorizes itself</em></h2>
       <div class="endpoint">/wp/v2/{taxonomy}</div>
     </div>
     <p class="dek">Before writing our own schema we read theirs. The tourism board has, over years, built a set of taxonomies. Each is a small ontological claim about what Columbia County contains.</p>
@@ -901,7 +901,7 @@
       <h2 class="section-title">Places that <em>host</em> things</h2>
       <div class="endpoint">/tribe/events/v1/venues</div>
     </div>
-    <p class="dek">A precise, narrow category: places in Kinderhook the county's event system currently recognises as <em>hosting events</em>. Not the same as "places in Kinderhook" or even "businesses that could host an event" — a venue only appears here if something is scheduled in it.</p>
+    <p class="dek">A precise, narrow category: places in Kinderhook the county's event system currently recognizes as <em>hosting events</em>. Not the same as "places in Kinderhook" or even "businesses that could host an event" — a venue only appears here if something is scheduled in it.</p>
     <div class="status" id="venues-status">Fetching event venues…</div>
     <div class="entity-list" id="venues-list"></div>
   </section>
@@ -913,15 +913,27 @@
       <h2 class="section-title">What the county has <em>said about us</em></h2>
       <div class="endpoint">/wp/v2/posts?categories=…</div>
     </div>
-    <p class="dek">Articles tagged with this village by the tourism board's editors. A decade of travel writing, already categorised by place — an under-used affective layer.</p>
+    <p class="dek">Articles tagged with this village by the tourism board's editors. A decade of travel writing, already categorized by place — an under-used affective layer.</p>
     <div class="status" id="posts-status">Fetching posts…</div>
     <div class="entity-list" id="posts-list"></div>
   </section>
 
-  <!-- ============================================ §VI GAPS ===== -->
+  <!-- ============================================ §VI BUSINESSES  -->
+  <section class="plate" id="sec-businesses">
+    <div class="section-head">
+      <div class="section-num">§ VI · CCT Businesses</div>
+      <h2 class="section-title">Everywhere CCT <em>points</em> in the village</h2>
+      <div class="endpoint">/business/{slug}/ × 594</div>
+    </div>
+    <p class="dek">The biggest single drill-down: the county's full business directory, fetched page-by-page at build time from the Yoast sitemap, then filtered to our village by address. This is what CCT tells the world about Kinderhook when it lists businesses.</p>
+    <div class="status" id="businesses-status">Loading snapshot…</div>
+    <div class="entity-list" id="businesses-list"></div>
+  </section>
+
+  <!-- ============================================ §VII GAPS ==== -->
   <section class="plate" id="sec-gaps">
     <div class="section-head">
-      <div class="section-num">§ VI · Diagnostic</div>
+      <div class="section-num">§ VII · Diagnostic</div>
       <h2 class="section-title">What the machines <em>cannot</em> see</h2>
       <div class="endpoint">(derived)</div>
     </div>
@@ -936,7 +948,7 @@
   <!-- ============================================ §VI CROSSREFS  -->
   <section class="plate" id="sec-crossrefs">
     <div class="section-head">
-      <div class="section-num">§ VII · Cross-references</div>
+      <div class="section-num">§ VIII · Cross-references</div>
       <h2 class="section-title">What the <em>wider commons</em> already knows</h2>
       <div class="endpoint">wikidata · overpass</div>
     </div>
@@ -966,7 +978,7 @@
   <!-- ============================================ §VII CURATED = -->
   <section class="plate" id="sec-curated">
     <div class="section-head">
-      <div class="section-num">§ VIII · Curated Places</div>
+      <div class="section-num">§ IX · Curated Places</div>
       <h2 class="section-title">What <em>we</em> have written</h2>
       <div class="endpoint">schema/places/*.json</div>
     </div>
@@ -978,7 +990,7 @@
   <!-- ============================================ §VIII SCHEMA = -->
   <section class="plate" id="sec-schema">
     <div class="section-head">
-      <div class="section-num">§ IX · Proposed Schema</div>
+      <div class="section-num">§ X · Proposed Schema</div>
       <h2 class="section-title">What we <em>would publish</em> instead</h2>
       <div class="endpoint">schema.org · JSON-LD</div>
     </div>
@@ -1016,8 +1028,21 @@
 
 const API = 'https://columbiacountytourism.org/wp-json';
 const $ = (sel) => document.querySelector(sel);
+
+/* Decode HTML entities the WordPress REST API hands us already-encoded
+   (things like `KJ&#8217;s` or `Saint Paul&#039;s`). Uses the DOM as
+   a canonical decoder rather than hand-rolling a table. Applied before
+   esc() so our escaping doesn't double-encode the entity. */
+const _decoder = typeof document !== 'undefined' ? document.createElement('textarea') : null;
+const decode = (s) => {
+  if (!s) return '';
+  if (!_decoder) return String(s);
+  _decoder.innerHTML = String(s);
+  return _decoder.value;
+};
+
 const esc = (s) => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const stripHtml = (s) => String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+const stripHtml = (s) => decode(String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
 
 /* Paginated fetch for WP REST endpoints that support per_page. */
 async function fetchAll(path, maxPages = 5) {
@@ -1073,7 +1098,7 @@ async function renderOntology(town) {
         <ul>
           ${items.slice().sort((a,b)=>(b.count||0)-(a.count||0)).slice(0, 30).map(i => `
             <li class="${matches.some(m => m.id === i.id) ? 'match' : ''}">
-              <span>${esc(i.name)}</span>
+              <span>${esc(decode(i.name))}</span>
               <span class="n">${i.count || 0}</span>
             </li>
           `).join('')}
@@ -1098,7 +1123,7 @@ async function renderOntology(town) {
 const SUBTYPE_LABELS = {
   tribe_events:    { label: 'Events',         dek: 'scheduled on the calendar' },
   tribe_venue:     { label: 'Event Venues',   dek: 'places that host events' },
-  tribe_organizer: { label: 'Organizers',     dek: 'who runs the programmes' },
+  tribe_organizer: { label: 'Organizers',     dek: 'who runs the programs' },
   post:            { label: 'Posts',          dek: 'editorial writing' },
   page:            { label: 'Pages',          dek: 'static site pages' },
   // business CPT is NOT in here — it's not exposed to search.
@@ -1188,10 +1213,10 @@ async function renderEvents(town) {
       wrap.innerHTML = `
         <div class="e-meta"><span class="when">${esc(when)}</span><br>${e.all_day ? 'all day' : esc((e.start_date || '').slice(11,16))}</div>
         <div>
-          <h4><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a></h4>
+          <h4><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(decode(e.title))}</a></h4>
           <p class="e-desc">${esc(stripHtml(e.excerpt || e.description || '').slice(0, 220))}${stripHtml(e.excerpt || e.description || '').length > 220 ? '…' : ''}</p>
         </div>
-        <div class="e-where">${esc(e.venue?.venue || 'Venue unspecified')}${e.venue?.city ? `<br><small>${esc(e.venue.city)}</small>` : ''}</div>
+        <div class="e-where">${esc(decode(e.venue?.venue || 'Venue unspecified'))}${e.venue?.city ? `<br><small>${esc(decode(e.venue.city))}</small>` : ''}</div>
       `;
       list.appendChild(wrap);
     });
@@ -1236,7 +1261,7 @@ async function renderVenues(town) {
       wrap.innerHTML = `
         <div class="e-meta">${esc(v.state || 'NY')}</div>
         <div>
-          <h4>${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.venue)}</a>` : esc(v.venue)}</h4>
+          <h4>${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(decode(v.venue))}</a>` : esc(decode(v.venue))}</h4>
           <p class="e-desc">${esc(stripHtml(v.description || '').slice(0, 200)) || '<em style="color:var(--rule);">No description published.</em>'}</p>
         </div>
         <div class="e-where">${[v.address, v.city, v.zip].filter(Boolean).map(esc).join(', ')}</div>
@@ -1538,7 +1563,7 @@ async function renderCrossrefs(town) {
 
 /* =============================================== FINDING ======== */
 
-function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex }) {
+function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses }) {
   const el = $('#finding-body');
   if (!el) return;
 
@@ -1547,8 +1572,9 @@ function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex }) {
   const K = village?.count ?? 0;
   const C = Object.keys(village?.categories || {}).length;
   const B = cctBizIndex?.totalBusinessUrls ?? null;
-  const BK = cctBizIndex?.kinderhookBySlugCount ?? null;
-  const single = v === 1 ? venues[0]?.venue : null;
+  // Prefer the full-scrape address-based count; fall back to the slug count.
+  const BK = cctBusinesses?.kinderhookCount ?? cctBizIndex?.kinderhookBySlugCount ?? null;
+  const single = v === 1 ? decode(venues[0]?.venue) : null;
 
   // Live numbers in bold; copy degrades sentence-by-sentence if a fetch fails.
   const lede = N
@@ -1556,7 +1582,7 @@ function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex }) {
     : `Columbia County Tourism's event-venue database could not be read on this load.`;
 
   const bizLine = (B != null)
-    ? ` CCT's broader business directory lists <strong>${B}</strong> entries across the county; <strong>${BK}</strong> identify as Kinderhook by URL slug, more by address — but none of those <strong>${B}</strong> pages carry <span style="font-family:var(--mono);font-size:14px;">LocalBusiness</span> structured data.`
+    ? ` CCT's full business directory lists <strong>${B}</strong> entries across the county; <strong>${BK ?? '?'}</strong> are in Kinderhook by address. None of those <strong>${B}</strong> pages carry <span style="font-family:var(--mono);font-size:14px;">LocalBusiness</span> structured data.`
     : '';
 
   const villageLine = K
@@ -1568,6 +1594,57 @@ function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex }) {
     : '';
 
   el.innerHTML = `<p class="finding-lede">${lede}</p><p class="finding-foot">${bizLine}${villageLine}${close}</p>`;
+}
+
+/* =============================================== §VI : BUSINESSES */
+
+function renderCCTBusinesses(bizSnapshot) {
+  const status = $('#businesses-status');
+  const list = $('#businesses-list');
+
+  if (!bizSnapshot) {
+    status.className = 'status';
+    status.textContent = `No CCT businesses snapshot in this deploy. Run tools/fetch-cct-businesses.mjs to capture ~594 pages.`;
+    return;
+  }
+
+  const kh = bizSnapshot.kinderhook || [];
+  const total = bizSnapshot.succeededCount || bizSnapshot.businesses?.length || 0;
+
+  if (kh.length === 0) {
+    status.className = 'status';
+    status.textContent = `Snapshot has ${total} businesses but 0 identify as Kinderhook by addressLocality.`;
+    list.innerHTML = '';
+    return;
+  }
+
+  // Sort alphabetically by name for stability.
+  const sorted = [...kh].sort((a,b) => (a.name||'').localeCompare(b.name||''));
+
+  list.innerHTML = sorted.map(b => {
+    const street = b.address?.streetAddress || '';
+    const locality = b.address?.addressLocality || 'Kinderhook';
+    const zip = b.address?.postalCode || '';
+    const cityLine = [street, [locality, zip].filter(Boolean).join(' ')].filter(Boolean).join(' · ');
+    const desc = b.description ? esc(b.description.slice(0, 260)) + (b.description.length > 260 ? '…' : '') : '';
+    return `
+      <div class="entity">
+        <div class="e-meta">
+          <span class="when">${b.phone ? esc(b.phone) : 'no phone listed'}</span><br>
+          ${b.website ? `<a href="${esc(b.website)}" target="_blank" rel="noopener" style="color:var(--accent);">site↗</a>` : 'no website'}
+        </div>
+        <div>
+          <h4><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.name || '(untitled)')}</a></h4>
+          ${desc ? `<p class="e-desc">${desc}</p>` : ''}
+        </div>
+        <div class="e-where">${esc(cityLine)}</div>
+      </div>
+    `;
+  }).join('');
+
+  status.className = 'status ok';
+  const fetchedDate = (bizSnapshot.fetchedAt || '').slice(0, 10);
+  status.textContent = `${kh.length} of ${total} CCT businesses are in Kinderhook (by address). Snapshot ${fetchedDate}.`;
 }
 
 /* =============================================== §V : DIAGNOSTIC  */
@@ -1656,8 +1733,8 @@ function renderGeneratedSchema(town, data) {
 
   const place = primaryVenue ? {
     "@type": "Place",
-    "@id": `https://kinderhook.node/places/${(primaryVenue.venue||'place').toLowerCase().replace(/[^a-z]+/g,'-')}`,
-    "name": primaryVenue.venue,
+    "@id": `https://fieldreports.harmonic-systems.org/kinderhook/places/${(decode(primaryVenue.venue)||'place').toLowerCase().replace(/[^a-z]+/g,'-')}`,
+    "name": decode(primaryVenue.venue),
     "address": {
       "@type": "PostalAddress",
       "streetAddress": primaryVenue.address || "",
@@ -1751,14 +1828,16 @@ async function audit(town) {
         return r.ok ? await r.json() : null;
       } catch { return null; }
     };
-    const [village, cctBizIndex] = await Promise.all([
+    const [village, cctBizIndex, cctBusinesses] = await Promise.all([
       readSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
       readSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
+      readSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
     ]);
 
-    renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex });
-    renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, footprint });
-    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated });
+    renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });
+    renderCCTBusinesses(cctBusinesses);
+    renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
+    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses });
   } catch (err) {
     console.error('Audit failed:', err);
     document.querySelectorAll('.status').forEach(s => {

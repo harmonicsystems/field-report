@@ -54,7 +54,7 @@
         "@id": "https://fieldreports.harmonic-systems.org/kinderhook/orgs/kbpa",
         "name": "Kinderhook Business & Professional Association",
         "alternateName": "KBPA",
-        "description": "Volunteer association of businesses and residents that organises civic activities in the Village of Kinderhook, including the farmers' market."
+        "description": "Volunteer association of businesses and residents that organizes civic activities in the Village of Kinderhook, including the farmers' market."
       },
       {
         "@type": ["Place", "CivicStructure"],

@@ -45,7 +45,7 @@ restrained, warm, and unshowy. Think municipal design manual × The Pudding.
 
 - `index.html` — Vol. I, single-file static report for Kinderhook
 - `schema/` — documented ontology, namespaced extensions, hand-curated places
-- `data/snapshots/` — dated structured pulls, for diffing over time. Organised
+- `data/snapshots/` — dated structured pulls, for diffing over time. Organized
   by source: `columbiacountytourism/`, `villageofkinderhook/`, etc.
 - `tools/` — scripts that re-run audits, fetch snapshots, regenerate JSON-LD
 - `tools/drafts/` — outgoing correspondence (emails to clerks, etc.), checked in
@@ -84,8 +84,10 @@ restrained, warm, and unshowy. Think municipal design manual × The Pudding.
 - Do not add third-party trackers or analytics. The project's posture is
   incompatible with surveillance.
 - Do not scrape anything that isn't already exposed via a public API, **except**
-  public pages on municipal, county, or state government domains, which we may
-  parse at build-time into `data/snapshots/` under the following conditions:
+  public pages on (a) municipal, county, or state government domains, or (b)
+  official nonprofit agencies that operate as the designated public promoter
+  of such a jurisdiction (the county tourism board counts). These we may parse
+  at build-time into `data/snapshots/` under the following conditions:
     - request rate stays low and is clearly attributed via `User-Agent`;
     - every extracted field records its exact source URL;
     - we link back to the authoritative page, never mirror it whole;
