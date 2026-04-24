@@ -1,0 +1,609 @@
+{
+  "source": "https://www.villageofkinderhook.org/community/business_directory.php",
+  "fetchedAt": "2026-04-24T15:39:05.897Z",
+  "fetcher": "tools/fetch-village-directory.mjs",
+  "attribution": "Village of Kinderhook, NY — municipal business directory. Cited as primary source; not mirrored.",
+  "count": 58,
+  "categories": {
+    "ACCOUNTING": 1,
+    "ADMINISTRATIVE AND GOVERNMENT SERVICES": 4,
+    "ART, MUSIC, ANTIQUES": 6,
+    "CONTRACTORS": 1,
+    "EATERIES, BARS, CATERING": 10,
+    "FARM AND GARDEN": 3,
+    "FINANCIAL SERVICES": 1,
+    "GAS STATION AND CONVENIENCE STORE": 1,
+    "HISTORIC": 4,
+    "INSURANCE": 1,
+    "LEGAL SERVICES": 3,
+    "LIBRARY SERVICES": 2,
+    "LODGING": 2,
+    "MEDICAL": 1,
+    "PERSONAL SERVICES": 5,
+    "REAL ESTATE": 5,
+    "RELIGIOUS INSTITUTIONS": 3,
+    "RETAIL SHOPS": 5
+  },
+  "businesses": [
+    {
+      "id": "57",
+      "name": "Thomas W. Hunt, CPA",
+      "category": "ACCOUNTING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R57.php",
+      "phone": "5187586450",
+      "website": "http://maps.google.com/?q=3+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7717.png?t=202412022133490"
+    },
+    {
+      "id": "58",
+      "name": "Kinderhook Business & Professional Association",
+      "category": "ADMINISTRATIVE AND GOVERNMENT SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R58.php",
+      "phone": "5187586340",
+      "website": "http://maps.google.com/?q=PO+Box+251+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7718.png?t=202412022150180"
+    },
+    {
+      "id": "59",
+      "name": "New York State Police Kinderhook Station",
+      "category": "ADMINISTRATIVE AND GOVERNMENT SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R59.php",
+      "phone": "5187587010",
+      "website": "http://maps.google.com/?q=6+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7725.png?t=202412022154130"
+    },
+    {
+      "id": "60",
+      "name": "United States Post Office ",
+      "category": "ADMINISTRATIVE AND GOVERNMENT SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R60.php",
+      "phone": "5187587782",
+      "website": "http://maps.google.com/?q=3+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7722.png?t=202412022156330"
+    },
+    {
+      "id": "61",
+      "name": "Village of Kinderhook",
+      "category": "ADMINISTRATIVE AND GOVERNMENT SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R61.php",
+      "phone": "5187589882",
+      "website": "http://maps.google.com/?q=6+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7721.png?t=202412022158270"
+    },
+    {
+      "id": "62",
+      "name": "Acroterion Fine Antiques and Art",
+      "category": "ART, MUSIC, ANTIQUES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R62.php",
+      "phone": "9176565863",
+      "website": "http://maps.google.com/?q=PO+Box+612+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7719.png?t=202412022200380"
+    },
+    {
+      "id": "64",
+      "name": "Concerts in the Village",
+      "category": "ART, MUSIC, ANTIQUES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R64.php",
+      "phone": null,
+      "website": "http://www.concertsinthevillage.org",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7724.png?t=202412022207350"
+    },
+    {
+      "id": "65",
+      "name": "Little Falls School of Music & Arts",
+      "category": "ART, MUSIC, ANTIQUES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R65.php",
+      "phone": "5187586000",
+      "website": "http://maps.google.com/?q=62+Chatham+Street+Kinderhook+New+York+12105",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_7723.png?t=202412022209080"
+    },
+    {
+      "id": "66",
+      "name": "September Gallery",
+      "category": "ART, MUSIC, ANTIQUES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R66.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=4+Hudson+Street+3rd+Floor+-+PO+Box+326+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/thumbnail_IMG_8070.jpg?t=202502091850410"
+    },
+    {
+      "id": "69",
+      "name": "Super Stories",
+      "category": "ART, MUSIC, ANTIQUES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R69.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=2+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Super Stories.jpg?t=202502092043350"
+    },
+    {
+      "id": "71",
+      "name": "The School I Jack Shainman Gallery",
+      "category": "ART, MUSIC, ANTIQUES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R71.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=25+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/The School.jpg?t=202502091901430"
+    },
+    {
+      "id": "72",
+      "name": "Lorne Dawes Construction Ltd.",
+      "category": "CONTRACTORS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R72.php",
+      "phone": "5187582149",
+      "website": "http://maps.google.com/?q=6+Catskill+View+Drive+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Lorne Dawes.jpg?t=202502091904450"
+    },
+    {
+      "id": "74",
+      "name": "Broad Street Bagel Co.",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R74.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=1+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Broad Street.jpg?t=202507081148210"
+    },
+    {
+      "id": "93",
+      "name": "Hamrah's Lebanese Foods & Takeaway",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R93.php",
+      "phone": "5186108235",
+      "website": "http://maps.google.com/?q=3+Albany+Avenue+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/thumbnail_IMG_8076.jpg?t=202502091956530"
+    },
+    {
+      "id": "76",
+      "name": "Hudson Meal Co",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R76.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=86+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Hudson Meal Co.jpg?t=202502091949570"
+    },
+    {
+      "id": "77",
+      "name": "Isola Wine Bar",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R77.php",
+      "phone": "5185677181",
+      "website": "http://maps.google.com/?q=16+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Isola Wine Bar.jpg?t=202502091910220"
+    },
+    {
+      "id": "78",
+      "name": "Kinderhook Books",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R78.php",
+      "phone": "5182172192",
+      "website": "http://maps.google.com/?q=10+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Kinderhook Books.jpg?t=202502092031350"
+    },
+    {
+      "id": "113",
+      "name": "Morningbird",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R113.php",
+      "phone": "5186108543",
+      "website": "http://maps.google.com/?q=4+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Morningbird.jpg?t=202502092034040"
+    },
+    {
+      "id": "80",
+      "name": "OK Pantry",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R80.php",
+      "phone": "5186108041",
+      "website": "http://maps.google.com/?q=2+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/OK Pantry.jpg?t=202502092034540"
+    },
+    {
+      "id": "81",
+      "name": "Saisonnier",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R81.php",
+      "phone": "5186108100",
+      "website": "http://maps.google.com/?q=11+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Saisonnier.jpg?t=202502091918500"
+    },
+    {
+      "id": "79",
+      "name": "The Aviary Kinderhook",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R79.php",
+      "phone": "5186108543",
+      "website": "http://maps.google.com/?q=4+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/The Aviary.jpg?t=202502091919510"
+    },
+    {
+      "id": "83",
+      "name": "The Brooklyn Pizzeria",
+      "category": "EATERIES, BARS, CATERING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R83.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=7+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/The Brooklyn Pizzeria.jpg?t=202502091921230"
+    },
+    {
+      "id": "85",
+      "name": "Kinderhook Farmers Market",
+      "category": "FARM AND GARDEN",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R85.php",
+      "phone": "5187586340",
+      "website": "http://maps.google.com/?q=Kinderhook+Village+Square+-+Route+9+(Broad+Street)+and+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Kinderhook Farmers Market.jpg?t=202507071012350"
+    },
+    {
+      "id": "87",
+      "name": "Samascott Orchards",
+      "category": "FARM AND GARDEN",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R87.php",
+      "phone": "5187587224",
+      "website": "http://maps.google.com/?q=5+Sunset+Avenue+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Samascott Orchards.jpg?t=202502092036120"
+    },
+    {
+      "id": "86",
+      "name": "Samascott's Garden Market",
+      "category": "FARM AND GARDEN",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R86.php",
+      "phone": "5187589292",
+      "website": "http://maps.google.com/?q=65+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Samascott Garden Market.jpg?t=202507091229000"
+    },
+    {
+      "id": "128",
+      "name": "Siena Private Wealth",
+      "category": "FINANCIAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R128.php",
+      "phone": "8605394421",
+      "website": "http://maps.google.com/?q=5+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_8394.png?t=202502181014400"
+    },
+    {
+      "id": "88",
+      "name": "Stewart's Shops",
+      "category": "GAS STATION AND CONVENIENCE STORE",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R88.php",
+      "phone": "5186607759",
+      "website": "http://maps.google.com/?q=61+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_8072.jpeg?t=202502101913040"
+    },
+    {
+      "id": "89",
+      "name": "Columbia County Historical Society James Vanderpoel House",
+      "category": "HISTORIC",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R89.php",
+      "phone": "5187589265",
+      "website": "http://maps.google.com/?q=16+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/James Vanderpoel House.jpg?t=202502091941430"
+    },
+    {
+      "id": "92",
+      "name": "Columbia County Historical Society Luykas Van Alan House and Ichabod Crane Schoolhouse",
+      "category": "HISTORIC",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R92.php",
+      "phone": "5187589265",
+      "website": "http://maps.google.com/?q=2589+NY-9H+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Luykas Van Alen House.jpg?t=202502091946370"
+    },
+    {
+      "id": "91",
+      "name": "Columbia County Historical Society Museum and Library",
+      "category": "HISTORIC",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R91.php",
+      "phone": "5187589265",
+      "website": "http://maps.google.com/?q=5+Albany+Avenue+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/CCHS.jpg?t=202502091944060"
+    },
+    {
+      "id": "94",
+      "name": "Persons of Color Cemetery",
+      "category": "HISTORIC",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R94.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=15+Rothermel+Lane+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Persons of Color Cemetery.jpg?t=202502091958280"
+    },
+    {
+      "id": "95",
+      "name": "Farm Family Insurance",
+      "category": "INSURANCE",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R95.php",
+      "phone": "5187583276",
+      "website": "http://maps.google.com/?q=2+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Farm Family Insurance.jpg?t=202502091959540"
+    },
+    {
+      "id": "125",
+      "name": "Nolan Robinson Law",
+      "category": "LEGAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R125.php",
+      "phone": "9179409049",
+      "website": "http://maps.google.com/?q=5+Chatham+Street+-+PO+Box+231+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_8437.jpeg?t=202502181010270"
+    },
+    {
+      "id": "127",
+      "name": "Tribble Law",
+      "category": "LEGAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R127.php",
+      "phone": "5183126927",
+      "website": "http://maps.google.com/?q=12+Hudson+Street+-+PO+Box+24+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_8395.png?t=202502181013240"
+    },
+    {
+      "id": "126",
+      "name": "William J. Better",
+      "category": "LEGAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R126.php",
+      "phone": "5187581511",
+      "website": "http://maps.google.com/?q=1+Albany+Avenue+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_8396.png?t=202502181011570"
+    },
+    {
+      "id": "97",
+      "name": "Friends of the Kinderhook Library",
+      "category": "LIBRARY SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R97.php",
+      "phone": "5187586192",
+      "website": "http://maps.google.com/?q=18+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Friends of Kinderhook Memorial Library.jpg?t=202502092002330"
+    },
+    {
+      "id": "96",
+      "name": "Kinderhook Memorial Library",
+      "category": "LIBRARY SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R96.php",
+      "phone": "5187586192",
+      "website": "http://maps.google.com/?q=18+Hudson+Street+Kinderhook+New+York+12",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/KML.jpg?t=202502092001300"
+    },
+    {
+      "id": "124",
+      "name": "Cottage on Sylvester Street",
+      "category": "LODGING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R124.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=Sylvester+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Cottage on Sylvester Street.jpg?t=202507031114420"
+    },
+    {
+      "id": "123",
+      "name": "Old Dutch Inn",
+      "category": "LODGING",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R123.php",
+      "phone": "5182033347",
+      "website": "http://maps.google.com/?q=8+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/OldDutchInn_BusinessDirectory.png?t=202604080955210"
+    },
+    {
+      "id": "98",
+      "name": "Walsh & Walsh Dentistry",
+      "category": "MEDICAL",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R98.php",
+      "phone": "5187587071",
+      "website": "http://maps.google.com/?q=3+Hudson+Street,+2nd+Floor+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Walsh & Walsh.jpg?t=202502092004020"
+    },
+    {
+      "id": "100",
+      "name": "Julia Jayne Pilates",
+      "category": "PERSONAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R100.php",
+      "phone": "9085815384",
+      "website": "http://maps.google.com/?q=Barn+Studio+-+83+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Julia Jayne Pilates.jpg?t=202502092008420"
+    },
+    {
+      "id": "102",
+      "name": "Muse Aesthetics",
+      "category": "PERSONAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R102.php",
+      "phone": "5188218988",
+      "website": "http://maps.google.com/?q=16+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Muse.jpg?t=202502092013140"
+    },
+    {
+      "id": "101",
+      "name": "Organic Images Photography",
+      "category": "PERSONAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R101.php",
+      "phone": "5185987260",
+      "website": "http://maps.google.com/?q=PO+Box+717+Kinderhook+New+York+121",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Organic Images.jpg?t=202502092011120"
+    },
+    {
+      "id": "103",
+      "name": "Roberta's Unisex Hair Salon",
+      "category": "PERSONAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R103.php",
+      "phone": "5187581445",
+      "website": "http://maps.google.com/?q=62A+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Robertas.jpg?t=202502092019450"
+    },
+    {
+      "id": "104",
+      "name": "Village Yoga",
+      "category": "PERSONAL SERVICES",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R104.php",
+      "phone": "5186108135",
+      "website": "http://maps.google.com/?q=6+Hudson+Street,+2nd+Floor+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/IMG_8440.jpeg?t=202502190931540"
+    },
+    {
+      "id": "105",
+      "name": "Anderson Agency",
+      "category": "REAL ESTATE",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R105.php",
+      "phone": "5187586340",
+      "website": "http://maps.google.com/?q=2+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Anderson Agency.jpg?t=202502092022580"
+    },
+    {
+      "id": "106",
+      "name": "Berkshire Hathaway Homeservices Blake Realtors",
+      "category": "REAL ESTATE",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R106.php",
+      "phone": "5187581300",
+      "website": "http://maps.google.com/?q=6+Hudson+Street,+2nd+Floor+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Berkshire Hathaway.jpg?t=202502092024260"
+    },
+    {
+      "id": "107",
+      "name": "Gilcrest Properties",
+      "category": "REAL ESTATE",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R107.php",
+      "phone": "5186108121",
+      "website": "http://maps.google.com/?q=15+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Gilcrest.jpg?t=202502092025410"
+    },
+    {
+      "id": "108",
+      "name": "Paul Calcagno Development",
+      "category": "REAL ESTATE",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R108.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=PO+Box+586+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Calcagno.jpg?t=202502092026350"
+    },
+    {
+      "id": "109",
+      "name": "Van Buren Investment Properties",
+      "category": "REAL ESTATE",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R109.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=10+Broad+Street+Kinderhook+New+York+12",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Van Buren Investment Properties.jpg?t=202502092027470"
+    },
+    {
+      "id": "119",
+      "name": "Cornerstone Fellowship Church",
+      "category": "RELIGIOUS INSTITUTIONS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R119.php",
+      "phone": "5187582644",
+      "website": "http://maps.google.com/?q=62+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Cornerstone.jpg?t=202502092039360"
+    },
+    {
+      "id": "120",
+      "name": "Kinderhook Reformed Church",
+      "category": "RELIGIOUS INSTITUTIONS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R120.php",
+      "phone": "5187586401",
+      "website": "http://maps.google.com/?q=21+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Kinderhook Reformed.jpg?t=202502092041170"
+    },
+    {
+      "id": "122",
+      "name": "Saint Paul's Episcopal Church",
+      "category": "RELIGIOUS INSTITUTIONS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R122.php",
+      "phone": "5187586291",
+      "website": "http://maps.google.com/?q=6+Sylvester+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/St Pauls.jpg?t=202502092046590"
+    },
+    {
+      "id": "111",
+      "name": "Kinderhook Books",
+      "category": "RETAIL SHOPS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R111.php",
+      "phone": null,
+      "website": "http://maps.google.com/?q=10+Broad+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Kinderhook Books.jpg?t=202502092031350"
+    },
+    {
+      "id": "114",
+      "name": "OK Pantry",
+      "category": "RETAIL SHOPS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R114.php",
+      "phone": "5186108041",
+      "website": "http://maps.google.com/?q=2+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/OK Pantry.jpg?t=202502092034540"
+    },
+    {
+      "id": "116",
+      "name": "Samascott Orchards",
+      "category": "RETAIL SHOPS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R116.php",
+      "phone": "5187587224",
+      "website": "http://maps.google.com/?q=5+Sunset+Avenue+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Samascott Orchards.jpg?t=202502092036120"
+    },
+    {
+      "id": "115",
+      "name": "Samascott's Garden Market",
+      "category": "RETAIL SHOPS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R115.php",
+      "phone": "5187589292",
+      "website": "http://maps.google.com/?q=65+Chatham+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Samascott Garden Market.jpg?t=202507091229000"
+    },
+    {
+      "id": "118",
+      "name": "The Kinderhook Bottle Shop",
+      "category": "RETAIL SHOPS",
+      "description": null,
+      "detailUrl": "https://www.villageofkinderhook.org/community/business_detail_T28_R118.php",
+      "phone": "5186108443",
+      "website": "http://maps.google.com/?q=8+Hudson+Street+Kinderhook+New+York+12106",
+      "thumbnail": "https://www.villageofkinderhook.org/community/bus-directory/Kinderhook Bottle Shop.jpg?t=202507091247380"
+    }
+  ]
+}

@@ -32,20 +32,24 @@ restrained, warm, and unshowy. Think municipal design manual × The Pudding.
 
 ## Stack
 
-- Astro (content collections, static build, MDX)
-- Vanilla CSS with design tokens (see `src/styles/tokens.css`)
-- Fonts: Fraunces (display) + EB Garamond (body) + JetBrains Mono (data).
-  Do not substitute. They are the voice of the publication.
+- Astro (content collections, static build, MDX) — not yet scaffolded; Vol. I
+  is currently a single-file static HTML report.
+- Vanilla CSS with design tokens (see `src/styles/tokens.css` when Astro lands)
+- Fonts: Newsreader (display) + Source Serif 4 (body) + JetBrains Mono (data).
+  Do not substitute. They are the voice of the publication. Calmer than the
+  earlier Fraunces + EB Garamond pairing — less ornate italic, no SOFT axis.
 - No Tailwind. No shadcn. No component libraries. Typography and grid do the work.
-- Deploy: (TBD — Vercel or Netlify)
+- Deploy: GitHub Pages at `fieldreports.harmonic-systems.org`
 
 ## Directory
 
-- `sites/kinderhook/` — the prime-example field report
+- `index.html` — Vol. I, single-file static report for Kinderhook
 - `schema/` — documented ontology, namespaced extensions, hand-curated places
-- `data/snapshots/` — dated JSON pulls from CCT's API, for diffing over time
-- `tools/` — scripts that re-run audits and regenerate JSON-LD
-- `method.md` — the project essay; the philosophy written down
+- `data/snapshots/` — dated structured pulls, for diffing over time. Organised
+  by source: `columbiacountytourism/`, `villageofkinderhook/`, etc.
+- `tools/` — scripts that re-run audits, fetch snapshots, regenerate JSON-LD
+- `tools/drafts/` — outgoing correspondence (emails to clerks, etc.), checked in
+- `method.md` — the project essay; the philosophy written down (TBD)
 
 ## Aesthetic rules
 
@@ -79,6 +83,14 @@ restrained, warm, and unshowy. Think municipal design manual × The Pudding.
 - Do not substitute fonts, colors, or design tokens without updating this file.
 - Do not add third-party trackers or analytics. The project's posture is
   incompatible with surveillance.
-- Do not scrape anything that isn't already exposed via a public API.
+- Do not scrape anything that isn't already exposed via a public API, **except**
+  public pages on municipal, county, or state government domains, which we may
+  parse at build-time into `data/snapshots/` under the following conditions:
+    - request rate stays low and is clearly attributed via `User-Agent`;
+    - every extracted field records its exact source URL;
+    - we link back to the authoritative page, never mirror it whole;
+    - we contact the municipality and offer to consume a structured feed instead,
+      the moment they're willing to publish one. The scrape is a stopgap until
+      the government publishes machine-readable civic data itself.
 - Do not invent facts about entities. If we don't know, we don't publish.
 - Do not generalize the method into a framework until Kinderhook is complete.
