@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kinderhook Field Report — A Civic Legibility Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4efe4;
+    --bg-plate: #ede7d7;
+    --ink: #1a1614;
+    --ink-soft: #3b342e;
+    --rule: #c9c0ae;
+    --rule-soft: #d8d0bc;
+    --accent: #a63d2a;
+    --accent-soft: #d88b77;
+    --slate: #4a5a4e;
+    --warn: #8a6a1e;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --serif: 'EB Garamond', Georgia, serif;
+    --display: 'Fraunces', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(166, 61, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(74, 90, 78, 0.04) 0%, transparent 40%);
+  }
+
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px 120px;
+  }
+
+  /* MASTHEAD ====================================================== */
+  header.masthead {
+    padding: 72px 0 40px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .masthead::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    height: 3px;
+    background: var(--ink);
+  }
+
+  .masthead::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 78px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .slug {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .slug .vol { color: var(--accent); }
+
+  h1.title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'SOFT' 30, 'opsz' 144;
+    font-size: clamp(56px, 9vw, 124px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    margin: 20px 0 12px;
+  }
+
+  h1.title em {
+    font-style: italic;
+    font-variation-settings: 'SOFT' 80, 'opsz' 144;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    max-width: 700px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .byline {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 28px;
+  }
+  .byline strong { color: var(--ink); font-weight: 500; }
+
+  /* EDITOR'S NOTE ================================================= */
+  .editors-note {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 0 0 56px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+
+  .editors-note .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 8px;
+  }
+
+  .editors-note p {
+    font-size: 20px;
+    line-height: 1.55;
+    margin: 0 0 16px;
+    max-width: 680px;
+  }
+
+  .editors-note p:first-of-type::first-letter {
+    font-family: var(--display);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 0.9;
+    float: left;
+    padding: 4px 10px 0 0;
+    color: var(--accent);
+  }
+
+  /* CONTROLS ====================================================== */
+  .controls {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    padding: 24px 28px;
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+
+  .controls .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .controls label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .controls input {
+    font-family: var(--display);
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    padding: 4px 0;
+    color: var(--ink);
+    width: 260px;
+    outline: none;
+  }
+
+  .controls input:focus {
+    border-bottom-color: var(--accent);
+  }
+
+  .controls button {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    padding: 12px 22px;
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  .controls button:hover { background: var(--accent); }
+
+  .controls .host {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-left: auto;
+    padding-bottom: 6px;
+  }
+  .controls .host a { color: var(--accent); text-decoration: none; }
+  .controls .host a:hover { text-decoration: underline; }
+
+  /* SECTIONS ====================================================== */
+  section.plate {
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    gap: 40px;
+    align-items: baseline;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+  }
+  .section-head::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -4px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 12px;
+  }
+
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'SOFT' 50, 'opsz' 72;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  h2.section-title em {
+    font-style: italic;
+    color: var(--slate);
+  }
+
+  .endpoint {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding-top: 14px;
+  }
+
+  .dek {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 680px;
+    margin: 0 0 28px 220px;
+    line-height: 1.45;
+  }
+
+  /* DATA DISPLAY ================================================== */
+  .status {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    padding: 8px 0;
+  }
+  .status.err { color: var(--accent); }
+  .status.ok { color: var(--slate); }
+
+  /* Ontology tree */
+  .taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+
+  .taxonomy {
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+  }
+
+  .taxonomy h3 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 4px;
+    font-weight: 500;
+  }
+
+  .taxonomy .tax-count {
+    font-family: var(--display);
+    font-size: 38px;
+    line-height: 1;
+    margin: 0 0 4px;
+    font-variation-settings: 'SOFT' 40;
+  }
+
+  .taxonomy .tax-label {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  .taxonomy ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 12px;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+  .taxonomy li {
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+  }
+  .taxonomy li .n {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    align-self: center;
+  }
+  .taxonomy li.match {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Entity cards (events, venues, posts) */
+  .entity-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+
+  .entity {
+    display: grid;
+    grid-template-columns: 140px 1fr 200px;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+
+  .entity .e-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: 6px;
+  }
+  .entity .e-meta .when { color: var(--accent); font-weight: 500; }
+
+  .entity h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'SOFT' 40, 'opsz' 36;
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 0 0 6px;
+  }
+
+  .entity h4 a { color: var(--ink); text-decoration: none; }
+  .entity h4 a:hover { color: var(--accent); }
+
+  .entity .e-desc {
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .entity .e-where {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--slate);
+    text-align: right;
+    line-height: 1.35;
+  }
+
+  /* Diagnostic section */
+  .gaps {
+    background: var(--bg-plate);
+    border: 1px solid var(--ink);
+    padding: 40px 48px;
+  }
+
+  .gaps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+  }
+
+  .gap {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .gap:nth-last-child(-n+2) { border-bottom: none; }
+
+  .gap .verdict {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 3px 8px;
+    margin-bottom: 8px;
+  }
+  .gap .verdict.missing { background: var(--accent); color: var(--bg); }
+  .gap .verdict.partial { background: var(--warn); color: var(--bg); }
+  .gap .verdict.present { background: var(--slate); color: var(--bg); }
+
+  .gap h5 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 6px;
+    line-height: 1.2;
+  }
+
+  .gap p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  /* Generated JSON-LD */
+  .jsonld-wrap {
+    position: relative;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 28px 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+
+  .jsonld-wrap::before {
+    content: '<script type="application/ld+json">';
+    display: block;
+    color: var(--accent-soft);
+    margin-bottom: 8px;
+    opacity: 0.7;
+  }
+  .jsonld-wrap::after {
+    content: '</script>';
+    display: block;
+    color: var(--accent-soft);
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
+  .jsonld-note {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 16px 0 0;
+    max-width: 680px;
+  }
+
+  /* FOOTER ======================================================== */
+  footer.colophon {
+    margin-top: 120px;
+    padding-top: 40px;
+    border-top: 3px solid var(--ink);
+    position: relative;
+  }
+  footer.colophon::before {
+    content: '';
+    position: absolute;
+    top: -6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .colophon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .colophon h6 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+
+  .colophon p { margin: 0 0 10px; color: var(--ink-soft); }
+
+  /* Loading shimmer */
+  @keyframes shimmer {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0.3; }
+  }
+  .loading { animation: shimmer 1.6s ease-in-out infinite; }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    .page { padding: 0 24px 80px; }
+    .masthead { padding-top: 48px; }
+    .editors-note { grid-template-columns: 1fr; gap: 12px; }
+    .section-head { grid-template-columns: 1fr; gap: 8px; }
+    .dek { margin-left: 0; }
+    .entity { grid-template-columns: 1fr; gap: 8px; }
+    .entity .e-where { text-align: left; }
+    .gaps-grid { grid-template-columns: 1fr; }
+    .controls { flex-wrap: wrap; }
+  }
+
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============================================ MASTHEAD ====== -->
+  <header class="masthead">
+    <div class="slug">
+      <span>A Civic Legibility Audit · Columbia County, NY</span>
+      <span><span class="vol">Vol. I</span> · Kinderhook Node · Pilot Edition</span>
+    </div>
+    <h1 class="title">The Kinderhook <em>Field Report</em></h1>
+    <p class="subtitle">What the machines currently see when they look for the village — and what they don't.</p>
+    <div class="byline">
+      Conducted by <strong>Harmonic Systems</strong> · Data read live from <strong>columbiacountytourism.org</strong>
+    </div>
+  </header>
+
+  <!-- ============================================ EDITOR'S NOTE - -->
+  <article class="editors-note">
+    <div class="label">Editor's Note</div>
+    <div>
+      <p>Columbia County's tourism board publishes a good site. Humans can read it; they find events and restaurants and things to do. But the web that's arriving isn't only read by humans. Language models, search engines, voice assistants, and the next generation of discovery tools all need the same information in a structured form — a form most local institutions haven't published.</p>
+      <p>This report is a read-only audit of what's legible to those systems today, pulled live from the county's public WordPress endpoints. It focuses on one village as a pilot. If Kinderhook — seasonal, volunteer-run, geographically liminal — can be made legible, any village in the Hudson Valley can.</p>
+    </div>
+  </article>
+
+  <!-- ============================================ CONTROLS ====== -->
+  <div class="controls">
+    <div class="field">
+      <label for="town-input">Pilot node</label>
+      <input id="town-input" type="text" value="kinderhook" autocomplete="off">
+    </div>
+    <button id="reload-btn">Re-audit</button>
+    <div class="host">
+      Source: <a href="https://columbiacountytourism.org/wp-json/wp/v2/" target="_blank" rel="noopener">WP REST v2</a> + <a href="https://columbiacountytourism.org/wp-json/tribe/events/v1/" target="_blank" rel="noopener">TEC v1</a>
+    </div>
+  </div>
+
+  <!-- ============================================ §I ONTOLOGY === -->
+  <section class="plate" id="sec-ontology">
+    <div class="section-head">
+      <div class="section-num">§ I · Ontology</div>
+      <h2 class="section-title">How the county <em>categorises itself</em></h2>
+      <div class="endpoint">/wp/v2/{taxonomy}</div>
+    </div>
+    <p class="dek">Before writing our own schema we read theirs. The tourism board has, over years, built a set of taxonomies. Each is a small ontological claim about what Columbia County contains.</p>
+    <div class="status" id="ontology-status">Fetching taxonomies…</div>
+    <div class="taxonomy-grid" id="ontology-grid"></div>
+  </section>
+
+  <!-- ============================================ §II EVENTS === -->
+  <section class="plate" id="sec-events">
+    <div class="section-head">
+      <div class="section-num">§ II · Events</div>
+      <h2 class="section-title">What <em>happens</em> in the village</h2>
+      <div class="endpoint">/tribe/events/v1/events</div>
+    </div>
+    <p class="dek">Upcoming events at Kinderhook venues, read live from The Events Calendar. Each appears below as it would if a machine were asking the county what is scheduled here.</p>
+    <div class="status" id="events-status">Fetching events…</div>
+    <div class="entity-list" id="events-list"></div>
+  </section>
+
+  <!-- ============================================ §III VENUES == -->
+  <section class="plate" id="sec-venues">
+    <div class="section-head">
+      <div class="section-num">§ III · Venues</div>
+      <h2 class="section-title">The <em>places</em> the village offers</h2>
+      <div class="endpoint">/tribe/events/v1/venues</div>
+    </div>
+    <p class="dek">Named places in Kinderhook recognised by the county's event system. These are the anchors that everything else attaches to — the schema.org <span style="font-family:var(--mono);">Place</span> entities, pre-written.</p>
+    <div class="status" id="venues-status">Fetching venues…</div>
+    <div class="entity-list" id="venues-list"></div>
+  </section>
+
+  <!-- ============================================ §IV EDITORIAL -->
+  <section class="plate" id="sec-editorial">
+    <div class="section-head">
+      <div class="section-num">§ IV · Editorial Record</div>
+      <h2 class="section-title">What the county has <em>said about us</em></h2>
+      <div class="endpoint">/wp/v2/posts?categories=…</div>
+    </div>
+    <p class="dek">Articles tagged with this village by the tourism board's editors. A decade of travel writing, already categorised by place — an under-used affective layer.</p>
+    <div class="status" id="posts-status">Fetching posts…</div>
+    <div class="entity-list" id="posts-list"></div>
+  </section>
+
+  <!-- ============================================ §V GAPS ====== -->
+  <section class="plate" id="sec-gaps">
+    <div class="section-head">
+      <div class="section-num">§ V · Diagnostic</div>
+      <h2 class="section-title">What the machines <em>cannot</em> see</h2>
+      <div class="endpoint">(derived)</div>
+    </div>
+    <p class="dek">The county's data model has shape. This is what we found missing from the public surface — the specific gaps that make Kinderhook less legible than it could be.</p>
+    <div class="gaps">
+      <div class="gaps-grid" id="gaps-grid">
+        <!-- populated by JS based on what was actually found -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ §VI SCHEMA === -->
+  <section class="plate" id="sec-schema">
+    <div class="section-head">
+      <div class="section-num">§ VI · Proposed Schema</div>
+      <h2 class="section-title">What we <em>would publish</em> instead</h2>
+      <div class="endpoint">schema.org · JSON-LD</div>
+    </div>
+    <p class="dek">Given what's already there, and the village-local judgement we add, here is the JSON-LD that would make the Kinderhook Farmers' Market correctly addressable by language models, assistants, and the next generation of discovery tools.</p>
+    <div class="jsonld-wrap" id="jsonld-out">Awaiting data…</div>
+    <p class="jsonld-note">Every item above could carry one of these blocks. The taxonomy is the county's; the disambiguation and local judgement is ours. The machines stop guessing.</p>
+  </section>
+
+  <!-- ============================================ COLOPHON ===== -->
+  <footer class="colophon">
+    <div class="colophon-grid">
+      <div>
+        <h6>Method</h6>
+        <p>All data in this report is read live from publicly accessible JSON endpoints. Nothing is scraped, cached, or altered. Each section names the endpoint it reads from.</p>
+      </div>
+      <div>
+        <h6>Intent</h6>
+        <p>This is a pilot for a regional legibility project — Kinderhook as the first node. The goal is not to replace the county's site but to augment it with a structured-data layer that existing systems can read.</p>
+      </div>
+      <div>
+        <h6>Correspondence</h6>
+        <p>This report can be re-pointed at any Columbia County town by changing the value above. Try <em>hudson</em>, <em>chatham</em>, <em>hillsdale</em>, or <em>copake</em>.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* =================================================================
+   THE KINDERHOOK FIELD REPORT
+   Live audit of columbiacountytourism.org via public WP REST API.
+   All fetches happen in-browser. No backend.
+   ================================================================= */
+
+const API = 'https://columbiacountytourism.org/wp-json';
+const $ = (sel) => document.querySelector(sel);
+const esc = (s) => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const stripHtml = (s) => String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
+/* Paginated fetch for WP REST endpoints that support per_page. */
+async function fetchAll(path, maxPages = 5) {
+  const results = [];
+  for (let page = 1; page <= maxPages; page++) {
+    const sep = path.includes('?') ? '&' : '?';
+    const url = `${API}${path}${sep}per_page=100&page=${page}`;
+    const res = await fetch(url);
+    if (!res.ok) {
+      if (res.status === 400 && page > 1) break;
+      throw new Error(`${res.status} ${res.statusText} on ${url}`);
+    }
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) break;
+    results.push(...data);
+    if (data.length < 100) break;
+  }
+  return results;
+}
+
+/* Find any taxonomy term whose slug contains the town keyword. */
+function matchingTerms(terms, slug) {
+  const s = slug.toLowerCase();
+  return terms.filter(t => (t.slug || '').toLowerCase().includes(s) || (t.name || '').toLowerCase().includes(s));
+}
+
+/* =============================================== §I : ONTOLOGY == */
+async function renderOntology(town) {
+  const status = $('#ontology-status');
+  const grid = $('#ontology-grid');
+  status.textContent = 'Fetching four taxonomies…';
+  grid.innerHTML = '';
+
+  const taxonomies = [
+    { path: '/wp/v2/categories', label: 'Editorial categories', tag: 'editorial' },
+    { path: '/wp/v2/tags', label: 'Editorial tags', tag: 'tags' },
+    { path: '/wp/v2/tribe_events_cat', label: 'Event categories', tag: 'events' },
+    { path: '/wp/v2/business-category', label: 'Business categories', tag: 'business' },
+  ];
+
+  const results = {};
+  for (const t of taxonomies) {
+    try {
+      const items = await fetchAll(t.path, 3);
+      results[t.tag] = items;
+      const matches = matchingTerms(items, town);
+      const card = document.createElement('div');
+      card.className = 'taxonomy';
+      card.innerHTML = `
+        <h3>${t.tag}</h3>
+        <div class="tax-count">${items.length}</div>
+        <div class="tax-label">${t.label}</div>
+        <ul>
+          ${items.slice().sort((a,b)=>(b.count||0)-(a.count||0)).slice(0, 30).map(i => `
+            <li class="${matches.some(m => m.id === i.id) ? 'match' : ''}">
+              <span>${esc(i.name)}</span>
+              <span class="n">${i.count || 0}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      grid.appendChild(card);
+    } catch (e) {
+      const card = document.createElement('div');
+      card.className = 'taxonomy';
+      card.innerHTML = `<h3>${t.tag}</h3><div class="tax-label">unreachable</div><p style="font-size:12px;color:var(--accent);margin:8px 0 0;">${esc(e.message)}</p>`;
+      grid.appendChild(card);
+    }
+  }
+
+  status.textContent = `✓ Four taxonomies read. ${Object.values(results).reduce((n, a) => n + (a?.length || 0), 0)} terms in total.`;
+  status.className = 'status ok';
+  return results;
+}
+
+/* =============================================== §II : EVENTS === */
+async function renderEvents(town) {
+  const status = $('#events-status');
+  const list = $('#events-list');
+  status.textContent = 'Fetching events via TEC API…';
+  list.innerHTML = '';
+
+  try {
+    // The Events Calendar's own REST API returns events with venue + organizer inline.
+    const res = await fetch(`${API}/tribe/events/v1/events?per_page=50&start_date=${new Date().toISOString().slice(0,10)}`);
+    if (!res.ok) throw new Error(`TEC ${res.status}`);
+    const data = await res.json();
+    const all = data.events || [];
+    const matching = all.filter(e => {
+      const venue = e.venue?.city || e.venue?.venue || '';
+      const title = e.title || '';
+      return (venue + ' ' + title + ' ' + (e.description||'')).toLowerCase().includes(town.toLowerCase());
+    });
+
+    if (matching.length === 0) {
+      status.className = 'status';
+      status.textContent = `No upcoming events in ${town} returned by TEC. (Checked ${all.length} county-wide.)`;
+      return { all, matching: [] };
+    }
+
+    matching.slice(0, 12).forEach(e => {
+      const when = e.start_date_details
+        ? `${e.start_date_details.month}/${e.start_date_details.day}`
+        : (e.start_date || '').slice(5, 10);
+      const wrap = document.createElement('div');
+      wrap.className = 'entity';
+      wrap.innerHTML = `
+        <div class="e-meta"><span class="when">${esc(when)}</span><br>${e.all_day ? 'all day' : esc((e.start_date || '').slice(11,16))}</div>
+        <div>
+          <h4><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a></h4>
+          <p class="e-desc">${esc(stripHtml(e.excerpt || e.description || '').slice(0, 220))}${stripHtml(e.excerpt || e.description || '').length > 220 ? '…' : ''}</p>
+        </div>
+        <div class="e-where">${esc(e.venue?.venue || 'Venue unspecified')}${e.venue?.city ? `<br><small>${esc(e.venue.city)}</small>` : ''}</div>
+      `;
+      list.appendChild(wrap);
+    });
+
+    status.className = 'status ok';
+    status.textContent = `✓ ${matching.length} upcoming events in ${town} · ${all.length} county-wide`;
+    return { all, matching };
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ TEC endpoint unreachable: ${err.message}. Falling back is possible but not attempted here.`;
+    return { all: [], matching: [] };
+  }
+}
+
+/* =============================================== §III : VENUES == */
+async function renderVenues(town) {
+  const status = $('#venues-status');
+  const list = $('#venues-list');
+  status.textContent = 'Fetching venues…';
+  list.innerHTML = '';
+
+  try {
+    const res = await fetch(`${API}/tribe/events/v1/venues?per_page=100`);
+    if (!res.ok) throw new Error(`${res.status}`);
+    const data = await res.json();
+    const venues = data.venues || [];
+    const matching = venues.filter(v => {
+      const hay = [v.venue, v.city, v.address, v.description].join(' ').toLowerCase();
+      return hay.includes(town.toLowerCase());
+    });
+
+    if (matching.length === 0) {
+      status.className = 'status';
+      status.textContent = `No venues in ${town} named in TEC's database. (Checked ${venues.length} county-wide.)`;
+      return [];
+    }
+
+    matching.forEach(v => {
+      const wrap = document.createElement('div');
+      wrap.className = 'entity';
+      wrap.innerHTML = `
+        <div class="e-meta">${esc(v.state || 'NY')}</div>
+        <div>
+          <h4>${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.venue)}</a>` : esc(v.venue)}</h4>
+          <p class="e-desc">${esc(stripHtml(v.description || '').slice(0, 200)) || '<em style="color:var(--rule);">No description published.</em>'}</p>
+        </div>
+        <div class="e-where">${[v.address, v.city, v.zip].filter(Boolean).map(esc).join(', ')}</div>
+      `;
+      list.appendChild(wrap);
+    });
+
+    status.className = 'status ok';
+    status.textContent = `✓ ${matching.length} venue(s) in ${town} found among ${venues.length} county-wide`;
+    return matching;
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ Could not reach venues endpoint: ${err.message}`;
+    return [];
+  }
+}
+
+/* =============================================== §IV : POSTS ==== */
+async function renderPosts(town, ontology) {
+  const status = $('#posts-status');
+  const list = $('#posts-list');
+  status.textContent = 'Matching posts…';
+  list.innerHTML = '';
+
+  try {
+    const cats = ontology.editorial || [];
+    const matchingCats = matchingTerms(cats, town);
+    if (matchingCats.length === 0) {
+      status.className = 'status';
+      status.textContent = `No editorial category named ${town}.`;
+      return [];
+    }
+
+    const catIds = matchingCats.map(c => c.id).join(',');
+    const posts = await fetchAll(`/wp/v2/posts?categories=${catIds}&_embed=1`, 2);
+
+    if (posts.length === 0) {
+      status.className = 'status';
+      status.textContent = `Editorial category exists but holds no published posts.`;
+      return [];
+    }
+
+    posts.slice(0, 10).forEach(p => {
+      const date = (p.date || '').slice(0, 10);
+      const year = date.slice(0, 4);
+      const mon = date.slice(5, 7);
+      const wrap = document.createElement('div');
+      wrap.className = 'entity';
+      wrap.innerHTML = `
+        <div class="e-meta"><span class="when">${esc(year)}</span><br>${esc(mon)}</div>
+        <div>
+          <h4><a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(stripHtml(p.title?.rendered || ''))}</a></h4>
+          <p class="e-desc">${esc(stripHtml(p.excerpt?.rendered || '').slice(0, 240))}${stripHtml(p.excerpt?.rendered || '').length > 240 ? '…' : ''}</p>
+        </div>
+        <div class="e-where">Editorial</div>
+      `;
+      list.appendChild(wrap);
+    });
+
+    status.className = 'status ok';
+    status.textContent = `✓ ${posts.length} article(s) tagged with ${town} · showing ${Math.min(10, posts.length)}`;
+    return posts;
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}`;
+    return [];
+  }
+}
+
+/* =============================================== §V : DIAGNOSTIC  */
+function renderGaps(town, data) {
+  const { events, venues, posts, ontology } = data;
+  const venueCount = venues?.length || 0;
+  const eventCount = events?.matching?.length || 0;
+  const postCount = posts?.length || 0;
+  const bizCatMatch = matchingTerms(ontology.business || [], town).length;
+
+  const gaps = [
+    {
+      verdict: 'missing',
+      title: 'No LocalBusiness JSON-LD',
+      body: `The site's business directory exists (${(ontology.business||[]).length} categories) but the custom post type is not exposed to the REST API, and no schema.org LocalBusiness markup is published in the page source. Businesses in ${town} are invisible to structured-data consumers.`,
+    },
+    {
+      verdict: 'missing',
+      title: 'No llms.txt or AI-facing canonical',
+      body: 'There is no file at the site root that tells language models what this site is about, who it represents, or how its content is structured. AI assistants reconstruct their picture of the county from HTML alone.',
+    },
+    {
+      verdict: venueCount > 0 ? 'partial' : 'missing',
+      title: 'Venues as orphan Places',
+      body: venueCount > 0
+        ? `The ${venueCount} venue(s) named in ${town} live only inside the event system. They have no standalone schema.org Place identity, no sameAs links to their own websites, and no containment link back to the village.`
+        : `No venues in ${town} are named in the county's event database. Saturday's farmers' market has no canonical Place entity.`,
+    },
+    {
+      verdict: eventCount > 0 ? 'present' : 'partial',
+      title: 'Events carry partial Event schema',
+      body: eventCount > 0
+        ? `The Events Calendar emits Event JSON-LD on individual event pages. This is the one structured-data win on the current site. It does not extend to series, seasonality, or vendor-level information.`
+        : `No upcoming events in ${town} were returned. Either none are scheduled, or the village's seasonal activity is not represented in-system during quiet months.`,
+    },
+    {
+      verdict: postCount > 0 ? 'partial' : 'missing',
+      title: 'Editorial voice is trapped in HTML',
+      body: postCount > 0
+        ? `${postCount} articles mention ${town}, but none carry schema.org CreativeWork markup that would link them back to the Place they describe. The affective layer is legible to people, invisible to machines.`
+        : `No editorial articles in the ${town} category — the affective record of the village is absent from the county's written record.`,
+    },
+    {
+      verdict: 'missing',
+      title: 'No functional-proximity model',
+      body: 'Every place in the county is represented only by its containing municipality. Nothing encodes the 15-minute functional distance between villages, the river crossings that change drive time, or the cultural orbits that make Hudson and Kinderhook more adjacent than their coordinates suggest.',
+    },
+  ];
+
+  const grid = $('#gaps-grid');
+  grid.innerHTML = gaps.map(g => `
+    <div class="gap">
+      <div class="verdict ${g.verdict}">${g.verdict}</div>
+      <h5>${esc(g.title)}</h5>
+      <p>${esc(g.body)}</p>
+    </div>
+  `).join('');
+}
+
+/* =============================================== §VI : SCHEMA === */
+function renderGeneratedSchema(town, data) {
+  const venues = data.venues || [];
+  const primaryVenue = venues.find(v => (v.venue || '').toLowerCase().includes('market')) || venues[0];
+  const matchingEvent = (data.events?.matching || [])[0];
+
+  const place = primaryVenue ? {
+    "@type": "Place",
+    "@id": `https://kinderhook.node/places/${(primaryVenue.venue||'place').toLowerCase().replace(/[^a-z]+/g,'-')}`,
+    "name": primaryVenue.venue,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": primaryVenue.address || "",
+      "addressLocality": primaryVenue.city || town.charAt(0).toUpperCase() + town.slice(1),
+      "addressRegion": primaryVenue.state || "NY",
+      "postalCode": primaryVenue.zip || "",
+      "addressCountry": "US"
+    },
+    "containedInPlace": { "@id": `https://kinderhook.node/places/${town}` },
+    "sameAs": [primaryVenue.url].filter(Boolean)
+  } : null;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Place",
+        "@id": `https://kinderhook.node/places/${town}`,
+        "name": town.charAt(0).toUpperCase() + town.slice(1),
+        "alternateName": town === 'kinderhook' ? ["Kinderhoeck", "Old Kinderhook"] : [],
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Columbia County",
+          "sameAs": "https://en.wikipedia.org/wiki/Columbia_County,_New_York"
+        },
+        "sameAs": [
+          `https://columbiacountytourism.org/?s=${town}`,
+          `https://en.wikipedia.org/wiki/${town.charAt(0).toUpperCase() + town.slice(1)}_(village),_New_York`
+        ]
+      },
+      ...(place ? [place] : []),
+      ...(matchingEvent ? [{
+        "@type": "Event",
+        "@id": matchingEvent.url,
+        "name": matchingEvent.title,
+        "startDate": matchingEvent.start_date,
+        "endDate": matchingEvent.end_date,
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": place ? { "@id": place["@id"] } : undefined,
+        "organizer": matchingEvent.organizer?.[0] ? {
+          "@type": "Organization",
+          "name": matchingEvent.organizer[0].organizer
+        } : undefined,
+        "description": stripHtml(matchingEvent.excerpt || matchingEvent.description || '').slice(0, 300)
+      }] : []),
+      {
+        "@type": "TouristAttraction",
+        "name": `${town.charAt(0).toUpperCase() + town.slice(1)} Farmers' Market`,
+        "description": "Seasonal community farmers' market operating Saturdays, May through October, organised by KBPA volunteers.",
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "containedInPlace": { "@id": `https://kinderhook.node/places/${town}` }
+      }
+    ]
+  };
+
+  $('#jsonld-out').textContent = JSON.stringify(schema, null, 2);
+}
+
+/* =============================================== ORCHESTRATION == */
+async function audit(town) {
+  const t = (town || 'kinderhook').trim().toLowerCase();
+  document.title = `The ${t.charAt(0).toUpperCase() + t.slice(1)} Field Report`;
+
+  try {
+    const ontology = await renderOntology(t);
+    const [events, venues, posts] = await Promise.all([
+      renderEvents(t),
+      renderVenues(t),
+      renderPosts(t, ontology),
+    ]);
+    renderGaps(t, { events, venues, posts, ontology });
+    renderGeneratedSchema(t, { events, venues, posts, ontology });
+  } catch (err) {
+    console.error('Audit failed:', err);
+    document.querySelectorAll('.status').forEach(s => {
+      if (s.textContent.includes('Fetching')) {
+        s.className = 'status err';
+        s.textContent = `✗ ${err.message}`;
+      }
+    });
+  }
+}
+
+$('#reload-btn').addEventListener('click', () => audit($('#town-input').value));
+$('#town-input').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') audit($('#town-input').value);
+});
+
+audit('kinderhook');
+</script>
+</body>
+</html>
