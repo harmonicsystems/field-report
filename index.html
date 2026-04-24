@@ -162,6 +162,72 @@
     color: var(--accent);
   }
 
+  /* HEADLINE FINDING ============================================== */
+  .finding {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 44px 0 48px;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .finding::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .finding-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 10px;
+  }
+
+  .finding-lede {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 18px;
+    max-width: 720px;
+    letter-spacing: -0.005em;
+  }
+  .finding-lede strong {
+    font-weight: 500;
+    color: var(--accent);
+    font-variation-settings: 'opsz' 36;
+  }
+  .finding-lede em {
+    font-style: italic;
+    color: var(--slate);
+  }
+
+  .finding-foot {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 680px;
+  }
+  .finding-foot strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  @media (max-width: 760px) {
+    .finding { grid-template-columns: 1fr; gap: 12px; padding: 28px 0 32px; }
+    .finding-lede { font-size: 22px; }
+  }
+
   /* SOURCES ======================================================= */
   .sources {
     display: grid;
@@ -699,6 +765,14 @@
     </div>
   </article>
 
+  <!-- ============================================ FINDING ====== -->
+  <section class="finding" aria-label="Headline finding">
+    <div class="finding-label">A Finding</div>
+    <div id="finding-body">
+      <p class="finding-lede">Reading…</p>
+    </div>
+  </section>
+
   <!-- ============================================ SOURCES ======= -->
   <aside class="sources" aria-label="Data sources">
     <div class="sources-col">
@@ -1015,8 +1089,8 @@ async function renderVenues(town) {
 
     if (matching.length === 0) {
       status.className = 'status';
-      status.textContent = `No venues in ${town} named in TEC's database. (Checked ${venues.length} county-wide.)`;
-      return [];
+      status.textContent = `0 of ${venues.length} county-wide venues are in ${town}. The village is absent from CCT's machine-readable venue database.`;
+      return { matching: [], total: venues.length };
     }
 
     matching.forEach(v => {
@@ -1034,13 +1108,14 @@ async function renderVenues(town) {
     });
 
     status.className = 'status ok';
-    status.textContent = `✓ ${matching.length} venue(s) in ${town} found among ${venues.length} county-wide`;
-    return matching;
+    const pct = ((matching.length / venues.length) * 100).toFixed(0);
+    status.textContent = `${matching.length} of ${venues.length} county-wide venues (${pct}%) are in ${town}. The rest are elsewhere in the county.`;
+    return { matching, total: venues.length };
 
   } catch (err) {
     status.className = 'status err';
     status.textContent = `✗ Could not reach venues endpoint: ${err.message}`;
-    return [];
+    return { matching: [], total: 0 };
   }
 }
 
@@ -1324,31 +1399,61 @@ async function renderCrossrefs(town) {
   return { wikidata: wd, osm, config: cfg };
 }
 
+/* =============================================== FINDING ======== */
+
+function renderHeadlineFinding({ venues, venueTotal, village }) {
+  const el = $('#finding-body');
+  if (!el) return;
+
+  const v = venues?.length ?? 0;
+  const N = venueTotal ?? 0;
+  const K = village?.count ?? 0;
+  const C = Object.keys(village?.categories || {}).length;
+  const single = v === 1 ? venues[0]?.venue : null;
+
+  // Live numbers in bold; copy survives even if a fetch fails.
+  const lede = N
+    ? `Of <strong>${N}</strong> venues listed county-wide on Columbia County Tourism's machine-readable surface, <strong>${v}</strong> ${v === 1 ? 'is' : 'are'} in the Village of Kinderhook.${single ? ` That venue is <em>${esc(single)}</em> — a yoga studio.` : ''}`
+    : `Columbia County Tourism's venue database could not be read on this load; the county-wide total is currently unavailable.`;
+
+  const foot = K
+    ? `The village itself maintains a directory of <strong>${K}</strong> businesses across <strong>${C}</strong> municipally-assigned categories. <strong>0</strong> are published as structured data any machine can read. The entire legible-by-machine Kinderhook surface of the new web is, today, one yoga studio.`
+    : `The village's own directory has not yet been snapshotted into this deploy. Run <span style="font-family:var(--mono);font-size:13px;">tools/fetch-village-directory.mjs</span> to capture it.`;
+
+  el.innerHTML = `<p class="finding-lede">${lede}</p><p class="finding-foot">${foot}</p>`;
+}
+
 /* =============================================== §V : DIAGNOSTIC  */
 function renderGaps(town, data) {
-  const { events, venues, posts, ontology } = data;
+  const { events, venues, venueTotal, posts, ontology, village } = data;
   const venueCount = venues?.length || 0;
   const eventCount = events?.matching?.length || 0;
   const postCount = posts?.length || 0;
-  const bizCatMatch = matchingTerms(ontology.business || [], town).length;
+  const villageCount = village?.count || 0;
+  const villageCatCount = Object.keys(village?.categories || {}).length;
 
   const gaps = [
     {
       verdict: 'missing',
-      title: 'No LocalBusiness JSON-LD',
-      body: `The site's business directory exists (${(ontology.business||[]).length} categories) but the custom post type is not exposed to the REST API, and no schema.org LocalBusiness markup is published in the page source. Businesses in ${town} are invisible to structured-data consumers.`,
+      title: `${venueCount} of ${venueTotal || '?'} county-wide venues is in ${town}`,
+      body: `Columbia County Tourism's machine-readable venue database holds ${venueTotal || '?'} entries for the whole county. ${venueCount === 1 ? 'One' : venueCount} ${venueCount === 1 ? 'is' : 'are'} in ${town}${venueCount === 1 ? ' — a yoga studio.' : '.'} Hudson has eighteen. Chatham has eight. The village's share of the county's machine-addressable tourism surface is ${venueTotal ? ((100*venueCount/venueTotal).toFixed(0) + '%') : 'unmeasured'}.`,
+    },
+    {
+      verdict: 'missing',
+      title: `Village directory: ${villageCount || '?'} businesses, 0 as structured data`,
+      body: villageCount
+        ? `The Village of Kinderhook itself maintains a directory of ${villageCount} businesses across ${villageCatCount} municipally-assigned categories (ACCOUNTING through RETAIL SHOPS). None are published as JSON-LD, RSS, iCal, or any other machine-readable feed. The information exists; the surface does not.`
+        : `The village's own business directory exists at villageofkinderhook.org but is not currently loaded into this report. See data/snapshots/villageofkinderhook/ once a snapshot is committed.`,
+    },
+    {
+      verdict: 'missing',
+      title: 'No LocalBusiness JSON-LD on the county site',
+      body: `CCT's own site lists ${(ontology.business||[]).length} business categories but the custom post type is not exposed to the REST API, and no schema.org LocalBusiness markup is published in the page source. Businesses in ${town} are invisible to structured-data consumers from that direction too.`,
     },
     {
       verdict: 'missing',
       title: 'No llms.txt or AI-facing canonical',
-      body: 'There is no file at the site root that tells language models what this site is about, who it represents, or how its content is structured. AI assistants reconstruct their picture of the county from HTML alone.',
-    },
-    {
-      verdict: venueCount > 0 ? 'partial' : 'missing',
-      title: 'Venues as orphan Places',
-      body: venueCount > 0
-        ? `The ${venueCount} venue(s) named in ${town} live only inside the event system. They have no standalone schema.org Place identity, no sameAs links to their own websites, and no containment link back to the village.`
-        : `No venues in ${town} are named in the county's event database. Saturday's farmers' market has no canonical Place entity.`,
+      body: 'There is no file at either site root that tells language models what this county is, who it represents, or how its content is structured. AI assistants reconstruct their picture from HTML alone.',
     },
     {
       verdict: eventCount > 0 ? 'present' : 'partial',
@@ -1474,14 +1579,25 @@ async function audit(town) {
 
   try {
     const ontology = await renderOntology(t);
-    const [events, venues, posts, crossrefs, curated] = await Promise.all([
+    const [events, venuesData, posts, crossrefs, curated] = await Promise.all([
       renderEvents(t),
       renderVenues(t),
       renderPosts(t, ontology),
       renderCrossrefs(t),
       renderCuratedPlaces(t),
     ]);
-    renderGaps(t, { events, venues, posts, ontology });
+    const venues = venuesData.matching;
+    const venueTotal = venuesData.total;
+
+    // Village directory snapshot — informs the headline finding.
+    let village = null;
+    try {
+      const r = await fetch('./data/snapshots/villageofkinderhook/latest-businesses.json');
+      if (r.ok) village = await r.json();
+    } catch { /* file not yet committed in this deploy */ }
+
+    renderHeadlineFinding({ venues, venueTotal, village });
+    renderGaps(t, { events, venues, venueTotal, posts, ontology, village });
     renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated });
   } catch (err) {
     console.error('Audit failed:', err);
