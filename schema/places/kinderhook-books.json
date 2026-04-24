@@ -1,0 +1,34 @@
+{
+  "slug": "kinderhook-books",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-24",
+  "sources": [
+    "https://columbiacountytourism.org/business/kinderhook-books/"
+  ],
+  "notes": "Simple case: single BookStore entity. No separate building-as-Place because no historic-building continuity is established from a primary source at time of writing.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": "BookStore",
+        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-books",
+        "name": "Kinderhook Books",
+        "description": "Independent bookseller in the Village of Kinderhook. Books and bookish gifts.",
+        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kinderhook",
+          "addressRegion": "NY",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://columbiacountytourism.org/business/kinderhook-books/"
+        ],
+        "kh:affectiveRegister": "A village bookseller in the old sense of the phrase — walkable, browsable, knowing."
+      }
+    ]
+  }
+}

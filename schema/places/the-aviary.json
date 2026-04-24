@@ -1,0 +1,48 @@
+{
+  "slug": "the-aviary",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-24",
+  "sources": [
+    "https://columbiacountytourism.org/business/the-aviary/"
+  ],
+  "notes": "Hard case per ontology: restaurant-in-historic-building is two linked Places. The Mill is modelled separately because it outlives any particular tenant.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": "Restaurant",
+        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/the-aviary",
+        "name": "The Aviary",
+        "description": "Restaurant occupying the soaring cathedral-ceilinged interior of the historic Kinderhook Knitting Mill.",
+        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kinderhook",
+          "addressRegion": "NY",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://columbiacountytourism.org/business/the-aviary/"
+        ],
+        "kh:affectiveRegister": "A room whose architecture does the aesthetic work; the interior carries the occasion without decoration trying to.",
+        "kh:culturalOrbit": [
+          { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill" },
+          { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/ok-pantry" }
+        ]
+      },
+      {
+        "@type": ["Place", "LandmarksOrHistoricalBuildings"],
+        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill",
+        "name": "Kinderhook Knitting Mill",
+        "description": "Nineteenth-century knitting mill in the historic core of the Village of Kinderhook, adaptively reused as a multi-tenant building that currently houses The Aviary and OK Pantry, among others.",
+        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/" },
+        "kh:localNotes": [
+          { "date": "2026-04-24", "note": "The building outlives its tenants. Model it as a durable Place so future occupants attach to it without losing continuity." }
+        ]
+      }
+    ]
+  }
+}

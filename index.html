@@ -786,10 +786,22 @@
     <p class="jsonld-note" id="crossref-note" style="margin-top:28px;"></p>
   </section>
 
-  <!-- ============================================ §VII SCHEMA == -->
+  <!-- ============================================ §VII CURATED = -->
+  <section class="plate" id="sec-curated">
+    <div class="section-head">
+      <div class="section-num">§ VII · Curated Places</div>
+      <h2 class="section-title">What <em>we</em> have written</h2>
+      <div class="endpoint">schema/places/*.json</div>
+    </div>
+    <p class="dek">The hand-kept corpus. Each entry is a JSON file under <span style="font-family:var(--mono);">schema/places/</span>, edited as a file, versioned in public, and loaded by this page at read-time. The county's data plus the commons' data plus these make a legible village.</p>
+    <div class="status" id="curated-status">Loading corpus…</div>
+    <div class="entity-list" id="curated-list"></div>
+  </section>
+
+  <!-- ============================================ §VIII SCHEMA = -->
   <section class="plate" id="sec-schema">
     <div class="section-head">
-      <div class="section-num">§ VII · Proposed Schema</div>
+      <div class="section-num">§ VIII · Proposed Schema</div>
       <h2 class="section-title">What we <em>would publish</em> instead</h2>
       <div class="endpoint">schema.org · JSON-LD</div>
     </div>
@@ -1058,6 +1070,71 @@ async function renderPosts(town, ontology) {
   }
 }
 
+/* =============================================== §VII : CURATED = */
+
+async function renderCuratedPlaces(town) {
+  const status = $('#curated-status');
+  const list = $('#curated-list');
+  status.textContent = 'Reading manifest…';
+  list.innerHTML = '';
+
+  try {
+    const manifestRes = await fetch(`./schema/places/manifest.json`);
+    if (!manifestRes.ok) throw new Error(`manifest ${manifestRes.status}`);
+    const manifest = await manifestRes.json();
+
+    if (manifest.village !== town) {
+      status.className = 'status';
+      status.textContent = `Corpus is pinned to ${manifest.village}. No curated places for ${town} yet.`;
+      return [];
+    }
+
+    const results = await Promise.all(manifest.places.map(async (p) => {
+      try {
+        const res = await fetch(`./schema/places/${p.slug}.json`);
+        if (!res.ok) throw new Error(`${p.slug}: ${res.status}`);
+        return await res.json();
+      } catch (err) {
+        return { slug: p.slug, error: err.message, _manifest: p };
+      }
+    }));
+
+    list.innerHTML = results.map(r => {
+      if (r.error) {
+        return `<div class="entity"><div class="e-meta">err</div><div><h4>${esc(r.slug)}</h4><p class="e-desc" style="color:var(--accent);">${esc(r.error)}</p></div><div class="e-where">—</div></div>`;
+      }
+      const primary = (r.jsonld?.['@graph'] || [])[0] || {};
+      const types = [].concat(primary['@type'] || []).join(' · ');
+      const register = primary['kh:affectiveRegister'] || '';
+      const seasonality = primary['kh:seasonality']?.cadence || '';
+      return `
+        <div class="entity">
+          <div class="e-meta">
+            <span class="when">${esc(types)}</span><br>
+            reviewed ${esc(r.lastReviewed || '—')}
+          </div>
+          <div>
+            <h4><a href="./schema/places/${esc(r.slug)}.json" target="_blank" rel="noopener">${esc(primary.name || r.slug)}</a></h4>
+            <p class="e-desc">${esc(primary.description || '')}</p>
+            ${register ? `<p class="e-desc" style="font-style:italic;margin-top:6px;color:var(--slate);">${esc(register)}</p>` : ''}
+          </div>
+          <div class="e-where">${esc(seasonality || r._manifest?.kind || 'Village of Kinderhook')}</div>
+        </div>
+      `;
+    }).join('');
+
+    status.className = 'status ok';
+    const ok = results.filter(r => !r.error).length;
+    status.textContent = `✓ ${ok} of ${results.length} curated ${results.length === 1 ? 'entry' : 'entries'} loaded from schema/places/`;
+    return results.filter(r => !r.error);
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}`;
+    return [];
+  }
+}
+
 /* =============================================== §VI : CROSSREFS  */
 
 /* Per-town registry. Start with Kinderhook; extend by hand as the
@@ -1318,7 +1395,10 @@ function renderGeneratedSchema(town, data) {
   } : null;
 
   const schema = {
-    "@context": "https://schema.org",
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
     "@graph": [
       {
         "@type": "Place",
@@ -1352,14 +1432,10 @@ function renderGeneratedSchema(town, data) {
         } : undefined,
         "description": stripHtml(matchingEvent.excerpt || matchingEvent.description || '').slice(0, 300)
       }] : []),
-      {
-        "@type": "TouristAttraction",
-        "name": `${town.charAt(0).toUpperCase() + town.slice(1)} Farmers' Market`,
-        "description": "Seasonal community farmers' market operating Saturdays, May through October, organised by KBPA volunteers.",
-        "isAccessibleForFree": true,
-        "publicAccess": true,
-        "containedInPlace": { "@id": `https://kinderhook.node/places/${town}` }
-      }
+      // Hand-curated entries from schema/places/ flow in as additional
+      // nodes of the same graph. The county's data, the commons' data,
+      // and the local corpus — one addressable JSON-LD document.
+      ...(data.curated || []).flatMap(c => (c.jsonld?.['@graph'] || []))
     ]
   };
 
@@ -1373,14 +1449,15 @@ async function audit(town) {
 
   try {
     const ontology = await renderOntology(t);
-    const [events, venues, posts, crossrefs] = await Promise.all([
+    const [events, venues, posts, crossrefs, curated] = await Promise.all([
       renderEvents(t),
       renderVenues(t),
       renderPosts(t, ontology),
       renderCrossrefs(t),
+      renderCuratedPlaces(t),
     ]);
     renderGaps(t, { events, venues, posts, ontology });
-    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs });
+    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated });
   } catch (err) {
     console.error('Audit failed:', err);
     document.querySelectorAll('.status').forEach(s => {

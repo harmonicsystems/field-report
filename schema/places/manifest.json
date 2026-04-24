@@ -1,0 +1,11 @@
+{
+  "village": "kinderhook",
+  "updated": "2026-04-24",
+  "note": "Hand-curated corpus for the Kinderhook Field Report. Each slug resolves to schema/places/{slug}.json. Order is editorial, not alphabetical — it reflects the order we want a reader (human or machine) to encounter the village in.",
+  "places": [
+    { "slug": "kinderhook-farmers-market", "display": "Kinderhook Farmers' Market", "primaryType": "Event", "kind": "market" },
+    { "slug": "the-aviary",                "display": "The Aviary",                  "primaryType": "Restaurant", "kind": "food" },
+    { "slug": "kinderhook-books",          "display": "Kinderhook Books",             "primaryType": "BookStore", "kind": "commerce" },
+    { "slug": "old-dutch-inn",             "display": "Old Dutch Inn",                "primaryType": "Hotel",     "kind": "lodging" }
+  ]
+}
