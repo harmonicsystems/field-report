@@ -205,7 +205,11 @@ async function main() {
   //      The corpus is hand-curated; @id is a fragment in this graph (the
   //      kinderhook.json file itself), so other nodes can reference it.
   const dayMap = { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' };
-  for (const b of (hoursManifest.businesses || [])) {
+  // Provisional entries are unverified placeholders; we render them on the
+  // page (with a banner) but exclude them from the published JSON-LD so the
+  // graph carries no invented facts.
+  const verifiedBusinesses = (hoursManifest.businesses || []).filter(b => !b.provisional);
+  for (const b of verifiedBusinesses) {
     const node = {
       "@type": b.type || 'LocalBusiness',
       "@id": `https://fieldreports.harmonic-systems.org/kinderhook.json#${b.slug}`,
@@ -357,7 +361,8 @@ async function main() {
         coverageArticles: coverageEntries.filter(c => c && c.type === 'article').length,
         historicSites: Math.min(15, (histSites?.sites || []).length),
         historicPeople: Math.min(5, (histPeople?.people || []).length),
-        localBusinesses: (hoursManifest.businesses || []).length,
+        localBusinesses: verifiedBusinesses.length,
+        localBusinessesProvisional: (hoursManifest.businesses || []).length - verifiedBusinesses.length,
         femaDisasters: fema?.declarations?.length || 0,
       },
     },

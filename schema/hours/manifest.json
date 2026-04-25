@@ -1,7 +1,8 @@
 {
   "village": "kinderhook",
   "updated": "2026-04-25",
-  "note": "Hand-curated weekly opening hours for Kinderhook businesses. Each entry uses schema.org openingHoursSpecification semantics: dayOfWeek + opens + closes (24-hour HH:MM). The diagnostic of §XVII is exactly this: hours are not machine-readably published anywhere upstream — neither CCT nor the village directory carry them — so until that changes the corpus lives here. Days: Mo Tu We Th Fr Sa Su.",
+  "note": "Hand-curated weekly opening hours. Each entry uses schema.org openingHoursSpecification semantics: dayOfWeek + opens + closes (24-hour HH:MM). The diagnostic of §XVII is exactly this: hours are not machine-readably published anywhere upstream — neither CCT nor the village directory carry them.",
+  "provenance": "PROVISIONAL — entries below are placeholder shapes generated to seed the format. They have NOT been verified against the businesses themselves and must not be treated as facts about the village. Set provisional=false on an entry only after confirming hours with the business directly. Provisional entries are excluded from kinderhook.json.",
   "businesses": [
     {
       "slug": "kinderhook-books",
@@ -10,13 +11,38 @@
       "url": "https://www.kinderhookbooks.com/",
       "type": "BookStore",
       "hours": [
-        { "day": "Tu", "opens": "10:00", "closes": "17:00" },
-        { "day": "We", "opens": "10:00", "closes": "17:00" },
-        { "day": "Th", "opens": "10:00", "closes": "17:00" },
-        { "day": "Fr", "opens": "10:00", "closes": "17:00" },
-        { "day": "Sa", "opens": "10:00", "closes": "17:00" },
-        { "day": "Su", "opens": "11:00", "closes": "16:00" }
-      ]
+        {
+          "day": "Tu",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "day": "We",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "day": "Th",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "day": "Fr",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "day": "Sa",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "day": "Su",
+          "opens": "11:00",
+          "closes": "16:00"
+        }
+      ],
+      "provisional": true
     },
     {
       "slug": "the-aviary",
@@ -24,11 +50,28 @@
       "address": "6 Hudson St, Kinderhook NY 12106",
       "type": "Restaurant",
       "hours": [
-        { "day": "Th", "opens": "17:00", "closes": "21:00" },
-        { "day": "Fr", "opens": "17:00", "closes": "22:00" },
-        { "day": "Sa", "opens": "17:00", "closes": "22:00" },
-        { "day": "Su", "opens": "11:00", "closes": "15:00" }
-      ]
+        {
+          "day": "Th",
+          "opens": "17:00",
+          "closes": "21:00"
+        },
+        {
+          "day": "Fr",
+          "opens": "17:00",
+          "closes": "22:00"
+        },
+        {
+          "day": "Sa",
+          "opens": "17:00",
+          "closes": "22:00"
+        },
+        {
+          "day": "Su",
+          "opens": "11:00",
+          "closes": "15:00"
+        }
+      ],
+      "provisional": true
     },
     {
       "slug": "ok-pantry",
@@ -36,12 +79,33 @@
       "address": "6 Hudson St, Kinderhook NY 12106",
       "type": "FoodEstablishment",
       "hours": [
-        { "day": "We", "opens": "08:00", "closes": "16:00" },
-        { "day": "Th", "opens": "08:00", "closes": "16:00" },
-        { "day": "Fr", "opens": "08:00", "closes": "16:00" },
-        { "day": "Sa", "opens": "08:00", "closes": "16:00" },
-        { "day": "Su", "opens": "09:00", "closes": "15:00" }
-      ]
+        {
+          "day": "We",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "day": "Th",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "day": "Fr",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "day": "Sa",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "day": "Su",
+          "opens": "09:00",
+          "closes": "15:00"
+        }
+      ],
+      "provisional": true
     },
     {
       "slug": "kinderhook-bottle-shop",
@@ -49,14 +113,43 @@
       "address": "Kinderhook NY 12106",
       "type": "LiquorStore",
       "hours": [
-        { "day": "Mo", "opens": "11:00", "closes": "19:00" },
-        { "day": "Tu", "opens": "11:00", "closes": "19:00" },
-        { "day": "We", "opens": "11:00", "closes": "19:00" },
-        { "day": "Th", "opens": "11:00", "closes": "19:00" },
-        { "day": "Fr", "opens": "11:00", "closes": "20:00" },
-        { "day": "Sa", "opens": "11:00", "closes": "20:00" },
-        { "day": "Su", "opens": "12:00", "closes": "18:00" }
-      ]
+        {
+          "day": "Mo",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "day": "Tu",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "day": "We",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "day": "Th",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "day": "Fr",
+          "opens": "11:00",
+          "closes": "20:00"
+        },
+        {
+          "day": "Sa",
+          "opens": "11:00",
+          "closes": "20:00"
+        },
+        {
+          "day": "Su",
+          "opens": "12:00",
+          "closes": "18:00"
+        }
+      ],
+      "provisional": true
     },
     {
       "slug": "old-dutch-inn",
@@ -64,14 +157,43 @@
       "address": "11 Broad St, Kinderhook NY 12106",
       "type": "Hotel",
       "hours": [
-        { "day": "Mo", "opens": "00:00", "closes": "23:59" },
-        { "day": "Tu", "opens": "00:00", "closes": "23:59" },
-        { "day": "We", "opens": "00:00", "closes": "23:59" },
-        { "day": "Th", "opens": "00:00", "closes": "23:59" },
-        { "day": "Fr", "opens": "00:00", "closes": "23:59" },
-        { "day": "Sa", "opens": "00:00", "closes": "23:59" },
-        { "day": "Su", "opens": "00:00", "closes": "23:59" }
-      ]
+        {
+          "day": "Mo",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "day": "Tu",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "day": "We",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "day": "Th",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "day": "Fr",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "day": "Sa",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "day": "Su",
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "provisional": true
     },
     {
       "slug": "samascott-garden-market",
@@ -79,14 +201,43 @@
       "address": "65 Sunset Ave, Kinderhook NY 12106",
       "type": "GroceryStore",
       "hours": [
-        { "day": "Mo", "opens": "09:00", "closes": "18:00" },
-        { "day": "Tu", "opens": "09:00", "closes": "18:00" },
-        { "day": "We", "opens": "09:00", "closes": "18:00" },
-        { "day": "Th", "opens": "09:00", "closes": "18:00" },
-        { "day": "Fr", "opens": "09:00", "closes": "18:00" },
-        { "day": "Sa", "opens": "09:00", "closes": "18:00" },
-        { "day": "Su", "opens": "10:00", "closes": "17:00" }
-      ]
+        {
+          "day": "Mo",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "day": "Tu",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "day": "We",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "day": "Th",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "day": "Fr",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "day": "Sa",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "day": "Su",
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ],
+      "provisional": true
     },
     {
       "slug": "us-post-office-kinderhook",
@@ -94,13 +245,38 @@
       "address": "10 Hudson St, Kinderhook NY 12106",
       "type": "PostOffice",
       "hours": [
-        { "day": "Mo", "opens": "08:30", "closes": "16:30" },
-        { "day": "Tu", "opens": "08:30", "closes": "16:30" },
-        { "day": "We", "opens": "08:30", "closes": "16:30" },
-        { "day": "Th", "opens": "08:30", "closes": "16:30" },
-        { "day": "Fr", "opens": "08:30", "closes": "16:30" },
-        { "day": "Sa", "opens": "09:00", "closes": "12:00" }
-      ]
+        {
+          "day": "Mo",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "day": "Tu",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "day": "We",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "day": "Th",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "day": "Fr",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "day": "Sa",
+          "opens": "09:00",
+          "closes": "12:00"
+        }
+      ],
+      "provisional": true
     },
     {
       "slug": "kinderhook-farmers-market",
@@ -109,8 +285,13 @@
       "type": "Event",
       "seasonal": "May–October",
       "hours": [
-        { "day": "Sa", "opens": "08:30", "closes": "12:30" }
-      ]
+        {
+          "day": "Sa",
+          "opens": "08:30",
+          "closes": "12:30"
+        }
+      ],
+      "provisional": true
     }
   ]
 }

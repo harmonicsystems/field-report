@@ -488,410 +488,6 @@
       ]
     },
     {
-      "@type": "BookStore",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#kinderhook-books",
-      "name": "Kinderhook Books",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "url": "https://www.kinderhookbooks.com/",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "8 Hudson St, Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Tuesday",
-          "opens": "10:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "10:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "10:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "10:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "10:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "11:00",
-          "closes": "16:00"
-        }
-      ]
-    },
-    {
-      "@type": "Restaurant",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#the-aviary",
-      "name": "The Aviary",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6 Hudson St, Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "17:00",
-          "closes": "21:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "17:00",
-          "closes": "22:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "17:00",
-          "closes": "22:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "11:00",
-          "closes": "15:00"
-        }
-      ]
-    },
-    {
-      "@type": "FoodEstablishment",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#ok-pantry",
-      "name": "OK Pantry",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6 Hudson St, Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "08:00",
-          "closes": "16:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "08:00",
-          "closes": "16:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "08:00",
-          "closes": "16:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:00",
-          "closes": "16:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "09:00",
-          "closes": "15:00"
-        }
-      ]
-    },
-    {
-      "@type": "LiquorStore",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#kinderhook-bottle-shop",
-      "name": "The Kinderhook Bottle Shop",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Monday",
-          "opens": "11:00",
-          "closes": "19:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Tuesday",
-          "opens": "11:00",
-          "closes": "19:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "11:00",
-          "closes": "19:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "11:00",
-          "closes": "19:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "11:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "11:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "12:00",
-          "closes": "18:00"
-        }
-      ]
-    },
-    {
-      "@type": "Hotel",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#old-dutch-inn",
-      "name": "Old Dutch Inn",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "11 Broad St, Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Monday",
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Tuesday",
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "00:00",
-          "closes": "23:59"
-        }
-      ]
-    },
-    {
-      "@type": "GroceryStore",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#samascott-garden-market",
-      "name": "Samascott's Garden Market",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Sunset Ave, Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Monday",
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Tuesday",
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "10:00",
-          "closes": "17:00"
-        }
-      ]
-    },
-    {
-      "@type": "PostOffice",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#us-post-office-kinderhook",
-      "name": "US Post Office, Kinderhook",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "10 Hudson St, Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Monday",
-          "opens": "08:30",
-          "closes": "16:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Tuesday",
-          "opens": "08:30",
-          "closes": "16:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "08:30",
-          "closes": "16:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "08:30",
-          "closes": "16:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "08:30",
-          "closes": "16:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "12:00"
-        }
-      ]
-    },
-    {
-      "@type": "Event",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#kinderhook-farmers-market",
-      "name": "Kinderhook Farmers' Market",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Village Square, Kinderhook NY 12106",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:30",
-          "closes": "12:30"
-        }
-      ],
-      "kh:seasonality": "May–October"
-    },
-    {
       "@type": "Dataset",
       "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#assessments",
       "name": "Kinderhook assessment + market summary",
@@ -961,6 +557,7 @@
         "median_value_owner_occupied": 349000,
         "median_household_income": 84861,
         "per_capita_income": 61581,
+        "poverty_universe": 1351,
         "income_below_poverty_level": 65,
         "race_white_alone": 1262,
         "race_black_alone": 0,
@@ -994,6 +591,7 @@
         "median_value_owner_occupied": 297300,
         "median_household_income": 88565,
         "per_capita_income": 53882,
+        "poverty_universe": 8047,
         "income_below_poverty_level": 608,
         "race_white_alone": 7527,
         "race_black_alone": 30,
@@ -1515,7 +1113,7 @@
   ],
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-04-25T19:06:13.958Z",
+    "builtAt": "2026-04-25T19:16:53.980Z",
     "sources": {
       "events": "2026-04-25T14:43:53.230Z",
       "venues": "2026-04-25T14:43:54.718Z",
@@ -1525,17 +1123,18 @@
       "orptsParcels": "2026-04-25T19:06:13.652Z",
       "orptsRar": "2026-04-25T19:06:13.894Z",
       "marketEquity": "2026-04-25T18:56:17.773Z",
-      "acsVillage": "2026-04-25T18:56:20.080Z",
-      "acsTown": "2026-04-25T18:56:20.082Z",
+      "acsVillage": "2026-04-25T19:13:37.981Z",
+      "acsTown": "2026-04-25T19:13:37.983Z",
       "fema": "2026-04-25T18:57:00.068Z"
     },
     "counts": {
-      "graph": 69,
+      "graph": 61,
       "curatedPlaces": 4,
       "coverageArticles": 2,
       "historicSites": 15,
       "historicPeople": 5,
-      "localBusinesses": 8,
+      "localBusinesses": 0,
+      "localBusinessesProvisional": 8,
       "femaDisasters": 27
     }
   }

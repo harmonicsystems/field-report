@@ -1352,6 +1352,46 @@
   .g-tick { position: absolute; transform: translateX(-50%); top: 0;
     font-family: var(--mono); font-size: 9px; color: var(--ink-soft); }
 
+  /* Generic fold (collapsed-by-default supplemental list). */
+  details.fold {
+    margin-top: 16px; border-top: 1px solid var(--rule); padding-top: 8px;
+  }
+  details.fold > summary {
+    cursor: pointer; list-style: none;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); padding: 8px 0;
+    user-select: none;
+  }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before { content: '▸ '; transition: none; }
+  details.fold[open] > summary::before { content: '▾ '; }
+  details.fold[open] > summary { color: var(--ink-soft); border-bottom: 1px dotted var(--rule); margin-bottom: 8px; }
+
+  /* Span-the-grid utility for §XIII full-width footnotes inside .assess-grid. */
+  .full-span { grid-column: 1 / -1; }
+
+  /* Provisional banner + tags (used by §XVII). */
+  .prov-banner {
+    border: 1px solid var(--accent); background: rgba(166, 61, 42, 0.05);
+    padding: 14px 18px; margin-bottom: 22px;
+    display: grid; grid-template-columns: 110px 1fr; gap: 16px;
+    font-size: 13px; color: var(--ink);
+  }
+  .prov-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); align-self: center;
+  }
+  .g-row-prov .g-biz { color: var(--ink-soft); }
+  .g-prov-tag {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    border: 1px solid var(--accent); padding: 1px 4px;
+    margin-left: 6px; vertical-align: 2px;
+  }
+  .g-block.g-prov {
+    background: transparent; border: 1px dashed var(--accent); opacity: 0.9;
+  }
+
   @media (max-width: 720px) {
     .assess-grid { grid-template-columns: 1fr; }
     .calc-body { grid-template-columns: 1fr; }
@@ -1361,6 +1401,7 @@
     .g-row { grid-template-columns: 130px 1fr; gap: 8px; }
     .g-tracks { gap: 2px; }
     .g-biz { font-size: 13px; }
+    .prov-banner { grid-template-columns: 1fr; gap: 6px; }
   }
 </style>
 </head>
@@ -1610,7 +1651,7 @@
         </label>
       </div>
       <div class="calc-out" id="calc-out"></div>
-      <p class="calc-foot">RAR is the state's official ratio between assessed value and full market value for residential property. Computed from a sample of arm's-length sales in each rate year.</p>
+      <p class="calc-foot">RAR is the state's official ratio between assessed value and full market value for residential property, derived from a sample of arm's-length sales each rate year. The result is the <em>typical</em> assessment for a property at this market value — individual parcels deviate; the variation band above is the state's coefficient of dispersion. Residential only; not applicable to commercial or vacant-land parcels.</p>
     </div>
   </section>
 
@@ -2734,9 +2775,11 @@ function renderAssessments({ parcels, rar }) {
         <div class="assess-stat"><span class="k">parcels</span><span class="v">${fmtN(rows.length)}</span></div>
         <div class="assess-stat"><span class="k">assessed total</span><span class="v">${fmt$(A)}</span></div>
         <div class="assess-stat"><span class="k">full market total</span><span class="v">${fmt$(M)}</span></div>
-        <div class="assess-stat"><span class="k">implied ratio</span><span class="v">${M ? (100 * A / M).toFixed(1) + '%' : '—'}</span></div>
+        <div class="assess-stat"><span class="k">equalization rate</span><span class="v">${M ? (100 * A / M).toFixed(1) + '%' : '—'}</span></div>
       </div>`;
   };
+
+  const exemptNote = `<p class="m-foot" style="margin-top:6px;">Assessed totals are <em>pre-exemption</em>: STAR, veterans, and senior exemptions are not netted out, so the actual taxable roll is lower. Full market value in the parcel data is computed by ORPTS as <span class="mono">assessment_total ÷ equalization_rate</span>, so the equalization rate above is recovered from the data by definition — a sanity check rather than an independent measurement.</p>`;
 
   const topClasses = parcels.propertyClasses.slice(0, 6).map(c =>
     `<tr><td class="mono">${esc(c.code)}</td><td>${esc(c.description || '')}</td><td class="num">${fmtN(c.count)}</td><td class="num">${fmt$(c.assessedTotal)}</td></tr>`
@@ -2752,6 +2795,7 @@ function renderAssessments({ parcels, rar }) {
         <tbody>${topClasses}</tbody>
       </table>
     </div>
+    <div class="full-span">${exemptNote}</div>
   `;
 
   // Calculator wiring — uses the RAR series for assessed-from-market.
@@ -2782,10 +2826,15 @@ function renderAssessments({ parcels, rar }) {
     const ratio  = lookupRatio();
     if (ratio == null) { out.innerHTML = '<em>No RAR for this jurisdiction/year.</em>'; return; }
     const assessed = market * (ratio / 100);
+    // Coefficient of dispersion: typical % deviation an individual parcel
+    // shows from the median assessment ratio. Pulls from the latest equity
+    // stats snapshot (window-scoped from renderMarket; may be undefined).
+    const cod = window.__latestCOD;
+    const band = cod ? `<div class="calc-line"><span class="k">Typical individual variation</span><span class="v">±${cod.toFixed(0)}%</span></div>` : '';
     out.innerHTML = `
       <div class="calc-line"><span class="k">RAR (${esc(swisSel.value)} · ${esc(yearSel.value)})</span><span class="v">${ratio.toFixed(2)}%</span></div>
-      <div class="calc-line big"><span class="k">Implied assessed value</span><span class="v">${fmt$(assessed)}</span></div>
-      <div class="calc-line"><span class="k">Equivalent if RAR were 100%</span><span class="v">${fmt$(market)}</span></div>`;
+      <div class="calc-line big"><span class="k">Typical assessed value</span><span class="v">${fmt$(assessed)}</span></div>
+      ${band}`;
   }
   [marketIn, swisSel, yearSel].forEach(el => el.addEventListener('input', recompute));
   recompute();
@@ -2802,6 +2851,8 @@ function renderMarket(eq) {
   }
   status.className = 'status ok';
   status.textContent = `${eq.series.length} years · ${eq.municipality} (SWIS ${eq.swis}) · snapshot ${(eq.fetchedAt||'').slice(0,10)}`;
+  // Expose COD to the §XIII calculator so the variation band can render.
+  if (eq.latest?.residential_cod != null) window.__latestCOD = eq.latest.residential_cod;
 
   // Sparkline of residential_market_value_ratio over time.
   const series = eq.series.filter(r => r.residential_market_value_ratio != null);
@@ -2863,7 +2914,7 @@ function renderACS({ village, town }) {
     ['Median gross rent',          fmt$(V.median_gross_rent),                fmt$(T.median_gross_rent)],
     ['Median household income',    fmt$(V.median_household_income),          fmt$(T.median_household_income)],
     ['Per capita income',          fmt$(V.per_capita_income),                fmt$(T.per_capita_income)],
-    ['Below poverty',              fmtN(V.income_below_poverty_level),       fmtN(T.income_below_poverty_level)],
+    ['Below poverty',              fmtPct(V.income_below_poverty_level, V.poverty_universe), fmtPct(T.income_below_poverty_level, T.poverty_universe)],
     ['Commute ≥ 60 min',           fmtPct(V.commute_60_plus_min, V.commute_total_workers), fmtPct(T.commute_60_plus_min, T.commute_total_workers)],
   ].map(([k,v,t]) => `<tr><th>${esc(k)}</th><td class="num">${esc(String(v))}</td><td class="num">${esc(String(t))}</td></tr>`).join('');
 
@@ -2872,7 +2923,7 @@ function renderACS({ village, town }) {
       <thead><tr><th></th><th>Village (place)</th><th>Town (MCD)</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
-    <p class="m-foot">Two distinct geographies. The town's count includes the village and the surrounding farmland; the difference between the two columns is the village's footprint as a Census-defined place.</p>
+    <p class="m-foot">Two distinct geographies. The town's count includes the village and the surrounding farmland; the difference between the two columns is the village's footprint as a Census-defined place. ACS 5-Year estimates pool five years of survey responses (so each value is an average centered on the vintage year, not a point-in-time count); margins of error are not shown here, but are non-trivial for a 1,351-person place — treat differences smaller than ~10% as inconclusive.</p>
   `;
 }
 
@@ -2891,7 +2942,7 @@ function renderFEMA(snap) {
   const types = Object.entries(snap.byIncidentType).sort((a,b) => b[1] - a[1]);
   const typesHtml = types.map(([t, n]) => `<span class="fema-chip">${esc(t)} <em>${n}</em></span>`).join('');
 
-  const list = snap.declarations.map(d => {
+  const rowFor = (d) => {
     const yr = (d.declarationDate || '').slice(0, 4);
     const programs = [
       d.iaProgramDeclared ? 'IA' : null,
@@ -2907,11 +2958,19 @@ function renderFEMA(snap) {
         </div>
         <div class="fema-tail">${esc((d.incidentBeginDate||'').slice(0,10))} → ${esc((d.incidentEndDate||'').slice(0,10) || 'open')}</div>
       </div>`;
-  }).join('');
+  };
+
+  const head = snap.declarations.slice(0, 6).map(rowFor).join('');
+  const rest = snap.declarations.slice(6).map(rowFor).join('');
+  const restBlock = rest
+    ? `<details class="fold"><summary>Show the remaining ${snap.declarations.length - 6} declarations · back to ${(snap.declarations[snap.declarations.length-1].declarationDate||'').slice(0,4)}</summary><div class="fema-list">${rest}</div></details>`
+    : '';
 
   body.innerHTML = `
     <div class="fema-types">${typesHtml}</div>
-    <div class="fema-list">${list}</div>
+    <div class="fema-list">${head}</div>
+    ${restBlock}
+    <p class="m-foot"><span class="mono">DR</span> = Major Disaster Declaration · <span class="mono">EM</span> = Emergency Declaration · program flags: <span class="mono">IA</span> Individual Assistance, <span class="mono">PA</span> Public Assistance, <span class="mono">HM</span> Hazard Mitigation. EM declarations are typically narrower in scope than DRs.</p>
   `;
 }
 
@@ -2924,15 +2983,24 @@ function renderHours(snap) {
     status.textContent = 'No hours corpus committed yet. See schema/hours/manifest.json.';
     return;
   }
+  const verifiedCount = snap.businesses.filter(b => !b.provisional).length;
+  const provisionalCount = snap.businesses.length - verifiedCount;
   status.className = 'status ok';
-  status.textContent = `${snap.businesses.length} businesses · hand-curated · ${snap.updated}`;
+  status.textContent = `${snap.businesses.length} businesses · ${verifiedCount} verified · ${provisionalCount} provisional · ${snap.updated}`;
+
+  const banner = provisionalCount > 0
+    ? `<div class="prov-banner">
+         <div class="prov-label">Provisional</div>
+         <div>${provisionalCount} of ${snap.businesses.length} entries below are placeholder shapes generated to seed the format. They have <em>not</em> been verified against the businesses themselves and are excluded from <span class="mono">kinderhook.json</span>. The corpus's editorial promise is that this banner shrinks to zero, in public, as entries are confirmed.</div>
+       </div>`
+    : '';
 
   const days = ['Mo','Tu','We','Th','Fr','Sa','Su'];
   const dayLabels = { Mo:'Mon', Tu:'Tue', We:'Wed', Th:'Thu', Fr:'Fri', Sa:'Sat', Su:'Sun' };
   const TOTAL_MIN = 24 * 60;
   const toMin = (hhmm) => { const [h,m] = hhmm.split(':').map(Number); return h*60 + m; };
 
-  const head = `
+  const headHtml = `
     <div class="g-row g-head">
       <div class="g-name"></div>
       <div class="g-tracks">
@@ -2956,21 +3024,21 @@ function renderHours(snap) {
       const blocks = slots.map(s => {
         const left = (toMin(s.opens) / TOTAL_MIN) * 100;
         const width = ((toMin(s.closes) - toMin(s.opens)) / TOTAL_MIN) * 100;
-        return `<div class="g-block" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%;" title="${esc(s.opens)}–${esc(s.closes)}"></div>`;
+        return `<div class="g-block${b.provisional ? ' g-prov' : ''}" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%;" title="${esc(s.opens)}–${esc(s.closes)}"></div>`;
       }).join('');
       return `<div class="g-day">${blocks}</div>`;
     }).join('');
     return `
-      <div class="g-row">
+      <div class="g-row${b.provisional ? ' g-row-prov' : ''}">
         <div class="g-name">
-          <div class="g-biz">${esc(b.name)}</div>
+          <div class="g-biz">${esc(b.name)}${b.provisional ? ' <span class="g-prov-tag">prov.</span>' : ''}</div>
           <div class="g-type">${esc(b.type || '')}${b.seasonal ? ` · ${esc(b.seasonal)}` : ''}</div>
         </div>
         <div class="g-tracks">${tracks}</div>
       </div>`;
   }).join('');
 
-  wrap.innerHTML = head + rows;
+  wrap.innerHTML = banner + headHtml + rows;
 }
 
 /* =============================================== §VI : SCHEMA === */
@@ -3179,8 +3247,8 @@ async function audit(town) {
     renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });
     renderCCTBusinesses(cctBusinesses);
     renderHistoricLayer({ sites: histSites, people: histPeople, summaries: histSummaries, newspapers: histNewspapers });
-    renderAssessments({ parcels: orptsParcels, rar: orptsRar });
     renderMarket(marketEquity);
+    renderAssessments({ parcels: orptsParcels, rar: orptsRar });
     renderACS({ village: acsVillage, town: acsTown });
     renderFEMA(fema);
     renderHours(hours);

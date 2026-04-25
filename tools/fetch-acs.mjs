@@ -64,6 +64,7 @@ const VARS = {
   // Income
   B19013_001E: 'median_household_income',
   B19301_001E: 'per_capita_income',
+  B17001_001E: 'poverty_universe',
   B17001_002E: 'income_below_poverty_level',
 
   // Race / ethnicity
