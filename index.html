@@ -228,6 +228,107 @@
     .finding-lede { font-size: 22px; }
   }
 
+  /* ASKS ========================================================== */
+  .asks {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 56px 0 60px;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    margin-top: 48px;
+    position: relative;
+  }
+  .asks::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .asks-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 10px;
+  }
+
+  .asks-lede {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+    max-width: 680px;
+  }
+
+  .asks-list {
+    list-style: none;
+    counter-reset: asks;
+    margin: 0;
+    padding: 0;
+  }
+
+  .asks-list li {
+    counter-increment: asks;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .asks-list li:last-child { border-bottom: none; }
+
+  .asks-list li::before {
+    content: counter(asks);
+    font-family: var(--display);
+    font-size: 38px;
+    line-height: 1;
+    color: var(--accent);
+    font-variation-settings: 'opsz' 48;
+  }
+
+  .ask-actor {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  .ask-action {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 8px;
+    font-variation-settings: 'opsz' 36;
+    max-width: 680px;
+  }
+
+  .ask-rationale {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 680px;
+  }
+  .ask-rationale strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 760px) {
+    .asks { grid-template-columns: 1fr; gap: 16px; padding: 32px 0 36px; }
+    .asks-list li { grid-template-columns: 40px 1fr; gap: 16px; }
+    .asks-list li::before { font-size: 28px; }
+    .ask-action { font-size: 18px; }
+  }
+
   /* SOURCES ======================================================= */
   .sources {
     display: grid;
@@ -1214,6 +1315,15 @@
     <p class="jsonld-note">Every item above could carry one of these blocks. The taxonomy is the county's; the disambiguation and local judgement is ours. The machines stop guessing.</p>
   </section>
 
+  <!-- ============================================ ASKS ========= -->
+  <section class="asks" aria-label="What we ask">
+    <div class="asks-label">What We Ask</div>
+    <div id="asks-body">
+      <p class="asks-lede">Five concrete things that, if implemented by the parties named, would close the largest legibility gaps in this report.</p>
+      <ol class="asks-list" id="asks-list"></ol>
+    </div>
+  </section>
+
   <!-- ============================================ COLOPHON ===== -->
   <footer class="colophon">
     <div class="colophon-grid">
@@ -2023,6 +2133,69 @@ function renderGaps(town, data) {
   `).join('');
 }
 
+/* =============================================== ASKS ============ */
+
+function renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint }) {
+  const list = $('#asks-list');
+  if (!list) return;
+
+  const B = cctBizIndex?.totalBusinessUrls ?? null;
+  const BK = cctBusinesses?.kinderhookCount ?? null;
+  const K = village?.count ?? null;
+  const C = village ? Object.keys(village.categories || {}).length : null;
+  const evCats = ontology?.events || [];
+  const evCatNames = evCats.map(t => decode(t.name)).join(', ');
+  const evCount = footprint?.bySubtype?.tribe_events?.length ?? null;
+  const tags = ontology?.tags || [];
+  const tagsCount = tags.length;
+
+  const asks = [
+    {
+      actor: 'Columbia County Tourism',
+      action: 'Emit LocalBusiness JSON-LD on every business detail page.',
+      rationale: B
+        ? `Adds <strong>${B}</strong> currently-invisible entities to the structured-data web — including the <strong>${BK ?? '?'}</strong> in Kinderhook this report had to fetch page-by-page to surface. Yoast already emits Organization and BreadcrumbList; adding LocalBusiness or Place is a configuration change, not a development project.`
+        : `Adds the entire CCT business directory to the structured-data web. Yoast already emits other schemas; adding LocalBusiness or Place is a configuration change.`,
+    },
+    {
+      actor: 'Village of Kinderhook',
+      action: 'Expose the business directory as JSON; the calendar as iCal.',
+      rationale: K
+        ? `<strong>${K}</strong> currently-invisible entities across <strong>${C}</strong> municipally-assigned categories. Until the village publishes a feed, this report maintains a daily snapshot at <span style="font-family:var(--mono);font-size:13px;">data/snapshots/villageofkinderhook/</span>. We would prefer to read yours.`
+        : `The village's business directory and event calendar live as HTML pages. A small feed at the site root would let every assistant, search engine, and civic project consume them directly.`,
+    },
+    {
+      actor: 'Columbia County Tourism',
+      action: 'Categorize the events calendar.',
+      rationale: evCats.length > 0
+        ? `The Events Calendar's category taxonomy currently holds <strong>${evCats.length}</strong> bucket${evCats.length === 1 ? '' : 's'} (${esc(evCatNames)})${evCount ? ` against <strong>${evCount}</strong> events surfacing for Kinderhook alone` : ''}. Adding categories like <em>Market</em>, <em>Festival</em>, <em>Lecture</em>, <em>Outdoors</em> would let language models answer "what's happening in Kinderhook this Saturday."`
+        : `Add categories to The Events Calendar so events can be grouped semantically — markets, lectures, festivals, outdoor activities — and surfaced by intent rather than by date alone.`,
+    },
+    {
+      actor: 'Both sites',
+      action: 'Publish /llms.txt at the site root.',
+      rationale: `A short text file at <span style="font-family:var(--mono);font-size:13px;">/llms.txt</span> declaring what the site is, who maintains it, what authoritative sources exist, and how its structured data is organized. Highest legibility-per-line-of-code change available. We will draft both files on request.`,
+    },
+    {
+      actor: 'Columbia County Tourism',
+      action: 'Use the WordPress tag system for editorial pieces.',
+      rationale: tagsCount > 0
+        ? `The tag taxonomy contains <strong>${tagsCount}</strong> term${tagsCount === 1 ? '' : 's'}, all golf-themed, applied once. The <em>Tee Off in Columbia County</em> piece (the only article that uses tags at all) shouldn't be the model — it should be the example of what the rest of the editorial archive could be doing. Tagging is a free win for discoverability, both for human readers and for AI assistants citing your work.`
+        : `Use the WordPress tag system across editorial content. Tagging is a free win for discoverability, both for human readers and for AI assistants citing your work.`,
+    },
+  ];
+
+  list.innerHTML = asks.map(a => `
+    <li>
+      <div>
+        <div class="ask-actor">${esc(a.actor)}</div>
+        <p class="ask-action">${a.action}</p>
+        <p class="ask-rationale">${a.rationale}</p>
+      </div>
+    </li>
+  `).join('');
+}
+
 /* =============================================== §X : HISTORIC == */
 
 function renderHistoricLayer({ sites, people, summaries, newspapers }) {
@@ -2284,6 +2457,7 @@ async function audit(town) {
     renderHistoricLayer({ sites: histSites, people: histPeople, summaries: histSummaries, newspapers: histNewspapers });
     renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
     renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople });
+    renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint });
   } catch (err) {
     console.error('Audit failed:', err);
     document.querySelectorAll('.status').forEach(s => {
