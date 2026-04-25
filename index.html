@@ -360,30 +360,68 @@
     padding: 20px 24px;
   }
 
+  .taxonomy .tax-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+
   .taxonomy h3 {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
-    margin: 0 0 4px;
+    margin: 0;
     font-weight: 500;
   }
 
-  .taxonomy .tax-count {
+  .taxonomy .tax-endpoint {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .taxonomy .tax-numbers {
+    display: flex;
+    gap: 32px;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+
+  .taxonomy .tax-stat .tax-count {
     font-family: var(--display);
     font-size: 38px;
     line-height: 1;
-    margin: 0 0 4px;
+    margin: 0 0 2px;
     font-variation-settings: 'opsz' 48;
+    color: var(--ink);
   }
 
-  .taxonomy .tax-label {
+  .taxonomy .tax-stat.kh-hit .tax-count { color: var(--accent); }
+  .taxonomy .tax-stat.kh-miss .tax-count { color: var(--rule); }
+
+  .taxonomy .tax-stat-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .taxonomy .tax-caption {
     font-family: var(--display);
     font-style: italic;
-    font-size: 14px;
+    font-size: 13.5px;
+    line-height: 1.45;
     color: var(--ink-soft);
     margin: 0 0 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule-soft);
   }
 
   .taxonomy ul {
@@ -1030,7 +1068,7 @@
       <h2 class="section-title">How the county <em>categorizes itself</em></h2>
       <div class="endpoint">/wp/v2/{taxonomy}</div>
     </div>
-    <p class="dek">Before writing our own schema we read theirs. The tourism board has, over years, built a set of taxonomies. Each is a small ontological claim about what Columbia County contains.</p>
+    <p class="dek">Before writing our own schema we read theirs. CCT publishes four taxonomies via REST. Each card below shows the full term list, <em>county-wide</em>, with any Kinderhook entries highlighted in cinnabar. The Kinderhook match count is what every later section filters against — if a taxonomy has zero Kinderhook terms, the village is invisible to that surface of the site.</p>
     <div class="status" id="ontology-status">Fetching taxonomies…</div>
     <div class="taxonomy-grid" id="ontology-grid"></div>
   </section>
@@ -1254,26 +1292,90 @@ async function renderOntology(town) {
   grid.innerHTML = '';
 
   const taxonomies = [
-    { path: '/wp/v2/categories', label: 'Editorial categories', tag: 'editorial' },
-    { path: '/wp/v2/tags', label: 'Editorial tags', tag: 'tags' },
-    { path: '/wp/v2/tribe_events_cat', label: 'Event categories', tag: 'events' },
-    { path: '/wp/v2/business-category', label: 'Business categories', tag: 'business' },
+    {
+      path: '/wp/v2/categories',
+      label: 'Editorial categories',
+      tag: 'editorial',
+      caption: (items, matches) => {
+        const top = items.slice().sort((a,b)=>(b.count||0)-(a.count||0))[0];
+        const m = matches[0];
+        if (!m) return `Geographic + topical buckets for blog posts. ${decode(top.name)} dominates with ${top.count}.`;
+        const rank = items.slice().sort((a,b)=>(b.count||0)-(a.count||0)).findIndex(x => x.id === m.id) + 1;
+        return `Geographic + topical buckets for blog posts. Kinderhook holds ${m.count} ${m.count === 1 ? 'post' : 'posts'} (rank ${rank} of ${items.length}); ${decode(top.name)} dominates at ${top.count}.`;
+      },
+    },
+    {
+      path: '/wp/v2/tags',
+      label: 'Editorial tags',
+      tag: 'tags',
+      caption: (items) => {
+        const total = items.length;
+        const totalUses = items.reduce((n, t) => n + (t.count || 0), 0);
+        const golfish = items.filter(t => /golf|par|driving range|tee|green|fairway/i.test(t.name)).length;
+        const allGolf = total > 0 && golfish === total;
+        if (allGolf) return `WordPress free-text tags. All ${total} terms are golf-themed (${totalUses} ${totalUses === 1 ? 'use' : 'uses'} total). Tagging is functionally not in use sitewide.`;
+        return `WordPress free-text tags. ${total} term${total === 1 ? '' : 's'}, ${totalUses} use${totalUses === 1 ? '' : 's'} total.`;
+      },
+    },
+    {
+      path: '/wp/v2/tribe_events_cat',
+      label: 'Event categories',
+      tag: 'events',
+      caption: (items) => {
+        const names = items.map(i => decode(i.name)).join(' · ');
+        const totalUses = items.reduce((n, t) => n + (t.count || 0), 0);
+        return `The Events Calendar's category taxonomy. ${items.length} bucket${items.length === 1 ? '' : 's'} county-wide (${names}); ${totalUses} categorized event${totalUses === 1 ? '' : 's'} total. The vast majority of events have no category.`;
+      },
+    },
+    {
+      path: '/wp/v2/business-category',
+      label: 'Business categories',
+      tag: 'business',
+      caption: (items) => {
+        // Detect overlapping categories (e.g., Dining 173 vs Restaurants 99).
+        const dining = items.find(i => /^dining$/i.test(decode(i.name)));
+        const rest = items.find(i => /^restaurants?$/i.test(decode(i.name)));
+        const overlapNote = (dining && rest)
+          ? ` "${decode(dining.name)}" (${dining.count}) and "${decode(rest.name)}" (${rest.count}) coexist as separate categories — the taxonomy overlaps itself.`
+          : '';
+        return `Functional, not geographic — what CCT calls each business.${overlapNote}`;
+      },
+    },
   ];
 
   const results = {};
+  const matchCounts = {};
   for (const t of taxonomies) {
     try {
       const items = await fetchAll(t.path, 3);
       results[t.tag] = items;
       const matches = matchingTerms(items, town);
+      matchCounts[t.tag] = matches.length;
+
+      const sorted = items.slice().sort((a,b)=>(b.count||0)-(a.count||0)).slice(0, 30);
+      const cap = t.caption ? t.caption(items, matches) : '';
+      const matchClass = matches.length > 0 ? 'kh-hit' : 'kh-miss';
+
       const card = document.createElement('div');
       card.className = 'taxonomy';
       card.innerHTML = `
-        <h3>${t.tag}</h3>
-        <div class="tax-count">${items.length}</div>
-        <div class="tax-label">${t.label}</div>
+        <div class="tax-head">
+          <h3>${esc(t.label)}</h3>
+          <span class="tax-endpoint">${esc(t.path)}</span>
+        </div>
+        <div class="tax-numbers">
+          <div class="tax-stat">
+            <div class="tax-count">${items.length}</div>
+            <div class="tax-stat-label">term${items.length === 1 ? '' : 's'} county-wide</div>
+          </div>
+          <div class="tax-stat ${matchClass}">
+            <div class="tax-count">${matches.length}</div>
+            <div class="tax-stat-label">in ${esc(town)}</div>
+          </div>
+        </div>
+        ${cap ? `<p class="tax-caption">${esc(cap)}</p>` : ''}
         <ul>
-          ${items.slice().sort((a,b)=>(b.count||0)-(a.count||0)).slice(0, 30).map(i => `
+          ${sorted.map(i => `
             <li class="${matches.some(m => m.id === i.id) ? 'match' : ''}">
               <span>${esc(decode(i.name))}</span>
               <span class="n">${i.count || 0}</span>
@@ -1285,12 +1387,14 @@ async function renderOntology(town) {
     } catch (e) {
       const card = document.createElement('div');
       card.className = 'taxonomy';
-      card.innerHTML = `<h3>${t.tag}</h3><div class="tax-label">unreachable</div><p style="font-size:12px;color:var(--accent);margin:8px 0 0;">${esc(e.message)}</p>`;
+      card.innerHTML = `<div class="tax-head"><h3>${esc(t.label)}</h3></div><p style="font-size:12px;color:var(--accent);margin:8px 0 0;">unreachable: ${esc(e.message)}</p>`;
       grid.appendChild(card);
     }
   }
 
-  status.textContent = `✓ Four taxonomies read. ${Object.values(results).reduce((n, a) => n + (a?.length || 0), 0)} terms in total.`;
+  const totalTerms = Object.values(results).reduce((n, a) => n + (a?.length || 0), 0);
+  const totalMatches = Object.values(matchCounts).reduce((n, x) => n + x, 0);
+  status.textContent = `Four taxonomies read · ${totalTerms} terms total · ${totalMatches} match ${town}.`;
   status.className = 'status ok';
   return results;
 }
@@ -1835,12 +1939,38 @@ function renderGaps(town, data) {
   const cctBizTotal = cctBizIndex?.totalBusinessUrls || null;
   const cctBizKh = cctBizIndex?.kinderhookBySlugCount || null;
 
+  // Diagnostic findings derived from the live taxonomy data in §I.
+  const cats = ontology?.editorial || [];
+  const tags = ontology?.tags || [];
+  const evCats = ontology?.events || [];
+  const bizCats = ontology?.business || [];
+  const tagsAllGolf = tags.length > 0 && tags.every(t => /golf|par|driving range|tee|green|fairway/i.test(t.name));
+  const tagsTotalUses = tags.reduce((n, t) => n + (t.count || 0), 0);
+  const evCatTotalUses = evCats.reduce((n, t) => n + (t.count || 0), 0);
+  const dining = bizCats.find(i => /^dining$/i.test(decode(i.name)));
+  const restaurants = bizCats.find(i => /^restaurants?$/i.test(decode(i.name)));
+
   const gaps = [
     {
       verdict: 'missing',
       title: `${venueCount} of ${venueTotal || '?'} county-wide event venues is in ${town}`,
       body: `The Events Calendar's machine-readable list of places currently hosting events contains ${venueTotal || '?'} entries for the whole county. ${venueCount === 1 ? 'One' : venueCount} ${venueCount === 1 ? 'is' : 'are'} in ${town}${venueCount === 1 ? ' — a yoga studio.' : '.'} Hudson has eighteen. Chatham has eight. "Event venue" is a narrow category — a place only appears here if something is scheduled — but the gap still tells us the county is not publishing Kinderhook's hosting capacity to its own search surface.`,
     },
+    ...(tagsAllGolf ? [{
+      verdict: 'missing',
+      title: `Editorial tag taxonomy: ${tags.length} terms, all golf-themed`,
+      body: `CCT's WordPress tag system contains exactly ${tags.length} terms (${tags.map(t => decode(t.name)).join(', ')}), applied ${tagsTotalUses} time${tagsTotalUses === 1 ? '' : 's'} total. Tagging is functionally not in use sitewide. Posts about Kinderhook — or anywhere else — carry no semantic tags a machine could group on.`,
+    }] : []),
+    ...(evCats.length > 0 && evCats.length <= 3 ? [{
+      verdict: 'missing',
+      title: `Event categories: ${evCats.length} bucket${evCats.length === 1 ? '' : 's'} county-wide`,
+      body: `The Events Calendar's category taxonomy holds ${evCats.length} term${evCats.length === 1 ? '' : 's'} (${evCats.map(t => `${decode(t.name)}: ${t.count}`).join(' · ')}). ${evCatTotalUses} event${evCatTotalUses === 1 ? '' : 's'} ${evCatTotalUses === 1 ? 'is' : 'are'} categorized at all; the rest carry no category. There is no way to say "this event is a market" or "this event is a lecture" in CCT's structured data.`,
+    }] : []),
+    ...((dining && restaurants) ? [{
+      verdict: 'partial',
+      title: `Business categories overlap: "Dining" (${dining.count}) vs "Restaurants" (${restaurants.count})`,
+      body: `CCT's business taxonomy carries "${decode(dining.name)}" and "${decode(restaurants.name)}" as separate categories with overlapping membership. A machine asking "what are the restaurants in Kinderhook?" gets a different answer depending on which category it queries. Internal taxonomy overlap reduces machine legibility even where the data exists.`,
+    }] : []),
     {
       verdict: 'missing',
       title: cctBizTotal
