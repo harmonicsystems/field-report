@@ -1126,7 +1126,7 @@
     <div class="label">Editor's Note</div>
     <div>
       <p>The web that's arriving is not only read by humans. Language models, search assistants, and agentic tools increasingly answer questions like <em>"where can I get fresh produce in the Hudson Valley this Saturday?"</em> — and they can only recommend what they can structurally read. A village whose institutions publish only prose will be invisible to that layer of the internet, no matter how much prose they write.</p>
-      <p>This is a civic legibility audit of Kinderhook, New York. It reads what machines currently see when they look for the village, notes what they miss, and publishes the schema.org markup that would close the gap. The concrete case we keep returning to is the <strong>Kinderhook Farmers' Market</strong> — seasonal, volunteer-run, no standalone website — the exact kind of civic institution the new web is worst at discovering, and the one this project is built to make findable.</p>
+      <p>This is a civic legibility audit of Kinderhook, New York. It reads what machines currently see when they look for the village, notes what they miss, and publishes the schema.org markup that would close the gap. The concrete case we keep returning to is the <strong>Kinderhook Farmers Market</strong> — seasonal, volunteer-run, no standalone website — the exact kind of civic institution the new web is worst at discovering, and the one this project is built to make findable.</p>
     </div>
   </article>
 
@@ -1222,10 +1222,22 @@
     <div class="entity-list" id="posts-list"></div>
   </section>
 
-  <!-- ============================================ §VI BUSINESSES  -->
+  <!-- ============================================ §VI COVERAGE == -->
+  <section class="plate" id="sec-coverage">
+    <div class="section-head">
+      <div class="section-num">§ VI · Independent Coverage</div>
+      <h2 class="section-title">What journalists <em>outside</em> the establishment have written</h2>
+      <div class="endpoint">schema/coverage/*.json</div>
+    </div>
+    <p class="dek">Hand-curated. Independent reporting on Kinderhook from publications outside the tourism board's orbit. Each entry is a citation, not a republication — readers click through to the original; the publishers get the traffic. The list grows by editorial decision, not by scrape.</p>
+    <div class="status" id="coverage-status">Loading corpus…</div>
+    <div id="coverage-list"></div>
+  </section>
+
+  <!-- ============================================ §VII BUSINESSES -->
   <section class="plate" id="sec-businesses">
     <div class="section-head">
-      <div class="section-num">§ VI · CCT Businesses</div>
+      <div class="section-num">§ VII · CCT Businesses</div>
       <h2 class="section-title">Everywhere CCT <em>points</em> in the village</h2>
       <div class="endpoint">/business/{slug}/ × 594</div>
     </div>
