@@ -1,0 +1,1569 @@
+{
+  "fetchedAt": "2026-04-25T14:43:58.123Z",
+  "fetcher": "tools/fetch-cct.mjs",
+  "source": "https://columbiacountytourism.org/wp-json/wp/v2/search?search=kinderhook",
+  "town": "kinderhook",
+  "count": 52,
+  "hits": [
+    {
+      "id": 58409,
+      "title": "Opening Day ~ Kinderhook Farmers Market",
+      "url": "https://columbiacountytourism.org/event/opening-day-kinderhook-farmers-market/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58409",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 58279,
+      "title": "Kinderhook Books",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-books/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/58279",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 58166,
+      "title": "Kinderhook: Putt Through the Past",
+      "url": "https://columbiacountytourism.org/event/kinderhook-putt-through-the-past/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58166",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 58107,
+      "title": "Kinderhook OK5k",
+      "url": "https://columbiacountytourism.org/event/kinderhook-ok5k/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58107",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 50704,
+      "title": "Kinderhook Lake",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-lake/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/50704",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 50651,
+      "title": "Del&#8217;s Roadside Kinderhook",
+      "url": "https://columbiacountytourism.org/venue/dels-roadside-kinderhook-2/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/50651",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 42822,
+      "title": "Kinderhook Books",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-books/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/42822",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41370,
+      "title": "Kinderhook Elks Lodge",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-elks-lodge/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/41370",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 40531,
+      "title": "Town of Kinderhook Volunteers&#8217; Park",
+      "url": "https://columbiacountytourism.org/venue/town-of-kinderhook-volunteers-park/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/40531",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 39207,
+      "title": "Kinderhook Reformed Church",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-memorial-church/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/39207",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 39090,
+      "title": "Del&#8217;s Roadside Kinderhook",
+      "url": "https://columbiacountytourism.org/venue/dels-roadside-kinderhook/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/39090",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 38753,
+      "title": "Kinderhook Village Hall",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-village-hall/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/38753",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 37683,
+      "title": "Town of Kinderhook",
+      "url": "https://columbiacountytourism.org/organizer/town-of-kinderhook-3/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/37683",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 35458,
+      "title": "Kinderhook Knitting Mill",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-knitting-mill/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/35458",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 34363,
+      "title": "Kinderhook Bottle Shop",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-bottle-shop/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/34363",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 34364,
+      "title": "Kinderhook Bottle Shop",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-bottle-shop/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/34364",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 33667,
+      "title": "Kinderhook Lake Improvement Assoc",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-lake-improvement-assoc/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/33667",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 33670,
+      "title": "Kinderhook Lake Improvement Assoc",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-lake-improvement-assoc-2/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/33670",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 33666,
+      "title": "Kinderhook Lake Improvement Assoc. Community Hall",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-lake-improvement-assoc-community-hall/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/33666",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 32687,
+      "title": "The Friends of the Kinderhook Library",
+      "url": "https://columbiacountytourism.org/organizer/the-friends-of-the-kinderhook-library/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/32687",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 32689,
+      "title": "The Friends of the Kinderhook Library",
+      "url": "https://columbiacountytourism.org/organizer/the-friends-of-the-kinderhook-library-2/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/32689",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 28816,
+      "title": "Kinderhook Village Recreation Commission",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-village-recreation-commission/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/28816",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6709,
+      "title": "Kinderhook Elks Lodge #2530",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-elks-lodge-2530/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/6709",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16642,
+      "title": "Kinderhook Lake Corp (KLC)",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-lake-corp-klc/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/16642",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15273,
+      "title": "Kinderhook Runners Club",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-runners-club/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/15273",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15013,
+      "title": "Village of Kinderhook",
+      "url": "https://columbiacountytourism.org/venue/village-of-kinderhook/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/15013",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15014,
+      "title": "Village of Kinderhook",
+      "url": "https://columbiacountytourism.org/venue/village-of-kinderhook-2/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/15014",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10721,
+      "title": "Kinderhook Reformed Church Cemetery",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-reformed-church-cemetery/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/10721",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8853,
+      "title": "Village of Kinderhook",
+      "url": "https://columbiacountytourism.org/organizer/village-of-kinderhook/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/8853",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8639,
+      "title": "Kinderhook Walks",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-walks/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/8639",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8638,
+      "title": "Kinderhook Memorial Library",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-memorial-library/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/8638",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8036,
+      "title": "Kinderhook Bank",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-bank/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/8036",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7564,
+      "title": "Kinderhook Memorial Library",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-memorial-library/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/7564",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6925,
+      "title": "Kinderhook Village Square",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-village-square/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/6925",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6926,
+      "title": "Town of Kinderhook",
+      "url": "https://columbiacountytourism.org/organizer/town-of-kinderhook/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/6926",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6928,
+      "title": "Town of Kinderhook",
+      "url": "https://columbiacountytourism.org/organizer/town-of-kinderhook-2/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/6928",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6708,
+      "title": "Kinderhook Recreation Commission",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-recreation-commission/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/6708",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6711,
+      "title": "Kinderhook Elks Lodge #2530",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-elks-lodge-2530-2/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/6711",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4860,
+      "title": "Kinderhook Reformed Church",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-reformed-church/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/4860",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4859,
+      "title": "Kinderhook Reformed Church",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-reformed-church/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/4859",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4075,
+      "title": "Kinderhook Village",
+      "url": "https://columbiacountytourism.org/venue/kinderhook-village/",
+      "type": "post",
+      "subtype": "tribe_venue",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_venue/4075",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_venue"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4076,
+      "title": "Kinderhook Business &#038; Professional Association",
+      "url": "https://columbiacountytourism.org/organizer/kinderhook-business-professional-association/",
+      "type": "post",
+      "subtype": "tribe_organizer",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_organizer/4076",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 58884,
+      "title": "Discovering the Treasures of Hudson Valley, New York &#8211; feat. Columbia County",
+      "url": "https://columbiacountytourism.org/2026/04/discovering-the-treasures-of-hudson-valley-new-york-feat-columbia-county/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/58884",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 58406,
+      "title": "Story Walk at High Falls with Carole Lindstrom",
+      "url": "https://columbiacountytourism.org/event/story-walk-at-high-falls-with-carole-lindstrom/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58406",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 57782,
+      "title": "Columbia County&#8217;s Revolutionary Legacy: Countdown to America 250",
+      "url": "https://columbiacountytourism.org/2026/03/columbia-countys-revolutionary-legacy-countdown-to-america-250/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/57782",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 57805,
+      "title": "Next Stop Comedy presents Stand Up Comedy",
+      "url": "https://columbiacountytourism.org/event/next-stop-comedy-presents-stand-up-comedy/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/57805",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 57763,
+      "title": "America 250: 250th Anniversary Lecture Series",
+      "url": "https://columbiacountytourism.org/event/250th-anniversary-lecture-series/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/57763",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 57474,
+      "title": "The Basics of Beekeeping with Bee Hollow Farm",
+      "url": "https://columbiacountytourism.org/event/the-basics-of-beekeeping-with-bee-hollow-farm/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/57474",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 54643,
+      "title": "Look Home for the Holidays",
+      "url": "https://columbiacountytourism.org/2025/11/look-home-for-the-holidays/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/54643",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 52652,
+      "title": "Fall Preview: Autumn Adventures Await in Columbia County",
+      "url": "https://columbiacountytourism.org/2025/09/fall-preview-2025/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/52652",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 48535,
+      "title": "Seven New Restaurants in Columbia County",
+      "url": "https://columbiacountytourism.org/2025/05/seven-new-restaurants-in-columbia-county/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/48535",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5632,
+      "title": "Business Groups",
+      "url": "https://columbiacountytourism.org/business-groups/",
+      "type": "post",
+      "subtype": "page",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/pages/5632",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/page"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    }
+  ]
+}

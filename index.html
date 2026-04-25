@@ -1227,16 +1227,16 @@
   <!-- ============================================ SOURCES ======= -->
   <aside class="sources" aria-label="Data sources">
     <div class="sources-col">
-      <div class="sources-label">Reading live from</div>
+      <div class="sources-label">Snapshotted at build time, read locally</div>
       <ul>
-        <li><a href="https://columbiacountytourism.org/wp-json/wp/v2/" target="_blank" rel="noopener">columbiacountytourism.org</a> — WordPress REST &amp; Events Calendar</li>
-        <li><a href="https://query.wikidata.org/" target="_blank" rel="noopener">query.wikidata.org</a> — SPARQL, municipal identifiers</li>
-        <li><a href="https://overpass-api.de/" target="_blank" rel="noopener">overpass-api.de</a> — OpenStreetMap ground truth</li>
-        <li><a href="./schema/places/manifest.json" target="_blank" rel="noopener">schema/places/</a> — this report's curated corpus</li>
-        <li><a href="./schema/coverage/manifest.json" target="_blank" rel="noopener">schema/coverage/</a> — independent journalism we cite</li>
-        <li><a href="./data/snapshots/" target="_blank" rel="noopener">data/snapshots/</a> — dated build-time pulls (village + CCT directories, historic sites, people, LoC)</li>
+        <li><a href="https://columbiacountytourism.org/wp-json/wp/v2/" target="_blank" rel="noopener">columbiacountytourism.org</a> — WP REST, TEC, search, business directory (594 pages)</li>
+        <li><a href="https://www.villageofkinderhook.org/" target="_blank" rel="noopener">villageofkinderhook.org</a> — municipal business directory (58 entries)</li>
+        <li><a href="https://query.wikidata.org/" target="_blank" rel="noopener">query.wikidata.org</a> — SPARQL: municipal IDs, historic sites and people</li>
+        <li><a href="https://overpass-api.de/" target="_blank" rel="noopener">overpass-api.de</a> — OpenStreetMap named features</li>
         <li><a href="https://en.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener">en.wikipedia.org/api/rest_v1</a> — page summaries for key articles</li>
         <li><a href="https://www.loc.gov/collections/chronicling-america/" target="_blank" rel="noopener">loc.gov/chronicling-america</a> — historic newspaper mentions</li>
+        <li><a href="./schema/places/manifest.json" target="_blank" rel="noopener">schema/places/</a> · <a href="./schema/coverage/manifest.json" target="_blank" rel="noopener">schema/coverage/</a> — this report's curated corpora</li>
+        <li><a href="./data/snapshots/" target="_blank" rel="noopener">data/snapshots/</a> — every dated pull, diffable in git</li>
       </ul>
     </div>
     <div class="sources-col">
@@ -1468,7 +1468,19 @@ const decode = (s) => {
 const esc = (s) => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const stripHtml = (s) => decode(String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
 
-/* Paginated fetch for WP REST endpoints that support per_page. */
+/* Loader for build-time snapshots committed under data/snapshots/.
+   The page reads ONLY from these — no external API calls at view time.
+   Returns null on 404 / parse error so each section degrades on its own. */
+async function loadSnapshot(path) {
+  try {
+    const r = await fetch(path);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+
+/* Paginated fetch for WP REST endpoints — retained for ad-hoc tooling.
+   Not used by the live page; all live data flows through loadSnapshot(). */
 async function fetchAll(path, maxPages = 5) {
   const results = [];
   for (let page = 1; page <= maxPages; page++) {
@@ -1497,11 +1509,19 @@ function matchingTerms(terms, slug) {
 async function renderOntology(town) {
   const status = $('#ontology-status');
   const grid = $('#ontology-grid');
-  status.textContent = 'Fetching four taxonomies…';
+  status.textContent = 'Loading snapshot…';
   grid.innerHTML = '';
+
+  const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-ontology.json');
+  if (!snap) {
+    status.className = 'status err';
+    status.textContent = '✗ No CCT ontology snapshot in this deploy. Run tools/fetch-cct.mjs.';
+    return {};
+  }
 
   const taxonomies = [
     {
+      key: 'categories',
       path: '/wp/v2/categories',
       label: 'Editorial categories',
       tag: 'editorial',
@@ -1514,6 +1534,7 @@ async function renderOntology(town) {
       },
     },
     {
+      key: 'tags',
       path: '/wp/v2/tags',
       label: 'Editorial tags',
       tag: 'tags',
@@ -1527,6 +1548,7 @@ async function renderOntology(town) {
       },
     },
     {
+      key: 'tribe_events_cat',
       path: '/wp/v2/tribe_events_cat',
       label: 'Event categories',
       tag: 'events',
@@ -1537,6 +1559,7 @@ async function renderOntology(town) {
       },
     },
     {
+      key: 'business_category',
       path: '/wp/v2/business-category',
       label: 'Business categories',
       tag: 'business',
@@ -1556,7 +1579,7 @@ async function renderOntology(town) {
   const matchCounts = {};
   for (const t of taxonomies) {
     try {
-      const items = await fetchAll(t.path, 3);
+      const items = snap[t.key] || [];
       results[t.tag] = items;
       const matches = matchingTerms(items, town);
       matchCounts[t.tag] = matches.length;
@@ -1603,7 +1626,8 @@ async function renderOntology(town) {
 
   const totalTerms = Object.values(results).reduce((n, a) => n + (a?.length || 0), 0);
   const totalMatches = Object.values(matchCounts).reduce((n, x) => n + x, 0);
-  status.textContent = `Four taxonomies read · ${totalTerms} terms total · ${totalMatches} match ${town}.`;
+  const stamp = (snap.fetchedAt || '').slice(0, 10);
+  status.textContent = `Four taxonomies · ${totalTerms} terms total · ${totalMatches} match ${town} · snapshot ${stamp}.`;
   status.className = 'status ok';
   return results;
 }
@@ -1624,13 +1648,13 @@ const SUBTYPE_ORDER = ['tribe_events', 'tribe_venue', 'tribe_organizer', 'post',
 async function renderFootprint(town) {
   const status = $('#footprint-status');
   const grid = $('#footprint-grid');
-  status.textContent = 'Querying unified search…';
+  status.textContent = 'Loading snapshot…';
   grid.innerHTML = '';
 
   try {
-    const res = await fetch(`${API}/wp/v2/search?search=${encodeURIComponent(town)}&per_page=100`);
-    if (!res.ok) throw new Error(`${res.status}`);
-    const hits = await res.json();
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-search-kinderhook.json');
+    if (!snap) throw new Error('no snapshot');
+    const hits = snap.hits || [];
 
     const bySubtype = {};
     for (const h of hits) {
@@ -1659,12 +1683,13 @@ async function renderFootprint(town) {
     status.className = 'status ok';
     const total = hits.length;
     const kinds = Object.keys(bySubtype).length;
-    status.textContent = `${total} items mentioning ${town} across ${kinds} content type${kinds === 1 ? '' : 's'}. Note: Columbia County Tourism's 594-entry "business" directory is not exposed to this search, and is not represented below.`;
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
+    status.textContent = `${total} items mentioning ${town} across ${kinds} content type${kinds === 1 ? '' : 's'} · snapshot ${stamp}. Note: CCT's 594-entry "business" directory is not exposed to this search, and is not represented below.`;
     return { total, bySubtype };
 
   } catch (err) {
     status.className = 'status err';
-    status.textContent = `✗ ${err.message}`;
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
     return { total: 0, bySubtype: {} };
   }
 }
@@ -1673,15 +1698,14 @@ async function renderFootprint(town) {
 async function renderEvents(town) {
   const status = $('#events-status');
   const list = $('#events-list');
-  status.textContent = 'Fetching events via TEC API…';
+  status.textContent = 'Loading snapshot…';
   list.innerHTML = '';
 
   try {
-    // The Events Calendar's own REST API returns events with venue + organizer inline.
-    const res = await fetch(`${API}/tribe/events/v1/events?per_page=50&start_date=${new Date().toISOString().slice(0,10)}`);
-    if (!res.ok) throw new Error(`TEC ${res.status}`);
-    const data = await res.json();
-    const all = data.events || [];
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-events.json');
+    if (!snap) throw new Error('no snapshot');
+    const all = snap.events || [];
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
     const matching = all.filter(e => {
       const venue = e.venue?.city || e.venue?.venue || '';
       const title = e.title || '';
@@ -1690,7 +1714,7 @@ async function renderEvents(town) {
 
     if (matching.length === 0) {
       status.className = 'status';
-      status.textContent = `No upcoming events in ${town} returned by TEC. (Checked ${all.length} county-wide.)`;
+      status.textContent = `No upcoming events in ${town} (checked ${all.length} county-wide). Snapshot ${stamp}.`;
       return { all, matching: [] };
     }
 
@@ -1712,12 +1736,12 @@ async function renderEvents(town) {
     });
 
     status.className = 'status ok';
-    status.textContent = `✓ ${matching.length} upcoming events in ${town} · ${all.length} county-wide`;
+    status.textContent = `${matching.length} upcoming events in ${town} · ${all.length} county-wide · snapshot ${stamp}.`;
     return { all, matching };
 
   } catch (err) {
     status.className = 'status err';
-    status.textContent = `✗ TEC endpoint unreachable: ${err.message}. Falling back is possible but not attempted here.`;
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
     return { all: [], matching: [] };
   }
 }
@@ -1726,14 +1750,14 @@ async function renderEvents(town) {
 async function renderVenues(town) {
   const status = $('#venues-status');
   const list = $('#venues-list');
-  status.textContent = 'Fetching venues…';
+  status.textContent = 'Loading snapshot…';
   list.innerHTML = '';
 
   try {
-    const res = await fetch(`${API}/tribe/events/v1/venues?per_page=100`);
-    if (!res.ok) throw new Error(`${res.status}`);
-    const data = await res.json();
-    const venues = data.venues || [];
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-venues.json');
+    if (!snap) throw new Error('no snapshot');
+    const venues = snap.venues || [];
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
     const matching = venues.filter(v => {
       const hay = [v.venue, v.city, v.address, v.description].join(' ').toLowerCase();
       return hay.includes(town.toLowerCase());
@@ -1741,7 +1765,7 @@ async function renderVenues(town) {
 
     if (matching.length === 0) {
       status.className = 'status';
-      status.textContent = `0 of ${venues.length} county-wide venues are in ${town}. The village is absent from CCT's machine-readable venue database.`;
+      status.textContent = `0 of ${venues.length} county-wide venues are in ${town}. Snapshot ${stamp}.`;
       return { matching: [], total: venues.length };
     }
 
@@ -1761,38 +1785,32 @@ async function renderVenues(town) {
 
     status.className = 'status ok';
     const pct = ((matching.length / venues.length) * 100).toFixed(0);
-    status.textContent = `${matching.length} of ${venues.length} county-wide venues (${pct}%) are in ${town}. The rest are elsewhere in the county.`;
+    status.textContent = `${matching.length} of ${venues.length} county-wide venues (${pct}%) are in ${town} · snapshot ${stamp}.`;
     return { matching, total: venues.length };
 
   } catch (err) {
     status.className = 'status err';
-    status.textContent = `✗ Could not reach venues endpoint: ${err.message}`;
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
     return { matching: [], total: 0 };
   }
 }
 
 /* =============================================== §IV : POSTS ==== */
-async function renderPosts(town, ontology) {
+async function renderPosts(town) {
   const status = $('#posts-status');
   const list = $('#posts-list');
-  status.textContent = 'Matching posts…';
+  status.textContent = 'Loading snapshot…';
   list.innerHTML = '';
 
   try {
-    const cats = ontology.editorial || [];
-    const matchingCats = matchingTerms(cats, town);
-    if (matchingCats.length === 0) {
-      status.className = 'status';
-      status.textContent = `No editorial category named ${town}.`;
-      return [];
-    }
-
-    const catIds = matchingCats.map(c => c.id).join(',');
-    const posts = await fetchAll(`/wp/v2/posts?categories=${catIds}&_embed=1`, 2);
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-posts.json');
+    if (!snap) throw new Error('no snapshot');
+    const posts = snap.posts || [];
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
 
     if (posts.length === 0) {
       status.className = 'status';
-      status.textContent = `Editorial category exists but holds no published posts.`;
+      status.textContent = `Editorial category exists but holds no published posts. Snapshot ${stamp}.`;
       return [];
     }
 
@@ -1814,12 +1832,12 @@ async function renderPosts(town, ontology) {
     });
 
     status.className = 'status ok';
-    status.textContent = `✓ ${posts.length} article(s) tagged with ${town} · showing ${Math.min(10, posts.length)}`;
+    status.textContent = `${posts.length} article(s) tagged with ${town} · showing ${Math.min(10, posts.length)} · snapshot ${stamp}.`;
     return posts;
 
   } catch (err) {
     status.className = 'status err';
-    status.textContent = `✗ ${err.message}`;
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
     return [];
   }
 }
@@ -1903,33 +1921,8 @@ const PLACES = {
   },
 };
 
-async function wikidataQuery(sparql) {
-  const url = 'https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(sparql);
-  const res = await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } });
-  if (!res.ok) throw new Error(`WDQS ${res.status}`);
-  const data = await res.json();
-  return data.results.bindings;
-}
-
-async function overpassQuery(bbox) {
-  const [s, w, n, e] = bbox;
-  const q = `[out:json][timeout:30];
-    (
-      node["name"]["historic"](${s},${w},${n},${e});
-      node["name"]["tourism"](${s},${w},${n},${e});
-      node["name"]["amenity"~"restaurant|cafe|bar|pub|library|place_of_worship|school|theatre|townhall|community_centre|arts_centre|fire_station|post_office"](${s},${w},${n},${e});
-      node["name"]["shop"](${s},${w},${n},${e});
-      node["name"]["memorial"](${s},${w},${n},${e});
-      way["name"]["historic"](${s},${w},${n},${e});
-      way["name"]["tourism"](${s},${w},${n},${e});
-    );
-    out center tags 200;`;
-  const url = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(q);
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Overpass ${res.status}`);
-  const data = await res.json();
-  return data.elements || [];
-}
+/* wikidataQuery() and overpassQuery() retired with the snapshot refactor.
+   See tools/fetch-crossrefs.mjs for the build-time equivalents. */
 
 function osmKind(tags) {
   return tags.historic || tags.tourism || tags.amenity || tags.shop || tags.memorial || '—';
@@ -1965,29 +1958,10 @@ async function renderCrossrefs(town) {
 
   // ---------- Wikidata ----------
   let wd = [];
-  try {
-    const values = cfg.wikidata.map(q => `wd:${q}`).join(' ');
-    const sparql = `SELECT DISTINCT ?item ?itemLabel ?instanceLabel ?article WHERE {
-      VALUES ?place { ${values} }
-      ?item wdt:P131 ?place .
-      ?item wdt:P31 ?instance .
-      OPTIONAL { ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
-    } LIMIT 60`;
-    const bindings = await wikidataQuery(sparql);
-    // Dedupe by Q-ID, keep first instance label.
-    const seen = new Map();
-    for (const b of bindings) {
-      const qid = b.item.value.split('/').pop();
-      if (!seen.has(qid)) seen.set(qid, {
-        qid,
-        name: b.itemLabel?.value || qid,
-        instance: b.instanceLabel?.value || '',
-        article: b.article?.value || null,
-      });
-    }
-    wd = [...seen.values()];
-
+  const wdSnap = await loadSnapshot('./data/snapshots/wikidata/latest-kinderhook-crossrefs.json');
+  if (wdSnap) {
+    wd = wdSnap.entities || [];
+    const stamp = (wdSnap.fetchedAt || '').slice(0, 10);
     wdList.innerHTML = wd.length === 0
       ? `<p style="font-family:var(--display);font-style:italic;color:var(--ink-soft);margin:8px 0 0;">Wikidata knows the municipality but holds no directly-linked entities. This is the kind of structural gap the project fills.</p>`
       : wd.map(r => `
@@ -1999,30 +1973,29 @@ async function renderCrossrefs(town) {
             <div class="xr-id">${r.qid}</div>
           </div>
         `).join('');
-
     wdStatus.className = 'status ok';
-    wdStatus.textContent = `✓ ${wd.length} entit${wd.length === 1 ? 'y' : 'ies'} linked to ${cfg.wikidata.join(' / ')}`;
-  } catch (e) {
+    wdStatus.textContent = `${wd.length} entit${wd.length === 1 ? 'y' : 'ies'} linked to ${cfg.wikidata.join(' / ')} · snapshot ${stamp}.`;
+  } else {
     wdStatus.className = 'status err';
-    wdStatus.textContent = `✗ WDQS: ${e.message}`;
+    wdStatus.textContent = `✗ No Wikidata snapshot. Run tools/fetch-crossrefs.mjs.`;
   }
 
   // ---------- OSM ----------
   let osm = [];
-  try {
-    const els = await overpassQuery(cfg.bbox);
-    osm = els
-      .filter(e => e.tags?.name)
-      .map(e => ({
-        id: e.id,
-        type: e.type,
-        name: e.tags.name,
-        kind: osmKind(e.tags),
-        group: osmGroup(e.tags),
-        lat: e.lat ?? e.center?.lat,
-        lon: e.lon ?? e.center?.lon,
-        tags: e.tags,
-      }));
+  const osmSnap = await loadSnapshot('./data/snapshots/openstreetmap/latest-kinderhook-features.json');
+  if (osmSnap) {
+    const els = osmSnap.features || [];
+    osm = els.map(e => ({
+      id: e.id,
+      type: e.type,
+      name: e.name,
+      kind: osmKind(e.tags || {}),
+      group: osmGroup(e.tags || {}),
+      lat: e.lat,
+      lon: e.lon,
+      tags: e.tags,
+    }));
+    const stamp = (osmSnap.fetchedAt || '').slice(0, 10);
 
     const order = ['Historic','Civic','Religious','Food & Drink','Commerce','Lodging / Info','Other'];
     const grouped = {};
@@ -2040,10 +2013,10 @@ async function renderCrossrefs(town) {
     `).join('');
 
     osmStatus.className = 'status ok';
-    osmStatus.textContent = `✓ ${osm.length} named features in a ${(cfg.bbox[2]-cfg.bbox[0]).toFixed(2)}° × ${(cfg.bbox[3]-cfg.bbox[1]).toFixed(2)}° window`;
-  } catch (e) {
+    osmStatus.textContent = `${osm.length} named features in a ${(cfg.bbox[2]-cfg.bbox[0]).toFixed(2)}° × ${(cfg.bbox[3]-cfg.bbox[1]).toFixed(2)}° window · snapshot ${stamp}.`;
+  } else {
     osmStatus.className = 'status err';
-    osmStatus.textContent = `✗ Overpass: ${e.message}`;
+    osmStatus.textContent = `✗ No OSM snapshot. Run tools/fetch-crossrefs.mjs.`;
   }
 
   note.textContent = `The municipality itself is known to Wikidata; its contents are not. OSM holds the ground truth — every named feature has a stable identifier we can cite.`;
@@ -2609,7 +2582,7 @@ async function audit(town) {
       renderFootprint(t),
       renderEvents(t),
       renderVenues(t),
-      renderPosts(t, ontology),
+      renderPosts(t),
       renderCrossrefs(t),
       renderCuratedPlaces(t),
       renderCoverage(t),
@@ -2617,22 +2590,16 @@ async function audit(town) {
     const venues = venuesData.matching;
     const venueTotal = venuesData.total;
 
-    // Snapshots — informs the headline finding. If a file is absent
-    // (not yet committed, 404 on Pages), we degrade gracefully.
-    const readSnapshot = async (path) => {
-      try {
-        const r = await fetch(path);
-        return r.ok ? await r.json() : null;
-      } catch { return null; }
-    };
+    // Auxiliary snapshots — used by the synthesizing sections (finding,
+    // gaps, schema, asks). Each can be absent without breaking the page.
     const [village, cctBizIndex, cctBusinesses, histSites, histPeople, histSummaries, histNewspapers] = await Promise.all([
-      readSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
-      readSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
-      readSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
-      readSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-sites.json'),
-      readSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-people.json'),
-      readSnapshot('./data/snapshots/wikipedia/latest-kinderhook-summaries.json'),
-      readSnapshot('./data/snapshots/loc/latest-kinderhook-chronicling-america.json'),
+      loadSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
+      loadSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
+      loadSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
+      loadSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-sites.json'),
+      loadSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-people.json'),
+      loadSnapshot('./data/snapshots/wikipedia/latest-kinderhook-summaries.json'),
+      loadSnapshot('./data/snapshots/loc/latest-kinderhook-chronicling-america.json'),
     ]);
 
     renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });

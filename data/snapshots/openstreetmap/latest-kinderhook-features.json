@@ -1,0 +1,866 @@
+{
+  "fetchedAt": "2026-04-25T14:43:59.513Z",
+  "fetcher": "tools/fetch-crossrefs.mjs",
+  "source": "overpass-api.de/api/interpreter",
+  "config": {
+    "wikidata": [
+      "Q3478629",
+      "Q3710663"
+    ],
+    "bbox": [
+      42.35,
+      -73.72,
+      42.42,
+      -73.65
+    ],
+    "wikipedia": "Kinderhook_(village),_New_York",
+    "officialSite": "https://www.villageofkinderhook.org/"
+  },
+  "count": 60,
+  "features": [
+    {
+      "id": 357649474,
+      "type": "node",
+      "name": "Kinderhook Reformed Church",
+      "tags": {
+        "amenity": "place_of_worship",
+        "ele": "76",
+        "gnis:feature_id": "2496363",
+        "name": "Kinderhook Reformed Church",
+        "religion": "christian"
+      },
+      "lat": 42.3936578,
+      "lon": -73.7009109
+    },
+    {
+      "id": 357649477,
+      "type": "node",
+      "name": "Saint Paul's Episcopal Church",
+      "tags": {
+        "amenity": "place_of_worship",
+        "ele": "76",
+        "gnis:feature_id": "2496364",
+        "name": "Saint Paul's Episcopal Church",
+        "religion": "christian"
+      },
+      "lat": 42.3933333,
+      "lon": -73.6977778
+    },
+    {
+      "id": 357649484,
+      "type": "node",
+      "name": "First Presbyterian Church",
+      "tags": {
+        "amenity": "place_of_worship",
+        "ele": "86",
+        "gnis:feature_id": "2496366",
+        "name": "First Presbyterian Church",
+        "religion": "christian",
+        "wikidata": "Q5453647"
+      },
+      "lat": 42.4152471,
+      "lon": -73.6762227
+    },
+    {
+      "id": 357649509,
+      "type": "node",
+      "name": "Martin Van Buren Elementary School",
+      "tags": {
+        "amenity": "school",
+        "ele": "76",
+        "gnis:feature_id": "2496375",
+        "name": "Martin Van Buren Elementary School"
+      },
+      "lat": 42.3927778,
+      "lon": -73.7011111
+    },
+    {
+      "id": 357649512,
+      "type": "node",
+      "name": "Martin H Glynn Elementary School",
+      "tags": {
+        "amenity": "school",
+        "ele": "86",
+        "gnis:feature_id": "2496376",
+        "name": "Martin H Glynn Elementary School"
+      },
+      "lat": 42.4155556,
+      "lon": -73.6772222
+    },
+    {
+      "id": 671460812,
+      "type": "node",
+      "name": "Plalmer Engine & Hose Co. Kinderhook Fire Department",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "39",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Chatham Street",
+        "amenity": "fire_station",
+        "name": "Plalmer Engine & Hose Co. Kinderhook Fire Department",
+        "nysgissam:nysaddresspointid": "COLU030166"
+      },
+      "lat": 42.3992884,
+      "lon": -73.6964514
+    },
+    {
+      "id": 1972166985,
+      "type": "node",
+      "name": "Martin Van Buren's grave",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:country": "US",
+        "addr:state": "NY",
+        "cemetery": "grave",
+        "historic": "tomb",
+        "name": "Martin Van Buren's grave",
+        "place_name": "Kinderhook Cemetery",
+        "tomb": "tombstone",
+        "wikimedia_commons": "File:Tomb of Martin Van Buren.jpg"
+      },
+      "lat": 42.4036838,
+      "lon": -73.7023659
+    },
+    {
+      "id": 2265796245,
+      "type": "node",
+      "name": "Blackwood & Brouwer Bookseller",
+      "tags": {
+        "name": "Blackwood & Brouwer Bookseller",
+        "shop": "books"
+      },
+      "lat": 42.3945365,
+      "lon": -73.6973691
+    },
+    {
+      "id": 2265796248,
+      "type": "node",
+      "name": "Kinderhook Memorial Library",
+      "tags": {
+        "amenity": "library",
+        "name": "Kinderhook Memorial Library"
+      },
+      "lat": 42.3940231,
+      "lon": -73.6972481
+    },
+    {
+      "id": 8427691193,
+      "type": "node",
+      "name": "Samascott Orchards",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "5",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Sunset Avenue",
+        "name": "Samascott Orchards",
+        "nysgissam:nysaddresspointid": "COLU031830",
+        "shop": "farm",
+        "website": "https://www.samascottorchards.com/"
+      },
+      "lat": 42.3984842,
+      "lon": -73.7038213
+    },
+    {
+      "id": 9655790841,
+      "type": "node",
+      "name": "Burial Ground",
+      "tags": {
+        "historic": "memorial",
+        "inscription": "1816 - CA 1861 Bequest by John Rodgers provided this quarter acre exclusively for the burial of persons of color.",
+        "material": "metal",
+        "memorial": "plaque",
+        "name": "Burial Ground"
+      },
+      "lat": 42.3951088,
+      "lon": -73.7048608
+    },
+    {
+      "id": 10873536573,
+      "type": "node",
+      "name": "The Old Dutch Inn",
+      "tags": {
+        "name": "The Old Dutch Inn",
+        "tourism": "hotel",
+        "website": "https://www.theolddutchinn.com/"
+      },
+      "lat": 42.3953377,
+      "lon": -73.6987603
+    },
+    {
+      "id": 11132736370,
+      "type": "node",
+      "name": "Stewart's Shops",
+      "tags": {
+        "brand": "Stewart's Shops",
+        "brand:wikidata": "Q7615690",
+        "name": "Stewart's Shops",
+        "shop": "convenience"
+      },
+      "lat": 42.4019807,
+      "lon": -73.6952039
+    },
+    {
+      "id": 12221793314,
+      "type": "node",
+      "name": "Broad Street Bagel",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "1",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Broad Street",
+        "amenity": "cafe",
+        "name": "Broad Street Bagel",
+        "phone": "+1-518-758-8084",
+        "website": "https://www.broadstreetbagelco.com"
+      },
+      "lat": 42.3949306,
+      "lon": -73.6987795
+    },
+    {
+      "id": 12221793315,
+      "type": "node",
+      "name": "Brooklyn Pizzeria",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "7",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Hudson Street",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Brooklyn Pizzeria",
+        "opening_hours": "Mo-Sa 11:00-21:00; Su off",
+        "outdoor_seating": "yes",
+        "phone": "+1-518-758-1509",
+        "website": "https://www.broadstreetbagelco.com"
+      },
+      "lat": 42.3946374,
+      "lon": -73.6974263
+    },
+    {
+      "id": 12482311698,
+      "type": "node",
+      "name": "Winding Brook Country Club Bar and Restaurant",
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Winding Brook Country Club Bar and Restaurant"
+      },
+      "lat": 42.398693,
+      "lon": -73.6629501
+    },
+    {
+      "id": 13067924636,
+      "type": "node",
+      "name": "Cole's Collision",
+      "tags": {
+        "name": "Cole's Collision",
+        "shop": "car_repair"
+      },
+      "lat": 42.3773625,
+      "lon": -73.6911237
+    },
+    {
+      "id": 13283852353,
+      "type": "node",
+      "name": "The Albany-Hudson Rail Line",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "The Albany-Hudson Rail Line",
+        "tourism": "information"
+      },
+      "lat": 42.3968323,
+      "lon": -73.7046857
+    },
+    {
+      "id": 13283869796,
+      "type": "node",
+      "name": "Welcome to the Historic Village of Kinderhook",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Welcome to the Historic Village of Kinderhook",
+        "tourism": "information"
+      },
+      "lat": 42.3984845,
+      "lon": -73.7028114
+    },
+    {
+      "id": 13283890158,
+      "type": "node",
+      "name": "Kinderhook Reformed Church Cemetery",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Kinderhook Reformed Church Cemetery",
+        "tourism": "information"
+      },
+      "lat": 42.4033112,
+      "lon": -73.7036203
+    },
+    {
+      "id": 13283922008,
+      "type": "node",
+      "name": "Gravesite Martin Van Buren 1782-1862",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Gravesite Martin Van Buren 1782-1862",
+        "tourism": "information"
+      },
+      "lat": 42.4035365,
+      "lon": -73.703147
+    },
+    {
+      "id": 13283974089,
+      "type": "node",
+      "name": "Benedict Arnold House",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Benedict Arnold House",
+        "tourism": "information"
+      },
+      "lat": 42.3929409,
+      "lon": -73.7026341
+    },
+    {
+      "id": 13283976600,
+      "type": "node",
+      "name": "Old Columbia Academy",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Old Columbia Academy",
+        "tourism": "information"
+      },
+      "lat": 42.3975746,
+      "lon": -73.700233
+    },
+    {
+      "id": 13283993796,
+      "type": "node",
+      "name": "Gen. John Burgoyne",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Gen. John Burgoyne",
+        "tourism": "information"
+      },
+      "lat": 42.3939581,
+      "lon": -73.7009746
+    },
+    {
+      "id": 13284046292,
+      "type": "node",
+      "name": "The Empire State Trail at Rothermel Park",
+      "tags": {
+        "board_type": "nature",
+        "information": "board",
+        "name": "The Empire State Trail at Rothermel Park",
+        "tourism": "information"
+      },
+      "lat": 42.3963299,
+      "lon": -73.7034231
+    },
+    {
+      "id": 13284077893,
+      "type": "node",
+      "name": "And None Other",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "And None Other",
+        "tourism": "information"
+      },
+      "lat": 42.3954815,
+      "lon": -73.7042748
+    },
+    {
+      "id": 13287735698,
+      "type": "node",
+      "name": "John M. Dahm and Jospeh B. Kennedy Memorial",
+      "tags": {
+        "historic": "memorial",
+        "inscription": "1917-1919\nIn Memoriam\nJohn M. Dahm and Jospeh B. Kennedy \nWho died in the service of their country\nAnd in honor of\nHarry G. Cole\nCharles S. Collier\nEverett Decker\nGeorge D. Earll\nHarold Fowler\nNathan D. Garnsey\nWilliam Gilette\nFrank H. Heeny",
+        "material": "stone",
+        "memorial": "stele",
+        "name": "John M. Dahm and Jospeh B. Kennedy Memorial"
+      },
+      "lat": 42.3950983,
+      "lon": -73.698193
+    },
+    {
+      "id": 13287750213,
+      "type": "node",
+      "name": "House of History",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "House of History",
+        "tourism": "information"
+      },
+      "lat": 42.3950679,
+      "lon": -73.6992934
+    },
+    {
+      "id": 13287755258,
+      "type": "node",
+      "name": "James Vanderpoel house",
+      "tags": {
+        "board_type": "welcome_sign",
+        "information": "board",
+        "name": "James Vanderpoel house",
+        "tourism": "information"
+      },
+      "lat": 42.3951619,
+      "lon": -73.6990737
+    },
+    {
+      "id": 13287756071,
+      "type": "node",
+      "name": "Through this place passed General Henry Knox",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Through this place passed General Henry Knox",
+        "tourism": "information"
+      },
+      "lat": 42.3952029,
+      "lon": -73.6981776
+    },
+    {
+      "id": 13287772520,
+      "type": "node",
+      "name": "Welcome to Historic Kinderhook",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Welcome to Historic Kinderhook",
+        "tourism": "information"
+      },
+      "lat": 42.3949248,
+      "lon": -73.6976584
+    },
+    {
+      "id": 13287819114,
+      "type": "node",
+      "name": "Birth Site Martin Van Buren",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Birth Site Martin Van Buren",
+        "tourism": "information"
+      },
+      "lat": 42.391809,
+      "lon": -73.6943324
+    },
+    {
+      "id": 13287994097,
+      "type": "node",
+      "name": "Mary Elizabeth Fisher Memorial",
+      "tags": {
+        "historic": "memorial",
+        "material": "stone",
+        "memorial": "stele",
+        "name": "Mary Elizabeth Fisher Memorial"
+      },
+      "lat": 42.3950155,
+      "lon": -73.6985866
+    },
+    {
+      "id": 13288006405,
+      "type": "node",
+      "name": "Martin Van Buren Statue",
+      "tags": {
+        "artwork_type": "statue",
+        "material": "metal",
+        "name": "Martin Van Buren Statue",
+        "tourism": "artwork"
+      },
+      "lat": 42.3950224,
+      "lon": -73.6985475
+    },
+    {
+      "id": 13288029940,
+      "type": "node",
+      "name": "Village of Kinderhook - Home of Martin Van Buren",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Village of Kinderhook - Home of Martin Van Buren",
+        "tourism": "information"
+      },
+      "lat": 42.4025151,
+      "lon": -73.6946271
+    },
+    {
+      "id": 13288040524,
+      "type": "node",
+      "name": "The Empire State Trail at Valatie",
+      "tags": {
+        "board_type": "nature",
+        "information": "board",
+        "name": "The Empire State Trail at Valatie",
+        "tourism": "information"
+      },
+      "lat": 42.4071814,
+      "lon": -73.6907482
+    },
+    {
+      "id": 13288063223,
+      "type": "node",
+      "name": "Site of Wild's Mill - Wild's Cotton Textile Mill",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Site of Wild's Mill - Wild's Cotton Textile Mill",
+        "tourism": "information"
+      },
+      "lat": 42.413034,
+      "lon": -73.681652
+    },
+    {
+      "id": 13288143716,
+      "type": "node",
+      "name": "John Rogers House",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "John Rogers House",
+        "tourism": "information"
+      },
+      "lat": 42.4125252,
+      "lon": -73.6705264
+    },
+    {
+      "id": 13288196792,
+      "type": "node",
+      "name": "John Vanderpoel Home",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "John Vanderpoel Home",
+        "tourism": "information"
+      },
+      "lat": 42.4133166,
+      "lon": -73.6749155
+    },
+    {
+      "id": 13288210633,
+      "type": "node",
+      "name": "G.W. Bulkley House",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "G.W. Bulkley House",
+        "tourism": "information"
+      },
+      "lat": 42.4165961,
+      "lon": -73.676429
+    },
+    {
+      "id": 13288222589,
+      "type": "node",
+      "name": "Welcome to Valatie",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Welcome to Valatie",
+        "tourism": "information"
+      },
+      "lat": 42.4134206,
+      "lon": -73.6767326
+    },
+    {
+      "id": 13288222983,
+      "type": "node",
+      "name": "Gov. Glynn Square",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Gov. Glynn Square",
+        "tourism": "information"
+      },
+      "lat": 42.4156397,
+      "lon": -73.6766068
+    },
+    {
+      "id": 13288251712,
+      "type": "node",
+      "name": "Welcome to Valatie, New York c. 1665",
+      "tags": {
+        "board_type": "welcome_sign",
+        "information": "board",
+        "name": "Welcome to Valatie, New York c. 1665",
+        "tourism": "information"
+      },
+      "lat": 42.4133733,
+      "lon": -73.6746994
+    },
+    {
+      "id": 13288251745,
+      "type": "node",
+      "name": "The Depot of the Electric Trolley",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "The Depot of the Electric Trolley",
+        "tourism": "information"
+      },
+      "lat": 42.4138186,
+      "lon": -73.6809268
+    },
+    {
+      "id": 13288280577,
+      "type": "node",
+      "name": "Glynn Homestead",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Glynn Homestead",
+        "tourism": "information"
+      },
+      "lat": 42.4135442,
+      "lon": -73.6781404
+    },
+    {
+      "id": 13288283253,
+      "type": "node",
+      "name": "Welcome to Valatie - Home of the Valatie Santa Claus Club",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Welcome to Valatie - Home of the Valatie Santa Claus Club",
+        "tourism": "information"
+      },
+      "lat": 42.4167073,
+      "lon": -73.6836529
+    },
+    {
+      "id": 13288292627,
+      "type": "node",
+      "name": "Nathan Wild House",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "Nathan Wild House",
+        "tourism": "information"
+      },
+      "lat": 42.4136268,
+      "lon": -73.6792127
+    },
+    {
+      "id": 13288298322,
+      "type": "node",
+      "name": "The Swallow House",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "The Swallow House",
+        "tourism": "information"
+      },
+      "lat": 42.4142775,
+      "lon": -73.6827094
+    },
+    {
+      "id": 13288342686,
+      "type": "node",
+      "name": "Sally's Little Book House",
+      "tags": {
+        "amenity": "public_bookcase",
+        "brand": "Little Free Library",
+        "brand:wikidata": "Q6650101",
+        "name": "Sally's Little Book House"
+      },
+      "lat": 42.4131748,
+      "lon": -73.6760344
+    },
+    {
+      "id": 13288356701,
+      "type": "node",
+      "name": "Welcome to the Historic Village of Kinderhook",
+      "tags": {
+        "board_type": "welcome_sign",
+        "information": "board",
+        "name": "Welcome to the Historic Village of Kinderhook",
+        "tourism": "information"
+      },
+      "lat": 42.3997344,
+      "lon": -73.6991431
+    },
+    {
+      "id": 13288376996,
+      "type": "node",
+      "name": "The Village of Kinderhook",
+      "tags": {
+        "board_type": "history",
+        "information": "board",
+        "name": "The Village of Kinderhook",
+        "tourism": "information"
+      },
+      "lat": 42.3988811,
+      "lon": -73.7010079
+    },
+    {
+      "id": 13288388017,
+      "type": "node",
+      "name": "Valatie Santa Claus",
+      "tags": {
+        "artwork_type": "statue",
+        "name": "Valatie Santa Claus",
+        "tourism": "artwork"
+      },
+      "lat": 42.4167096,
+      "lon": -73.6836821
+    },
+    {
+      "id": 13289926233,
+      "type": "node",
+      "name": "Mayor William R. Rothermel and Mary Rothermel Memorial",
+      "tags": {
+        "historic": "memorial",
+        "inscription": "In Memory of Mayor William R. Rothermel and Mary Rothermel\nIn recognition for their love of the Village of Kinderhook",
+        "memorial": "stone",
+        "name": "Mayor William R. Rothermel and Mary Rothermel Memorial"
+      },
+      "lat": 42.395481,
+      "lon": -73.7054735
+    },
+    {
+      "id": 286004534,
+      "type": "way",
+      "name": "Martin Van Buren National Historic Site Visitor Center",
+      "tags": {
+        "building": "yes",
+        "information": "office",
+        "name": "Martin Van Buren National Historic Site Visitor Center",
+        "tourism": "information"
+      },
+      "lat": 42.3709149,
+      "lon": -73.7022635
+    },
+    {
+      "id": 835390801,
+      "type": "way",
+      "name": "Ichabod Crane Schoolhouse",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "2577",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Route 9H",
+        "building": "yes",
+        "historic": "building",
+        "name": "Ichabod Crane Schoolhouse",
+        "nysgissam:nysaddresspointid": "COLU029890",
+        "tourism": "museum",
+        "website": "https://cchsny.org/visit/ichabod-crane-schoolhouse/"
+      },
+      "lat": 42.3803604,
+      "lon": -73.6909741
+    },
+    {
+      "id": 835390802,
+      "type": "way",
+      "name": "Luykas Van Alen House",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "2589",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Route 9H",
+        "building": "yes",
+        "historic": "building",
+        "name": "Luykas Van Alen House",
+        "nysgissam:nysaddresspointid": "COLU029733",
+        "tourism": "museum",
+        "website": "https://www.hudsonrivervalley.com/sites/Luykas-Van-Alen-House-/details"
+      },
+      "lat": 42.3811481,
+      "lon": -73.6914287
+    },
+    {
+      "id": 1197260013,
+      "type": "way",
+      "name": "Jack Shainman Gallery",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "25",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Broad Street",
+        "building": "yes",
+        "name": "Jack Shainman Gallery",
+        "source": "NYSDOP Orthoimagery",
+        "tourism": "gallery",
+        "website": "https://jackshainman.com/"
+      },
+      "lat": 42.3929536,
+      "lon": -73.701308
+    },
+    {
+      "id": 1197561600,
+      "type": "way",
+      "name": "Columbia County Historical Society",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "5",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Albany Avenue",
+        "building": "yes",
+        "charge": "5 USD",
+        "fee": "yes",
+        "museum": "history",
+        "name": "Columbia County Historical Society",
+        "nysgissam:nysaddresspointid": "COLU030069",
+        "opening_hours": "Sa-Su 11:00-16:00",
+        "tourism": "museum",
+        "website": "https://www.cchsny.org/"
+      },
+      "lat": 42.3957401,
+      "lon": -73.6988851
+    },
+    {
+      "id": 1200677850,
+      "type": "way",
+      "name": "Burgoyne House",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "24",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Broad Street",
+        "building": "yes",
+        "historic": "building",
+        "name": "Burgoyne House",
+        "source": "NYSDOP Orthoimagery"
+      },
+      "lat": 42.3941201,
+      "lon": -73.7015686
+    },
+    {
+      "id": 1200677852,
+      "type": "way",
+      "name": "Benedict Arnold House",
+      "tags": {
+        "addr:city": "Kinderhook",
+        "addr:housenumber": "28",
+        "addr:postcode": "12106",
+        "addr:state": "NY",
+        "addr:street": "Broad Street",
+        "building": "yes",
+        "historic": "building",
+        "name": "Benedict Arnold House",
+        "nysgissam:nysaddresspointid": "COLU011192",
+        "source": "NYSDOP Orthoimagery"
+      },
+      "lat": 42.3930754,
+      "lon": -73.7026324
+    }
+  ]
+}
