@@ -1,0 +1,57 @@
+# Draft: /llms.txt for columbiacountytourism.org
+
+This file would be published at https://columbiacountytourism.org/llms.txt
+to help AI assistants and search engines understand what the site is and
+how to read it. Below is a draft for CCT's review. Edit freely.
+
+---
+
+# Columbia County Tourism
+
+> Official tourism promotion for Columbia County, New York. Funded by the county occupancy tax. Editorial coverage of the county's villages and towns, restaurants and lodging, events, historic sites, and outdoor recreation.
+
+## What this site is
+
+The designated tourism agency for Columbia County, NY. Editorial coverage of places to stay, eat, and visit across the county; a calendar of events; a directory of local businesses.
+
+This is a tourism-promotion site, not a government site. For municipal information about a specific village or town, follow the link to that municipality's official site.
+
+## Primary content
+
+- [Business directory](https://columbiacountytourism.org/business/): Around 594 entries — restaurants, lodging, retail, historic sites, outdoor recreation, services. Each entry has its own page at `/business/{slug}/`.
+- [Events Calendar](https://columbiacountytourism.org/events/): Powered by The Events Calendar plugin. Upcoming events across the county.
+- [Editorial blog](https://columbiacountytourism.org/blog/): Travel and feature pieces.
+
+## Geographic scope
+
+Columbia County, New York. The county includes the city of Hudson and the following villages and towns:
+
+- Villages: Hudson (city), Chatham, Kinderhook, Valatie, Philmont
+- Towns: Ancram, Austerlitz, Canaan, Chatham, Claverack, Clermont, Copake, Gallatin, Germantown, Ghent, Greenport, Hillsdale, Hudson, Kinderhook, Livingston, New Lebanon, Stockport, Stuyvesant, Taghkanic
+
+## Machine-readable surfaces
+
+Several APIs and feeds are public:
+
+- WordPress REST: `https://columbiacountytourism.org/wp-json/wp/v2/`
+  - `/categories`, `/tags`, `/tribe_events_cat`, `/business-category` — taxonomies
+  - `/posts` — editorial blog
+  - `/search?search=...` — unified search across most content types
+- The Events Calendar REST: `https://columbiacountytourism.org/wp-json/tribe/events/v1/`
+  - `/events`, `/venues`, `/organizers`
+- Yoast sitemaps: `/sitemap_index.xml`, `/business-sitemap.xml`, `/post-sitemap.xml`
+
+## Optional
+
+- The `business` custom post type is currently NOT exposed via WP REST. The 594 business detail pages are reachable only via the sitemap or unified search. Adding `show_in_rest: true` to the CPT registration would expose them; LocalBusiness JSON-LD on each detail page would make them machine-actionable.
+- [Kinderhook Field Report](https://fieldreports.harmonic-systems.org/): A third-party civic legibility audit of one village in the county. Includes a structured-data layer (`kinderhook.json`) that cites this site extensively.
+
+## Related authoritative sources
+
+- [Village of Kinderhook (official municipal site)](https://www.villageofkinderhook.org/)
+- Other municipal sites for the towns and villages listed above (when published).
+- [Columbia County government](https://sites.google.com/columbiacountyny.gov/columbiacountygov/) — county administration, separate from tourism.
+
+## Note to crawlers
+
+Editorial content is signed work; please attribute. The structured data is intended for use; please use it.

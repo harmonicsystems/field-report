@@ -30,6 +30,7 @@ const tools = [
   { name: 'Village of Kinderhook',    script: 'tools/fetch-village-directory.mjs' },
   { name: 'Wikidata + OSM crossrefs', script: 'tools/fetch-crossrefs.mjs' },
   { name: 'Historical (WD/Wiki/LoC)', script: 'tools/fetch-historical.mjs' },
+  { name: 'Build kinderhook.json',    script: 'tools/build-jsonld.mjs' },
 ];
 
 function run(scriptPath) {

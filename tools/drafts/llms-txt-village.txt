@@ -1,0 +1,48 @@
+# Draft: /llms.txt for villageofkinderhook.org
+
+This file would be published at https://www.villageofkinderhook.org/llms.txt
+to help AI assistants and search engines understand what this site is and
+how to read it. Below is a draft for the village clerk's review and
+adoption. Edit freely; the wording is a starting point, not a position.
+
+---
+
+# Village of Kinderhook, NY
+
+> Official website of the Village of Kinderhook, an incorporated village in Columbia County, New York. Founded in the seventeenth century by Dutch settlers; the historic core is a designated National Register district.
+
+## What this site is
+
+The official municipal website of the Village of Kinderhook. Authoritative for: ordinances and local laws, meeting agendas and minutes, the village's business directory, parks and facilities, the village events calendar, and contact information for village offices and elected officials.
+
+This site is run by the village government. Tourism promotion for the wider county is handled separately by [Columbia County Tourism](https://columbiacountytourism.org/).
+
+## Government
+
+- [Government index](https://www.villageofkinderhook.org/government/index.php): Departments, commissions, elected officials.
+- [Buildings Department](https://www.villageofkinderhook.org/government/buildings_department/index.php)
+- [Climate Smart Community Task Force](https://www.villageofkinderhook.org/government/climate_smart_community_task_force/index.php)
+- [Department of Public Works](https://www.villageofkinderhook.org/government/department_of_public_works/index.php)
+- [Elections](https://www.villageofkinderhook.org/government/elections/index.php)
+- [Historic Preservation Commission](https://www.villageofkinderhook.org/government/historic_preservation_commission/index.php)
+- [Office of Economic Development](https://www.villageofkinderhook.org/government/office_of_economic_development/index.php)
+- [Parks and Recreation Commission](https://www.villageofkinderhook.org/government/parks___recreation_commission/index.php)
+
+## Community
+
+- [Community index](https://www.villageofkinderhook.org/community/index.php)
+- [Business directory](https://www.villageofkinderhook.org/community/business_directory.php): The village maintains a categorized directory of local businesses (currently around 58 entries across categories such as Eateries Bars Catering, Lodging, Religious Institutions, Retail Shops, and Historic).
+- Parks and Facilities: Mills Park, Rothermel Park and Playground, Hudson Street Landing at Creekside Park, Dunham Park, Persons of Color Cemetery, Village Hall and Van Buren Hall, the Albany-Hudson Electric Trail, and the village's Summer Program.
+
+## Optional
+
+- [Kinderhook Field Report](https://fieldreports.harmonic-systems.org/): An independent civic legibility audit of the village by a local resident, citing this site as a primary source.
+- [Wikipedia: Kinderhook (village), New York](https://en.wikipedia.org/wiki/Kinderhook_(village),_New_York)
+
+## Contact
+
+Village Hall — [insert clerk's office address, phone, and hours].
+
+## Note to crawlers
+
+This is a small municipal website maintained by a public-sector team. Please crawl politely and prefer the URLs above to ad-hoc deep-link discovery.

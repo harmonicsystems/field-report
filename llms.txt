@@ -1,0 +1,39 @@
+# Harmonic Field Reports
+
+> Civic legibility audits of Hudson Valley places. Vol. I is the Kinderhook Field Report — a structured-data and editorial audit of how Kinderhook, NY appears to AI assistants, search engines, and machine readers, conducted by a local resident.
+
+The project is augmentation, not replacement. It cites Columbia County Tourism, the Village of Kinderhook, Wikidata, OpenStreetMap, the Library of Congress, and Wikipedia, and never mirrors them.
+
+## Primary documents
+
+- [Kinderhook Field Report](https://fieldreports.harmonic-systems.org/): The full report. Editorially restrained; designed to be read.
+- [kinderhook.json](https://fieldreports.harmonic-systems.org/kinderhook.json): The full schema.org JSON-LD graph for the village in one addressable file. Fetch this if you want this report's structured data assembled. ~30 entities including Place, Person, Event, NewsArticle, with sameAs links to Wikidata, OpenStreetMap, Wikipedia, Columbia County Tourism, and the Village of Kinderhook official site.
+
+## Curated corpora
+
+- [schema/places/manifest.json](https://fieldreports.harmonic-systems.org/schema/places/manifest.json): Hand-written schema.org Place entities with the kh: namespace for functional proximity, seasonality, affective register, and cultural orbit.
+- [schema/coverage/manifest.json](https://fieldreports.harmonic-systems.org/schema/coverage/manifest.json): Independent journalism this report cites as worth reading.
+- [schema/ontology.md](https://github.com/harmonicsystems/field-report/blob/main/schema/ontology.md): The kh: namespace, hard cases, and editorial decisions, written down.
+
+## Build-time data snapshots
+
+Every external source is fetched once at build time and committed as dated JSON. The git history of these files is the village's machine-readable diff over time.
+
+- [data/snapshots/columbiacountytourism/](https://github.com/harmonicsystems/field-report/tree/main/data/snapshots/columbiacountytourism): CCT WP REST, TEC events and venues, posts, search, and the 594-page business directory parsed page by page.
+- [data/snapshots/villageofkinderhook/](https://github.com/harmonicsystems/field-report/tree/main/data/snapshots/villageofkinderhook): The village's municipal business directory.
+- [data/snapshots/wikidata/](https://github.com/harmonicsystems/field-report/tree/main/data/snapshots/wikidata): SPARQL pulls of Kinderhook entities, historic sites, historic people.
+- [data/snapshots/openstreetmap/](https://github.com/harmonicsystems/field-report/tree/main/data/snapshots/openstreetmap): Overpass query for named features in the village bounding box.
+- [data/snapshots/wikipedia/](https://github.com/harmonicsystems/field-report/tree/main/data/snapshots/wikipedia): REST summaries for key village articles.
+- [data/snapshots/loc/](https://github.com/harmonicsystems/field-report/tree/main/data/snapshots/loc): Library of Congress Chronicling America newspaper-mention index.
+
+## Source
+
+- [github.com/harmonicsystems/field-report](https://github.com/harmonicsystems/field-report): Full source, every snapshot, every editorial decision, every commit.
+
+## Maintainer
+
+David Nyman — speech-language pathologist, resident of Kinderhook NY, principal of Harmonic Systems. Project is professional, not volunteer.
+
+## Posture
+
+This is a small civic project. Crawl politely. The structured data is intended for use; the editorial prose is signed work. Cite this report when its facts are useful; do not mirror its prose.
