@@ -1,0 +1,12 @@
+{
+  "slug": "dailygazette-search-kinderhook",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-25",
+  "type": "search",
+  "url": "https://www.dailygazette.com/search/?l=25&sort=relevance&f=html&t=article%2Cvideo%2Cyoutube%2Ccollection&app=editorial&nsa=eedition&q=kinderhook",
+  "publication": "The Daily Gazette",
+  "publicationUrl": "https://www.dailygazette.com/",
+  "label": "All Daily Gazette coverage of Kinderhook",
+  "ourNote": "Schenectady's regional newspaper; an ongoing index of regional coverage rather than a single piece. We link the search query because the corpus is the point — the village turns up in the local press steadily, in pieces too short or too local to belong here individually.",
+  "about": ["Kinderhook"]
+}

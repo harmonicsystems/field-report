@@ -1,0 +1,10 @@
+{
+  "village": "kinderhook",
+  "updated": "2026-04-25",
+  "note": "Hand-curated list of independent journalism about Kinderhook — pieces by publications outside the tourism establishment that the report endorses as worth reading. Editorially chosen, never scraped. Each entry resolves to schema/coverage/{slug}.json.",
+  "entries": [
+    { "slug": "themountains-knitting-mill-in-kinderhook",  "type": "article", "publication": "The Mountains" },
+    { "slug": "jiffy-greetings-from-kinderhook-week",      "type": "article", "publication": "The Jiffy" },
+    { "slug": "dailygazette-search-kinderhook",            "type": "search",  "publication": "The Daily Gazette" }
+  ]
+}

@@ -670,6 +670,92 @@
     line-height: 1.35;
   }
 
+  /* Coverage (independent journalism citations) */
+  .cite {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .cite:first-child { border-top: 1px solid var(--ink); }
+  .cite:last-child { border-bottom: 1px solid var(--ink); }
+
+  .cite-pub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 4px;
+  }
+  .cite-pub a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-soft);
+  }
+  .cite-pub .cite-when {
+    display: block;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+
+  .cite-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 36;
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 0 6px;
+  }
+  .cite-title a { color: var(--ink); text-decoration: none; }
+  .cite-title a:hover { color: var(--accent); }
+
+  .cite-byline {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+
+  .cite-summary {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+    max-width: 640px;
+    border-left: 2px solid var(--rule);
+    padding-left: 14px;
+  }
+
+  .cite-note {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--slate);
+    margin: 8px 0 0;
+    max-width: 640px;
+  }
+
+  .cite.cite-search .cite-title {
+    font-size: 20px;
+  }
+  .cite.cite-search .cite-pub::after {
+    content: ' · search';
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 760px) {
+    .cite { grid-template-columns: 1fr; gap: 8px; }
+  }
+
   /* Diagnostic section */
   .gaps {
     background: var(--bg-plate);
@@ -1147,6 +1233,7 @@
         <li><a href="https://query.wikidata.org/" target="_blank" rel="noopener">query.wikidata.org</a> — SPARQL, municipal identifiers</li>
         <li><a href="https://overpass-api.de/" target="_blank" rel="noopener">overpass-api.de</a> — OpenStreetMap ground truth</li>
         <li><a href="./schema/places/manifest.json" target="_blank" rel="noopener">schema/places/</a> — this report's curated corpus</li>
+        <li><a href="./schema/coverage/manifest.json" target="_blank" rel="noopener">schema/coverage/</a> — independent journalism we cite</li>
         <li><a href="./data/snapshots/" target="_blank" rel="noopener">data/snapshots/</a> — dated build-time pulls (village + CCT directories, historic sites, people, LoC)</li>
         <li><a href="https://en.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener">en.wikipedia.org/api/rest_v1</a> — page summaries for key articles</li>
         <li><a href="https://www.loc.gov/collections/chronicling-america/" target="_blank" rel="noopener">loc.gov/chronicling-america</a> — historic newspaper mentions</li>
@@ -1246,10 +1333,10 @@
     <div class="entity-list" id="businesses-list"></div>
   </section>
 
-  <!-- ============================================ §VII GAPS ==== -->
+  <!-- ============================================ §VIII GAPS == -->
   <section class="plate" id="sec-gaps">
     <div class="section-head">
-      <div class="section-num">§ VII · Diagnostic</div>
+      <div class="section-num">§ VIII · Diagnostic</div>
       <h2 class="section-title">What the machines <em>cannot</em> see</h2>
       <div class="endpoint">(derived)</div>
     </div>
@@ -1264,7 +1351,7 @@
   <!-- ============================================ §VI CROSSREFS  -->
   <section class="plate" id="sec-crossrefs">
     <div class="section-head">
-      <div class="section-num">§ VIII · Cross-references</div>
+      <div class="section-num">§ IX · Cross-references</div>
       <h2 class="section-title">What the <em>wider commons</em> already knows</h2>
       <div class="endpoint">wikidata · overpass</div>
     </div>
@@ -1294,7 +1381,7 @@
   <!-- ============================================ §VII CURATED = -->
   <section class="plate" id="sec-curated">
     <div class="section-head">
-      <div class="section-num">§ IX · Curated Places</div>
+      <div class="section-num">§ X · Curated Places</div>
       <h2 class="section-title">What <em>we</em> have written</h2>
       <div class="endpoint">schema/places/*.json</div>
     </div>
@@ -1306,7 +1393,7 @@
   <!-- ============================================ §X HISTORIC == -->
   <section class="plate" id="sec-historic">
     <div class="section-head">
-      <div class="section-num">§ X · Historic Layer</div>
+      <div class="section-num">§ XI · Historic Layer</div>
       <h2 class="section-title">Kinderhook as <em>deep time</em> already knows it</h2>
       <div class="endpoint">wikidata · wikipedia · loc</div>
     </div>
@@ -1318,7 +1405,7 @@
   <!-- ============================================ §XI SCHEMA == -->
   <section class="plate" id="sec-schema">
     <div class="section-head">
-      <div class="section-num">§ XI · Proposed Schema</div>
+      <div class="section-num">§ XII · Proposed Schema</div>
       <h2 class="section-title">What we <em>would publish</em> instead</h2>
       <div class="endpoint">schema.org · JSON-LD</div>
     </div>
@@ -1999,7 +2086,74 @@ function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBu
   el.innerHTML = `<p class="finding-lede">${lede}</p><p class="finding-foot">${bizLine}${villageLine}${close}</p>`;
 }
 
-/* =============================================== §VI : BUSINESSES */
+/* =============================================== §VI : COVERAGE = */
+
+async function renderCoverage(town) {
+  const status = $('#coverage-status');
+  const list = $('#coverage-list');
+  status.textContent = 'Reading manifest…';
+  list.innerHTML = '';
+
+  try {
+    const m = await fetch(`./schema/coverage/manifest.json`);
+    if (!m.ok) throw new Error(`manifest ${m.status}`);
+    const manifest = await m.json();
+
+    if (manifest.village !== town) {
+      status.className = 'status';
+      status.textContent = `Coverage corpus is pinned to ${manifest.village}.`;
+      return [];
+    }
+
+    const entries = await Promise.all(manifest.entries.map(async (e) => {
+      try {
+        const r = await fetch(`./schema/coverage/${e.slug}.json`);
+        if (!r.ok) throw new Error(`${e.slug}: ${r.status}`);
+        return await r.json();
+      } catch (err) {
+        return { slug: e.slug, error: err.message };
+      }
+    }));
+
+    // Sort: articles by datePublished desc, search entries last.
+    entries.sort((a, b) => {
+      if (a.type !== b.type) return a.type === 'search' ? 1 : -1;
+      return (b.datePublished || '').localeCompare(a.datePublished || '');
+    });
+
+    list.innerHTML = entries.map(c => {
+      if (c.error) {
+        return `<div class="cite"><div class="cite-pub">err</div><div><p class="cite-title">${esc(c.slug)}</p><p class="cite-summary" style="color:var(--accent);">${esc(c.error)}</p></div></div>`;
+      }
+      const date = c.datePublished ? c.datePublished.slice(0, 10) : '';
+      const isSearch = c.type === 'search';
+      return `
+        <div class="cite ${isSearch ? 'cite-search' : ''}">
+          <div class="cite-pub">
+            ${c.publicationUrl ? `<a href="${esc(c.publicationUrl)}" target="_blank" rel="noopener">${esc(c.publication)}</a>` : esc(c.publication)}
+            ${date ? `<span class="cite-when">${esc(date)}</span>` : ''}
+          </div>
+          <div>
+            <p class="cite-title"><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title || c.label || c.slug)}</a></p>
+            ${c.author ? `<p class="cite-byline">by ${esc(c.author)}</p>` : ''}
+            ${c.summary ? `<p class="cite-summary">${esc(c.summary)}</p>` : ''}
+            ${c.ourNote ? `<p class="cite-note">${esc(c.ourNote)}</p>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+
+    status.className = 'status ok';
+    const ok = entries.filter(e => !e.error).length;
+    status.textContent = `${ok} of ${entries.length} citations loaded from schema/coverage/. Curated by hand; new entries welcomed via PR.`;
+    return entries.filter(e => !e.error);
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}`;
+    return [];
+  }
+}
+
+/* =============================================== §VII : BUSINESSES */
 
 function renderCCTBusinesses(bizSnapshot) {
   const status = $('#businesses-status');
@@ -2410,6 +2564,22 @@ function renderGeneratedSchema(town, data) {
         "sameAs": [s.wikipedia, `https://www.wikidata.org/wiki/${s.qid}`].filter(Boolean),
       }))),
 
+      // Independent journalism citations — each NewsArticle entity declares
+      // what the report endorses as worth reading. The publisher gets the
+      // traffic; we publish only the metadata of the citation.
+      ...((data.coverage || []).filter(c => c.type === 'article').map(c => ({
+        "@type": "NewsArticle",
+        "@id": c.url,
+        "headline": c.title,
+        "url": c.url,
+        ...(c.author ? { "author": { "@type": "Person", "name": c.author } } : {}),
+        ...(c.publication ? { "publisher": { "@type": "Organization", "name": c.publication, ...(c.publicationUrl ? { "url": c.publicationUrl } : {}) } } : {}),
+        ...(c.datePublished ? { "datePublished": c.datePublished } : {}),
+        ...(c.summary ? { "abstract": c.summary } : {}),
+        "about": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+        "isAccessibleForFree": true,
+      }))),
+
       // Top people from the Wikidata snapshot — Persons with their key dates.
       // Capped at the 5 most-sitelinked to keep the graph legible.
       ...((data.histPeople?.people || []).slice(0, 5).map(p => ({
@@ -2435,13 +2605,14 @@ async function audit(town) {
 
   try {
     const ontology = await renderOntology(t);
-    const [footprint, events, venuesData, posts, crossrefs, curated] = await Promise.all([
+    const [footprint, events, venuesData, posts, crossrefs, curated, coverage] = await Promise.all([
       renderFootprint(t),
       renderEvents(t),
       renderVenues(t),
       renderPosts(t, ontology),
       renderCrossrefs(t),
       renderCuratedPlaces(t),
+      renderCoverage(t),
     ]);
     const venues = venuesData.matching;
     const venueTotal = venuesData.total;
@@ -2468,7 +2639,7 @@ async function audit(town) {
     renderCCTBusinesses(cctBusinesses);
     renderHistoricLayer({ sites: histSites, people: histPeople, summaries: histSummaries, newspapers: histNewspapers });
     renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
-    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople });
+    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople, coverage });
     renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint });
   } catch (err) {
     console.error('Audit failed:', err);
