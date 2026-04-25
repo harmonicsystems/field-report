@@ -1,0 +1,199 @@
+{
+  "fetchedAt": "2026-04-24T19:40:20.806Z",
+  "fetcher": "tools/fetch-historical.mjs",
+  "source": "query.wikidata.org/sparql",
+  "bbox": "SW(-73.75, 42.35) → NE(-73.62, 42.43)",
+  "count": 19,
+  "sites": [
+    {
+      "qid": "Q5189085",
+      "name": "Crow Hill",
+      "description": "historic house in New York, United States",
+      "instance": "historic house",
+      "coord": "Point(-73.69 42.389444)",
+      "inception": null,
+      "nrhp": "97000412",
+      "wikipedia": "https://en.wikipedia.org/wiki/Crow_Hill"
+    },
+    {
+      "qid": "Q6410573",
+      "name": "Kinderhook Cemetery",
+      "description": "cemetery in Kinderhook, New York",
+      "instance": "cemetery",
+      "coord": "Point(-73.703333333 42.403333333)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": "https://en.wikipedia.org/wiki/Kinderhook_Cemetery"
+    },
+    {
+      "qid": "Q117579346",
+      "name": "Shufelt Cemetery",
+      "description": "cemetery in Columbia County, New York, United States",
+      "instance": "cemetery",
+      "coord": "Point(-73.64451 42.3536)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q7307504",
+      "name": "Reformed Dutch Church of Kinderhook",
+      "description": "church building in United States of America",
+      "instance": "church building",
+      "coord": "Point(-73.7006 42.3933)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": "https://en.wikipedia.org/wiki/Reformed_Dutch_Church_(Kinderhook,_New_York)"
+    },
+    {
+      "qid": "Q117611388",
+      "name": "Saint Marys Cemetery",
+      "description": "cemetery in Columbia County, New York, United States",
+      "instance": "cemetery",
+      "coord": "Point(-73.74321 42.35049)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q5453647",
+      "name": "First Presbyterian Church",
+      "description": "church in Valatie, New York",
+      "instance": "church building",
+      "coord": "Point(-73.676667 42.415278)",
+      "inception": null,
+      "nrhp": "79001574",
+      "wikipedia": "https://en.wikipedia.org/wiki/First_Presbyterian_Church_(Valatie,_New_York)"
+    },
+    {
+      "qid": "Q6969418",
+      "name": "Nathan Wild House",
+      "description": "historic house in New York, United States",
+      "instance": "historic house",
+      "coord": "Point(-73.679444 42.414167)",
+      "inception": null,
+      "nrhp": "91000612",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nathan_Wild_House"
+    },
+    {
+      "qid": "Q7629262",
+      "name": "Stuyvesant Falls Mill District",
+      "description": "historic district in New York, United States",
+      "instance": "archaeological site",
+      "coord": "Point(-73.734167 42.356389)",
+      "inception": null,
+      "nrhp": "76001210",
+      "wikipedia": "https://en.wikipedia.org/wiki/Stuyvesant_Falls_Mill_District"
+    },
+    {
+      "qid": "Q117592869",
+      "name": "Saint Pauls Episcopal Church Cemetery",
+      "description": "cemetery in Columbia County, New York, United States",
+      "instance": "cemetery",
+      "coord": "Point(-73.69835 42.39345)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q118898116",
+      "name": "Ichabod Crane Schoolhouse",
+      "description": "historic site in Kinderhook, NY",
+      "instance": "historic site",
+      "coord": "Point(-73.691416666 42.381094444)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": "https://en.wikipedia.org/wiki/Ichabod_Crane_Schoolhouse"
+    },
+    {
+      "qid": "Q7913104",
+      "name": "Van Alen House",
+      "description": "historic house in New York, United States",
+      "instance": "house",
+      "coord": "Point(-73.691417 42.381094)",
+      "inception": null,
+      "nrhp": "67000011",
+      "wikipedia": "https://en.wikipedia.org/wiki/Van_Alen_House"
+    },
+    {
+      "qid": "Q6410582",
+      "name": "Kinderhook Village District",
+      "description": "historic district in New York, United States",
+      "instance": "historic district",
+      "coord": "Point(-73.698056 42.395)",
+      "inception": null,
+      "nrhp": "74001227",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kinderhook_Village_District"
+    },
+    {
+      "qid": "Q117689171",
+      "name": "Saint John the Baptist Cemetery",
+      "description": "cemetery in Columbia County, New York, United States",
+      "instance": "cemetery",
+      "coord": "Point(-73.68787 42.41286)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q117648524",
+      "name": "African-Americans Cemetery",
+      "description": "cemetery in Columbia County, New York, United States",
+      "instance": "cemetery",
+      "coord": "Point(-73.70419 42.39548)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q110667203",
+      "name": "Stuyvesant Falls Cemetery",
+      "description": "cemetery in Hudson, New York",
+      "instance": "cemetery",
+      "coord": "Point(-73.7416992 42.3539009)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q6776802",
+      "name": "Martin Van Buren National Historic Site",
+      "description": "national Historic Site of the United States",
+      "instance": "National Historic Site",
+      "coord": "Point(-73.704206 42.369706)",
+      "inception": null,
+      "nrhp": "66000510",
+      "wikipedia": "https://en.wikipedia.org/wiki/Martin_Van_Buren_National_Historic_Site"
+    },
+    {
+      "qid": "Q117497965",
+      "name": "Woodlawn Cemetery",
+      "description": "cemetery in Columbia County, New York, United States",
+      "instance": "cemetery",
+      "coord": "Point(-73.66801 42.4239)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q117612946",
+      "name": "Prospect Hill Cemetery",
+      "description": "cemetery in Columbia County, New York, United States",
+      "instance": "cemetery",
+      "coord": "Point(-73.68353 42.41566)",
+      "inception": null,
+      "nrhp": null,
+      "wikipedia": null
+    },
+    {
+      "qid": "Q8000428",
+      "name": "Wild's Mill Complex",
+      "description": "historic buildings in Valatie, New York, United States",
+      "instance": "historic district",
+      "coord": "Point(-73.681111 42.413056)",
+      "inception": null,
+      "nrhp": "82003353",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex"
+    }
+  ]
+}

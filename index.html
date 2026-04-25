@@ -707,6 +707,169 @@
     .sources { grid-template-columns: 1fr; gap: 24px; }
   }
 
+  /* Historic layer =============================================== */
+  .historic-opener {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0 0 32px;
+    max-width: 720px;
+    font-variation-settings: 'opsz' 36;
+  }
+  .historic-opener em { color: var(--slate); font-style: italic; }
+  .historic-opener a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .historic-opener a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .historic-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+  .historic-col-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .historic-col-head h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    font-variation-settings: 'opsz' 36;
+  }
+  .historic-col-head .count {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+  }
+
+  .hist-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .hist-row:last-child { border-bottom: none; }
+
+  .hist-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  .hist-name {
+    font-family: var(--display);
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .hist-name a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .hist-name a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .hist-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  .hist-newspapers {
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    padding: 28px 32px;
+    margin-top: 8px;
+  }
+
+  .hist-newspapers h3 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+
+  .hist-newspapers .hist-total {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1;
+    margin: 0 0 4px;
+    font-variation-settings: 'opsz' 48;
+  }
+
+  .hist-newspapers .hist-caption {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+    max-width: 640px;
+  }
+
+  .hist-decade-grid {
+    display: grid;
+    grid-template-columns: 70px 1fr 50px;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .hist-decade-grid .dec { color: var(--ink-soft); }
+  .hist-decade-grid .bar {
+    color: var(--accent);
+    letter-spacing: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .hist-decade-grid .n { color: var(--ink); text-align: right; }
+
+  .hist-sample-head {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    margin-bottom: 8px;
+  }
+
+  .hist-sample {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    padding: 4px 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .hist-sample .d { font-family: var(--mono); font-size: 10px; color: var(--accent); }
+  .hist-sample a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+  .hist-sample a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  @media (max-width: 760px) {
+    .historic-two-col { grid-template-columns: 1fr; gap: 32px; }
+    .hist-row { grid-template-columns: 90px 1fr; gap: 12px; }
+  }
+
   /* Generated JSON-LD */
   .jsonld-wrap {
     position: relative;
@@ -845,7 +1008,9 @@
         <li><a href="https://query.wikidata.org/" target="_blank" rel="noopener">query.wikidata.org</a> — SPARQL, municipal identifiers</li>
         <li><a href="https://overpass-api.de/" target="_blank" rel="noopener">overpass-api.de</a> — OpenStreetMap ground truth</li>
         <li><a href="./schema/places/manifest.json" target="_blank" rel="noopener">schema/places/</a> — this report's curated corpus</li>
-        <li><a href="./data/snapshots/" target="_blank" rel="noopener">data/snapshots/</a> — dated build-time pulls (village directory, CCT business index)</li>
+        <li><a href="./data/snapshots/" target="_blank" rel="noopener">data/snapshots/</a> — dated build-time pulls (village + CCT directories, historic sites, people, LoC)</li>
+        <li><a href="https://en.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener">en.wikipedia.org/api/rest_v1</a> — page summaries for key articles</li>
+        <li><a href="https://www.loc.gov/collections/chronicling-america/" target="_blank" rel="noopener">loc.gov/chronicling-america</a> — historic newspaper mentions</li>
       </ul>
     </div>
     <div class="sources-col">
@@ -987,10 +1152,22 @@
     <div class="entity-list" id="curated-list"></div>
   </section>
 
-  <!-- ============================================ §VIII SCHEMA = -->
+  <!-- ============================================ §X HISTORIC == -->
+  <section class="plate" id="sec-historic">
+    <div class="section-head">
+      <div class="section-num">§ X · Historic Layer</div>
+      <h2 class="section-title">Kinderhook as <em>deep time</em> already knows it</h2>
+      <div class="endpoint">wikidata · wikipedia · loc</div>
+    </div>
+    <p class="dek">Before the URL slug, the village. Structured historical knowledge the commons has already written down, snapshotted at build time: NRHP listings, notable residents, Wikipedia summaries of the canonical sites, and two centuries of newspaper mentions.</p>
+    <div class="status" id="historic-status">Loading snapshots…</div>
+    <div id="historic-body"></div>
+  </section>
+
+  <!-- ============================================ §XI SCHEMA == -->
   <section class="plate" id="sec-schema">
     <div class="section-head">
-      <div class="section-num">§ X · Proposed Schema</div>
+      <div class="section-num">§ XI · Proposed Schema</div>
       <h2 class="section-title">What we <em>would publish</em> instead</h2>
       <div class="endpoint">schema.org · JSON-LD</div>
     </div>
@@ -1716,6 +1893,113 @@ function renderGaps(town, data) {
   `).join('');
 }
 
+/* =============================================== §X : HISTORIC == */
+
+function renderHistoricLayer({ sites, people, summaries, newspapers }) {
+  const status = $('#historic-status');
+  const body = $('#historic-body');
+
+  const loaded = [sites, people, summaries, newspapers].filter(Boolean).length;
+  if (loaded === 0) {
+    status.className = 'status';
+    status.textContent = 'No historical snapshots in this deploy. Run tools/fetch-historical.mjs.';
+    return;
+  }
+
+  // ---------- Opener: Wikipedia summary for the village. ----------
+  const villageSummary = summaries?.summaries?.find(s => /village|kinderhook.*york/i.test(s.displayTitle || s.title || ''));
+  const opener = villageSummary?.extract
+    ? `<p class="historic-opener">${esc(villageSummary.extract)} <a href="${esc(villageSummary.url)}" target="_blank" rel="noopener">— Wikipedia</a></p>`
+    : '';
+
+  // ---------- Historic sites: sort by NRHP number presence, then name. ----------
+  const siteList = (sites?.sites || []).slice()
+    .sort((a, b) => (b.nrhp ? 1 : 0) - (a.nrhp ? 1 : 0) || (a.name||'').localeCompare(b.name||''));
+
+  const sitesHtml = siteList.map(s => {
+    const href = s.wikipedia || (s.qid ? `https://www.wikidata.org/wiki/${s.qid}` : '#');
+    const metaLabel = s.nrhp ? `NRHP #${esc(s.nrhp)}` : (s.instance ? esc(s.instance).slice(0, 18) : '');
+    return `
+      <div class="hist-row">
+        <div class="hist-meta">${metaLabel}</div>
+        <div>
+          <div class="hist-name"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(s.name || s.qid)}</a></div>
+          ${s.description ? `<div class="hist-sub">${esc(s.description)}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  // ---------- People: sort by sitelinks (salience), then by birth date. ----------
+  const peopleList = (people?.people || [])
+    .filter(p => p.birth || p.death)
+    .slice()
+    .sort((a, b) => (b.sitelinks || 0) - (a.sitelinks || 0))
+    .slice(0, 14);
+
+  const peopleHtml = peopleList.map(p => {
+    const b = (p.birth || '').slice(0, 4);
+    const d = (p.death || '').slice(0, 4);
+    const span = b && d ? `${b}–${d}` : (b ? `${b}–` : (d ? `–${d}` : ''));
+    const href = p.wikipedia || `https://www.wikidata.org/wiki/${p.qid}`;
+    return `
+      <div class="hist-row">
+        <div class="hist-meta">${esc(span)}</div>
+        <div>
+          <div class="hist-name"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(p.name || p.qid)}</a></div>
+          ${p.description ? `<div class="hist-sub">${esc(p.description)}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  // ---------- Chronicling America block. ----------
+  let newspapersHtml = '';
+  if (newspapers) {
+    const maxDecade = Math.max(1, ...Object.values(newspapers.byDecade || {}));
+    const decadeRows = Object.entries(newspapers.byDecade || {})
+      .sort(([a],[b]) => a.localeCompare(b))
+      .map(([dec, n]) => {
+        const width = Math.round((n / maxDecade) * 22);
+        return `
+          <div class="dec">${dec}</div>
+          <div class="bar">${'▬'.repeat(width)}</div>
+          <div class="n">${n}</div>`;
+      }).join('');
+
+    const sample = (newspapers.items || []).slice(0, 6).map(i => `
+      <div class="hist-sample">
+        <div class="d">${esc((i.date || '').slice(0, 10))}</div>
+        <div><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title || '(untitled)')}</a></div>
+      </div>`).join('');
+
+    newspapersHtml = `
+      <div class="hist-newspapers">
+        <h3>Chronicling America</h3>
+        <div class="hist-total">${newspapers.total?.toLocaleString() || '?'}</div>
+        <p class="hist-caption">appearances of the word <em>Kinderhook</em> across digitized historic US newspapers (Library of Congress). A sampled distribution, by decade:</p>
+        <div class="hist-decade-grid">${decadeRows}</div>
+        <div class="hist-sample-head">Sample (first ${Math.min(6, (newspapers.items||[]).length)} of ${newspapers.sampled} retrieved)</div>
+        ${sample}
+      </div>`;
+  }
+
+  body.innerHTML = opener
+    + `<div class="historic-two-col">
+         <div>
+           <div class="historic-col-head"><h3>Historic Sites</h3><span class="count">${siteList.length}</span></div>
+           ${sitesHtml || '<p style="color:var(--ink-soft);font-style:italic;">No sites snapshot in this deploy.</p>'}
+         </div>
+         <div>
+           <div class="historic-col-head"><h3>Notable People</h3><span class="count">${peopleList.length}</span></div>
+           ${peopleHtml || '<p style="color:var(--ink-soft);font-style:italic;">No people snapshot in this deploy.</p>'}
+         </div>
+       </div>`
+    + newspapersHtml;
+
+  status.className = 'status ok';
+  const stamp = (sites?.fetchedAt || newspapers?.fetchedAt || '').slice(0, 10);
+  status.textContent = `${siteList.length} sites · ${peopleList.length} people · ${newspapers?.total?.toLocaleString() || '?'} newspaper mentions · snapshot ${stamp}`;
+}
+
 /* =============================================== §VI : SCHEMA === */
 function renderGeneratedSchema(town, data) {
   const venues = data.venues || [];
@@ -1795,7 +2079,34 @@ function renderGeneratedSchema(town, data) {
       // Hand-curated entries from schema/places/ flow in as additional
       // nodes of the same graph. The county's data, the commons' data,
       // and the local corpus — one addressable JSON-LD document.
-      ...(data.curated || []).flatMap(c => (c.jsonld?.['@graph'] || []))
+      ...(data.curated || []).flatMap(c => (c.jsonld?.['@graph'] || [])),
+
+      // Historic sites from the Wikidata snapshot — published as Place
+      // entities with sameAs to Wikipedia / Wikidata. Capped at 15 so
+      // the document stays readable.
+      ...((data.histSites?.sites || []).slice(0, 15).map(s => ({
+        "@type": "Place",
+        "@id": s.wikipedia || `https://www.wikidata.org/wiki/${s.qid}`,
+        "name": s.name,
+        ...(s.description ? { "description": s.description } : {}),
+        ...(s.nrhp ? { "identifier": { "@type": "PropertyValue", "propertyID": "NRHP", "value": s.nrhp } } : {}),
+        ...(s.inception ? { "dateCreated": s.inception.slice(0, 10) } : {}),
+        "containedInPlace": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+        "sameAs": [s.wikipedia, `https://www.wikidata.org/wiki/${s.qid}`].filter(Boolean),
+      }))),
+
+      // Top people from the Wikidata snapshot — Persons with their key dates.
+      // Capped at the 5 most-sitelinked to keep the graph legible.
+      ...((data.histPeople?.people || []).slice(0, 5).map(p => ({
+        "@type": "Person",
+        "@id": p.wikipedia || `https://www.wikidata.org/wiki/${p.qid}`,
+        "name": p.name,
+        ...(p.description ? { "description": p.description } : {}),
+        ...(p.birth ? { "birthDate": p.birth.slice(0, 10) } : {}),
+        ...(p.death ? { "deathDate": p.death.slice(0, 10) } : {}),
+        "birthPlace": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+        "sameAs": [p.wikipedia, `https://www.wikidata.org/wiki/${p.qid}`].filter(Boolean),
+      }))),
     ]
   };
 
@@ -1828,16 +2139,21 @@ async function audit(town) {
         return r.ok ? await r.json() : null;
       } catch { return null; }
     };
-    const [village, cctBizIndex, cctBusinesses] = await Promise.all([
+    const [village, cctBizIndex, cctBusinesses, histSites, histPeople, histSummaries, histNewspapers] = await Promise.all([
       readSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
       readSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
       readSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
+      readSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-sites.json'),
+      readSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-people.json'),
+      readSnapshot('./data/snapshots/wikipedia/latest-kinderhook-summaries.json'),
+      readSnapshot('./data/snapshots/loc/latest-kinderhook-chronicling-america.json'),
     ]);
 
     renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });
     renderCCTBusinesses(cctBusinesses);
+    renderHistoricLayer({ sites: histSites, people: histPeople, summaries: histSummaries, newspapers: histNewspapers });
     renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
-    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses });
+    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople });
   } catch (err) {
     console.error('Audit failed:', err);
     document.querySelectorAll('.status').forEach(s => {

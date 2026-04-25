@@ -1,0 +1,314 @@
+{
+  "fetchedAt": "2026-04-24T19:40:20.806Z",
+  "fetcher": "tools/fetch-historical.mjs",
+  "source": "query.wikidata.org/sparql",
+  "count": 34,
+  "people": [
+    {
+      "qid": "Q11820",
+      "name": "Martin Van Buren",
+      "description": "president of the United States from 1837 to 1841",
+      "birth": "1782-12-05T00:00:00Z",
+      "death": "1862-07-24T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Martin_Van_Buren",
+      "sitelinks": 145
+    },
+    {
+      "qid": "Q255310",
+      "name": "Hannah Van Buren",
+      "description": "Wife of Martin Van Buren",
+      "birth": "1783-03-08T00:00:00Z",
+      "death": "1819-02-05T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hannah_Van_Buren",
+      "sitelinks": 25
+    },
+    {
+      "qid": "Q369485",
+      "name": "Peter Masterson",
+      "description": "American actor, writer, film director/producer (1934–2018)",
+      "birth": "1934-06-01T00:00:00Z",
+      "death": "2018-12-18T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peter_Masterson",
+      "sitelinks": 18
+    },
+    {
+      "qid": "Q817486",
+      "name": "Benjamin Franklin Butler",
+      "description": "United States Attorney General (1795-1858)",
+      "birth": "1795-12-17T00:00:00Z",
+      "death": "1858-11-08T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Benjamin_Franklin_Butler_(lawyer)",
+      "sitelinks": 17
+    },
+    {
+      "qid": "Q886196",
+      "name": "Cornelius P. Van Ness",
+      "description": "American politician (1782-1852)",
+      "birth": "1782-01-26T00:00:00Z",
+      "death": "1852-12-15T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cornelius_P._Van_Ness",
+      "sitelinks": 8
+    },
+    {
+      "qid": "Q1416405",
+      "name": "John F. Driggs",
+      "description": "Union Army officer, politician (1813-1877)",
+      "birth": "1813-03-08T00:00:00Z",
+      "death": "1877-12-17T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_F._Driggs",
+      "sitelinks": 6
+    },
+    {
+      "qid": "Q5171463",
+      "name": "Cornelius Van Alen Van Dyck",
+      "description": "American missionary (1818-1895)",
+      "birth": "1818-08-13T00:00:00Z",
+      "death": "1895-11-13T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cornelius_Van_Alen_Van_Dyck",
+      "sitelinks": 6
+    },
+    {
+      "qid": "Q1103463",
+      "name": "John Evert Van Alen",
+      "description": "American politician (1749-1807)",
+      "birth": "1749-01-01T00:00:00Z",
+      "death": "1807-02-27T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Evert_Van_Alen",
+      "sitelinks": 5
+    },
+    {
+      "qid": "Q1282062",
+      "name": "James Isaac Van Alen",
+      "description": "American politician (1772–1870)",
+      "birth": "1773-01-01T00:00:00Z",
+      "death": "1822-05-18T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/James_I._Van_Alen",
+      "sitelinks": 5
+    },
+    {
+      "qid": "Q1282062",
+      "name": "James Isaac Van Alen",
+      "description": "American politician (1772–1870)",
+      "birth": "1772-12-31T00:00:00Z",
+      "death": "1822-05-18T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/James_I._Van_Alen",
+      "sitelinks": 5
+    },
+    {
+      "qid": "Q1650370",
+      "name": "William S. Groesbeck",
+      "description": "United States politician (1815-1897)",
+      "birth": "1815-07-24T00:00:00Z",
+      "death": "1897-07-07T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/William_S._Groesbeck",
+      "sitelinks": 5
+    },
+    {
+      "qid": "Q20988914",
+      "name": "Eleanor Lynn",
+      "description": "American actor and stage actor (1916-1996)",
+      "birth": "1916-10-29T00:00:00Z",
+      "death": "1996-12-26T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eleanor_Lynn",
+      "sitelinks": 5
+    },
+    {
+      "qid": "Q1156337",
+      "name": "Nicholas Sickles",
+      "description": "American politician (1801-1845)",
+      "birth": "1801-09-11T00:00:00Z",
+      "death": "1845-05-13T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nicholas_Sickles",
+      "sitelinks": 4
+    },
+    {
+      "qid": "Q1383031",
+      "name": "Aaron Vanderpoel",
+      "description": "American politician (1799-1870)",
+      "birth": "1799-02-05T00:00:00Z",
+      "death": "1870-07-18T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Aaron_Vanderpoel",
+      "sitelinks": 4
+    },
+    {
+      "qid": "Q2075379",
+      "name": "Peter H. Silvester",
+      "description": "American politician (1807–1882)",
+      "birth": "1807-02-17T00:00:00Z",
+      "death": "1882-11-29T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peter_H._Silvester",
+      "sitelinks": 4
+    },
+    {
+      "qid": "Q5294676",
+      "name": "Donald L. Rutherford",
+      "description": "American Army officer and a Roman Catholic priest",
+      "birth": "1955-08-04T00:00:00Z",
+      "death": null,
+      "wikipedia": "https://en.wikipedia.org/wiki/Donald_L._Rutherford",
+      "sitelinks": 4
+    },
+    {
+      "qid": "Q7787533",
+      "name": "Thomas Beekman",
+      "description": "American politician (1790-1870)",
+      "birth": "1790-07-04T00:00:00Z",
+      "death": "1870-02-02T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Thomas_Beekman",
+      "sitelinks": 4
+    },
+    {
+      "qid": "Q4669211",
+      "name": "Abraham Van Buren",
+      "description": "United States Army paymaster, eldest son of US President Martin Van Buren (1807-1873)",
+      "birth": "1807-11-27T00:00:00Z",
+      "death": "1873-03-15T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Abraham_Van_Buren_II",
+      "sitelinks": 3
+    },
+    {
+      "qid": "Q6264851",
+      "name": "John Woodward Philip",
+      "description": "United States Navy admiral (1840-1900)",
+      "birth": "1840-08-26T00:00:00Z",
+      "death": "1900-06-30T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Woodward_Philip",
+      "sitelinks": 3
+    },
+    {
+      "qid": "Q6911684",
+      "name": "Morgan Henry Chrysler",
+      "description": "American general",
+      "birth": "1822-09-30T00:00:00Z",
+      "death": "1890-08-24T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Morgan_Henry_Chrysler",
+      "sitelinks": 3
+    },
+    {
+      "qid": "Q7177949",
+      "name": "Peter van Schaack",
+      "description": "American lawyer",
+      "birth": "1747-03-01T00:00:00Z",
+      "death": "1832-09-17T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peter_van_Schaack",
+      "sitelinks": 3
+    },
+    {
+      "qid": "Q16065604",
+      "name": "Isaac V. Vanderpoel",
+      "description": "New York lawyer and politician",
+      "birth": "1814-07-01T00:00:00Z",
+      "death": "1871-03-25T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Isaac_V._Vanderpoel",
+      "sitelinks": 3
+    },
+    {
+      "qid": "Q5075929",
+      "name": "Charles Butler",
+      "description": "American lawyer",
+      "birth": "1802-02-15T00:00:00Z",
+      "death": "1897-12-13T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Charles_Butler_(NYU)",
+      "sitelinks": 2
+    },
+    {
+      "qid": "Q17627128",
+      "name": "William L. Heermance",
+      "description": "American Civil War Medal of Honor recipient",
+      "birth": "1837-02-28T00:00:00Z",
+      "death": "1903-02-25T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/William_L._Heermance",
+      "sitelinks": 2
+    },
+    {
+      "qid": "Q21069010",
+      "name": "James Henry Van Alen",
+      "description": "Union Army general (1819-1886)",
+      "birth": "1819-08-17T00:00:00Z",
+      "death": "1886-07-22T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/James_Henry_Van_Alen",
+      "sitelinks": 2
+    },
+    {
+      "qid": "Q29261511",
+      "name": "Jesse Merwin",
+      "description": "American school teacher (1783-1852)",
+      "birth": "1783-04-03T00:00:00Z",
+      "death": "1852-11-08T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jesse_Merwin",
+      "sitelinks": 2
+    },
+    {
+      "qid": "Q18911921",
+      "name": "Samuel Hanna Frisbee",
+      "description": "American clergyman (1840-1907)",
+      "birth": "1840-07-19T00:00:00Z",
+      "death": "1907-02-19T00:00:00Z",
+      "wikipedia": null,
+      "sitelinks": 1
+    },
+    {
+      "qid": "Q24169858",
+      "name": "Henry Mandeville",
+      "description": "American clergyman",
+      "birth": "1804-03-08T00:00:00Z",
+      "death": "1858-10-02T00:00:00Z",
+      "wikipedia": null,
+      "sitelinks": 1
+    },
+    {
+      "qid": "Q24169858",
+      "name": "Henry Mandeville",
+      "description": "American clergyman",
+      "birth": "1804-03-06T00:00:00Z",
+      "death": "1858-10-02T00:00:00Z",
+      "wikipedia": null,
+      "sitelinks": 1
+    },
+    {
+      "qid": "Q47505850",
+      "name": "Willis Isbister Milham",
+      "description": "American astronomer (1874-1957)",
+      "birth": "1874-02-11T00:00:00Z",
+      "death": "1957-03-23T00:00:00Z",
+      "wikipedia": null,
+      "sitelinks": 1
+    },
+    {
+      "qid": "Q6251499",
+      "name": "John P. Beekman",
+      "description": "American physician, farmer, banker and politician",
+      "birth": "1788-03-13T00:00:00Z",
+      "death": "1861-10-16T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_P._Beekman",
+      "sitelinks": 1
+    },
+    {
+      "qid": "Q7791270",
+      "name": "Thomas Jefferson Hubbard",
+      "description": "American politician",
+      "birth": "1806-01-01T00:00:00Z",
+      "death": "1877-04-24T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Thomas_Jefferson_Hubbard",
+      "sitelinks": 1
+    },
+    {
+      "qid": "Q87766932",
+      "name": "James Vanderpoel",
+      "description": "(1787-1843)",
+      "birth": "1787-01-10T00:00:00Z",
+      "death": "1843-10-03T00:00:00Z",
+      "wikipedia": null,
+      "sitelinks": 0
+    },
+    {
+      "qid": "Q112365452",
+      "name": "Newton Melman Shaffer",
+      "description": "American orthopedic surgeon (1846–1928)",
+      "birth": "1846-02-14T00:00:00Z",
+      "death": "1928-01-02T00:00:00Z",
+      "wikipedia": null,
+      "sitelinks": 0
+    }
+  ]
+}

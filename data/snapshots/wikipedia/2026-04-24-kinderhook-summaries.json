@@ -1,0 +1,106 @@
+{
+  "fetchedAt": "2026-04-24T19:40:20.806Z",
+  "fetcher": "tools/fetch-historical.mjs",
+  "source": "en.wikipedia.org/api/rest_v1/page/summary/",
+  "articles": [
+    "Kinderhook_(village),_New_York",
+    "Kinderhook_(town),_New_York",
+    "Martin_Van_Buren",
+    "Lindenwald",
+    "Luykas_Van_Alen_House",
+    "Ichabod_Crane",
+    "James_Vanderpoel_House",
+    "Kinderhook_Village_District"
+  ],
+  "summaries": [
+    {
+      "title": "Kinderhook_(village),_New_York",
+      "displayTitle": "Kinderhook (village), New York",
+      "description": "Village in New York, United States",
+      "extract": "Kinderhook is a village in the town of Kinderhook in Columbia County, New York, United States. The village population was 1,170 at the 2020 census, slightly down from 1,211 at the 2010 census. The village of Kinderhook is located in the south-central part of the town on US 9. The eighth President of the United States, Martin Van Buren, was born in Kinderhook and retired to the area (Lindenwald).",
+      "wikibaseItem": "Q3478629",
+      "coordinates": {
+        "lat": 42.39361111,
+        "lon": -73.705
+      },
+      "url": "https://en.wikipedia.org/wiki/Kinderhook_(village)%2C_New_York",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Columbia_County_New_York_incorporated_areas_Village_of_Kinderhook_highlighted.svg/330px-Columbia_County_New_York_incorporated_areas_Village_of_Kinderhook_highlighted.svg.png"
+    },
+    {
+      "title": "Kinderhook,_New_York",
+      "displayTitle": "Kinderhook, New York",
+      "description": "Town in New York, United States",
+      "extract": "Kinderhook is a town in the northern part of Columbia County, New York, United States. The population was 8,330 at the 2020 census, making it the most populous municipality in Columbia County. The name of the town means \"Children's Corner\" in the language of the original Dutch settlers (Kinderhoek). The name \"Kinderhook\" has its root in the landing of Henry Hudson in the area around present-day Stuyvesant, where he was greeted by Native Americans with many children. With the Dutch kind meaning \"child\" and hoek meaning \"corner\", it could be that the name refers to a bend in the river where the children are. The eighth president of the United States, Martin Van Buren, was born in Kinderhook and retired to it.",
+      "wikibaseItem": "Q3710663",
+      "coordinates": {
+        "lat": 42.41277778,
+        "lon": -73.68138889
+      },
+      "url": "https://en.wikipedia.org/wiki/Kinderhook%2C_New_York",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Main_square%2C_Kinderhook%2C_NY.jpg/330px-Main_square%2C_Kinderhook%2C_NY.jpg"
+    },
+    {
+      "title": "Martin_Van_Buren",
+      "displayTitle": "Martin Van Buren",
+      "description": "President of the United States from 1837 to 1841",
+      "extract": "Martin Van Buren was the eighth president of the United States, serving from 1837 to 1841. Van Buren co-founded the Democratic Party with Andrew Jackson and became Jackson's vice president from 1833 to 1837.",
+      "wikibaseItem": "Q11820",
+      "coordinates": null,
+      "url": "https://en.wikipedia.org/wiki/Martin_Van_Buren",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Martin_Van_Buren_by_Mathew_Brady_c1855-58-%284%29.jpg/330px-Martin_Van_Buren_by_Mathew_Brady_c1855-58-%284%29.jpg"
+    },
+    {
+      "title": "Martin_Van_Buren_National_Historic_Site",
+      "displayTitle": "Martin Van Buren National Historic Site",
+      "description": "Historic site in New York, USA",
+      "extract": "Martin Van Buren National Historic Site is a unit of the United States National Park Service in Columbia County, New York, 1 mile (1.6 km) south of the village of Kinderhook, 125 miles (201 km) north of New York City and 20 miles (32 km) south of Albany. The National Historic Site preserves the Lindenwald estate owned by Martin Van Buren, the eighth president of the United States. Van Buren purchased the 36-room mansion during his presidency in 1839, and it became his home and farm from his leaving office in 1841 until his death in 1862.",
+      "wikibaseItem": "Q6776802",
+      "coordinates": {
+        "lat": 42.36970556,
+        "lon": -73.70420556
+      },
+      "url": "https://en.wikipedia.org/wiki/Martin_Van_Buren_National_Historic_Site",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lindenwald2006.jpg/330px-Lindenwald2006.jpg"
+    },
+    {
+      "title": "Van_Alen_House",
+      "displayTitle": "Van Alen House",
+      "description": "Historic house in New York, United States",
+      "extract": "The Luykas Van Alen House is an historic Dutch Colonial farmhouse at 2589 New York State Route 9H in the town of Kinderhook, Columbia County, New York, United States. Built about 1737 and enlarged about 1750, it is one of the finest surviving examples of Dutch colonial architecture in upstate New York. It was designated a National Historic Landmark in 1967. It is now an historic house museum operated by the Columbia County Historical Society, and open for tours on weekends from June to October.",
+      "wikibaseItem": "Q7913104",
+      "coordinates": {
+        "lat": 42.38109444,
+        "lon": -73.69141667
+      },
+      "url": "https://en.wikipedia.org/wiki/Van_Alen_House",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/LuykasVanAlenHouse-1737.jpg/330px-LuykasVanAlenHouse-1737.jpg"
+    },
+    {
+      "title": "Ichabod_Crane",
+      "displayTitle": "Ichabod Crane",
+      "description": "Fictional character from The Legend of Sleepy Hollow",
+      "extract": "Ichabod Crane is a fictional character and the protagonist in Washington Irving's short story \"The Legend of Sleepy Hollow\". Crane is portrayed in the original work, and in most adaptations, as a tall, lanky individual. He is the local schoolmaster, and strongly believes in all things supernatural, including the legend of the Headless Horseman. Crane eventually tries unsuccessfully to court the heiress Katrina Van Tassel, a decision that angers Abraham \"Brom Bones\" Van Brunt, a local man who also wishes to marry Katrina. After supposedly proposing to Katrina, Crane is on his way home alone at night when the Headless Horseman appears and chases the schoolmaster. The Horseman eventually throws his pumpkin head at Crane, causing him to mysteriously disappear without a trace.",
+      "wikibaseItem": "Q5986015",
+      "coordinates": null,
+      "url": "https://en.wikipedia.org/wiki/Ichabod_Crane",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/What_fearful_shapes_and_shadows_beset_his_path_-_The_Legend_of_Sleepy_Hollow_%281899%29%2C_frontispiece_-_BL.jpg/330px-What_fearful_shapes_and_shadows_beset_his_path_-_The_Legend_of_Sleepy_Hollow_%281899%29%2C_frontispiece_-_BL.jpg"
+    },
+    {
+      "title": "James_Vanderpoel_House",
+      "error": "404"
+    },
+    {
+      "title": "Kinderhook_Village_District",
+      "displayTitle": "Kinderhook Village District",
+      "description": "Historic district in New York, United States",
+      "extract": "The Kinderhook Village District is located in the central areas of the village of Kinderhook, New York, United States. It is a 612-acre (248 ha) area covering both developed and undeveloped land centered on US 9.",
+      "wikibaseItem": "Q6410582",
+      "coordinates": {
+        "lat": 42.395,
+        "lon": -73.69805556
+      },
+      "url": "https://en.wikipedia.org/wiki/Kinderhook_Village_District",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Main_square%2C_Kinderhook%2C_NY.jpg/330px-Main_square%2C_Kinderhook%2C_NY.jpg"
+    }
+  ]
+}
