@@ -488,6 +488,956 @@
       ]
     },
     {
+      "@type": "BookStore",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#kinderhook-books",
+      "name": "Kinderhook Books",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "url": "https://www.kinderhookbooks.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8 Hudson St, Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "11:00",
+          "closes": "16:00"
+        }
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#the-aviary",
+      "name": "The Aviary",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6 Hudson St, Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "17:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "17:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "17:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "11:00",
+          "closes": "15:00"
+        }
+      ]
+    },
+    {
+      "@type": "FoodEstablishment",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#ok-pantry",
+      "name": "OK Pantry",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6 Hudson St, Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "15:00"
+        }
+      ]
+    },
+    {
+      "@type": "LiquorStore",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#kinderhook-bottle-shop",
+      "name": "The Kinderhook Bottle Shop",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "11:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "11:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "11:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "12:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "Hotel",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#old-dutch-inn",
+      "name": "Old Dutch Inn",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11 Broad St, Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ]
+    },
+    {
+      "@type": "GroceryStore",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#samascott-garden-market",
+      "name": "Samascott's Garden Market",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Sunset Ave, Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ]
+    },
+    {
+      "@type": "PostOffice",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#us-post-office-kinderhook",
+      "name": "US Post Office, Kinderhook",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10 Hudson St, Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "08:30",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "12:00"
+        }
+      ]
+    },
+    {
+      "@type": "Event",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#kinderhook-farmers-market",
+      "name": "Kinderhook Farmers' Market",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Village Square, Kinderhook NY 12106",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:30",
+          "closes": "12:30"
+        }
+      ],
+      "kh:seasonality": "May–October"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#assessments",
+      "name": "Kinderhook assessment + market summary",
+      "description": "Aggregated assessed value, full market value, residential assessment ratio, and state-published market-equity statistics for the Town of Kinderhook (which contains the village).",
+      "isBasedOn": [
+        "https://data.ny.gov/dataset/Property-Assessment-Data-from-Local-Assessment-Rol/7vem-aaz7",
+        "https://data.ny.gov/dataset/Residential-Assessment-Ratios/bsmp-6um6",
+        "https://data.ny.gov/dataset/Real-Property-Assessment-Equity-Statistics-By-Muni/4sut-q3dt"
+      ],
+      "spatialCoverage": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "kh:rollYear": "2025",
+      "kh:parcelsTotal": 3350,
+      "kh:parcelsVillage": 642,
+      "kh:parcelsTownOutside": 2708,
+      "kh:assessedTotalUSD": 971295933,
+      "kh:fullMarketTotalUSD": 1618826553,
+      "kh:residentialAssessmentRatio": {
+        "village104401": {
+          "year": 2004,
+          "ratio": 66.17
+        },
+        "townOutside104489": null
+      },
+      "kh:marketValueRatioLatest": {
+        "year": 2025,
+        "method_residential": "Sales Ratio",
+        "residential_market_value_ratio": 60,
+        "residential_cod": 14.67,
+        "residential_prd": 1.02,
+        "all_property_cod": 15.62,
+        "equalization_rate": 60,
+        "population_per_sq_mi": 257.5289
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#demographics",
+      "name": "Kinderhook demographics (ACS 5-Year)",
+      "description": "Census Bureau American Community Survey 5-Year estimates for two geographies: the incorporated Village of Kinderhook and the surrounding Town of Kinderhook MCD.",
+      "isBasedOn": "https://api.census.gov/data/2022/acs/acs5",
+      "spatialCoverage": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "kh:vintage": "2022",
+      "kh:village": {
+        "_name": "Kinderhook village, New York",
+        "_label": "Kinderhook village, NY",
+        "_geoSpec": "place:39562 in state:36",
+        "population_total": 1351,
+        "median_age": 51.9,
+        "households_total": 622,
+        "households_family": 337,
+        "households_nonfamily": 285,
+        "avg_household_size": 2.17,
+        "housing_units_total": 667,
+        "housing_units_occupied": 622,
+        "housing_units_vacant": 45,
+        "tenure_owner_occupied": 521,
+        "tenure_renter_occupied": 101,
+        "yrbuilt_total": 667,
+        "yrbuilt_1939_or_earlier": 41,
+        "yrbuilt_1940_1949": 88,
+        "yrbuilt_2014_or_later": 0,
+        "median_gross_rent": 954,
+        "median_value_owner_occupied": 349000,
+        "median_household_income": 84861,
+        "per_capita_income": 61581,
+        "income_below_poverty_level": 65,
+        "race_white_alone": 1262,
+        "race_black_alone": 0,
+        "race_asian_alone": 2,
+        "hispanic_or_latino": 149,
+        "language_population_5_plus": null,
+        "language_english_only": null,
+        "commute_total_workers": 523,
+        "commute_60_plus_min": 18
+      },
+      "kh:town": {
+        "_name": "Kinderhook town, Columbia County, New York",
+        "_label": "Kinderhook town, Columbia County, NY",
+        "_geoSpec": "cousub:39573 in state:36 county:021",
+        "population_total": 8253,
+        "median_age": 47.5,
+        "households_total": 3334,
+        "households_family": 2216,
+        "households_nonfamily": 1118,
+        "avg_household_size": 2.39,
+        "housing_units_total": 3964,
+        "housing_units_occupied": 3334,
+        "housing_units_vacant": 630,
+        "tenure_owner_occupied": 2584,
+        "tenure_renter_occupied": 750,
+        "yrbuilt_total": 3964,
+        "yrbuilt_1939_or_earlier": 79,
+        "yrbuilt_1940_1949": 368,
+        "yrbuilt_2014_or_later": 11,
+        "median_gross_rent": 1088,
+        "median_value_owner_occupied": 297300,
+        "median_household_income": 88565,
+        "per_capita_income": 53882,
+        "income_below_poverty_level": 608,
+        "race_white_alone": 7527,
+        "race_black_alone": 30,
+        "race_asian_alone": 61,
+        "hispanic_or_latino": 618,
+        "language_population_5_plus": null,
+        "language_english_only": null,
+        "commute_total_workers": 3284,
+        "commute_60_plus_min": 75
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3565",
+      "name": "HURRICANE HENRI",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2021-08-21",
+      "endDate": "2021-08-24",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Hurricane",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3565
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/4480",
+      "name": "COVID-19 PANDEMIC",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2020-01-20",
+      "endDate": "2023-05-11",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Biological",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 4480
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3434",
+      "name": "COVID-19 ",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2020-01-20",
+      "endDate": "2023-05-11",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Biological",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3434
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/4322",
+      "name": "SEVERE WINTER STORM AND SNOWSTORM",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2017-03-14",
+      "endDate": "2017-03-15",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Snowstorm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 4322
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3351",
+      "name": "HURRICANE SANDY",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2012-10-27",
+      "endDate": "2012-11-08",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Hurricane",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3351
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/4020",
+      "name": "HURRICANE IRENE",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2011-08-26",
+      "endDate": "2011-09-05",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Hurricane",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 4020
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3328",
+      "name": "HURRICANE IRENE",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2011-08-25",
+      "endDate": "2011-09-05",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Hurricane",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3328
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1957",
+      "name": "SEVERE WINTER STORM AND SNOWSTORM",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2010-12-26",
+      "endDate": "2010-12-27",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1957
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1827",
+      "name": "SEVERE WINTER STORM",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2008-12-11",
+      "endDate": "2008-12-31",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1827
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3299",
+      "name": "SEVERE WINTER STORM",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2008-12-11",
+      "endDate": "2008-12-31",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3299
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1692",
+      "name": "SEVERE STORMS AND INLAND AND COASTAL FLOODING",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2007-04-14",
+      "endDate": "2007-04-18",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1692
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3262",
+      "name": "HURRICANE KATRINA EVACUATION",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2005-08-29",
+      "endDate": "2005-10-01",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Hurricane",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3262
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1589",
+      "name": "SEVERE STORMS AND FLOODING",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2005-04-02",
+      "endDate": "2005-04-04",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1589
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1564",
+      "name": "SEVERE STORMS AND FLOODING",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2004-08-13",
+      "endDate": "2004-09-16",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1564
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1534",
+      "name": "SEVERE STORMS AND FLOODING",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2004-05-13",
+      "endDate": "2004-06-17",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1534
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1486",
+      "name": "SEVERE STORMS, FLOODING, AND TORNADOES",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2003-07-21",
+      "endDate": "2003-08-13",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1486
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3186",
+      "name": "POWER OUTAGE",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2003-08-14",
+      "endDate": "2003-08-16",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Other",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3186
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3184",
+      "name": "SNOW",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2003-02-17",
+      "endDate": "2003-02-18",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Snowstorm",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3184
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3173",
+      "name": "SNOWSTORMS",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2002-12-25",
+      "endDate": "2003-01-04",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Snowstorm",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3173
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1391",
+      "name": "FIRES AND EXPLOSIONS",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2001-09-11",
+      "endDate": "2001-09-11",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Fire",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1391
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3155",
+      "name": "WEST NILE VIRUS",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2000-05-22",
+      "endDate": "2000-11-01",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Other",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3155
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1335",
+      "name": "SEVERE STORMS AND FLOODING",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "2000-05-03",
+      "endDate": "2000-08-12",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Severe Storm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1335
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1095",
+      "name": "SEVERE STORMS AND FLOODING",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "1996-01-19",
+      "endDate": "1996-01-30",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Flood",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1095
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/1083",
+      "name": "BLIZZARD OF 96 (SEVERE SNOW STORM)",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "1996-01-06",
+      "endDate": "1996-01-12",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Snowstorm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 1083
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/3107",
+      "name": "SEVERE BLIZZARD",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "1993-03-13",
+      "endDate": "1993-03-17",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Snowstorm",
+      "kh:declarationType": "EM",
+      "kh:disasterNumber": 3107
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/801",
+      "name": "SEVERE WINTER STORM",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "1987-10-04",
+      "endDate": "1987-10-04",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Snowstorm",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 801
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.fema.gov/disaster/401",
+      "name": "SEVERE STORMS & FLOODING",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "startDate": "1973-07-20",
+      "endDate": "1973-07-20",
+      "location": {
+        "@type": "AdministrativeArea",
+        "name": "Columbia County, New York",
+        "sameAs": "https://www.wikidata.org/wiki/Q245071"
+      },
+      "kh:incidentType": "Flood",
+      "kh:declarationType": "DR",
+      "kh:disasterNumber": 401
+    },
+    {
       "@type": "Person",
       "@id": "https://en.wikipedia.org/wiki/Martin_Van_Buren",
       "name": "Martin Van Buren",
@@ -565,20 +1515,28 @@
   ],
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-04-25T18:26:09.497Z",
+    "builtAt": "2026-04-25T19:06:13.958Z",
     "sources": {
       "events": "2026-04-25T14:43:53.230Z",
       "venues": "2026-04-25T14:43:54.718Z",
       "osm": "2026-04-25T14:43:59.513Z",
       "historicSites": "2026-04-24T19:40:20.806Z",
-      "historicPeople": "2026-04-24T19:40:20.806Z"
+      "historicPeople": "2026-04-24T19:40:20.806Z",
+      "orptsParcels": "2026-04-25T19:06:13.652Z",
+      "orptsRar": "2026-04-25T19:06:13.894Z",
+      "marketEquity": "2026-04-25T18:56:17.773Z",
+      "acsVillage": "2026-04-25T18:56:20.080Z",
+      "acsTown": "2026-04-25T18:56:20.082Z",
+      "fema": "2026-04-25T18:57:00.068Z"
     },
     "counts": {
-      "graph": 32,
+      "graph": 69,
       "curatedPlaces": 4,
       "coverageArticles": 2,
       "historicSites": 15,
-      "historicPeople": 5
+      "historicPeople": 5,
+      "localBusinesses": 8,
+      "femaDisasters": 27
     }
   }
 }

@@ -30,6 +30,10 @@ const tools = [
   { name: 'Village of Kinderhook',    script: 'tools/fetch-village-directory.mjs' },
   { name: 'Wikidata + OSM crossrefs', script: 'tools/fetch-crossrefs.mjs' },
   { name: 'Historical (WD/Wiki/LoC)', script: 'tools/fetch-historical.mjs' },
+  { name: 'ORPTS assessments',        script: 'tools/fetch-orpts.mjs' },
+  { name: 'NY market equity stats',   script: 'tools/fetch-ny-sales.mjs' },
+  { name: 'Census ACS 5-Year',        script: 'tools/fetch-acs.mjs' },
+  { name: 'OpenFEMA disasters',       script: 'tools/fetch-fema.mjs' },
   { name: 'Build kinderhook.json',    script: 'tools/build-jsonld.mjs' },
 ];
 

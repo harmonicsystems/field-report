@@ -53,6 +53,13 @@ async function main() {
   const osmSnap    = await readJson('data/snapshots/openstreetmap/latest-kinderhook-features.json');
   const histSites  = await readJson('data/snapshots/wikidata/latest-kinderhook-historic-sites.json');
   const histPeople = await readJson('data/snapshots/wikidata/latest-kinderhook-historic-people.json');
+  const orptsParcels = await readJson('data/snapshots/orpts/latest-parcels.json');
+  const orptsRar     = await readJson('data/snapshots/orpts/latest-rar.json');
+  const marketEquity = await readJson('data/snapshots/nysales/latest-equity.json');
+  const acsVillage   = await readJson('data/snapshots/acs/latest-village.json');
+  const acsTown      = await readJson('data/snapshots/acs/latest-town.json');
+  const fema         = await readJson('data/snapshots/fema/latest-disasters.json');
+  const hoursManifest = await readJson('schema/hours/manifest.json', { businesses: [] });
 
   // --- curated corpora ---
   const placesManifest = await readJson('schema/places/manifest.json', { places: [] });
@@ -193,6 +200,115 @@ async function main() {
     });
   }
 
+  // 6.5. LocalBusiness entities — every business in schema/hours/ becomes a
+  //      schema.org LocalBusiness with structured openingHoursSpecification.
+  //      The corpus is hand-curated; @id is a fragment in this graph (the
+  //      kinderhook.json file itself), so other nodes can reference it.
+  const dayMap = { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' };
+  for (const b of (hoursManifest.businesses || [])) {
+    const node = {
+      "@type": b.type || 'LocalBusiness',
+      "@id": `https://fieldreports.harmonic-systems.org/kinderhook.json#${b.slug}`,
+      "name": b.name,
+      "containedInPlace": { "@id": VILLAGE_ID },
+      ...(b.url ? { "url": b.url } : {}),
+      ...(b.address ? {
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": b.address,
+          "addressLocality": "Kinderhook",
+          "addressRegion": "NY",
+          "postalCode": "12106",
+          "addressCountry": "US",
+        },
+      } : {}),
+      "openingHoursSpecification": (b.hours || []).map(h => ({
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": dayMap[h.day] || h.day,
+        "opens":  h.opens,
+        "closes": h.closes,
+      })),
+      ...(b.seasonal ? {
+        "kh:seasonality": b.seasonal,
+      } : {}),
+    };
+    graph.push(node);
+  }
+
+  // 6.6. Assessment + market metadata as a single Dataset node describing
+  //      the village's tax-roll and market-ratio facts. Not a schema.org
+  //      Place — a Dataset whose subjectOf is the village.
+  if (orptsParcels || marketEquity) {
+    graph.push({
+      "@type": "Dataset",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#assessments",
+      "name": "Kinderhook assessment + market summary",
+      "description": "Aggregated assessed value, full market value, residential assessment ratio, and state-published market-equity statistics for the Town of Kinderhook (which contains the village).",
+      "isBasedOn": [
+        "https://data.ny.gov/dataset/Property-Assessment-Data-from-Local-Assessment-Rol/7vem-aaz7",
+        "https://data.ny.gov/dataset/Residential-Assessment-Ratios/bsmp-6um6",
+        "https://data.ny.gov/dataset/Real-Property-Assessment-Equity-Statistics-By-Muni/4sut-q3dt",
+      ],
+      "spatialCoverage": { "@id": VILLAGE_ID },
+      ...(orptsParcels ? {
+        "kh:rollYear": orptsParcels.rollYear,
+        "kh:parcelsTotal": orptsParcels.counts.total,
+        "kh:parcelsVillage": orptsParcels.counts.village,
+        "kh:parcelsTownOutside": orptsParcels.counts.townOutsideVillage,
+        "kh:assessedTotalUSD": orptsParcels.summary.assessedTotalUSD,
+        "kh:fullMarketTotalUSD": orptsParcels.summary.fullMarketTotalUSD,
+      } : {}),
+      ...(orptsRar ? {
+        "kh:residentialAssessmentRatio": {
+          "village104401": orptsRar.latest['104401'],
+          "townOutside104489": orptsRar.latest['104489'],
+        },
+      } : {}),
+      ...(marketEquity ? {
+        "kh:marketValueRatioLatest": marketEquity.latest,
+      } : {}),
+    });
+  }
+
+  // 6.7. ACS demographics as a Dataset describing the population of the
+  //      village place and the surrounding town MCD.
+  if (acsVillage || acsTown) {
+    graph.push({
+      "@type": "Dataset",
+      "@id": "https://fieldreports.harmonic-systems.org/kinderhook.json#demographics",
+      "name": "Kinderhook demographics (ACS 5-Year)",
+      "description": "Census Bureau American Community Survey 5-Year estimates for two geographies: the incorporated Village of Kinderhook and the surrounding Town of Kinderhook MCD.",
+      "isBasedOn": `https://api.census.gov/data/${acsVillage?.vintage || acsTown?.vintage}/acs/acs5`,
+      "spatialCoverage": { "@id": VILLAGE_ID },
+      "kh:vintage": acsVillage?.vintage || acsTown?.vintage,
+      ...(acsVillage ? { "kh:village": acsVillage.estimates } : {}),
+      ...(acsTown    ? { "kh:town":    acsTown.estimates    } : {}),
+    });
+  }
+
+  // 6.8. FEMA disaster history as a list of Event entities (one per
+  //      declaration), each with @id at the federal declaration record.
+  if (fema?.declarations) {
+    for (const d of fema.declarations) {
+      graph.push({
+        "@type": "Event",
+        "@id": `https://www.fema.gov/disaster/${d.disasterNumber}`,
+        "name": d.declarationTitle || `${d.incidentType} (${d.declarationType}-${d.disasterNumber})`,
+        "eventStatus": "https://schema.org/EventCompleted",
+        ...(d.incidentBeginDate ? { "startDate": d.incidentBeginDate.slice(0, 10) } : {}),
+        ...(d.incidentEndDate   ? { "endDate":   d.incidentEndDate.slice(0, 10)   } : {}),
+        "location": {
+          "@type": "AdministrativeArea",
+          "name": "Columbia County, New York",
+          "sameAs": "https://www.wikidata.org/wiki/Q245071",
+        },
+        "kh:incidentType":   d.incidentType,
+        "kh:declarationType": d.declarationType,
+        "kh:disasterNumber":  d.disasterNumber,
+      });
+    }
+  }
+
   // 7. Top 5 historic people.
   for (const p of (histPeople?.people || []).slice(0, 5)) {
     graph.push({
@@ -228,6 +344,12 @@ async function main() {
         osm: osmSnap?.fetchedAt || null,
         historicSites: histSites?.fetchedAt || null,
         historicPeople: histPeople?.fetchedAt || null,
+        orptsParcels: orptsParcels?.fetchedAt || null,
+        orptsRar: orptsRar?.fetchedAt || null,
+        marketEquity: marketEquity?.fetchedAt || null,
+        acsVillage: acsVillage?.fetchedAt || null,
+        acsTown: acsTown?.fetchedAt || null,
+        fema: fema?.fetchedAt || null,
       },
       counts: {
         graph: graph.length,
@@ -235,6 +357,8 @@ async function main() {
         coverageArticles: coverageEntries.filter(c => c && c.type === 'article').length,
         historicSites: Math.min(15, (histSites?.sites || []).length),
         historicPeople: Math.min(5, (histPeople?.people || []).length),
+        localBusinesses: (hoursManifest.businesses || []).length,
+        femaDisasters: fema?.declarations?.length || 0,
       },
     },
   };

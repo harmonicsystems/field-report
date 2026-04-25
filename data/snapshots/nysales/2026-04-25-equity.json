@@ -1,0 +1,242 @@
+{
+  "fetchedAt": "2026-04-25T18:56:17.773Z",
+  "fetcher": "tools/fetch-ny-sales.mjs",
+  "source": "https://data.ny.gov/resource/4sut-q3dt.json?$where=swis_code='104400'",
+  "swis": "104400",
+  "municipality": "Town of Kinderhook",
+  "datasetTitle": "Real Property Assessment Equity Statistics By Municipality",
+  "datasetId": "4sut-q3dt",
+  "note": "These are the only sales-derived market figures the state publishes machine-readably for this jurisdiction. Parcel-level sales records exist but are released only as county-level PDFs.",
+  "series": [
+    {
+      "year": 2004,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 261
+    },
+    {
+      "year": 2005,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 261
+    },
+    {
+      "year": 2006,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 261
+    },
+    {
+      "year": 2007,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 261
+    },
+    {
+      "year": 2008,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 261
+    },
+    {
+      "year": 2009,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 261
+    },
+    {
+      "year": 2010,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 261
+    },
+    {
+      "year": 2011,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 102.33,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2012,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2013,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2014,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2015,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2016,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2017,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2018,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 91.93,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 93.12,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2019,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 88.62,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 93,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2020,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 100,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 100,
+      "population_per_sq_mi": 267
+    },
+    {
+      "year": 2021,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 96,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 96,
+      "population_per_sq_mi": 257.5289
+    },
+    {
+      "year": 2022,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 79,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 79,
+      "population_per_sq_mi": 258
+    },
+    {
+      "year": 2023,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 67,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 67,
+      "population_per_sq_mi": 257.5289
+    },
+    {
+      "year": 2024,
+      "method_residential": "Review of Reassessment",
+      "residential_market_value_ratio": 64,
+      "residential_cod": null,
+      "residential_prd": null,
+      "all_property_cod": null,
+      "equalization_rate": 64,
+      "population_per_sq_mi": 258
+    },
+    {
+      "year": 2025,
+      "method_residential": "Sales Ratio",
+      "residential_market_value_ratio": 60,
+      "residential_cod": 14.67,
+      "residential_prd": 1.02,
+      "all_property_cod": 15.62,
+      "equalization_rate": 60,
+      "population_per_sq_mi": 257.5289
+    }
+  ],
+  "latest": {
+    "year": 2025,
+    "method_residential": "Sales Ratio",
+    "residential_market_value_ratio": 60,
+    "residential_cod": 14.67,
+    "residential_prd": 1.02,
+    "all_property_cod": 15.62,
+    "equalization_rate": 60,
+    "population_per_sq_mi": 257.5289
+  }
+}

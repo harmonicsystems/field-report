@@ -1236,6 +1236,132 @@
   }
 
   a { color: var(--accent); }
+
+  /* ============================================ §XIII : ASSESSMENTS = */
+  .assess-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+  }
+  .assess-card, .assess-classes {
+    border: 1px solid var(--rule);
+    background: rgba(255,255,255,0.4);
+    padding: 18px 20px;
+  }
+  .assess-classes { grid-column: 1 / -1; }
+  .assess-card-head {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin-bottom: 10px;
+  }
+  .assess-stat { display: flex; justify-content: space-between; align-items: baseline;
+    padding: 4px 0; border-bottom: 1px dotted var(--rule); }
+  .assess-stat:last-child { border-bottom: 0; }
+  .assess-stat .k { font-size: 13px; color: var(--ink-soft); }
+  .assess-stat .v { font-family: var(--mono); font-size: 14px; color: var(--ink); }
+  .assess-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .assess-table th, .assess-table td { padding: 6px 8px; border-bottom: 1px solid var(--rule); text-align: left; }
+  .assess-table th { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-soft); }
+  .assess-table td.num, .assess-table th.num { text-align: right; font-family: var(--mono); }
+  .mono { font-family: var(--mono); }
+
+  .calc {
+    margin-top: 26px;
+    border: 1px solid var(--accent);
+    background: rgba(166, 61, 42, 0.04);
+    padding: 22px 24px;
+  }
+  .calc-head { border-bottom: 1px solid var(--rule); padding-bottom: 10px; margin-bottom: 14px; }
+  .calc-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); }
+  .calc-sub { font-style: italic; color: var(--ink-soft); margin-top: 4px; font-size: 14px; }
+  .calc-body { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .calc-body label { display: flex; flex-direction: column; gap: 4px; }
+  .calc-cap { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); }
+  .calc-body input, .calc-body select {
+    font-family: var(--mono); font-size: 14px;
+    background: var(--cream); color: var(--ink);
+    border: 1px solid var(--rule); padding: 8px 10px;
+  }
+  .calc-out { padding: 12px 0; border-top: 1px dotted var(--rule); border-bottom: 1px dotted var(--rule); }
+  .calc-line { display: flex; justify-content: space-between; padding: 4px 0; font-size: 14px; }
+  .calc-line .k { color: var(--ink-soft); }
+  .calc-line .v { font-family: var(--mono); }
+  .calc-line.big { font-size: 18px; padding: 8px 0; }
+  .calc-line.big .v { color: var(--accent); }
+  .calc-foot { font-style: italic; font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+  /* ============================================ §XIV : MARKET == */
+  .m-head { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+  .m-stat { border: 1px solid var(--rule); padding: 12px 14px; background: rgba(255,255,255,0.4); }
+  .m-stat .k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); }
+  .m-stat .v { font-family: var(--mono); font-size: 18px; color: var(--ink); margin-top: 4px; }
+  .m-grid { margin-top: 22px; display: grid; gap: 4px; }
+  .m-row { display: grid; grid-template-columns: 56px 1fr 64px 1fr; align-items: baseline;
+    column-gap: 12px; font-size: 13px; padding: 2px 0; border-bottom: 1px dotted var(--rule); }
+  .m-yr { font-family: var(--mono); color: var(--ink-soft); }
+  .m-bar { font-family: var(--mono); color: var(--accent); letter-spacing: -2px; overflow: hidden; }
+  .m-val { font-family: var(--mono); text-align: right; }
+  .m-method { color: var(--ink-soft); font-style: italic; }
+  .m-foot { font-style: italic; color: var(--ink-soft); font-size: 13px; margin-top: 16px; }
+
+  /* ============================================ §XV : ACS ==== */
+  .acs-table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14px; }
+  .acs-table th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-soft); padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  .acs-table td { padding: 6px 10px; border-bottom: 1px dotted var(--rule); }
+  .acs-table td.num { font-family: var(--mono); text-align: right; }
+  .acs-table tbody th { color: var(--ink); font-family: var(--body); text-transform: none;
+    letter-spacing: 0; font-weight: 500; font-size: 14px; }
+
+  /* ============================================ §XVI : FEMA == */
+  .fema-types { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 22px; }
+  .fema-chip { font-family: var(--mono); font-size: 12px; padding: 4px 10px;
+    border: 1px solid var(--rule); background: rgba(255,255,255,0.5); color: var(--ink-soft); }
+  .fema-chip em { color: var(--accent); font-style: normal; margin-left: 4px; }
+  .fema-list { display: grid; gap: 4px; }
+  .fema-row { display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    padding: 10px 0; border-bottom: 1px dotted var(--rule); align-items: baseline; }
+  .fema-yr { font-family: var(--mono); color: var(--accent); font-size: 14px; }
+  .fema-name { font-family: var(--display); font-size: 16px; color: var(--ink); }
+  .fema-sub { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 2px;
+    letter-spacing: 0.04em; }
+  .fema-tail { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
+
+  /* ============================================ §XVII : HOURS = */
+  .gantt-wrap { margin-top: 18px; overflow-x: auto; }
+  .g-row { display: grid; grid-template-columns: 200px 1fr; gap: 14px;
+    align-items: center; padding: 6px 0; border-bottom: 1px dotted var(--rule); }
+  .g-row.g-head, .g-row.g-hours { border-bottom: 1px solid var(--rule); padding: 4px 0; }
+  .g-name { padding-right: 8px; }
+  .g-biz { font-family: var(--display); font-size: 15px; color: var(--ink); }
+  .g-type { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-soft); margin-top: 2px; }
+  .g-tracks { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .g-day { position: relative; height: 22px; background: rgba(255,255,255,0.35);
+    border: 1px solid var(--rule); }
+  .g-day-h { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-soft); text-align: center; }
+  .g-block { position: absolute; top: 2px; bottom: 2px; background: var(--accent);
+    opacity: 0.7; border-radius: 1px; }
+  .g-hour-track { background: transparent; border: 0; height: 12px; }
+  .g-tick { position: absolute; transform: translateX(-50%); top: 0;
+    font-family: var(--mono); font-size: 9px; color: var(--ink-soft); }
+
+  @media (max-width: 720px) {
+    .assess-grid { grid-template-columns: 1fr; }
+    .calc-body { grid-template-columns: 1fr; }
+    .m-head { grid-template-columns: repeat(2, 1fr); }
+    .m-row { grid-template-columns: 48px 1fr 56px; }
+    .m-row .m-method { display: none; }
+    .g-row { grid-template-columns: 130px 1fr; gap: 8px; }
+    .g-tracks { gap: 2px; }
+    .g-biz { font-size: 13px; }
+  }
 </style>
 </head>
 <body>
@@ -1449,7 +1575,94 @@
     <div id="historic-body"></div>
   </section>
 
-  <!-- ============================================ §XI SCHEMA == -->
+  <!-- ============================================ §XIII ASSESSMENTS -->
+  <section class="plate" id="sec-assessments">
+    <div class="section-head">
+      <div class="section-num">§ XIII · Assessments</div>
+      <h2 class="section-title">What every parcel is <em>worth on the books</em></h2>
+      <div class="endpoint">data.ny.gov · 7vem-aaz7 · bsmp-6um6</div>
+    </div>
+    <p class="dek">NY ORPTS publishes the annual assessment roll for every municipality. Read here for the village (SWIS 104401) and the surrounding town outside the village (104489): parcel count, total assessed value, total full-market value, and the dominant property classes. The Residential Assessment Ratio time series — the state's official assessed-to-market ratio — drives the calculator below.</p>
+    <div class="status" id="assess-status">Loading snapshot…</div>
+    <div class="assess-grid" id="assess-grid"></div>
+
+    <div class="calc" id="assess-calc" hidden>
+      <div class="calc-head">
+        <div class="calc-label">Assessment Calculator</div>
+        <div class="calc-sub">Enter a market price; see what the state's ratio would call its assessment.</div>
+      </div>
+      <div class="calc-body">
+        <label>
+          <span class="calc-cap">Market value</span>
+          <input type="number" id="calc-market" min="0" step="1000" value="450000" inputmode="numeric">
+        </label>
+        <label>
+          <span class="calc-cap">Jurisdiction</span>
+          <select id="calc-swis">
+            <option value="104400" selected>Town of Kinderhook (SWIS 104400)</option>
+            <option value="104401">Village pre-2005 (104401)</option>
+            <option value="104489">Town outside village (104489)</option>
+          </select>
+        </label>
+        <label>
+          <span class="calc-cap">Rate year</span>
+          <select id="calc-year"></select>
+        </label>
+      </div>
+      <div class="calc-out" id="calc-out"></div>
+      <p class="calc-foot">RAR is the state's official ratio between assessed value and full market value for residential property. Computed from a sample of arm's-length sales in each rate year.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ §XIV MARKET == -->
+  <section class="plate" id="sec-market">
+    <div class="section-head">
+      <div class="section-num">§ XIV · Market Movement</div>
+      <h2 class="section-title">How the state <em>measures</em> the village's market</h2>
+      <div class="endpoint">data.ny.gov · 4sut-q3dt</div>
+    </div>
+    <p class="dek">The state does not publish parcel-level sales records as machine-readable data — only county-level PDFs. What it does publish, annually, is what the sales <em>imply</em>: a residential market-value ratio, a coefficient of dispersion, and a price-related differential, computed from arm's-length sales in the Town of Kinderhook. The series below is the only legible signal of the local residential market in two decades.</p>
+    <div class="status" id="market-status">Loading snapshot…</div>
+    <div id="market-body"></div>
+  </section>
+
+  <!-- ============================================ §XV ACS == -->
+  <section class="plate" id="sec-acs">
+    <div class="section-head">
+      <div class="section-num">§ XV · Demographics</div>
+      <h2 class="section-title">Who the Census <em>says we are</em></h2>
+      <div class="endpoint">api.census.gov · acs/acs5</div>
+    </div>
+    <p class="dek">American Community Survey 5-Year estimates for two geographies: the incorporated Village of Kinderhook (place 36-39562) and the surrounding Town of Kinderhook (county subdivision 36-021-39573). The two are not the same place; the difference is most of the local story.</p>
+    <div class="status" id="acs-status">Loading snapshot…</div>
+    <div id="acs-body"></div>
+  </section>
+
+  <!-- ============================================ §XVI FEMA == -->
+  <section class="plate" id="sec-fema">
+    <div class="section-head">
+      <div class="section-num">§ XVI · Disaster Record</div>
+      <h2 class="section-title">What FEMA has <em>declared</em> here</h2>
+      <div class="endpoint">fema.gov/api/open/v2 · DisasterDeclarationsSummaries</div>
+    </div>
+    <p class="dek">Every federal disaster declaration that designated Columbia County, NY (FIPS 36-021), since 1965. One row per declaration. This is the legible record of what the federal government has said happened to this place — flood, fire, ice, pandemic — and which programs were authorized in response.</p>
+    <div class="status" id="fema-status">Loading snapshot…</div>
+    <div id="fema-body"></div>
+  </section>
+
+  <!-- ============================================ §XVII HOURS == -->
+  <section class="plate" id="sec-hours">
+    <div class="section-head">
+      <div class="section-num">§ XVII · Open Hours</div>
+      <h2 class="section-title">When the village is <em>actually open</em></h2>
+      <div class="endpoint">schema/hours/manifest.json</div>
+    </div>
+    <p class="dek">Neither CCT nor the village directory publishes machine-readable opening hours for any business in Kinderhook. The corpus below is hand-curated, in the editorial pattern of <span style="font-family:var(--mono);">schema/places/</span>: weekly hours per business, expressed as schema.org <span style="font-family:var(--mono);">openingHoursSpecification</span>. A reader (human or machine) can answer "what's open at 4 p.m. on a Sunday in April" without scraping a single page.</p>
+    <div class="status" id="hours-status">Loading corpus…</div>
+    <div class="gantt-wrap" id="hours-gantt"></div>
+  </section>
+
+  <!-- ============================================ §XII SCHEMA == -->
   <section class="plate" id="sec-schema">
     <div class="section-head">
       <div class="section-num">§ XII · Proposed Schema</div>
@@ -2490,6 +2703,276 @@ function renderHistoricLayer({ sites, people, summaries, newspapers }) {
   status.textContent = `${siteList.length} sites · ${peopleList.length} people · ${newspapers?.total?.toLocaleString() || '?'} newspaper mentions · snapshot ${stamp}`;
 }
 
+/* =============================================== §XIII : ASSESSMENTS = */
+function renderAssessments({ parcels, rar }) {
+  const status = $('#assess-status');
+  const grid   = $('#assess-grid');
+  const calc   = $('#assess-calc');
+
+  if (!parcels) {
+    status.className = 'status';
+    status.textContent = 'No ORPTS snapshot in this deploy. Run tools/fetch-orpts.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  const stamp = (parcels.fetchedAt || '').slice(0, 10);
+  status.textContent = `${parcels.counts.total.toLocaleString()} parcels · roll year ${parcels.rollYear} · snapshot ${stamp}`;
+
+  const fmt$ = (n) => n == null ? '—' : '$' + Math.round(n).toLocaleString();
+  const fmtN = (n) => n == null ? '—' : Math.round(n).toLocaleString();
+
+  const villageBucket = parcels.parcels.filter(p => p.swis_code === '104401');
+  const townBucket    = parcels.parcels.filter(p => p.swis_code === '104489');
+  const sumA = (rows) => rows.reduce((s, p) => s + (Number(p.assessment_total) || 0), 0);
+  const sumM = (rows) => rows.reduce((s, p) => s + (Number(p.full_market_value) || 0), 0);
+
+  const card = (label, rows) => {
+    const A = sumA(rows), M = sumM(rows);
+    return `
+      <div class="assess-card">
+        <div class="assess-card-head">${esc(label)}</div>
+        <div class="assess-stat"><span class="k">parcels</span><span class="v">${fmtN(rows.length)}</span></div>
+        <div class="assess-stat"><span class="k">assessed total</span><span class="v">${fmt$(A)}</span></div>
+        <div class="assess-stat"><span class="k">full market total</span><span class="v">${fmt$(M)}</span></div>
+        <div class="assess-stat"><span class="k">implied ratio</span><span class="v">${M ? (100 * A / M).toFixed(1) + '%' : '—'}</span></div>
+      </div>`;
+  };
+
+  const topClasses = parcels.propertyClasses.slice(0, 6).map(c =>
+    `<tr><td class="mono">${esc(c.code)}</td><td>${esc(c.description || '')}</td><td class="num">${fmtN(c.count)}</td><td class="num">${fmt$(c.assessedTotal)}</td></tr>`
+  ).join('');
+
+  grid.innerHTML = `
+    ${card('Village (SWIS 104401)', villageBucket)}
+    ${card('Town outside village (104489)', townBucket)}
+    <div class="assess-classes">
+      <div class="assess-card-head">Top property classes</div>
+      <table class="assess-table">
+        <thead><tr><th>Code</th><th>Description</th><th class="num">Parcels</th><th class="num">Assessed</th></tr></thead>
+        <tbody>${topClasses}</tbody>
+      </table>
+    </div>
+  `;
+
+  // Calculator wiring — uses the RAR series for assessed-from-market.
+  if (!rar) return;
+  calc.hidden = false;
+  const yearSel   = $('#calc-year');
+  const swisSel   = $('#calc-swis');
+  const marketIn  = $('#calc-market');
+  const out       = $('#calc-out');
+
+  function fillYears() {
+    const swis = swisSel.value;
+    const years = (rar.series[swis] || []).map(r => r.year).sort((a,b) => b - a);
+    yearSel.innerHTML = years.map((y, i) => `<option value="${y}"${i === 0 ? ' selected' : ''}>${y}</option>`).join('')
+      || '<option value="">—</option>';
+  }
+  function lookupRatio() {
+    const swis = swisSel.value;
+    const yr   = Number(yearSel.value);
+    const series = rar.series[swis] || [];
+    const row = series.find(r => r.year === yr);
+    return row?.ratio ?? null;
+  }
+  fillYears();
+  swisSel.addEventListener('change', () => { fillYears(); recompute(); });
+  function recompute() {
+    const market = Number(marketIn.value) || 0;
+    const ratio  = lookupRatio();
+    if (ratio == null) { out.innerHTML = '<em>No RAR for this jurisdiction/year.</em>'; return; }
+    const assessed = market * (ratio / 100);
+    out.innerHTML = `
+      <div class="calc-line"><span class="k">RAR (${esc(swisSel.value)} · ${esc(yearSel.value)})</span><span class="v">${ratio.toFixed(2)}%</span></div>
+      <div class="calc-line big"><span class="k">Implied assessed value</span><span class="v">${fmt$(assessed)}</span></div>
+      <div class="calc-line"><span class="k">Equivalent if RAR were 100%</span><span class="v">${fmt$(market)}</span></div>`;
+  }
+  [marketIn, swisSel, yearSel].forEach(el => el.addEventListener('input', recompute));
+  recompute();
+}
+
+/* =============================================== §XIV : MARKET == */
+function renderMarket(eq) {
+  const status = $('#market-status');
+  const body   = $('#market-body');
+  if (!eq) {
+    status.className = 'status';
+    status.textContent = 'No NY market-equity snapshot in this deploy. Run tools/fetch-ny-sales.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  status.textContent = `${eq.series.length} years · ${eq.municipality} (SWIS ${eq.swis}) · snapshot ${(eq.fetchedAt||'').slice(0,10)}`;
+
+  // Sparkline of residential_market_value_ratio over time.
+  const series = eq.series.filter(r => r.residential_market_value_ratio != null);
+  const max = Math.max(...series.map(r => r.residential_market_value_ratio));
+  const rows = series.map(r => {
+    const w = Math.round((r.residential_market_value_ratio / max) * 32);
+    return `<div class="m-row">
+      <div class="m-yr">${r.year}</div>
+      <div class="m-bar">${'▬'.repeat(w)}</div>
+      <div class="m-val">${r.residential_market_value_ratio?.toFixed(0)}%</div>
+      <div class="m-method">${esc(r.method_residential || '')}</div>
+    </div>`;
+  }).join('');
+
+  const latest = eq.latest;
+  body.innerHTML = `
+    <div class="m-head">
+      <div class="m-stat"><div class="k">Latest market-value ratio</div><div class="v">${latest.residential_market_value_ratio}%</div></div>
+      <div class="m-stat"><div class="k">Method</div><div class="v">${esc(latest.method_residential || '—')}</div></div>
+      <div class="m-stat"><div class="k">Coefficient of dispersion</div><div class="v">${latest.residential_cod ?? '—'}</div></div>
+      <div class="m-stat"><div class="k">Price-related differential</div><div class="v">${latest.residential_prd ?? '—'}</div></div>
+    </div>
+    <div class="m-grid">${rows}</div>
+    <p class="m-foot">A market-value ratio dropping over time means assessed values are lagging an appreciating market — the state's machine-readable trace of price movement here.</p>
+  `;
+}
+
+/* =============================================== §XV : ACS ==== */
+function renderACS({ village, town }) {
+  const status = $('#acs-status');
+  const body   = $('#acs-body');
+  if (!village && !town) {
+    status.className = 'status';
+    status.textContent = 'No ACS snapshot in this deploy. Run tools/fetch-acs.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  const stamp = (village?.fetchedAt || town?.fetchedAt || '').slice(0, 10);
+  status.textContent = `ACS 5-Year ${village?.vintage || town?.vintage} · village + town · snapshot ${stamp}`;
+
+  const fmt$ = (n) => n == null ? '—' : '$' + Math.round(n).toLocaleString();
+  const fmtN = (n) => n == null ? '—' : Math.round(n).toLocaleString();
+  const fmtPct = (num, den) => (num == null || !den) ? '—' : (100 * num / den).toFixed(1) + '%';
+
+  const e = (snap) => snap?.estimates || {};
+  const V = e(village), T = e(town);
+
+  const rows = [
+    ['Population',                 fmtN(V.population_total),                 fmtN(T.population_total)],
+    ['Median age',                 V.median_age ?? '—',                      T.median_age ?? '—'],
+    ['Households',                 fmtN(V.households_total),                 fmtN(T.households_total)],
+    ['Avg household size',         V.avg_household_size ?? '—',              T.avg_household_size ?? '—'],
+    ['Housing units',              fmtN(V.housing_units_total),              fmtN(T.housing_units_total)],
+    ['Owner-occupied',             fmtPct(V.tenure_owner_occupied, V.housing_units_occupied), fmtPct(T.tenure_owner_occupied, T.housing_units_occupied)],
+    ['Renter-occupied',            fmtPct(V.tenure_renter_occupied, V.housing_units_occupied), fmtPct(T.tenure_renter_occupied, T.housing_units_occupied)],
+    ['Vacant',                     fmtPct(V.housing_units_vacant, V.housing_units_total), fmtPct(T.housing_units_vacant, T.housing_units_total)],
+    ['Built 1939 or earlier',      fmtPct(V.yrbuilt_1939_or_earlier, V.yrbuilt_total), fmtPct(T.yrbuilt_1939_or_earlier, T.yrbuilt_total)],
+    ['Median home value',          fmt$(V.median_value_owner_occupied),      fmt$(T.median_value_owner_occupied)],
+    ['Median gross rent',          fmt$(V.median_gross_rent),                fmt$(T.median_gross_rent)],
+    ['Median household income',    fmt$(V.median_household_income),          fmt$(T.median_household_income)],
+    ['Per capita income',          fmt$(V.per_capita_income),                fmt$(T.per_capita_income)],
+    ['Below poverty',              fmtN(V.income_below_poverty_level),       fmtN(T.income_below_poverty_level)],
+    ['Commute ≥ 60 min',           fmtPct(V.commute_60_plus_min, V.commute_total_workers), fmtPct(T.commute_60_plus_min, T.commute_total_workers)],
+  ].map(([k,v,t]) => `<tr><th>${esc(k)}</th><td class="num">${esc(String(v))}</td><td class="num">${esc(String(t))}</td></tr>`).join('');
+
+  body.innerHTML = `
+    <table class="acs-table">
+      <thead><tr><th></th><th>Village (place)</th><th>Town (MCD)</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <p class="m-foot">Two distinct geographies. The town's count includes the village and the surrounding farmland; the difference between the two columns is the village's footprint as a Census-defined place.</p>
+  `;
+}
+
+/* =============================================== §XVI : FEMA == */
+function renderFEMA(snap) {
+  const status = $('#fema-status');
+  const body   = $('#fema-body');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No FEMA snapshot in this deploy. Run tools/fetch-fema.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  status.textContent = `${snap.counts.declarationsTotal} declarations · ${snap.geography.name} · snapshot ${(snap.fetchedAt||'').slice(0,10)}`;
+
+  const types = Object.entries(snap.byIncidentType).sort((a,b) => b[1] - a[1]);
+  const typesHtml = types.map(([t, n]) => `<span class="fema-chip">${esc(t)} <em>${n}</em></span>`).join('');
+
+  const list = snap.declarations.map(d => {
+    const yr = (d.declarationDate || '').slice(0, 4);
+    const programs = [
+      d.iaProgramDeclared ? 'IA' : null,
+      d.paProgramDeclared ? 'PA' : null,
+      d.hmProgramDeclared ? 'HM' : null,
+    ].filter(Boolean).join(' · ');
+    return `
+      <div class="fema-row">
+        <div class="fema-yr">${esc(yr)}</div>
+        <div>
+          <div class="fema-name">${esc(d.declarationTitle || d.incidentType)}</div>
+          <div class="fema-sub">${esc(d.incidentType)} · ${esc(d.declarationType)}-${esc(String(d.disasterNumber))}${programs ? ' · ' + esc(programs) : ''}</div>
+        </div>
+        <div class="fema-tail">${esc((d.incidentBeginDate||'').slice(0,10))} → ${esc((d.incidentEndDate||'').slice(0,10) || 'open')}</div>
+      </div>`;
+  }).join('');
+
+  body.innerHTML = `
+    <div class="fema-types">${typesHtml}</div>
+    <div class="fema-list">${list}</div>
+  `;
+}
+
+/* =============================================== §XVII : HOURS = */
+function renderHours(snap) {
+  const status = $('#hours-status');
+  const wrap   = $('#hours-gantt');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No hours corpus committed yet. See schema/hours/manifest.json.';
+    return;
+  }
+  status.className = 'status ok';
+  status.textContent = `${snap.businesses.length} businesses · hand-curated · ${snap.updated}`;
+
+  const days = ['Mo','Tu','We','Th','Fr','Sa','Su'];
+  const dayLabels = { Mo:'Mon', Tu:'Tue', We:'Wed', Th:'Thu', Fr:'Fri', Sa:'Sat', Su:'Sun' };
+  const TOTAL_MIN = 24 * 60;
+  const toMin = (hhmm) => { const [h,m] = hhmm.split(':').map(Number); return h*60 + m; };
+
+  const head = `
+    <div class="g-row g-head">
+      <div class="g-name"></div>
+      <div class="g-tracks">
+        ${days.map(d => `<div class="g-day-h">${dayLabels[d]}</div>`).join('')}
+      </div>
+    </div>
+    <div class="g-row g-hours">
+      <div class="g-name"></div>
+      <div class="g-tracks">
+        ${days.map(() => `<div class="g-day g-hour-track">
+          <span class="g-tick" style="left:25%">6a</span>
+          <span class="g-tick" style="left:50%">12p</span>
+          <span class="g-tick" style="left:75%">6p</span>
+        </div>`).join('')}
+      </div>
+    </div>`;
+
+  const rows = snap.businesses.map(b => {
+    const tracks = days.map(d => {
+      const slots = b.hours.filter(h => h.day === d);
+      const blocks = slots.map(s => {
+        const left = (toMin(s.opens) / TOTAL_MIN) * 100;
+        const width = ((toMin(s.closes) - toMin(s.opens)) / TOTAL_MIN) * 100;
+        return `<div class="g-block" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%;" title="${esc(s.opens)}–${esc(s.closes)}"></div>`;
+      }).join('');
+      return `<div class="g-day">${blocks}</div>`;
+    }).join('');
+    return `
+      <div class="g-row">
+        <div class="g-name">
+          <div class="g-biz">${esc(b.name)}</div>
+          <div class="g-type">${esc(b.type || '')}${b.seasonal ? ` · ${esc(b.seasonal)}` : ''}</div>
+        </div>
+        <div class="g-tracks">${tracks}</div>
+      </div>`;
+  }).join('');
+
+  wrap.innerHTML = head + rows;
+}
+
 /* =============================================== §VI : SCHEMA === */
 function renderGeneratedSchema(town, data) {
   const venues = data.venues || [];
@@ -2675,7 +3158,8 @@ async function audit(town) {
 
     // Auxiliary snapshots — used by the synthesizing sections (finding,
     // gaps, schema, asks). Each can be absent without breaking the page.
-    const [village, cctBizIndex, cctBusinesses, histSites, histPeople, histSummaries, histNewspapers] = await Promise.all([
+    const [village, cctBizIndex, cctBusinesses, histSites, histPeople, histSummaries, histNewspapers,
+           orptsParcels, orptsRar, marketEquity, acsVillage, acsTown, fema, hours] = await Promise.all([
       loadSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
       loadSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
       loadSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
@@ -2683,11 +3167,23 @@ async function audit(town) {
       loadSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-people.json'),
       loadSnapshot('./data/snapshots/wikipedia/latest-kinderhook-summaries.json'),
       loadSnapshot('./data/snapshots/loc/latest-kinderhook-chronicling-america.json'),
+      loadSnapshot('./data/snapshots/orpts/latest-parcels.json'),
+      loadSnapshot('./data/snapshots/orpts/latest-rar.json'),
+      loadSnapshot('./data/snapshots/nysales/latest-equity.json'),
+      loadSnapshot('./data/snapshots/acs/latest-village.json'),
+      loadSnapshot('./data/snapshots/acs/latest-town.json'),
+      loadSnapshot('./data/snapshots/fema/latest-disasters.json'),
+      loadSnapshot('./schema/hours/manifest.json'),
     ]);
 
     renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });
     renderCCTBusinesses(cctBusinesses);
     renderHistoricLayer({ sites: histSites, people: histPeople, summaries: histSummaries, newspapers: histNewspapers });
+    renderAssessments({ parcels: orptsParcels, rar: orptsRar });
+    renderMarket(marketEquity);
+    renderACS({ village: acsVillage, town: acsTown });
+    renderFEMA(fema);
+    renderHours(hours);
     renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
     renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople, coverage });
     renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint });
