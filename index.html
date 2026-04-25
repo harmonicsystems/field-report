@@ -2505,9 +2505,18 @@ function renderGeneratedSchema(town, data) {
                     || normalize(primaryVenue.venue).includes(normalize(o.name)))
     : null;
 
+  // Real, dereferenceable identifiers throughout. The village's @id is
+  // its Wikidata entity (Q3478629) — we describe Q3478629, we don't mint
+  // a new ID for a thing the commons already names. CCT venues use their
+  // CCT URL as @id.
+  const villageQid = (xr.config?.wikidata || ['Q3478629'])[0];
+  const VILLAGE_ID = `https://www.wikidata.org/wiki/${villageQid}`;
+  const venueId = primaryVenue?.url
+    || (primaryVenue ? `https://columbiacountytourism.org/venue/${(decode(primaryVenue.venue) || 'place').toLowerCase().replace(/[^a-z]+/g,'-')}/` : null);
+
   const place = primaryVenue ? {
     "@type": "Place",
-    "@id": `https://fieldreports.harmonic-systems.org/kinderhook/places/${(decode(primaryVenue.venue)||'place').toLowerCase().replace(/[^a-z]+/g,'-')}`,
+    "@id": venueId,
     "name": decode(primaryVenue.venue),
     "address": {
       "@type": "PostalAddress",
@@ -2517,9 +2526,8 @@ function renderGeneratedSchema(town, data) {
       "postalCode": primaryVenue.zip || "",
       "addressCountry": "US"
     },
-    "containedInPlace": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+    "containedInPlace": { "@id": VILLAGE_ID },
     "sameAs": [
-      primaryVenue.url,
       venueOsm ? `https://www.openstreetmap.org/${venueOsm.type}/${venueOsm.id}` : null,
     ].filter(Boolean),
     ...(venueOsm?.lat && venueOsm?.lon ? {
@@ -2535,7 +2543,7 @@ function renderGeneratedSchema(town, data) {
     "@graph": [
       {
         "@type": "Place",
-        "@id": `https://fieldreports.harmonic-systems.org/${town}/`,
+        "@id": VILLAGE_ID,
         "name": town.charAt(0).toUpperCase() + town.slice(1),
         "alternateName": town === 'kinderhook' ? ["Kinderhoeck", "Old Kinderhook"] : [],
         "containedInPlace": {
@@ -2545,7 +2553,9 @@ function renderGeneratedSchema(town, data) {
         },
         "sameAs": [
           xr.config?.officialSite || null,
-          ...(xr.config?.wikidata || []).map(q => `https://www.wikidata.org/wiki/${q}`),
+          // Note: village @id is already Wikidata Q3478629; sameAs lists
+          // *other* identifiers for the same entity.
+          ...(xr.config?.wikidata || []).slice(1).map(q => `https://www.wikidata.org/wiki/${q}`),
           xr.config?.wikipedia ? `https://en.wikipedia.org/wiki/${xr.config.wikipedia}` : null,
           `https://columbiacountytourism.org/?s=${town}`,
         ].filter(Boolean)
@@ -2581,7 +2591,7 @@ function renderGeneratedSchema(town, data) {
         ...(s.description ? { "description": s.description } : {}),
         ...(s.nrhp ? { "identifier": { "@type": "PropertyValue", "propertyID": "NRHP", "value": s.nrhp } } : {}),
         ...(s.inception ? { "dateCreated": s.inception.slice(0, 10) } : {}),
-        "containedInPlace": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+        "containedInPlace": { "@id": VILLAGE_ID },
         "sameAs": [s.wikipedia, `https://www.wikidata.org/wiki/${s.qid}`].filter(Boolean),
       }))),
 
@@ -2597,7 +2607,7 @@ function renderGeneratedSchema(town, data) {
         ...(c.publication ? { "publisher": { "@type": "Organization", "name": c.publication, ...(c.publicationUrl ? { "url": c.publicationUrl } : {}) } } : {}),
         ...(c.datePublished ? { "datePublished": c.datePublished } : {}),
         ...(c.summary ? { "abstract": c.summary } : {}),
-        "about": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+        "about": { "@id": VILLAGE_ID },
         "isAccessibleForFree": true,
       }))),
 
@@ -2610,7 +2620,7 @@ function renderGeneratedSchema(town, data) {
         ...(p.description ? { "description": p.description } : {}),
         ...(p.birth ? { "birthDate": p.birth.slice(0, 10) } : {}),
         ...(p.death ? { "deathDate": p.death.slice(0, 10) } : {}),
-        "birthPlace": { "@id": `https://fieldreports.harmonic-systems.org/${town}/` },
+        "birthPlace": { "@id": VILLAGE_ID },
         "sameAs": [p.wikipedia, `https://www.wikidata.org/wiki/${p.qid}`].filter(Boolean),
       }))),
     ]

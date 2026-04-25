@@ -1,12 +1,12 @@
 {
   "slug": "kinderhook-farmers-market",
   "editor": "david@harmonic-systems.org",
-  "lastReviewed": "2026-04-24",
+  "lastReviewed": "2026-04-25",
   "sources": [
     "https://columbiacountytourism.org/business/kinderhook-farmers-market/",
     "local knowledge (Kinderhook resident)"
   ],
-  "notes": "Hard case per ontology: Event + Organization + Place linked. Address intentionally left generic until verified from a primary source.",
+  "notes": "Hard case per ontology: Event + Organization + Place linked. The Organization (KBPA) and the Place (Village Green) are sub-entities within this file, addressed via fragment IDs. Address intentionally left generic until verified from a primary source.",
   "jsonld": {
     "@context": [
       "https://schema.org",
@@ -15,7 +15,7 @@
     "@graph": [
       {
         "@type": "Event",
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/events/kinderhook-farmers-market",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json",
         "name": "Kinderhook Farmers' Market",
         "description": "Seasonal community farmers' market in the Village of Kinderhook. Saturdays, May through October.",
         "eventSchedule": {
@@ -29,8 +29,8 @@
         },
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "organizer": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/orgs/kbpa" },
-        "location": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green" },
+        "organizer": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#kbpa" },
+        "location": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green" },
         "isAccessibleForFree": true,
         "sameAs": [
           "https://columbiacountytourism.org/business/kinderhook-farmers-market/"
@@ -42,8 +42,8 @@
         },
         "kh:affectiveRegister": "The weekly rhythm that tells the village it is summer. Small, volunteer-run, unhurried.",
         "kh:culturalOrbit": [
-          { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green" },
-          { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/the-aviary" }
+          { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green" },
+          { "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json" }
         ],
         "kh:localNotes": [
           { "date": "2026-04-24", "note": "Entry created. Season dates reflect typical pattern; verify against current KBPA announcement before the opening Saturday." }
@@ -51,17 +51,17 @@
       },
       {
         "@type": "Organization",
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/orgs/kbpa",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#kbpa",
         "name": "Kinderhook Business & Professional Association",
         "alternateName": "KBPA",
         "description": "Volunteer association of businesses and residents that organizes civic activities in the Village of Kinderhook, including the farmers' market."
       },
       {
         "@type": ["Place", "CivicStructure"],
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green",
         "name": "Village Green",
         "description": "The central public green in the Village of Kinderhook. Host site for the farmers' market and other community gatherings.",
-        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/" },
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
         "isAccessibleForFree": true,
         "publicAccess": true,
         "kh:functionalProximity": "The centre. Everything in the village is measured from here."

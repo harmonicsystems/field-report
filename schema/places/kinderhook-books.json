@@ -1,7 +1,7 @@
 {
   "slug": "kinderhook-books",
   "editor": "david@harmonic-systems.org",
-  "lastReviewed": "2026-04-24",
+  "lastReviewed": "2026-04-25",
   "sources": [
     "https://columbiacountytourism.org/business/kinderhook-books/"
   ],
@@ -14,10 +14,10 @@
     "@graph": [
       {
         "@type": "BookStore",
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-books",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-books.json",
         "name": "Kinderhook Books",
         "description": "Independent bookseller in the Village of Kinderhook. Books and bookish gifts.",
-        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/" },
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Kinderhook",

@@ -8,7 +8,7 @@
   "@graph": [
     {
       "@type": "Place",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/",
+      "@id": "https://www.wikidata.org/wiki/Q3478629",
       "name": "Kinderhook",
       "alternateName": [
         "Kinderhoeck",
@@ -29,7 +29,7 @@
     },
     {
       "@type": "Place",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-yoga",
+      "@id": "https://columbiacountytourism.org/venue/village-yoga/",
       "name": "Village Yoga",
       "address": {
         "@type": "PostalAddress",
@@ -40,7 +40,7 @@
         "addressCountry": "US"
       },
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://columbiacountytourism.org/venue/village-yoga/"
@@ -55,13 +55,13 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-yoga"
+        "@id": "https://columbiacountytourism.org/venue/village-yoga/"
       },
       "description": "Come out for Opening Day for the Market!\nEnjoy selections from local farmers offering a wide variety of goods, produce, naturally raised meats, baked goods, flowers, plants, honey, crafts, live music and MORE!!"
     },
     {
       "@type": "Event",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/events/kinderhook-farmers-market",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json",
       "name": "Kinderhook Farmers' Market",
       "description": "Seasonal community farmers' market in the Village of Kinderhook. Saturdays, May through October.",
       "eventSchedule": {
@@ -76,10 +76,10 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/orgs/kbpa"
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#kbpa"
       },
       "location": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green"
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green"
       },
       "isAccessibleForFree": true,
       "sameAs": [
@@ -100,10 +100,10 @@
       "kh:affectiveRegister": "The weekly rhythm that tells the village it is summer. Small, volunteer-run, unhurried.",
       "kh:culturalOrbit": [
         {
-          "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green"
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green"
         },
         {
-          "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/the-aviary"
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json"
         }
       ],
       "kh:localNotes": [
@@ -115,7 +115,7 @@
     },
     {
       "@type": "Organization",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/orgs/kbpa",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#kbpa",
       "name": "Kinderhook Business & Professional Association",
       "alternateName": "KBPA",
       "description": "Volunteer association of businesses and residents that organizes civic activities in the Village of Kinderhook, including the farmers' market."
@@ -125,11 +125,11 @@
         "Place",
         "CivicStructure"
       ],
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green",
       "name": "Village Green",
       "description": "The central public green in the Village of Kinderhook. Host site for the farmers' market and other community gatherings.",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "isAccessibleForFree": true,
       "publicAccess": true,
@@ -137,11 +137,11 @@
     },
     {
       "@type": "Restaurant",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/the-aviary",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json",
       "name": "The Aviary",
       "description": "Restaurant occupying the soaring cathedral-ceilinged interior of the historic Kinderhook Knitting Mill.",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill"
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json#kinderhook-knitting-mill"
       },
       "address": {
         "@type": "PostalAddress",
@@ -155,10 +155,10 @@
       "kh:affectiveRegister": "A room whose architecture does the aesthetic work; the interior carries the occasion without decoration trying to.",
       "kh:culturalOrbit": [
         {
-          "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill"
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json#kinderhook-knitting-mill"
         },
         {
-          "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/ok-pantry"
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/ok-pantry.json"
         }
       ]
     },
@@ -167,11 +167,11 @@
         "Place",
         "LandmarksOrHistoricalBuildings"
       ],
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json#kinderhook-knitting-mill",
       "name": "Kinderhook Knitting Mill",
       "description": "Nineteenth-century knitting mill in the historic core of the Village of Kinderhook, adaptively reused as a multi-tenant building that currently houses The Aviary and OK Pantry, among others.",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "kh:localNotes": [
         {
@@ -182,11 +182,11 @@
     },
     {
       "@type": "BookStore",
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-books",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-books.json",
       "name": "Kinderhook Books",
       "description": "Independent bookseller in the Village of Kinderhook. Books and bookish gifts.",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "address": {
         "@type": "PostalAddress",
@@ -204,11 +204,11 @@
         "Hotel",
         "LodgingBusiness"
       ],
-      "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/old-dutch-inn",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/old-dutch-inn.json",
       "name": "Old Dutch Inn",
       "description": "Boutique hotel in the heart of the historic Dutch-founded Village of Kinderhook.",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "address": {
         "@type": "PostalAddress",
@@ -223,7 +223,7 @@
       "kh:affectiveRegister": "The village's canonical lodging. Rooms in a house whose exterior has been there long enough to orient the rest of the street.",
       "kh:culturalOrbit": [
         {
-          "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green"
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green"
         }
       ]
     },
@@ -244,7 +244,7 @@
       "datePublished": "2023-05-17",
       "abstract": "Kinderhook in New York is a 248-year-old Dutch town that combines the latest art, design and eclectic cuisine.",
       "about": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "isAccessibleForFree": true
     },
@@ -264,7 +264,7 @@
       },
       "abstract": "Kinderhook is O.K. IYKYK.",
       "about": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "isAccessibleForFree": true
     },
@@ -279,7 +279,7 @@
         "value": "97000412"
       },
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Crow_Hill",
@@ -292,7 +292,7 @@
       "name": "Kinderhook Cemetery",
       "description": "cemetery in Kinderhook, New York",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Kinderhook_Cemetery",
@@ -305,7 +305,7 @@
       "name": "Shufelt Cemetery",
       "description": "cemetery in Columbia County, New York, United States",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117579346"
@@ -317,7 +317,7 @@
       "name": "Reformed Dutch Church of Kinderhook",
       "description": "church building in United States of America",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Reformed_Dutch_Church_(Kinderhook,_New_York)",
@@ -330,7 +330,7 @@
       "name": "Saint Marys Cemetery",
       "description": "cemetery in Columbia County, New York, United States",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117611388"
@@ -347,7 +347,7 @@
         "value": "79001574"
       },
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/First_Presbyterian_Church_(Valatie,_New_York)",
@@ -365,7 +365,7 @@
         "value": "91000612"
       },
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Nathan_Wild_House",
@@ -383,7 +383,7 @@
         "value": "76001210"
       },
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Stuyvesant_Falls_Mill_District",
@@ -396,7 +396,7 @@
       "name": "Saint Pauls Episcopal Church Cemetery",
       "description": "cemetery in Columbia County, New York, United States",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117592869"
@@ -408,7 +408,7 @@
       "name": "Ichabod Crane Schoolhouse",
       "description": "historic site in Kinderhook, NY",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Ichabod_Crane_Schoolhouse",
@@ -426,7 +426,7 @@
         "value": "67000011"
       },
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Van_Alen_House",
@@ -444,7 +444,7 @@
         "value": "74001227"
       },
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Kinderhook_Village_District",
@@ -457,7 +457,7 @@
       "name": "Saint John the Baptist Cemetery",
       "description": "cemetery in Columbia County, New York, United States",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117689171"
@@ -469,7 +469,7 @@
       "name": "African-Americans Cemetery",
       "description": "cemetery in Columbia County, New York, United States",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117648524"
@@ -481,7 +481,7 @@
       "name": "Stuyvesant Falls Cemetery",
       "description": "cemetery in Hudson, New York",
       "containedInPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q110667203"
@@ -495,7 +495,7 @@
       "birthDate": "1782-12-05",
       "deathDate": "1862-07-24",
       "birthPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Martin_Van_Buren",
@@ -510,7 +510,7 @@
       "birthDate": "1783-03-08",
       "deathDate": "1819-02-05",
       "birthPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Hannah_Van_Buren",
@@ -525,7 +525,7 @@
       "birthDate": "1934-06-01",
       "deathDate": "2018-12-18",
       "birthPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Peter_Masterson",
@@ -540,7 +540,7 @@
       "birthDate": "1795-12-17",
       "deathDate": "1858-11-08",
       "birthPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Benjamin_Franklin_Butler_(lawyer)",
@@ -555,7 +555,7 @@
       "birthDate": "1782-01-26",
       "deathDate": "1852-12-15",
       "birthPlace": {
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/"
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
       },
       "sameAs": [
         "https://en.wikipedia.org/wiki/Cornelius_P._Van_Ness",
@@ -565,7 +565,7 @@
   ],
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-04-25T17:38:01.668Z",
+    "builtAt": "2026-04-25T18:26:09.497Z",
     "sources": {
       "events": "2026-04-25T14:43:53.230Z",
       "venues": "2026-04-25T14:43:54.718Z",

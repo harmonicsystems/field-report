@@ -1,11 +1,11 @@
 {
   "slug": "the-aviary",
   "editor": "david@harmonic-systems.org",
-  "lastReviewed": "2026-04-24",
+  "lastReviewed": "2026-04-25",
   "sources": [
     "https://columbiacountytourism.org/business/the-aviary/"
   ],
-  "notes": "Hard case per ontology: restaurant-in-historic-building is two linked Places. The Mill is modelled separately because it outlives any particular tenant.",
+  "notes": "Hard case per ontology: restaurant-in-historic-building is two linked Places. The Mill is modelled separately because it outlives any particular tenant. The Mill's @id is a fragment within this file.",
   "jsonld": {
     "@context": [
       "https://schema.org",
@@ -14,10 +14,10 @@
     "@graph": [
       {
         "@type": "Restaurant",
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/the-aviary",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json",
         "name": "The Aviary",
         "description": "Restaurant occupying the soaring cathedral-ceilinged interior of the historic Kinderhook Knitting Mill.",
-        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill" },
+        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json#kinderhook-knitting-mill" },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Kinderhook",
@@ -29,16 +29,16 @@
         ],
         "kh:affectiveRegister": "A room whose architecture does the aesthetic work; the interior carries the occasion without decoration trying to.",
         "kh:culturalOrbit": [
-          { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill" },
-          { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/ok-pantry" }
+          { "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json#kinderhook-knitting-mill" },
+          { "@id": "https://fieldreports.harmonic-systems.org/schema/places/ok-pantry.json" }
         ]
       },
       {
         "@type": ["Place", "LandmarksOrHistoricalBuildings"],
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/kinderhook-knitting-mill",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json#kinderhook-knitting-mill",
         "name": "Kinderhook Knitting Mill",
         "description": "Nineteenth-century knitting mill in the historic core of the Village of Kinderhook, adaptively reused as a multi-tenant building that currently houses The Aviary and OK Pantry, among others.",
-        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/" },
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
         "kh:localNotes": [
           { "date": "2026-04-24", "note": "The building outlives its tenants. Model it as a durable Place so future occupants attach to it without losing continuity." }
         ]

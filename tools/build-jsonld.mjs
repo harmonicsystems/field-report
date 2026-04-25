@@ -30,7 +30,11 @@ const PLACE = {
   officialSite: 'https://www.villageofkinderhook.org/',
 };
 
-const VILLAGE_ID = `https://fieldreports.harmonic-systems.org/${TOWN}/`;
+// The village's canonical @id is its Wikidata entity. We're describing
+// Q3478629; we're not minting a new identifier for a place the commons
+// already named. Every "containedInPlace" reference to the village
+// resolves to a real, machine-readable Wikidata page.
+const VILLAGE_ID = `https://www.wikidata.org/wiki/${PLACE.wikidata[0]}`;
 
 async function readJson(rel, fallback = null) {
   try {
@@ -106,11 +110,14 @@ async function main() {
     ].filter(Boolean),
   });
 
-  // 2. Primary venue Place (if any).
+  // 2. Primary venue Place (if any). Use the venue's CCT URL as @id —
+  //    that's where the entity is described authoritatively.
   if (primaryVenue) {
+    const venueId = primaryVenue.url
+      || `https://columbiacountytourism.org/venue/${(primaryVenue.slug || (primaryVenue.venue || 'place').toLowerCase().replace(/[^a-z]+/g, '-'))}/`;
     graph.push({
       "@type": "Place",
-      "@id": `${VILLAGE_ID}places/${(primaryVenue.venue || 'place').toLowerCase().replace(/[^a-z]+/g, '-')}`,
+      "@id": venueId,
       "name": primaryVenue.venue,
       "address": {
         "@type": "PostalAddress",
@@ -130,8 +137,10 @@ async function main() {
       } : {}),
     });
   }
+  const venueId = primaryVenue?.url
+    || (primaryVenue ? `https://columbiacountytourism.org/venue/${(primaryVenue.venue || 'place').toLowerCase().replace(/[^a-z]+/g, '-')}/` : null);
 
-  // 3. Primary upcoming event (if any).
+  // 3. Primary upcoming event (if any). @id is CCT's canonical URL for the event.
   if (primaryEvent) {
     graph.push({
       "@type": "Event",
@@ -141,7 +150,7 @@ async function main() {
       "endDate": primaryEvent.end_date,
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      ...(primaryVenue ? { "location": { "@id": `${VILLAGE_ID}places/${(primaryVenue.venue || 'place').toLowerCase().replace(/[^a-z]+/g, '-')}` } } : {}),
+      ...(venueId ? { "location": { "@id": venueId } } : {}),
       ...(primaryEvent.organizer?.[0] ? {
         "organizer": { "@type": "Organization", "name": primaryEvent.organizer[0].organizer },
       } : {}),

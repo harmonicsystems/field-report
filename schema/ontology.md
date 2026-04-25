@@ -104,16 +104,42 @@ to Van Buren's Wikidata item `Q11817`.
 
 ## Identifiers
 
-All Kinderhook `@id`s follow:
+Every `@id` in this corpus must resolve to a real, dereferenceable URL.
+We do not mint identifiers for things the commons already names; we do
+not invent URL patterns whose pages don't exist. The rules:
 
-```
-https://fieldreports.harmonic-systems.org/kinderhook/places/{slug}
-https://fieldreports.harmonic-systems.org/kinderhook/people/{slug}
-https://fieldreports.harmonic-systems.org/kinderhook/events/{slug}
-```
+- **The village itself** is `https://www.wikidata.org/wiki/Q3478629`.
+  Wikidata is the canonical record; we describe Q3478629, we don't
+  rename it. Every `containedInPlace` reference to the village resolves
+  to a real Wikidata page.
 
-These are permanent. If we later split the report into multiple
-deployments, the IDs stay; only the hosting changes.
+- **Curated places we maintain** use the file URL of their JSON-LD as
+  `@id`. The Aviary, for example, is
+  `https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json`.
+  The file IS the entity's representation; fetching it returns the
+  JSON-LD that describes it. No invented URL pattern, no 404.
+
+- **Sub-entities defined within a curated file** (e.g., the Knitting
+  Mill described inside `the-aviary.json`) use a fragment within that
+  file's URL: `…/the-aviary.json#kinderhook-knitting-mill`. Standard
+  JSON-LD pattern. The fragment ID is a slug.
+
+- **Cross-references to entities we have not yet curated** (e.g.,
+  `ok-pantry` mentioned from `the-aviary.json` before its file exists)
+  use the file URL the entity *will* live at:
+  `…/schema/places/ok-pantry.json`. The reference resolves the moment
+  someone creates the file. This is forward-compatible, not invented.
+
+- **Entities owned by other authorities** (CCT venues, CCT events,
+  Wikipedia-described people, NRHP sites) use the authority's URL
+  directly. We're consumers of those identifiers, not minters. CCT's
+  `https://columbiacountytourism.org/venue/village-yoga/` is what
+  Village Yoga's `@id` should be.
+
+The earlier draft of this section described an invented pattern under
+`/kinderhook/places/{slug}` etc. That pattern was abandoned: those URLs
+did not resolve, so the JSON-LD was making structural promises the
+deploy could not keep.
 
 ## What we do not model
 

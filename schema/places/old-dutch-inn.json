@@ -1,7 +1,7 @@
 {
   "slug": "old-dutch-inn",
   "editor": "david@harmonic-systems.org",
-  "lastReviewed": "2026-04-24",
+  "lastReviewed": "2026-04-25",
   "sources": [
     "https://columbiacountytourism.org/business/old-dutch-inn/",
     "OpenStreetMap node 10873536573"
@@ -15,10 +15,10 @@
     "@graph": [
       {
         "@type": ["Hotel", "LodgingBusiness"],
-        "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/old-dutch-inn",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/old-dutch-inn.json",
         "name": "Old Dutch Inn",
         "description": "Boutique hotel in the heart of the historic Dutch-founded Village of Kinderhook.",
-        "containedInPlace": { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/" },
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Kinderhook",
@@ -31,7 +31,7 @@
         ],
         "kh:affectiveRegister": "The village's canonical lodging. Rooms in a house whose exterior has been there long enough to orient the rest of the street.",
         "kh:culturalOrbit": [
-          { "@id": "https://fieldreports.harmonic-systems.org/kinderhook/places/village-green" }
+          { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green" }
         ]
       }
     ]
