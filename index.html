@@ -1123,6 +1123,53 @@
     opacity: 0.7;
   }
 
+  .jsonld-wrap pre {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    white-space: pre;
+  }
+
+  .jsonld-preview {
+    /* The teaser: first entity, in full, plus a structural comment. */
+  }
+
+  .jsonld-full {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(244, 239, 228, 0.18);
+  }
+
+  .jsonld-full > summary {
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    padding: 6px 0;
+    user-select: none;
+  }
+  .jsonld-full > summary::-webkit-details-marker { display: none; }
+  .jsonld-full > summary::before {
+    content: '▸  ';
+    color: var(--accent-soft);
+    display: inline-block;
+    transition: transform 0.15s;
+  }
+  .jsonld-full[open] > summary::before {
+    content: '▾  ';
+  }
+  .jsonld-full > summary:hover { color: var(--bg); }
+
+  .jsonld-full[open] .jsonld-pre {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(244, 239, 228, 0.18);
+  }
+
   .jsonld-note {
     font-family: var(--display);
     font-style: italic;
@@ -2569,7 +2616,32 @@ function renderGeneratedSchema(town, data) {
     ]
   };
 
-  $('#jsonld-out').textContent = JSON.stringify(schema, null, 2);
+  // Render a preview (first entity) + a <details> for the full graph.
+  // The full document is also addressable at /kinderhook.json — linked above.
+  const fullText = JSON.stringify(schema, null, 2);
+  const fullLines = fullText.split('\n').length;
+  const entityCount = schema['@graph'].length;
+  const ctxText = JSON.stringify({ "@context": schema['@context'] }, null, 2)
+    .replace(/^{|\n}$/g, '').replace(/^\s{2}/gm, '').trimEnd().replace(/,$/, '');
+  const firstEntity = JSON.stringify(schema['@graph'][0], null, 2)
+    .split('\n').map(l => '    ' + l).join('\n');
+
+  const previewText =
+`{
+  ${ctxText},
+  "@graph": [
+${firstEntity},
+    /* + ${entityCount - 1} more entities — expand below, or fetch /kinderhook.json */
+  ]
+}`;
+
+  $('#jsonld-out').innerHTML = `
+    <pre class="jsonld-preview">${esc(previewText)}</pre>
+    <details class="jsonld-full">
+      <summary>Show the full graph · ${entityCount} entities · ${fullLines.toLocaleString()} lines</summary>
+      <pre class="jsonld-pre">${esc(fullText)}</pre>
+    </details>
+  `;
 }
 
 /* =============================================== ORCHESTRATION == */
