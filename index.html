@@ -1645,9 +1645,9 @@
       <span><span class="vol">Vol. I</span> · Kinderhook Node · Pilot Edition</span>
     </div>
     <h1 class="title">The Kinderhook <em>Field Report</em></h1>
-    <p class="subtitle">What the machines currently see when they look for the village — and what they don't.</p>
+    <p class="subtitle">How findable Kinderhook is to the channels its commerce depends on.</p>
     <div class="byline">
-      Conducted by <strong>Harmonic Systems</strong> · Data read live from <strong>columbiacountytourism.org</strong>
+      Conducted by <strong>Harmonic Systems</strong> · A civic-vitality and machine-legibility report on <strong>Kinderhook, NY</strong>
     </div>
   </header>
 
@@ -1655,8 +1655,9 @@
   <article class="editors-note">
     <div class="label">Editor's Note</div>
     <div>
-      <p>The web that's arriving is not only read by humans. Language models, search assistants, and agentic tools increasingly answer questions like <em>"where can I get fresh produce in the Hudson Valley this Saturday?"</em> — and they can only recommend what they can structurally read. A village whose institutions publish only prose will be invisible to that layer of the internet, no matter how much prose they write.</p>
-      <p>This is a civic legibility audit of Kinderhook, New York. It reads what machines currently see when they look for the village, notes what they miss, and publishes the schema.org markup that would close the gap. The concrete case we keep returning to is the <strong>Kinderhook Farmers Market</strong> — seasonal, volunteer-run, no standalone website — the exact kind of civic institution the new web is worst at discovering, and the one this project is built to make findable.</p>
+      <p>Kinderhook has 1,351 residents. Six hundred twenty-two households cannot, by themselves, sustain the bookstore, the wine bar, the bagel shop, the hotel, the restaurants, the gallery, the farmers' market. Local demand alone funds maybe three or four storefronts; everything beyond that runs on outside spending. The village's commercial life — and therefore its tax base, its historic preservation, the conditions that make it the village it is — depends on tourism.</p>
+      <p>That tourism is, geographically, well-positioned. Two and a half hours from New York City; twenty-five minutes from Albany; a fifteen-minute drive from an Amtrak station that puts Manhattan inside two hours by rail. Kinderhook sits inside the weekend reach of seventeen million people and just upstream of the Hudson Valley wave that has already remade Hudson, Rhinebeck, Beacon. The window is open and finite.</p>
+      <p>But geography is necessary, not sufficient. Visitors increasingly plan trips by asking phones, search engines, and AI assistants <em>"where should we go for a weekend in the Hudson Valley?"</em> Those channels can only recommend what they can <em>structurally</em> read. This report reads what those channels currently see when they look for Kinderhook — across the county tourism site, the village's own pages, state and federal records, and the broader commons — and publishes the schema.org markup that would close the gap. The concrete case we keep returning to is the <strong>Kinderhook Farmers' Market</strong>: seasonal, volunteer-run, no standalone website — and the exact kind of asset this village's commerce depends on visitors being able to find.</p>
     </div>
   </article>
 
@@ -2636,7 +2637,7 @@ function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBu
 
   // Live numbers in bold; copy degrades sentence-by-sentence if a fetch fails.
   const lede = N
-    ? `Of <strong>${N}</strong> places currently hosting scheduled events on Columbia County Tourism's calendar, <strong>${v}</strong> ${v === 1 ? 'is' : 'are'} in the Village of Kinderhook${single ? ` — <em>${esc(single)}</em>, a yoga studio.` : '.'}`
+    ? `Of <strong>${N}</strong> places currently hosting scheduled events on Columbia County Tourism's calendar, <strong>${v}</strong> ${v === 1 ? 'is' : 'are'} in the Village of Kinderhook${single ? ` — <em>${esc(single)}</em>, a yoga studio.` : '.'} To a phone or an AI assistant asked <em>"what's worth a weekend trip from NYC?"</em>, that one yoga studio is, structurally, the entire village.`
     : `Columbia County Tourism's event-venue database could not be read on this load.`;
 
   const bizLine = (B != null)
@@ -2648,7 +2649,7 @@ function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBu
     : '';
 
   const close = (K || B)
-    ? ` The entire legible-by-machine Kinderhook surface of the new web is, today, one yoga studio.`
+    ? ` Kinderhook's commerce depends on tourism. Its tourism depends on visitors finding it. Visitors find it through the channels that publish every other Hudson Valley village. Those channels can only recommend what they can structurally read. A village that is invisible to that surface is, in commercial terms, not there.`
     : '';
 
   el.innerHTML = `<p class="finding-lede">${lede}</p><p class="finding-foot">${bizLine}${villageLine}${close}</p>`;
