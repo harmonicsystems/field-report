@@ -1310,13 +1310,47 @@
   .m-foot { font-style: italic; color: var(--ink-soft); font-size: 13px; margin-top: 16px; }
 
   /* ============================================ §XV : ACS ==== */
-  .acs-table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14px; }
+  .acs-table {
+    width: 100%; max-width: 720px;
+    table-layout: fixed; border-collapse: collapse;
+    margin: 18px 0 0; font-size: 14px;
+  }
+  .acs-table col.acs-c-label { width: 48%; }
+  .acs-table col.acs-c-num   { width: 26%; }
   .acs-table th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--ink-soft); padding: 8px 10px; border-bottom: 1px solid var(--rule); }
-  .acs-table td { padding: 6px 10px; border-bottom: 1px dotted var(--rule); }
-  .acs-table td.num { font-family: var(--mono); text-align: right; }
+  .acs-table thead th.num { text-align: right; }
+  .acs-table td { padding: 7px 10px; border-bottom: 1px dotted var(--rule); }
+  .acs-table td.num { font-family: var(--mono); text-align: right; white-space: nowrap; }
   .acs-table tbody th { color: var(--ink); font-family: var(--body); text-transform: none;
     letter-spacing: 0; font-weight: 500; font-size: 14px; }
+  .acs-section-row th { padding-top: 16px; color: var(--accent);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; border-bottom: 1px solid var(--rule); }
+
+  .acs-insights {
+    margin-top: 24px; padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  .acs-insights-h {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  .acs-insights ul { list-style: none; margin: 0; padding: 0; }
+  .acs-insights li {
+    font-family: var(--body); font-size: 15px; line-height: 1.55;
+    color: var(--ink); padding: 8px 0; max-width: 680px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .acs-insights li:last-child { border-bottom: 0; }
+  .acs-insights li strong { color: var(--accent); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .acs-table col.acs-c-label { width: 44%; }
+    .acs-table col.acs-c-num   { width: 28%; }
+    .acs-table td, .acs-table th { padding: 6px 6px; font-size: 13px; }
+    .acs-insights li { font-size: 14px; }
+  }
 
   /* ============================================ §XVI : FEMA == */
   .fema-types { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 22px; }
@@ -1333,7 +1367,7 @@
   .fema-tail { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
 
   /* ============================================ §XVII : HOURS = */
-  .gantt-wrap { margin-top: 18px; overflow-x: auto; }
+  .gantt-wrap { margin-top: 18px; }
   .g-row { display: grid; grid-template-columns: 200px 1fr; gap: 14px;
     align-items: center; padding: 6px 0; border-bottom: 1px dotted var(--rule); }
   .g-row.g-head, .g-row.g-hours { border-bottom: 1px solid var(--rule); padding: 4px 0; }
@@ -1351,6 +1385,24 @@
   .g-hour-track { background: transparent; border: 0; height: 12px; }
   .g-tick { position: absolute; transform: translateX(-50%); top: 0;
     font-family: var(--mono); font-size: 9px; color: var(--ink-soft); }
+
+  /* Below ~640px the seven-day × four-tick grid becomes unreadable.
+     Stack the business label above its tracks, drop the tick row,
+     and let the existing g-head day labels span full width as a
+     sticky-ish strip at the top. The chart remains the chart —
+     just legible. */
+  @media (max-width: 640px) {
+    .g-row { grid-template-columns: 1fr; gap: 6px; padding: 10px 0; align-items: stretch; }
+    .g-row.g-head { padding: 8px 0 4px; position: sticky; top: 0;
+      background: var(--bg); z-index: 1; }
+    .g-row.g-hours { display: none; }   /* tick labels are unreadable here */
+    .g-tracks { gap: 2px; }
+    .g-day { height: 18px; }
+    .g-day-h { font-size: 9px; letter-spacing: 0.04em; padding: 0 1px; }
+    .g-tick { display: none; }
+    .g-biz { font-size: 14px; }
+    .g-type { font-size: 9px; }
+  }
 
   /* Generic fold (collapsed-by-default supplemental list). */
   details.fold {
@@ -2900,30 +2952,122 @@ function renderACS({ village, town }) {
   const e = (snap) => snap?.estimates || {};
   const V = e(village), T = e(town);
 
-  const rows = [
-    ['Population',                 fmtN(V.population_total),                 fmtN(T.population_total)],
-    ['Median age',                 V.median_age ?? '—',                      T.median_age ?? '—'],
-    ['Households',                 fmtN(V.households_total),                 fmtN(T.households_total)],
-    ['Avg household size',         V.avg_household_size ?? '—',              T.avg_household_size ?? '—'],
-    ['Housing units',              fmtN(V.housing_units_total),              fmtN(T.housing_units_total)],
-    ['Owner-occupied',             fmtPct(V.tenure_owner_occupied, V.housing_units_occupied), fmtPct(T.tenure_owner_occupied, T.housing_units_occupied)],
-    ['Renter-occupied',            fmtPct(V.tenure_renter_occupied, V.housing_units_occupied), fmtPct(T.tenure_renter_occupied, T.housing_units_occupied)],
-    ['Vacant',                     fmtPct(V.housing_units_vacant, V.housing_units_total), fmtPct(T.housing_units_vacant, T.housing_units_total)],
-    ['Built 1939 or earlier',      fmtPct(V.yrbuilt_1939_or_earlier, V.yrbuilt_total), fmtPct(T.yrbuilt_1939_or_earlier, T.yrbuilt_total)],
-    ['Median home value',          fmt$(V.median_value_owner_occupied),      fmt$(T.median_value_owner_occupied)],
-    ['Median gross rent',          fmt$(V.median_gross_rent),                fmt$(T.median_gross_rent)],
-    ['Median household income',    fmt$(V.median_household_income),          fmt$(T.median_household_income)],
-    ['Per capita income',          fmt$(V.per_capita_income),                fmt$(T.per_capita_income)],
-    ['Below poverty',              fmtPct(V.income_below_poverty_level, V.poverty_universe), fmtPct(T.income_below_poverty_level, T.poverty_universe)],
-    ['Commute ≥ 60 min',           fmtPct(V.commute_60_plus_min, V.commute_total_workers), fmtPct(T.commute_60_plus_min, T.commute_total_workers)],
-  ].map(([k,v,t]) => `<tr><th>${esc(k)}</th><td class="num">${esc(String(v))}</td><td class="num">${esc(String(t))}</td></tr>`).join('');
+  const groups = [
+    ['People', [
+      ['Population',                 fmtN(V.population_total),                 fmtN(T.population_total)],
+      ['Median age',                 V.median_age ?? '—',                      T.median_age ?? '—'],
+      ['Hispanic or Latino',         fmtPct(V.hispanic_or_latino, V.population_total), fmtPct(T.hispanic_or_latino, T.population_total)],
+      ['White alone',                fmtPct(V.race_white_alone, V.population_total),   fmtPct(T.race_white_alone, T.population_total)],
+      ['Black alone',                fmtPct(V.race_black_alone, V.population_total),   fmtPct(T.race_black_alone, T.population_total)],
+      ['Asian alone',                fmtPct(V.race_asian_alone, V.population_total),   fmtPct(T.race_asian_alone, T.population_total)],
+    ]],
+    ['Households', [
+      ['Households',                 fmtN(V.households_total),                 fmtN(T.households_total)],
+      ['Avg household size',         V.avg_household_size ?? '—',              T.avg_household_size ?? '—'],
+      ['Family households',          fmtPct(V.households_family, V.households_total), fmtPct(T.households_family, T.households_total)],
+      ['Non-family households',      fmtPct(V.households_nonfamily, V.households_total), fmtPct(T.households_nonfamily, T.households_total)],
+    ]],
+    ['Housing', [
+      ['Housing units',              fmtN(V.housing_units_total),              fmtN(T.housing_units_total)],
+      ['Owner-occupied',             fmtPct(V.tenure_owner_occupied, V.housing_units_occupied), fmtPct(T.tenure_owner_occupied, T.housing_units_occupied)],
+      ['Renter-occupied',            fmtPct(V.tenure_renter_occupied, V.housing_units_occupied), fmtPct(T.tenure_renter_occupied, T.housing_units_occupied)],
+      ['Vacant',                     fmtPct(V.housing_units_vacant, V.housing_units_total), fmtPct(T.housing_units_vacant, T.housing_units_total)],
+      ['Built 1939 or earlier',      fmtPct(V.yrbuilt_1939_or_earlier, V.yrbuilt_total), fmtPct(T.yrbuilt_1939_or_earlier, T.yrbuilt_total)],
+      ['Built 1940–1949',            fmtPct(V.yrbuilt_1940_1949, V.yrbuilt_total), fmtPct(T.yrbuilt_1940_1949, T.yrbuilt_total)],
+      ['Built 2014 or later',        fmtPct(V.yrbuilt_2014_or_later, V.yrbuilt_total), fmtPct(T.yrbuilt_2014_or_later, T.yrbuilt_total)],
+      ['Median home value',          fmt$(V.median_value_owner_occupied),      fmt$(T.median_value_owner_occupied)],
+      ['Median gross rent',          fmt$(V.median_gross_rent),                fmt$(T.median_gross_rent)],
+    ]],
+    ['Income & commute', [
+      ['Median household income',    fmt$(V.median_household_income),          fmt$(T.median_household_income)],
+      ['Per capita income',          fmt$(V.per_capita_income),                fmt$(T.per_capita_income)],
+      ['Below poverty',              fmtPct(V.income_below_poverty_level, V.poverty_universe), fmtPct(T.income_below_poverty_level, T.poverty_universe)],
+      ['Commute ≥ 60 min',           fmtPct(V.commute_60_plus_min, V.commute_total_workers), fmtPct(T.commute_60_plus_min, T.commute_total_workers)],
+    ]],
+  ];
+
+  const rowsHtml = groups.map(([groupName, rows]) => {
+    const head = `<tr class="acs-section-row"><th colspan="3">${esc(groupName)}</th></tr>`;
+    const body = rows
+      .filter(([, v, t]) => v !== '—' || t !== '—')
+      .map(([k,v,t]) => `<tr><th>${esc(k)}</th><td class="num">${esc(String(v))}</td><td class="num">${esc(String(t))}</td></tr>`)
+      .join('');
+    return head + body;
+  }).join('');
+
+  // ---------- Auto-derived insights ----------
+  const insights = [];
+  const pct = (n, d) => (n != null && d) ? (100 * n / d) : null;
+
+  if (V.median_age && T.median_age) {
+    const diff = +(V.median_age - T.median_age).toFixed(1);
+    if (Math.abs(diff) >= 1) {
+      insights.push(`The village skews <strong>${Math.abs(diff)} years ${diff > 0 ? 'older' : 'younger'}</strong> than the surrounding town (${V.median_age} vs ${T.median_age}).`);
+    }
+  }
+
+  // Pre-1950 housing combined.
+  const vPre50 = (V.yrbuilt_1939_or_earlier || 0) + (V.yrbuilt_1940_1949 || 0);
+  const tPre50 = (T.yrbuilt_1939_or_earlier || 0) + (T.yrbuilt_1940_1949 || 0);
+  if (V.yrbuilt_total && T.yrbuilt_total) {
+    const vp = pct(vPre50, V.yrbuilt_total), tp = pct(tPre50, T.yrbuilt_total);
+    insights.push(`<strong>${vp.toFixed(0)}%</strong> of village homes were built before 1950 (${tp.toFixed(0)}% in the surrounding town) — the historic-core effect made tangible.`);
+  }
+
+  // Vacancy contrast.
+  const vVac = pct(V.housing_units_vacant, V.housing_units_total);
+  const tVac = pct(T.housing_units_vacant, T.housing_units_total);
+  if (vVac != null && tVac != null && (tVac - vVac) >= 3) {
+    insights.push(`Village vacancy is <strong>${vVac.toFixed(1)}%</strong> versus the town's <strong>${tVac.toFixed(1)}%</strong> — the seasonal-second-home pattern lives in the surrounding farmland, not the village core.`);
+  }
+
+  // Home-value premium.
+  if (V.median_value_owner_occupied && T.median_value_owner_occupied) {
+    const diff = V.median_value_owner_occupied - T.median_value_owner_occupied;
+    if (Math.abs(diff) >= 5000) {
+      insights.push(`Median home value is <strong>${fmt$(V.median_value_owner_occupied)}</strong> in the village versus <strong>${fmt$(T.median_value_owner_occupied)}</strong> in the town — a ${fmt$(Math.abs(diff))} ${diff > 0 ? 'premium' : 'discount'} for the village footprint.`);
+    }
+  }
+
+  // Per-capita vs household income — the smaller-household effect.
+  if (V.per_capita_income && T.per_capita_income && V.median_household_income && T.median_household_income
+      && V.per_capita_income > T.per_capita_income && V.median_household_income < T.median_household_income) {
+    insights.push(`Per-capita income is higher in the village (<strong>${fmt$(V.per_capita_income)}</strong> vs ${fmt$(T.per_capita_income)}), but household income is lower (${fmt$(V.median_household_income)} vs ${fmt$(T.median_household_income)}). The math: village households are smaller (<strong>${V.avg_household_size}</strong> vs ${T.avg_household_size}) — many one-person.`);
+  }
+
+  // Hispanic share.
+  const vHisp = pct(V.hispanic_or_latino, V.population_total);
+  const tHisp = pct(T.hispanic_or_latino, T.population_total);
+  if (vHisp != null && tHisp != null) {
+    insights.push(`Hispanic or Latino population: <strong>${vHisp.toFixed(1)}%</strong> in the village, <strong>${tHisp.toFixed(1)}%</strong> in the surrounding town.`);
+  }
+
+  // Non-family households.
+  const vNF = pct(V.households_nonfamily, V.households_total);
+  const tNF = pct(T.households_nonfamily, T.households_total);
+  if (vNF != null && tNF != null && (vNF - tNF) >= 5) {
+    insights.push(`<strong>${vNF.toFixed(0)}%</strong> of village households are non-family (one person living alone, or unrelated roommates), versus ${tNF.toFixed(0)}% in the surrounding town.`);
+  }
+
+  const insightsHtml = insights.length
+    ? `<div class="acs-insights">
+         <div class="acs-insights-h">Reading the table</div>
+         <ul>${insights.map(s => `<li>${s}</li>`).join('')}</ul>
+       </div>`
+    : '';
 
   body.innerHTML = `
     <table class="acs-table">
-      <thead><tr><th></th><th>Village (place)</th><th>Town (MCD)</th></tr></thead>
-      <tbody>${rows}</tbody>
+      <colgroup>
+        <col class="acs-c-label">
+        <col class="acs-c-num">
+        <col class="acs-c-num">
+      </colgroup>
+      <thead><tr><th></th><th class="num">Village (place)</th><th class="num">Town (MCD)</th></tr></thead>
+      <tbody>${rowsHtml}</tbody>
     </table>
-    <p class="m-foot">Two distinct geographies. The town's count includes the village and the surrounding farmland; the difference between the two columns is the village's footprint as a Census-defined place. ACS 5-Year estimates pool five years of survey responses (so each value is an average centered on the vintage year, not a point-in-time count); margins of error are not shown here, but are non-trivial for a 1,351-person place — treat differences smaller than ~10% as inconclusive.</p>
+    ${insightsHtml}
+    <p class="m-foot">Two distinct geographies. The town's count includes the village and the surrounding farmland; the difference between the two columns is the village's footprint as a Census-defined place. ACS 5-Year estimates pool five years of survey responses (so each value is an average centered on the vintage year, not a point-in-time count); margins of error are not shown here, but are non-trivial for a ${fmtN(V.population_total)}-person place — treat differences smaller than ~10% as inconclusive.</p>
   `;
 }
 
