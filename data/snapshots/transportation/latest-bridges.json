@@ -1,0 +1,88 @@
+{
+  "fetchedAt": "2026-04-26T14:07:31.727Z",
+  "fetcher": "tools/fetch-transportation.mjs",
+  "source": "https://data.ny.gov/resource/wpyb-cjy8.json",
+  "bridges": [
+    {
+      "bin": "3342130",
+      "municipality": "Kinderhook (Village)",
+      "yearBuilt": 1930,
+      "lastInspection": "2019-10-02",
+      "feature": "COUNTY ROAD 21",
+      "crosses": "KINDERHOOK CREEK",
+      "owner": "County",
+      "poor": false,
+      "location": "AT KINDERHOOK"
+    },
+    {
+      "bin": "3342140",
+      "municipality": "Kinderhook (Village)",
+      "yearBuilt": 1930,
+      "lastInspection": "2019-10-16",
+      "feature": "COUNTY ROAD 21",
+      "crosses": "BR KINDERHOOK CRK",
+      "owner": "County",
+      "poor": false,
+      "location": "0.5 MI SE OF KINDERHOOK"
+    },
+    {
+      "bin": "1005459",
+      "municipality": "Kinderhook (Town)",
+      "yearBuilt": 1937,
+      "lastInspection": "2019-08-28",
+      "feature": "9H  9H81011174",
+      "crosses": "9   9 81063127",
+      "owner": "NYSDOT",
+      "poor": false,
+      "location": "1.5 MI S JCT RTS 9H+9"
+    },
+    {
+      "bin": "1006529",
+      "municipality": "Kinderhook (Town)",
+      "yearBuilt": 1938,
+      "lastInspection": "2019-06-25",
+      "feature": "9H  9H81011162",
+      "crosses": "CR 21",
+      "owner": "NYSDOT",
+      "poor": false,
+      "location": "2.7 MI S JCT RTS 9H + 9"
+    },
+    {
+      "bin": "1040180",
+      "municipality": "Kinderhook (Town)",
+      "yearBuilt": 1986,
+      "lastInspection": "2018-04-17",
+      "feature": "203 203 81011104",
+      "crosses": "KLINE KILL",
+      "owner": "NYSDOT",
+      "poor": false,
+      "location": "4 MI SOUTH VALATIE"
+    },
+    {
+      "bin": "3222020",
+      "municipality": "Kinderhook (Town)",
+      "yearBuilt": 1998,
+      "lastInspection": "2019-04-15",
+      "feature": "MERWIN ROAD",
+      "crosses": "KLINE KILL",
+      "owner": "County",
+      "poor": false,
+      "location": "1.9 MI SE OF VALATIE"
+    },
+    {
+      "bin": "3342240",
+      "municipality": "Kinderhook (Town)",
+      "yearBuilt": 2004,
+      "lastInspection": "2018-12-18",
+      "feature": "COUNTY ROAD 28",
+      "crosses": "VALATIE KILL",
+      "owner": "County",
+      "poor": false,
+      "location": "2.1 MI N OF VALATIE"
+    }
+  ],
+  "counts": {
+    "total": 7,
+    "poor": 0
+  }
+}

@@ -1366,6 +1366,116 @@
     letter-spacing: 0.04em; }
   .fema-tail { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
 
+  /* ============================================ CONTENTS ===== */
+  .contents {
+    padding: 24px 28px; margin-bottom: 56px;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    background: transparent;
+  }
+  .contents-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+  }
+  .contents-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 4px 24px;
+  }
+  .contents-list li { padding: 4px 0; }
+  .contents-list a {
+    font-family: var(--body); font-size: 14px; color: var(--ink);
+    text-decoration: none; display: grid;
+    grid-template-columns: 70px 1fr; gap: 10px; align-items: baseline;
+  }
+  .contents-list a:hover { color: var(--accent); }
+  .contents-list a:hover .c-num { color: var(--accent); }
+  .contents-list .c-num {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-soft);
+    text-align: right;
+  }
+  @media (max-width: 600px) {
+    .contents { padding: 18px 16px; margin-bottom: 32px; }
+    .contents-list { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  /* ============================================ §XIX : MARKETS  */
+  .market-card {
+    display: grid; grid-template-columns: 200px 1fr; gap: 28px;
+    padding: 22px 26px; margin: 18px 0;
+    background: var(--bg-plate); border: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .market-card-h {
+    font-family: var(--display); font-variation-settings: 'opsz' 60;
+    font-size: 26px; line-height: 1.15; color: var(--ink); margin: 0 0 4px;
+  }
+  .market-card-sub {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+  }
+  .market-meta { display: grid; gap: 6px; font-size: 14px; }
+  .market-meta dt {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .market-meta dd { margin: 0 0 6px; color: var(--ink); font-family: var(--body); }
+  .market-flag {
+    display: inline-block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid var(--accent); color: var(--accent);
+    padding: 2px 6px; margin-right: 4px;
+  }
+  .market-flag.off { border-color: var(--rule); color: var(--ink-soft); }
+  @media (max-width: 600px) {
+    .market-card { grid-template-columns: 1fr; gap: 14px; padding: 16px 18px; }
+  }
+
+  /* ============================================ §XX : TRANSPORT  */
+  .transport-grid {
+    display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 14px;
+  }
+  .transport-h {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 0 0 10px;
+  }
+  .aadt-row {
+    display: grid; grid-template-columns: 80px 1fr 100px; gap: 14px;
+    align-items: baseline; padding: 6px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 14px;
+  }
+  .aadt-row:first-of-type { border-top: 1px dotted var(--rule); }
+  .aadt-route { font-family: var(--mono); color: var(--accent);
+    font-size: 12px; letter-spacing: 0.06em; }
+  .aadt-seg { color: var(--ink-soft); font-style: italic; font-size: 13px; }
+  .aadt-bar-cell { display: grid; grid-template-columns: 1fr 60px; gap: 10px; align-items: baseline; }
+  .aadt-bar {
+    height: 6px; background: var(--accent); opacity: 0.65;
+  }
+  .aadt-num { font-family: var(--mono); font-size: 13px; color: var(--ink);
+    text-align: right; }
+
+  .bridge-row {
+    display: grid; grid-template-columns: 90px 1fr 110px; gap: 14px;
+    align-items: baseline; padding: 8px 0;
+    border-bottom: 1px dotted var(--rule); font-size: 14px;
+  }
+  .bridge-row:first-of-type { border-top: 1px dotted var(--rule); }
+  .bridge-bin { font-family: var(--mono); font-size: 11px;
+    color: var(--ink-soft); letter-spacing: 0.04em; }
+  .bridge-name { color: var(--ink); font-family: var(--display); font-size: 16px; }
+  .bridge-sub { color: var(--ink-soft); font-size: 12px; font-style: italic; }
+  .bridge-when { font-family: var(--mono); font-size: 11px; color: var(--ink-soft);
+    text-align: right; }
+  .bridge-row.poor .bridge-when { color: var(--accent); font-weight: 600; }
+  @media (max-width: 600px) {
+    .aadt-row { grid-template-columns: 60px 1fr 60px; gap: 8px; font-size: 13px; }
+    .bridge-row { grid-template-columns: 70px 1fr 80px; gap: 8px; font-size: 13px; }
+    .aadt-bar-cell { grid-template-columns: 1fr 40px; gap: 6px; }
+  }
+
   /* ============================================ §XVIII : CSC == */
   .csc-hero {
     display: grid; grid-template-columns: 220px 1fr; gap: 32px;
@@ -1582,6 +1692,33 @@
       </ul>
     </div>
   </aside>
+
+  <!-- ============================================ CONTENTS ===== -->
+  <nav class="contents" aria-label="Contents">
+    <div class="contents-label">Contents</div>
+    <ol class="contents-list">
+      <li><a href="#sec-ontology"><span class="c-num">§ I</span> Ontology</a></li>
+      <li><a href="#sec-footprint"><span class="c-num">§ II</span> CCT Footprint</a></li>
+      <li><a href="#sec-events"><span class="c-num">§ III</span> Events</a></li>
+      <li><a href="#sec-venues"><span class="c-num">§ IV</span> Event Venues</a></li>
+      <li><a href="#sec-editorial"><span class="c-num">§ V</span> Editorial Record</a></li>
+      <li><a href="#sec-coverage"><span class="c-num">§ VI</span> Independent Coverage</a></li>
+      <li><a href="#sec-businesses"><span class="c-num">§ VII</span> CCT Businesses</a></li>
+      <li><a href="#sec-gaps"><span class="c-num">§ VIII</span> Diagnostic</a></li>
+      <li><a href="#sec-crossrefs"><span class="c-num">§ IX</span> Cross-references</a></li>
+      <li><a href="#sec-curated"><span class="c-num">§ X</span> Curated Places</a></li>
+      <li><a href="#sec-historic"><span class="c-num">§ XI</span> Historic Layer</a></li>
+      <li><a href="#sec-assess"><span class="c-num">§ XIII</span> Assessments</a></li>
+      <li><a href="#sec-market"><span class="c-num">§ XIV</span> Market Movement</a></li>
+      <li><a href="#sec-acs"><span class="c-num">§ XV</span> Demographics</a></li>
+      <li><a href="#sec-fema"><span class="c-num">§ XVI</span> Disaster Record</a></li>
+      <li><a href="#sec-hours"><span class="c-num">§ XVII</span> Open Hours</a></li>
+      <li><a href="#sec-csc"><span class="c-num">§ XVIII</span> Climate Smart</a></li>
+      <li><a href="#sec-markets"><span class="c-num">§ XIX</span> Farmers Markets</a></li>
+      <li><a href="#sec-transport"><span class="c-num">§ XX</span> Transportation</a></li>
+      <li><a href="#sec-schema"><span class="c-num">§ XII</span> Proposed Schema</a></li>
+    </ol>
+  </nav>
 
   <!-- ============================================ §I ONTOLOGY === -->
   <section class="plate" id="sec-ontology">
@@ -1833,6 +1970,30 @@
     <p class="dek">The Climate Smart Communities program, run by the NYS Department of Environmental Conservation, is a statewide ladder: jurisdictions take a pledge across ten policy categories, then earn points for documented actions to escalate from Registered → Bronze → Silver → Gold. Below: the village's certification status, the Columbia County peers it sits among, and the statewide context.</p>
     <div class="status" id="csc-status">Loading snapshot…</div>
     <div id="csc-body"></div>
+  </section>
+
+  <!-- ============================================ §XIX MARKETS = -->
+  <section class="plate" id="sec-markets">
+    <div class="section-head">
+      <div class="section-num">§ XIX · Farmers Markets</div>
+      <h2 class="section-title">What the state <em>knows</em> about the market</h2>
+      <div class="endpoint">data.ny.gov · qq4h-8p86</div>
+    </div>
+    <p class="dek">The NYS Department of Agriculture and Markets keeps the authoritative public record of every farmers' market in the state — operating season, weekly hours, SNAP/EBT acceptance, contact. The Kinderhook Farmers' Market we curated by hand at <span style="font-family:var(--mono);">schema/places/</span> appears here too. The state is a primary source we cite; the curated entry is the editorial overlay.</p>
+    <div class="status" id="markets-status">Loading snapshot…</div>
+    <div id="markets-body"></div>
+  </section>
+
+  <!-- ============================================ §XX TRANSPORT  -->
+  <section class="plate" id="sec-transport">
+    <div class="section-head">
+      <div class="section-num">§ XX · Transportation Infrastructure</div>
+      <h2 class="section-title">The roads that <em>carry</em> the village</h2>
+      <div class="endpoint">data.ny.gov · 6amx-2pbv · wpyb-cjy8</div>
+    </div>
+    <p class="dek">NYSDOT publishes Annual Average Daily Traffic counts for every roadway segment under state inventory, and condition data for every state-owned bridge. Below: how many vehicles pass through Kinderhook on a given day, and the structures that carry them across the village's creeks.</p>
+    <div class="status" id="transport-status">Loading snapshot…</div>
+    <div id="transport-body"></div>
   </section>
 
   <!-- ============================================ §XII SCHEMA == -->
@@ -3250,6 +3411,142 @@ function renderFEMA(snap) {
 }
 
 /* =============================================== §XVII : HOURS = */
+/* =============================================== §XIX : MARKETS  */
+function renderFarmersMarkets(snap) {
+  const status = $('#markets-status');
+  const body   = $('#markets-body');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No farmers-markets snapshot in this deploy. Run tools/fetch-farmers-markets.mjs.';
+    return;
+  }
+  const stamp = (snap.fetchedAt || '').slice(0, 10);
+  status.className = 'status ok';
+  status.textContent = `${snap.counts.county} markets in Columbia County · ${snap.counts.statewide ?? '?'} statewide · snapshot ${stamp}`;
+
+  const v = snap.village;
+  const flag = (val, label) => {
+    const on = String(val || '').toLowerCase().includes('y') || String(val || '').toLowerCase().includes('accept');
+    return `<span class="market-flag${on ? '' : ' off'}">${esc(label)}${on ? '' : ' · no'}</span>`;
+  };
+
+  const villageHtml = v ? `
+    <div class="market-card">
+      <div>
+        <div class="market-card-sub">State record</div>
+        <p class="market-card-h">${esc(v.name)}</p>
+        <div>${flag(v.snapStatus, 'SNAP / EBT')}${flag(v.fmnp, 'FMNP coupons')}</div>
+      </div>
+      <dl class="market-meta">
+        ${v.location ? `<dt>Location</dt><dd>${esc(v.location)}</dd>` : ''}
+        ${v.address  ? `<dt>Address</dt><dd>${esc(v.address)}${v.zip ? ', ' + esc(v.zip) : ''}</dd>` : ''}
+        ${v.operationSeason ? `<dt>Season</dt><dd>${esc(v.operationSeason)}</dd>` : ''}
+        ${v.operationHours  ? `<dt>Hours</dt><dd>${esc(v.operationHours)}</dd>` : ''}
+        ${v.contact ? `<dt>Contact</dt><dd>${esc(v.contact)}</dd>` : ''}
+        ${v.website ? `<dt>Website</dt><dd><a href="${esc(v.website)}" target="_blank" rel="noopener">${esc(v.website)}</a></dd>` : ''}
+      </dl>
+    </div>` : `<p class="m-foot">No state record found for a Kinderhook market.</p>`;
+
+  const peers = (snap.county || []).filter(m => !v || m.name !== v.name);
+  const peersHtml = peers.length ? `
+    <div class="csc-block-h">Other Columbia County markets</div>
+    <div class="csc-county">
+      ${peers.map(m => `
+        <div class="csc-peer">
+          <span class="csc-peer-name">${esc(m.name)} <em>${esc(m.city || '')}</em></span>
+          <span class="csc-peer-status">${esc((m.operationSeason || '').slice(0, 18))}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  body.innerHTML = `
+    ${villageHtml}
+    ${peersHtml}
+    <p class="m-foot">Source: NYS Department of Agriculture and Markets, published via data.ny.gov dataset qq4h-8p86. The hand-curated entry at <span style="font-family:var(--mono);">schema/places/kinderhook-farmers-market.json</span> overlays editorial detail (organizer, cultural orbit, kh: namespace fields) on the state's record.</p>
+  `;
+}
+
+/* =============================================== §XX : TRANSPORT  */
+function renderTransportation({ aadt, bridges }) {
+  const status = $('#transport-status');
+  const body   = $('#transport-body');
+  if (!aadt && !bridges) {
+    status.className = 'status';
+    status.textContent = 'No transportation snapshot in this deploy. Run tools/fetch-transportation.mjs.';
+    return;
+  }
+  const stamps = [aadt?.fetchedAt, bridges?.fetchedAt].filter(Boolean).map(s => s.slice(0, 10));
+  status.className = 'status ok';
+  const aadtCount = aadt?.stations?.length || 0;
+  const brCount = bridges?.bridges?.length || 0;
+  const brPoor = bridges?.counts?.poor || 0;
+  status.textContent = `${aadtCount} traffic stations (year ${aadt?.latestYear || '?'}) · ${brCount} bridges (${brPoor} poor) · snapshot ${stamps[0] || '—'}`;
+
+  const stations = (aadt?.stations || []).slice(0, 18);
+  const maxAadt = Math.max(1, ...stations.map(s => s.aadt || 0));
+  const fmt = (n) => n == null ? '—' : n.toLocaleString();
+
+  const aadtHtml = stations.length ? `
+    <div>
+      <h3 class="transport-h">Annual Average Daily Traffic · ${esc(aadt.latestYear)}</h3>
+      ${stations.map(s => {
+        const w = ((s.aadt || 0) / maxAadt * 100).toFixed(1);
+        return `
+          <div class="aadt-row">
+            <div class="aadt-route">${esc((s.signing || '') + ' ' + (s.route || ''))}</div>
+            <div class="aadt-bar-cell">
+              <div class="aadt-bar" style="width:${w}%"></div>
+              <div class="aadt-seg">${esc(s.from)} → ${esc(s.to)}</div>
+            </div>
+            <div class="aadt-num">${fmt(s.aadt)}</div>
+          </div>`;
+      }).join('')}
+    </div>` : '';
+
+  const bridgeHtml = (bridges?.bridges || []).length ? `
+    <div>
+      <h3 class="transport-h">State-inventoried bridges</h3>
+      ${bridges.bridges.map(b => `
+        <div class="bridge-row${b.poor ? ' poor' : ''}">
+          <div class="bridge-bin">BIN ${esc(b.bin)}</div>
+          <div>
+            <div class="bridge-name">${esc(b.feature)} <span class="bridge-sub">over ${esc(b.crosses)}</span></div>
+            <div class="bridge-sub">${esc(b.owner || '')}${b.municipality ? ' · ' + esc(b.municipality) : ''}</div>
+          </div>
+          <div class="bridge-when">
+            built ${esc(String(b.yearBuilt || '?'))}<br>
+            insp ${esc(b.lastInspection || '?')}${b.poor ? ' · POOR' : ''}
+          </div>
+        </div>`).join('')}
+    </div>` : '';
+
+  // Editorial findings.
+  const insights = [];
+  if (stations.length) {
+    const top = stations[0];
+    insights.push(`<strong>${fmt(top.aadt)}</strong> vehicles per day on the busiest segment through Kinderhook (${esc(top.signing)} ${esc(top.route)}: ${esc(top.from)} → ${esc(top.to)}).`);
+    const total = stations.reduce((s, x) => s + (x.aadt || 0), 0);
+    insights.push(`Across all <strong>${stations.length}</strong> measured segments in the municipality, NYSDOT recorded a combined <strong>${total.toLocaleString()}</strong> daily vehicle-passes in ${esc(aadt.latestYear)}. (Note: passes overlap; this is segment-sum, not unique vehicles.)`);
+  }
+  if ((bridges?.bridges || []).length) {
+    const oldest = bridges.bridges.filter(b => b.yearBuilt).sort((a,b) => a.yearBuilt - b.yearBuilt)[0];
+    if (oldest) insights.push(`The oldest state-inventoried bridge in Kinderhook was built in <strong>${oldest.yearBuilt}</strong> (${esc(oldest.feature)} over ${esc(oldest.crosses)}, ${esc(oldest.owner)}, last inspected ${esc(oldest.lastInspection || 'unknown')}).`);
+    if (brPoor === 0) insights.push(`<strong>0</strong> of the ${brCount} bridges are flagged Poor in NYSDOT's most recent inspection round.`);
+    else insights.push(`<strong>${brPoor}</strong> of ${brCount} bridges are flagged Poor — see the rows highlighted above.`);
+  }
+
+  body.innerHTML = `
+    <div class="transport-grid">
+      ${aadtHtml}
+      ${bridgeHtml}
+    </div>
+    <div class="acs-insights">
+      <div class="acs-insights-h">Reading the infrastructure</div>
+      <ul>${insights.map(s => `<li>${s}</li>`).join('')}</ul>
+    </div>
+    <p class="m-foot">Sources: NYSDOT Traffic Data (data.ny.gov 6amx-2pbv) and Bridge Conditions (wpyb-cjy8). AADT is the most-recent vintage (2019); the source has 770+ historical Kinderhook rows back to 1977 if a longer time series is wanted. Bridge data covers structures owned by NYSDOT, the County, and other public owners.</p>
+  `;
+}
+
 /* =============================================== §XVIII : CSC == */
 function renderClimateSmart(snap) {
   const status = $('#csc-status');
@@ -3591,7 +3888,8 @@ async function audit(town) {
     // Auxiliary snapshots — used by the synthesizing sections (finding,
     // gaps, schema, asks). Each can be absent without breaking the page.
     const [village, cctBizIndex, cctBusinesses, histSites, histPeople, histSummaries, histNewspapers,
-           orptsParcels, orptsRar, marketEquity, acsVillage, acsTown, fema, hours, csc] = await Promise.all([
+           orptsParcels, orptsRar, marketEquity, acsVillage, acsTown, fema, hours, csc,
+           farmersMarkets, transportAadt, transportBridges] = await Promise.all([
       loadSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
       loadSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
       loadSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
@@ -3607,6 +3905,9 @@ async function audit(town) {
       loadSnapshot('./data/snapshots/fema/latest-disasters.json'),
       loadSnapshot('./schema/hours/manifest.json'),
       loadSnapshot('./data/snapshots/climate-smart/latest.json'),
+      loadSnapshot('./data/snapshots/farmers-markets/latest.json'),
+      loadSnapshot('./data/snapshots/transportation/latest-aadt.json'),
+      loadSnapshot('./data/snapshots/transportation/latest-bridges.json'),
     ]);
 
     renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });
@@ -3618,6 +3919,8 @@ async function audit(town) {
     renderFEMA(fema);
     renderHours(hours);
     renderClimateSmart(csc);
+    renderFarmersMarkets(farmersMarkets);
+    renderTransportation({ aadt: transportAadt, bridges: transportBridges });
     renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
     renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople, coverage });
     renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint });

@@ -35,6 +35,8 @@ const tools = [
   { name: 'Census ACS 5-Year',        script: 'tools/fetch-acs.mjs' },
   { name: 'OpenFEMA disasters',       script: 'tools/fetch-fema.mjs' },
   { name: 'Climate Smart (data.ny.gov)', script: 'tools/fetch-climate-smart.mjs' },
+  { name: 'Farmers Markets (data.ny.gov)', script: 'tools/fetch-farmers-markets.mjs' },
+  { name: 'Transportation: AADT + Bridges', script: 'tools/fetch-transportation.mjs' },
   { name: 'Build kinderhook.json',    script: 'tools/build-jsonld.mjs' },
 ];
 

@@ -1,0 +1,136 @@
+{
+  "fetchedAt": "2026-04-26T14:07:31.077Z",
+  "fetcher": "tools/fetch-farmers-markets.mjs",
+  "source": "https://data.ny.gov/resource/qq4h-8p86.json",
+  "program": {
+    "name": "New York State Farmers' Markets",
+    "agency": "NYS Department of Agriculture and Markets",
+    "url": "https://agriculture.ny.gov/farming/farmers-markets"
+  },
+  "counts": {
+    "statewide": 457,
+    "county": 6
+  },
+  "village": {
+    "name": "Kinderhook Farmers' Market",
+    "location": "Village Square 1 Hudson St",
+    "address": "US Route 9 and Hudson St",
+    "city": "Kinderhook",
+    "zip": "12106",
+    "contact": "Kim Voltz",
+    "operationHours": "Sat 8:30am-12:30pm",
+    "operationSeason": "May 2-October 31",
+    "operationMonths": "P/M",
+    "fmnp": "Y",
+    "snapStatus": "N",
+    "farmCount": "N",
+    "county": "Columbia"
+  },
+  "county": [
+    {
+      "name": "Scarecrow Farm Stand",
+      "location": "20 Old Barrington Rd Hudson",
+      "address": "20 Old Barrington Rd",
+      "city": "Claverack",
+      "zip": "12534",
+      "contact": "Virginia Ambrose",
+      "website": {
+        "url": "http://www.scarecrowfarmny.com"
+      },
+      "operationHours": "Daily 11am-4pm , closed Tue & Sat",
+      "operationSeason": "July 1-November 1",
+      "operationMonths": "M",
+      "fmnp": "Y",
+      "snapStatus": "Y",
+      "farmCount": "N",
+      "county": "Columbia"
+    },
+    {
+      "name": "Germantown Farmers' Market",
+      "location": "Palatine Park Pavilion, 50 Palatine Park Rd",
+      "address": "50 Palatine Park Road",
+      "city": "Germantown",
+      "zip": "12526",
+      "contact": "Lauren Williams",
+      "website": {
+        "url": "https://www.germantownfarmersmarket.com/"
+      },
+      "operationHours": "Sat 10am-1pm",
+      "operationSeason": "May 23-October 10",
+      "operationMonths": "P/M",
+      "fmnp": "Y",
+      "snapStatus": "N",
+      "farmCount": "N",
+      "county": "Columbia"
+    },
+    {
+      "name": "Copake Hillsdale Farmers' Market",
+      "location": "Roeliff Jansen Park 9140 Rte 22",
+      "address": "9140 Route 23",
+      "city": "Hillsdale",
+      "zip": "12529",
+      "contact": "Nicole Friedrich",
+      "website": {
+        "url": "http://www.copakehillsdalefarmersmarket.com"
+      },
+      "operationHours": "Sat 9am-1pm",
+      "operationSeason": "May 16-November 21",
+      "operationMonths": "P/M",
+      "fmnp": "Y",
+      "snapStatus": "Y",
+      "farmCount": "Y",
+      "county": "Columbia"
+    },
+    {
+      "name": "Hudson Farmers' Market",
+      "location": "DMV parking lot 6th & Columbia Sts",
+      "address": "Columbia St and North 6th St",
+      "city": "Hudson",
+      "zip": "12534",
+      "contact": "Brandon Bjerke",
+      "website": {
+        "url": "http://www.hudsonfarmersmarketny.com"
+      },
+      "operationHours": "Sat 9am-1pm",
+      "operationSeason": "April 18-November 28",
+      "operationMonths": "P/M",
+      "fmnp": "Y",
+      "snapStatus": "Y",
+      "farmCount": "N",
+      "county": "Columbia"
+    },
+    {
+      "name": "Hudson Winter Farmers Market",
+      "location": "201 Harry Howard Ave, Elks Lodge #787",
+      "address": "201 Harry Howard Ave",
+      "city": "Hudson",
+      "zip": "12534",
+      "contact": "Brandon Bjerke",
+      "website": {
+        "url": "https://www.hudsonfarmersmarketny.org/"
+      },
+      "operationHours": "Sat 10am-1pm",
+      "operationSeason": "January 3-April 11",
+      "operationMonths": "W/P",
+      "fmnp": "N",
+      "snapStatus": "Y",
+      "farmCount": "Y",
+      "county": "Columbia"
+    },
+    {
+      "name": "Kinderhook Farmers' Market",
+      "location": "Village Square 1 Hudson St",
+      "address": "US Route 9 and Hudson St",
+      "city": "Kinderhook",
+      "zip": "12106",
+      "contact": "Kim Voltz",
+      "operationHours": "Sat 8:30am-12:30pm",
+      "operationSeason": "May 2-October 31",
+      "operationMonths": "P/M",
+      "fmnp": "Y",
+      "snapStatus": "N",
+      "farmCount": "N",
+      "county": "Columbia"
+    }
+  ]
+}
