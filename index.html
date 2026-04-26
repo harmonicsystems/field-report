@@ -1721,9 +1721,9 @@
   <article class="editors-note">
     <div class="label">Editor's Note</div>
     <div>
-      <p>Kinderhook has 1,351 residents. Six hundred twenty-two households cannot, by themselves, sustain the bookstore, the wine bar, the bagel shop, the hotel, the restaurants, the gallery, the farmers' market. Local demand alone funds maybe three or four storefronts; everything beyond that runs on outside spending. The village's commercial life — and therefore its tax base, its historic preservation, the conditions that make it the village it is — depends on tourism.</p>
-      <p>That tourism is, geographically, well-positioned. Two and a half hours from New York City; twenty-five minutes from Albany; a fifteen-minute drive from an Amtrak station that puts Manhattan inside two hours by rail. Kinderhook sits inside the weekend reach of seventeen million people and just upstream of the Hudson Valley wave that has already remade Hudson, Rhinebeck, Beacon. The window is open and finite.</p>
-      <p>But geography is necessary, not sufficient. Visitors increasingly plan trips by asking phones, search engines, and AI assistants <em>"where should we go for a weekend in the Hudson Valley?"</em> Those channels can only recommend what they can <em>structurally</em> read. This report reads what those channels currently see when they look for Kinderhook — across the county tourism site, the village's own pages, state and federal records, and the broader commons — and publishes the schema.org markup that would close the gap. The concrete case we keep returning to is the <strong>Kinderhook Farmers' Market</strong>: seasonal, volunteer-run, no standalone website — and the exact kind of asset this village's commerce depends on visitors being able to find.</p>
+      <p>Kinderhook holds an unusual amount for a village of its size: a Manhattan gallery's upstate space at the Knitting Mill, the Aviary's cathedral-ceilinged dining room, the Old Dutch Inn on Broad Street, the Saturday farmers' market from May through October, the Van Buren grave a short walk from the village green. Generations of work — by residents, the village government, the county tourism board, the businesses themselves, and the volunteer organizations that hold so much of it together — have built and maintained this. The cultural and commercial ground is real.</p>
+      <p>The geography around it is favorable. Two and a half hours from New York City, twenty-five minutes from Albany, a fifteen-minute drive from Amtrak service that puts Manhattan inside two hours by rail. Kinderhook sits inside the weekend reach of seventeen million people, just upstream of the Hudson Valley wave that has already reshaped Hudson, Rhinebeck, and Beacon. NYC visitors are looking for villages exactly like this one.</p>
+      <p>Increasingly, those visitors plan trips by asking phones, search engines, and AI assistants <em>"where should we go for a weekend in the Hudson Valley?"</em> Those channels can recommend what they can structurally read. This report reads what those channels currently see when they look for Kinderhook — across the county tourism site, the village's own pages, state and federal records, and the broader commons — and proposes the publishing patterns that would let the village's existing assets show up where today's visitors are looking. The work the village has already done is the foundation; this report is about what to add on top of it.</p>
     </div>
   </article>
 
@@ -2755,23 +2755,17 @@ function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBu
   const single = v === 1 ? decode(venues[0]?.venue) : null;
 
   // Live numbers in bold; copy degrades sentence-by-sentence if a fetch fails.
+  // Framing: the data is real, the situation is shared, the path forward is
+  // additive. We name what's there before we name what's missing.
   const lede = N
-    ? `Of <strong>${N}</strong> places currently hosting scheduled events on Columbia County Tourism's calendar, <strong>${v}</strong> ${v === 1 ? 'is' : 'are'} in the Village of Kinderhook${single ? ` — <em>${esc(single)}</em>, a yoga studio.` : '.'} To a phone or an AI assistant asked <em>"what's worth a weekend trip from NYC?"</em>, that one yoga studio is, structurally, the entire village.`
+    ? `Of <strong>${N}</strong> places currently hosting scheduled events on Columbia County Tourism's calendar, <strong>${v}</strong> ${v === 1 ? 'is' : 'are'} in the Village of Kinderhook${single ? ` — <em>${esc(single)}</em>` : ''}. CCT's broader business directory adds <strong>${BK ?? '?'}</strong> Kinderhook entries on top of that${B != null ? ` (out of ${B} county-wide)` : ''}; the village's own directory lists another <strong>${K ?? '?'}</strong>${C ? ` across <strong>${C}</strong> municipally-assigned categories` : ''}. The pages exist, the businesses are real, the storefronts are open.`
     : `Columbia County Tourism's event-venue database could not be read on this load.`;
 
-  const bizLine = (B != null)
-    ? ` CCT's full business directory lists <strong>${B}</strong> entries across the county; <strong>${BK ?? '?'}</strong> are in Kinderhook by address. None of those <strong>${B}</strong> pages carry <span style="font-family:var(--mono);font-size:14px;">LocalBusiness</span> structured data.`
+  const foot = (K || B)
+    ? `What none of those pages currently carry is the structured markup — <span style="font-family:var(--mono);font-size:14px;">LocalBusiness</span>, <span style="font-family:var(--mono);font-size:14px;">Restaurant</span>, <span style="font-family:var(--mono);font-size:14px;">Hotel</span>, <span style="font-family:var(--mono);font-size:14px;">Place</span> — that lets a phone or an AI assistant identify them as recommendable destinations. Kinderhook's commerce depends on tourism. Its tourism depends on visitors finding it. Visitors find it through the same channels that publish every other Hudson Valley village. Those channels can only recommend what they can structurally read. Making the village's existing assets readable to them is the opportunity this report describes.`
     : '';
 
-  const villageLine = K
-    ? ` The village's own directory adds another <strong>${K}</strong> businesses across <strong>${C}</strong> municipally-assigned categories, also not machine-readable.`
-    : '';
-
-  const close = (K || B)
-    ? ` Kinderhook's commerce depends on tourism. Its tourism depends on visitors finding it. Visitors find it through the channels that publish every other Hudson Valley village. Those channels can only recommend what they can structurally read. A village that is invisible to that surface is, in commercial terms, not there.`
-    : '';
-
-  el.innerHTML = `<p class="finding-lede">${lede}</p><p class="finding-foot">${bizLine}${villageLine}${close}</p>`;
+  el.innerHTML = `<p class="finding-lede">${lede}</p><p class="finding-foot">${foot}</p>`;
 }
 
 /* =============================================== §VI : COVERAGE = */
@@ -3601,41 +3595,44 @@ function renderTransportation({ aadt, bridges }) {
   const brPoor = bridges?.counts?.poor || 0;
   status.textContent = `${aadtCount} traffic stations (year ${aadt?.latestYear || '?'}) · ${brCount} bridges (${brPoor} poor) · snapshot ${stamps[0] || '—'}`;
 
-  const stations = (aadt?.stations || []).slice(0, 18);
-  const maxAadt = Math.max(1, ...stations.map(s => s.aadt || 0));
+  const allStations = aadt?.stations || [];
+  const headStations = allStations.slice(0, 6);
+  const restStations = allStations.slice(6);
+  const maxAadt = Math.max(1, ...allStations.map(s => s.aadt || 0));
   const fmt = (n) => n == null ? '—' : n.toLocaleString();
 
-  const aadtHtml = stations.length ? `
+  const renderAadtRow = (s) => {
+    const w = ((s.aadt || 0) / maxAadt * 100).toFixed(1);
+    return `
+      <div class="aadt-row">
+        <div class="aadt-route">${esc((s.signing || '') + ' ' + (s.route || ''))}</div>
+        <div class="aadt-bar-cell">
+          <div class="aadt-bar" style="width:${w}%"></div>
+          <div class="aadt-seg">${esc(s.from)} → ${esc(s.to)}</div>
+        </div>
+        <div class="aadt-num">${fmt(s.aadt)}</div>
+      </div>`;
+  };
+
+  const aadtHtml = allStations.length ? `
     <div>
-      <h3 class="transport-h">Annual Average Daily Traffic · ${esc(aadt.latestYear)}</h3>
-      ${stations.map(s => {
-        const w = ((s.aadt || 0) / maxAadt * 100).toFixed(1);
-        return `
-          <div class="aadt-row">
-            <div class="aadt-route">${esc((s.signing || '') + ' ' + (s.route || ''))}</div>
-            <div class="aadt-bar-cell">
-              <div class="aadt-bar" style="width:${w}%"></div>
-              <div class="aadt-seg">${esc(s.from)} → ${esc(s.to)}</div>
-            </div>
-            <div class="aadt-num">${fmt(s.aadt)}</div>
-          </div>`;
-      }).join('')}
+      <h3 class="transport-h">Annual Average Daily Traffic · ${esc(aadt.latestYear)} · ${allStations.length} segments</h3>
+      ${headStations.map(renderAadtRow).join('')}
+      ${restStations.length ? `
+        <details class="fold">
+          <summary>Show the remaining ${restStations.length} segments</summary>
+          ${restStations.map(renderAadtRow).join('')}
+        </details>` : ''}
     </div>` : '';
 
   const bridgeHtml = (bridges?.bridges || []).length ? `
     <div>
-      <h3 class="transport-h">State-inventoried bridges</h3>
+      <h3 class="transport-h">State-inventoried bridges · ${bridges.bridges.length}</h3>
       ${bridges.bridges.map(b => `
         <div class="bridge-row${b.poor ? ' poor' : ''}">
           <div class="bridge-bin">BIN ${esc(b.bin)}</div>
-          <div>
-            <div class="bridge-name">${esc(b.feature)} <span class="bridge-sub">over ${esc(b.crosses)}</span></div>
-            <div class="bridge-sub">${esc(b.owner || '')}${b.municipality ? ' · ' + esc(b.municipality) : ''}</div>
-          </div>
-          <div class="bridge-when">
-            built ${esc(String(b.yearBuilt || '?'))}<br>
-            insp ${esc(b.lastInspection || '?')}${b.poor ? ' · POOR' : ''}
-          </div>
+          <div class="bridge-name">${esc(b.feature)} <span class="bridge-sub">over ${esc(b.crosses)}</span></div>
+          <div class="bridge-when">${esc(String(b.yearBuilt || '?'))} · insp ${esc((b.lastInspection || '?').slice(0, 7))}${b.poor ? ' · POOR' : ''}</div>
         </div>`).join('')}
     </div>` : '';
 
