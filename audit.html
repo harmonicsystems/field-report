@@ -1,0 +1,4088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kinderhook Field Report — A Civic Legibility Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4efe4;
+    --bg-plate: #ede7d7;
+    --ink: #1a1614;
+    --ink-soft: #3b342e;
+    --rule: #c9c0ae;
+    --rule-soft: #d8d0bc;
+    --accent: #a63d2a;
+    --accent-soft: #d88b77;
+    --slate: #4a5a4e;
+    --warn: #8a6a1e;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --serif: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+    --display: 'Newsreader', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(166, 61, 42, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(74, 90, 78, 0.04) 0%, transparent 40%);
+  }
+
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px 120px;
+  }
+
+  /* WORKING-NOTES BANNER ========================================== */
+  .working-notes-banner {
+    margin: 32px 0 0;
+    padding: 14px 22px;
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .working-notes-banner p { margin: 0; }
+  .working-notes-banner .mono {
+    font-family: var(--mono); color: var(--ink);
+  }
+  .working-notes-banner a {
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+  }
+  .working-notes-banner a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .working-notes-banner .back { float: right; }
+  @media (max-width: 600px) {
+    .working-notes-banner .back { float: none; display: block; margin-top: 6px; }
+  }
+
+  /* MASTHEAD ====================================================== */
+  header.masthead {
+    padding: 72px 0 40px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .masthead::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    height: 3px;
+    background: var(--ink);
+  }
+
+  .masthead::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 78px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .slug {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .slug .vol { color: var(--accent); }
+
+  h1.title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 72;
+    font-size: clamp(56px, 9vw, 124px);
+    line-height: 0.92;
+    letter-spacing: -0.015em;
+    margin: 20px 0 12px;
+  }
+
+  h1.title em {
+    font-style: italic;
+    font-variation-settings: 'opsz' 72;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--ink-soft);
+    max-width: 700px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .byline {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 28px;
+  }
+  .byline strong { color: var(--ink); font-weight: 500; }
+
+  /* EDITOR'S NOTE ================================================= */
+  .editors-note {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 0 0 56px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+
+  .editors-note .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 8px;
+  }
+
+  .editors-note p {
+    font-size: 20px;
+    line-height: 1.55;
+    margin: 0 0 16px;
+    max-width: 680px;
+  }
+
+  .editors-note p:first-of-type::first-letter {
+    font-family: var(--display);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 0.9;
+    float: left;
+    padding: 4px 10px 0 0;
+    color: var(--accent);
+  }
+
+  /* HEADLINE FINDING ============================================== */
+  .finding {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 44px 0 48px;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .finding::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .finding-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 10px;
+  }
+
+  .finding-lede {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 18px;
+    max-width: 720px;
+    letter-spacing: -0.005em;
+  }
+  .finding-lede strong {
+    font-weight: 500;
+    color: var(--accent);
+    font-variation-settings: 'opsz' 36;
+  }
+  .finding-lede em {
+    font-style: italic;
+    color: var(--slate);
+  }
+
+  .finding-foot {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 680px;
+  }
+  .finding-foot strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  @media (max-width: 760px) {
+    .finding { grid-template-columns: 1fr; gap: 12px; padding: 28px 0 32px; }
+    .finding-lede { font-size: 22px; }
+  }
+
+  /* ASKS ========================================================== */
+  .asks {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 56px 0 60px;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    margin-top: 48px;
+    position: relative;
+  }
+  .asks::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .asks-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 10px;
+  }
+
+  .asks-lede {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+    max-width: 680px;
+  }
+
+  .asks-list {
+    list-style: none;
+    counter-reset: asks;
+    margin: 0;
+    padding: 0;
+  }
+
+  .asks-list li {
+    counter-increment: asks;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .asks-list li:last-child { border-bottom: none; }
+
+  .asks-list li::before {
+    content: counter(asks);
+    font-family: var(--display);
+    font-size: 38px;
+    line-height: 1;
+    color: var(--accent);
+    font-variation-settings: 'opsz' 48;
+  }
+
+  .ask-actor {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  .ask-action {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 8px;
+    font-variation-settings: 'opsz' 36;
+    max-width: 680px;
+  }
+
+  .ask-rationale {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 680px;
+  }
+  .ask-rationale strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 760px) {
+    .asks { grid-template-columns: 1fr; gap: 16px; padding: 32px 0 36px; }
+    .asks-list li { grid-template-columns: 40px 1fr; gap: 16px; }
+    .asks-list li::before { font-size: 28px; }
+    .ask-action { font-size: 18px; }
+  }
+
+  /* SOURCES ======================================================= */
+  .sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 28px 32px;
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+
+  .sources-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sources li {
+    font-size: 14px;
+    line-height: 1.55;
+    padding: 3px 0;
+    color: var(--ink-soft);
+  }
+
+  .sources li a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sources li a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* SECTIONS ====================================================== */
+  section.plate {
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    gap: 40px;
+    align-items: baseline;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+  }
+  .section-head::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -4px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 12px;
+  }
+
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 60;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  h2.section-title em {
+    font-style: italic;
+    color: var(--slate);
+  }
+
+  .endpoint {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding-top: 14px;
+  }
+
+  .dek {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 680px;
+    margin: 0 0 28px 220px;
+    line-height: 1.45;
+  }
+
+  /* DATA DISPLAY ================================================== */
+  .status {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    padding: 8px 0;
+  }
+  .status.err { color: var(--accent); }
+  .status.ok { color: var(--slate); }
+
+  /* Ontology tree */
+  .taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+
+  .taxonomy {
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+  }
+
+  .taxonomy .tax-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+
+  .taxonomy h3 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .taxonomy .tax-endpoint {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .taxonomy .tax-numbers {
+    display: flex;
+    gap: 32px;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+
+  .taxonomy .tax-stat .tax-count {
+    font-family: var(--display);
+    font-size: 38px;
+    line-height: 1;
+    margin: 0 0 2px;
+    font-variation-settings: 'opsz' 48;
+    color: var(--ink);
+  }
+
+  .taxonomy .tax-stat.kh-hit .tax-count { color: var(--accent); }
+  .taxonomy .tax-stat.kh-miss .tax-count { color: var(--rule); }
+
+  .taxonomy .tax-stat-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .taxonomy .tax-caption {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .taxonomy ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 12px;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+  .taxonomy li {
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+  }
+  .taxonomy li .n {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    align-self: center;
+  }
+  .taxonomy li.match {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Footprint (unified search, grouped by subtype) */
+  .footprint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+  }
+
+  .footprint-col {
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footprint-col h3 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 4px;
+    font-weight: 500;
+  }
+
+  .footprint-count {
+    font-family: var(--display);
+    font-size: 38px;
+    line-height: 1;
+    margin: 0 0 4px;
+    font-variation-settings: 'opsz' 48;
+  }
+
+  .footprint-label {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  .footprint-col ul {
+    list-style: none;
+    margin: 0; padding: 12px 0 0;
+    border-top: 1px solid var(--rule-soft);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .footprint-col li {
+    padding: 3px 0;
+  }
+
+  .footprint-col li a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .footprint-col li a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* Entity cards (events, venues, posts) */
+  .entity-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+
+  .entity {
+    display: grid;
+    grid-template-columns: 140px 1fr 200px;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+
+  .entity .e-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: 6px;
+  }
+  .entity .e-meta .when { color: var(--accent); font-weight: 500; }
+
+  .entity h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 36;
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 0 0 6px;
+  }
+
+  .entity h4 a { color: var(--ink); text-decoration: none; }
+  .entity h4 a:hover { color: var(--accent); }
+
+  .entity .e-desc {
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .entity .e-where {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--slate);
+    text-align: right;
+    line-height: 1.35;
+  }
+
+  /* Coverage (independent journalism citations) */
+  .cite {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .cite:first-child { border-top: 1px solid var(--ink); }
+  .cite:last-child { border-bottom: 1px solid var(--ink); }
+
+  .cite-pub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 4px;
+  }
+  .cite-pub a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-soft);
+  }
+  .cite-pub .cite-when {
+    display: block;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+
+  .cite-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 36;
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 0 6px;
+  }
+  .cite-title a { color: var(--ink); text-decoration: none; }
+  .cite-title a:hover { color: var(--accent); }
+
+  .cite-byline {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+
+  .cite-summary {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+    max-width: 640px;
+    border-left: 2px solid var(--rule);
+    padding-left: 14px;
+  }
+
+  .cite-note {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--slate);
+    margin: 8px 0 0;
+    max-width: 640px;
+  }
+
+  .cite.cite-search .cite-title {
+    font-size: 20px;
+  }
+  .cite.cite-search .cite-pub::after {
+    content: ' · search';
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 760px) {
+    .cite { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* Diagnostic section */
+  .gaps {
+    background: var(--bg-plate);
+    border: 1px solid var(--ink);
+    padding: 40px 48px;
+  }
+
+  .gaps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+  }
+
+  .gap {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .gap:nth-last-child(-n+2) { border-bottom: none; }
+
+  .gap .verdict {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 3px 8px;
+    margin-bottom: 8px;
+  }
+  .gap .verdict.missing { background: var(--accent); color: var(--bg); }
+  .gap .verdict.partial { background: var(--warn); color: var(--bg); }
+  .gap .verdict.present { background: var(--slate); color: var(--bg); }
+
+  .gap h5 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 6px;
+    line-height: 1.2;
+  }
+
+  .gap p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  /* Cross-references */
+  .crossref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 8px;
+  }
+
+  .crossref-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+
+  .crossref-head h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    font-variation-settings: 'opsz' 22;
+  }
+
+  .crossref-endpoint {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .crossref-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .xr {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .xr:last-child { border-bottom: none; }
+
+  .xr .xr-name {
+    font-family: var(--display);
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .xr .xr-name a { color: var(--ink); text-decoration: none; }
+  .xr .xr-name a:hover { color: var(--accent); }
+
+  .xr .xr-kind {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .xr .xr-id {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .xr-group {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 18px 0 4px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 6px;
+  }
+  .xr-group:first-child { padding-top: 0; }
+
+  /* Condensed OSM: comma-separated inline names, grouped. */
+  .osm-group {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .osm-group:last-child { border-bottom: none; }
+
+  .osm-group-head {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .osm-group-head .count { color: var(--accent); }
+
+  .osm-names {
+    font-family: var(--serif);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .osm-names a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .osm-names a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .osm-sep {
+    color: var(--rule);
+    padding: 0 2px;
+  }
+
+  @media (max-width: 760px) {
+    .crossref-grid { grid-template-columns: 1fr; gap: 32px; }
+    .sources { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* Historic layer =============================================== */
+  .historic-opener {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0 0 32px;
+    max-width: 720px;
+    font-variation-settings: 'opsz' 36;
+  }
+  .historic-opener em { color: var(--slate); font-style: italic; }
+  .historic-opener a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .historic-opener a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .historic-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+  .historic-col-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .historic-col-head h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    font-variation-settings: 'opsz' 36;
+  }
+  .historic-col-head .count {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+  }
+
+  .hist-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .hist-row:last-child { border-bottom: none; }
+
+  .hist-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  .hist-name {
+    font-family: var(--display);
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .hist-name a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .hist-name a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .hist-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  .hist-newspapers {
+    background: var(--bg-plate);
+    border: 1px solid var(--rule);
+    padding: 28px 32px;
+    margin-top: 8px;
+  }
+
+  .hist-newspapers h3 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+
+  .hist-newspapers .hist-total {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1;
+    margin: 0 0 4px;
+    font-variation-settings: 'opsz' 48;
+  }
+
+  .hist-newspapers .hist-caption {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+    max-width: 640px;
+  }
+
+  .hist-decade-grid {
+    display: grid;
+    grid-template-columns: 70px 1fr 50px;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .hist-decade-grid .dec { color: var(--ink-soft); }
+  .hist-decade-grid .bar {
+    color: var(--accent);
+    letter-spacing: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .hist-decade-grid .n { color: var(--ink); text-align: right; }
+
+  .hist-sample-head {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    margin-bottom: 8px;
+  }
+
+  .hist-sample {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    padding: 4px 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .hist-sample .d { font-family: var(--mono); font-size: 10px; color: var(--accent); }
+  .hist-sample a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+  .hist-sample a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  @media (max-width: 760px) {
+    .historic-two-col { grid-template-columns: 1fr; gap: 32px; }
+    .hist-row { grid-template-columns: 90px 1fr; gap: 12px; }
+  }
+
+  /* Generated JSON-LD */
+  .jsonld-wrap {
+    position: relative;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 28px 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+
+  .jsonld-wrap::before {
+    content: '<script type="application/ld+json">';
+    display: block;
+    color: var(--accent-soft);
+    margin-bottom: 8px;
+    opacity: 0.7;
+  }
+  .jsonld-wrap::after {
+    content: '</script>';
+    display: block;
+    color: var(--accent-soft);
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
+  .jsonld-wrap pre {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    white-space: pre;
+  }
+
+  .jsonld-preview {
+    /* The teaser: first entity, in full, plus a structural comment. */
+  }
+
+  .jsonld-full {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(244, 239, 228, 0.18);
+  }
+
+  .jsonld-full > summary {
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    padding: 6px 0;
+    user-select: none;
+  }
+  .jsonld-full > summary::-webkit-details-marker { display: none; }
+  .jsonld-full > summary::before {
+    content: '▸  ';
+    color: var(--accent-soft);
+    display: inline-block;
+    transition: transform 0.15s;
+  }
+  .jsonld-full[open] > summary::before {
+    content: '▾  ';
+  }
+  .jsonld-full > summary:hover { color: var(--bg); }
+
+  .jsonld-full[open] .jsonld-pre {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(244, 239, 228, 0.18);
+  }
+
+  .jsonld-note {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 16px 0 0;
+    max-width: 680px;
+  }
+
+  /* FOOTER ======================================================== */
+  footer.colophon {
+    margin-top: 120px;
+    padding-top: 40px;
+    border-top: 3px solid var(--ink);
+    position: relative;
+  }
+  footer.colophon::before {
+    content: '';
+    position: absolute;
+    top: -6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .colophon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .colophon h6 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+
+  .colophon p { margin: 0 0 10px; color: var(--ink-soft); }
+
+  /* Loading shimmer */
+  @keyframes shimmer {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0.3; }
+  }
+  .loading { animation: shimmer 1.6s ease-in-out infinite; }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    .page { padding: 0 24px 80px; }
+    .masthead { padding-top: 48px; }
+    .editors-note { grid-template-columns: 1fr; gap: 12px; }
+    .section-head { grid-template-columns: 1fr; gap: 8px; }
+    .dek { margin-left: 0; }
+    .entity { grid-template-columns: 1fr; gap: 8px; }
+    .entity .e-where { text-align: left; }
+    .gaps-grid { grid-template-columns: 1fr; }
+    .controls { flex-wrap: wrap; }
+  }
+
+  a { color: var(--accent); }
+
+  /* ============================================ §XIII : ASSESSMENTS = */
+  .assess-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+  }
+  .assess-card, .assess-classes {
+    border: 1px solid var(--rule);
+    background: rgba(255,255,255,0.4);
+    padding: 18px 20px;
+  }
+  .assess-classes { grid-column: 1 / -1; }
+  .assess-card-head {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin-bottom: 10px;
+  }
+  .assess-stat { display: flex; justify-content: space-between; align-items: baseline;
+    padding: 4px 0; border-bottom: 1px dotted var(--rule); }
+  .assess-stat:last-child { border-bottom: 0; }
+  .assess-stat .k { font-size: 13px; color: var(--ink-soft); }
+  .assess-stat .v { font-family: var(--mono); font-size: 14px; color: var(--ink); }
+  .assess-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .assess-table th, .assess-table td { padding: 6px 8px; border-bottom: 1px solid var(--rule); text-align: left; }
+  .assess-table th { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-soft); }
+  .assess-table td.num, .assess-table th.num { text-align: right; font-family: var(--mono); }
+  .mono { font-family: var(--mono); }
+
+  .calc {
+    margin-top: 26px;
+    border: 1px solid var(--accent);
+    background: rgba(166, 61, 42, 0.04);
+    padding: 22px 24px;
+  }
+  .calc-head { border-bottom: 1px solid var(--rule); padding-bottom: 10px; margin-bottom: 14px; }
+  .calc-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); }
+  .calc-sub { font-style: italic; color: var(--ink-soft); margin-top: 4px; font-size: 14px; }
+  .calc-body { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .calc-body label { display: flex; flex-direction: column; gap: 4px; }
+  .calc-cap { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); }
+  .calc-body input, .calc-body select {
+    font-family: var(--mono); font-size: 14px;
+    background: var(--cream); color: var(--ink);
+    border: 1px solid var(--rule); padding: 8px 10px;
+  }
+  .calc-out { padding: 12px 0; border-top: 1px dotted var(--rule); border-bottom: 1px dotted var(--rule); }
+  .calc-line { display: flex; justify-content: space-between; padding: 4px 0; font-size: 14px; }
+  .calc-line .k { color: var(--ink-soft); }
+  .calc-line .v { font-family: var(--mono); }
+  .calc-line.big { font-size: 18px; padding: 8px 0; }
+  .calc-line.big .v { color: var(--accent); }
+  .calc-foot { font-style: italic; font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+  /* ============================================ §XIV : MARKET == */
+  .m-head { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+  .m-stat { border: 1px solid var(--rule); padding: 12px 14px; background: rgba(255,255,255,0.4); }
+  .m-stat .k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); }
+  .m-stat .v { font-family: var(--mono); font-size: 18px; color: var(--ink); margin-top: 4px; }
+  .m-grid { margin-top: 22px; display: grid; gap: 4px; }
+  .m-row { display: grid; grid-template-columns: 56px 1fr 64px 1fr; align-items: baseline;
+    column-gap: 12px; font-size: 13px; padding: 2px 0; border-bottom: 1px dotted var(--rule); }
+  .m-yr { font-family: var(--mono); color: var(--ink-soft); }
+  .m-bar { font-family: var(--mono); color: var(--accent); letter-spacing: -2px; overflow: hidden; }
+  .m-val { font-family: var(--mono); text-align: right; }
+  .m-method { color: var(--ink-soft); font-style: italic; }
+  .m-foot { font-style: italic; color: var(--ink-soft); font-size: 13px; margin-top: 16px; }
+
+  /* ============================================ §XV : ACS ==== */
+  .acs-table {
+    width: 100%; max-width: 720px;
+    table-layout: fixed; border-collapse: collapse;
+    margin: 18px 0 0; font-size: 14px;
+  }
+  .acs-table col.acs-c-label { width: 48%; }
+  .acs-table col.acs-c-num   { width: 26%; }
+  .acs-table th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-soft); padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  .acs-table thead th.num { text-align: right; }
+  .acs-table td { padding: 7px 10px; border-bottom: 1px dotted var(--rule); }
+  .acs-table td.num { font-family: var(--mono); text-align: right; white-space: nowrap; }
+  .acs-table tbody th { color: var(--ink); font-family: var(--body); text-transform: none;
+    letter-spacing: 0; font-weight: 500; font-size: 14px; }
+  .acs-section-row th { padding-top: 16px; color: var(--accent);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; border-bottom: 1px solid var(--rule); }
+
+  .acs-insights {
+    margin-top: 24px; padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  .acs-insights-h {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  .acs-insights ul { list-style: none; margin: 0; padding: 0; }
+  .acs-insights li {
+    font-family: var(--body); font-size: 15px; line-height: 1.55;
+    color: var(--ink); padding: 8px 0; max-width: 680px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .acs-insights li:last-child { border-bottom: 0; }
+  .acs-insights li strong { color: var(--accent); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .acs-table col.acs-c-label { width: 44%; }
+    .acs-table col.acs-c-num   { width: 28%; }
+    .acs-table td, .acs-table th { padding: 6px 6px; font-size: 13px; }
+    .acs-insights li { font-size: 14px; }
+  }
+
+  /* ============================================ §XVI : FEMA == */
+  .fema-types { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 22px; }
+  .fema-chip { font-family: var(--mono); font-size: 12px; padding: 4px 10px;
+    border: 1px solid var(--rule); background: rgba(255,255,255,0.5); color: var(--ink-soft); }
+  .fema-chip em { color: var(--accent); font-style: normal; margin-left: 4px; }
+  .fema-list { display: grid; gap: 4px; }
+  .fema-row { display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    padding: 10px 0; border-bottom: 1px dotted var(--rule); align-items: baseline; }
+  .fema-yr { font-family: var(--mono); color: var(--accent); font-size: 14px; }
+  .fema-name { font-family: var(--display); font-size: 16px; color: var(--ink); }
+  .fema-sub { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 2px;
+    letter-spacing: 0.04em; }
+  .fema-tail { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
+
+  /* ============================================ PART HEADERS = */
+  .part-header {
+    margin: 96px 0 48px;
+    padding: 36px 0 14px;
+    border-top: 3px solid var(--ink);
+    position: relative;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: baseline;
+  }
+  .part-header::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+  .part-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .part-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 60;
+    font-size: 38px;
+    line-height: 1.05;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .part-header:first-of-type { margin-top: 56px; }
+
+  @media (max-width: 760px) {
+    .part-header {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 56px;
+      padding-top: 24px;
+    }
+    .part-title { font-size: 28px; }
+  }
+
+  /* ============================================ CONTENTS ===== */
+  .contents {
+    padding: 24px 28px; margin-bottom: 56px;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    background: transparent;
+  }
+  .contents-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  .contents-parts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px 28px;
+  }
+  .contents-part {
+    display: flex; flex-direction: column;
+  }
+  .contents-part-h {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.4;
+  }
+  .contents-part-h:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .contents-list {
+    list-style: none; margin: 0; padding: 0;
+  }
+  .contents-list li { padding: 3px 0; }
+  .contents-list a {
+    font-family: var(--body); font-size: 14px; color: var(--ink);
+    text-decoration: none; display: grid;
+    grid-template-columns: 56px 1fr; gap: 8px; align-items: baseline;
+  }
+  .contents-list a:hover { color: var(--accent); }
+  .contents-list a:hover .c-num { color: var(--accent); }
+  .contents-list .c-num {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft);
+    text-align: right;
+  }
+  @media (max-width: 600px) {
+    .contents { padding: 18px 16px; margin-bottom: 32px; }
+    .contents-parts { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  /* ============================================ §XIX : MARKETS  */
+  .market-card {
+    display: grid; grid-template-columns: 200px 1fr; gap: 28px;
+    padding: 22px 26px; margin: 18px 0;
+    background: var(--bg-plate); border: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .market-card-h {
+    font-family: var(--display); font-variation-settings: 'opsz' 60;
+    font-size: 26px; line-height: 1.15; color: var(--ink); margin: 0 0 4px;
+  }
+  .market-card-sub {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+  }
+  .market-meta { display: grid; gap: 6px; font-size: 14px; }
+  .market-meta dt {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .market-meta dd { margin: 0 0 6px; color: var(--ink); font-family: var(--body); }
+  .market-flag {
+    display: inline-block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid var(--accent); color: var(--accent);
+    padding: 2px 6px; margin-right: 4px;
+  }
+  .market-flag.off { border-color: var(--rule); color: var(--ink-soft); }
+  @media (max-width: 600px) {
+    .market-card { grid-template-columns: 1fr; gap: 14px; padding: 16px 18px; }
+  }
+
+  /* ============================================ §XX : TRANSPORT  */
+  .transport-grid {
+    display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 14px;
+  }
+  .transport-h {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 0 0 10px;
+  }
+  .aadt-row {
+    display: grid; grid-template-columns: 80px 1fr 100px; gap: 14px;
+    align-items: baseline; padding: 6px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 14px;
+  }
+  .aadt-row:first-of-type { border-top: 1px dotted var(--rule); }
+  .aadt-route { font-family: var(--mono); color: var(--accent);
+    font-size: 12px; letter-spacing: 0.06em; }
+  .aadt-seg { color: var(--ink-soft); font-style: italic; font-size: 13px; }
+  .aadt-bar-cell { display: grid; grid-template-columns: 1fr 60px; gap: 10px; align-items: baseline; }
+  .aadt-bar {
+    height: 6px; background: var(--accent); opacity: 0.65;
+  }
+  .aadt-num { font-family: var(--mono); font-size: 13px; color: var(--ink);
+    text-align: right; }
+
+  .bridge-row {
+    display: grid; grid-template-columns: 90px 1fr 110px; gap: 14px;
+    align-items: baseline; padding: 8px 0;
+    border-bottom: 1px dotted var(--rule); font-size: 14px;
+  }
+  .bridge-row:first-of-type { border-top: 1px dotted var(--rule); }
+  .bridge-bin { font-family: var(--mono); font-size: 11px;
+    color: var(--ink-soft); letter-spacing: 0.04em; }
+  .bridge-name { color: var(--ink); font-family: var(--display); font-size: 16px; }
+  .bridge-sub { color: var(--ink-soft); font-size: 12px; font-style: italic; }
+  .bridge-when { font-family: var(--mono); font-size: 11px; color: var(--ink-soft);
+    text-align: right; }
+  .bridge-row.poor .bridge-when { color: var(--accent); font-weight: 600; }
+  @media (max-width: 600px) {
+    .aadt-row { grid-template-columns: 60px 1fr 60px; gap: 8px; font-size: 13px; }
+    .bridge-row { grid-template-columns: 70px 1fr 80px; gap: 8px; font-size: 13px; }
+    .aadt-bar-cell { grid-template-columns: 1fr 40px; gap: 6px; }
+  }
+
+  /* ============================================ §XVIII : CSC == */
+  .csc-hero {
+    display: grid; grid-template-columns: 220px 1fr; gap: 32px;
+    align-items: baseline;
+    padding: 24px 28px; margin: 12px 0 28px;
+    background: var(--bg-plate); border: 1px solid var(--rule);
+  }
+  .csc-status-badge {
+    font-family: var(--display); font-variation-settings: 'opsz' 60;
+    font-size: 30px; line-height: 1.1; color: var(--accent);
+    margin: 0;
+  }
+  .csc-status-badge .csc-tier {
+    display: block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .csc-hero-meta { display: grid; gap: 6px; font-size: 14px; }
+  .csc-hero-meta dt {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .csc-hero-meta dd { margin: 0 0 8px; color: var(--ink); font-family: var(--body); }
+
+  .csc-block-h {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin: 24px 0 8px;
+  }
+  .csc-county {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px 18px; margin-bottom: 18px;
+  }
+  .csc-peer {
+    display: grid; grid-template-columns: 1fr auto; gap: 8px;
+    padding: 7px 0; border-bottom: 1px dotted var(--rule);
+    font-size: 14px; align-items: baseline;
+  }
+  .csc-peer-name { color: var(--ink); }
+  .csc-peer-name em { color: var(--ink-soft); font-style: italic; font-size: 11px; margin-left: 4px; }
+  .csc-peer-status {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .csc-peer.tier-silver .csc-peer-status { color: #6b6b8a; font-weight: 600; }
+  .csc-peer.tier-bronze .csc-peer-status { color: var(--accent); }
+  .csc-peer.tier-registered .csc-peer-status { color: var(--ink-soft); }
+  .csc-peer.tier-self {
+    background: rgba(166, 61, 42, 0.06);
+    padding-left: 8px; padding-right: 8px;
+    border-bottom: 1px solid var(--accent);
+  }
+  .csc-peer.tier-self .csc-peer-name { color: var(--accent); font-weight: 600; }
+
+  .csc-statewide {
+    display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 24px;
+  }
+  .csc-stat-chip {
+    font-family: var(--mono); font-size: 12px; padding: 4px 10px;
+    border: 1px solid var(--rule); background: rgba(255,255,255,0.5);
+    color: var(--ink-soft);
+  }
+  .csc-stat-chip em { color: var(--accent); font-style: normal; margin-left: 4px; font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .csc-hero { grid-template-columns: 1fr; gap: 16px; padding: 18px 18px; }
+    .csc-status-badge { font-size: 24px; }
+  }
+
+  /* ============================================ §XVII : HOURS = */
+  .gantt-wrap { margin-top: 18px; }
+  .g-row { display: grid; grid-template-columns: 200px 1fr; gap: 14px;
+    align-items: center; padding: 6px 0; border-bottom: 1px dotted var(--rule); }
+  .g-row.g-head, .g-row.g-hours { border-bottom: 1px solid var(--rule); padding: 4px 0; }
+  .g-name { padding-right: 8px; }
+  .g-biz { font-family: var(--display); font-size: 15px; color: var(--ink); }
+  .g-type { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-soft); margin-top: 2px; }
+  .g-tracks { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .g-day { position: relative; height: 22px; background: rgba(255,255,255,0.35);
+    border: 1px solid var(--rule); }
+  .g-day-h { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-soft); text-align: center; }
+  .g-block { position: absolute; top: 2px; bottom: 2px; background: var(--accent);
+    opacity: 0.7; border-radius: 1px; }
+  .g-hour-track { background: transparent; border: 0; height: 12px; }
+  .g-tick { position: absolute; transform: translateX(-50%); top: 0;
+    font-family: var(--mono); font-size: 9px; color: var(--ink-soft); }
+
+  /* Below ~640px the seven-day × four-tick grid becomes unreadable.
+     Stack the business label above its tracks, drop the tick row,
+     and let the existing g-head day labels span full width as a
+     sticky-ish strip at the top. The chart remains the chart —
+     just legible. */
+  @media (max-width: 640px) {
+    .g-row { grid-template-columns: 1fr; gap: 6px; padding: 10px 0; align-items: stretch; }
+    .g-row.g-head { padding: 8px 0 4px; position: sticky; top: 0;
+      background: var(--bg); z-index: 1; }
+    .g-row.g-hours { display: none; }   /* tick labels are unreadable here */
+    .g-tracks { gap: 2px; }
+    .g-day { height: 18px; }
+    .g-day-h { font-size: 9px; letter-spacing: 0.04em; padding: 0 1px; }
+    .g-tick { display: none; }
+    .g-biz { font-size: 14px; }
+    .g-type { font-size: 9px; }
+  }
+
+  /* Generic fold (collapsed-by-default supplemental list). */
+  details.fold {
+    margin-top: 16px; border-top: 1px solid var(--rule); padding-top: 8px;
+  }
+  details.fold > summary {
+    cursor: pointer; list-style: none;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); padding: 8px 0;
+    user-select: none;
+  }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before { content: '▸ '; transition: none; }
+  details.fold[open] > summary::before { content: '▾ '; }
+  details.fold[open] > summary { color: var(--ink-soft); border-bottom: 1px dotted var(--rule); margin-bottom: 8px; }
+
+  /* Span-the-grid utility for §XIII full-width footnotes inside .assess-grid. */
+  .full-span { grid-column: 1 / -1; }
+
+  /* Provisional banner + tags (used by §XVII). */
+  .prov-banner {
+    border: 1px solid var(--accent); background: rgba(166, 61, 42, 0.05);
+    padding: 14px 18px; margin-bottom: 22px;
+    display: grid; grid-template-columns: 110px 1fr; gap: 16px;
+    font-size: 13px; color: var(--ink);
+  }
+  .prov-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); align-self: center;
+  }
+  .g-row-prov .g-biz { color: var(--ink-soft); }
+  .g-prov-tag {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    border: 1px solid var(--accent); padding: 1px 4px;
+    margin-left: 6px; vertical-align: 2px;
+  }
+  .g-block.g-prov {
+    background: transparent; border: 1px dashed var(--accent); opacity: 0.9;
+  }
+
+  @media (max-width: 720px) {
+    .assess-grid { grid-template-columns: 1fr; }
+    .calc-body { grid-template-columns: 1fr; }
+    .m-head { grid-template-columns: repeat(2, 1fr); }
+    .m-row { grid-template-columns: 48px 1fr 56px; }
+    .m-row .m-method { display: none; }
+    .g-row { grid-template-columns: 130px 1fr; gap: 8px; }
+    .g-tracks { gap: 2px; }
+    .g-biz { font-size: 13px; }
+    .prov-banner { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="working-notes-banner">
+    <p>You're reading the long-form working notes that produced <a href="./kinderhook.json"><span class="mono">kinderhook.json</span></a>. <a href="./" class="back">← Back to the landing page</a></p>
+  </aside>
+
+  <!-- ============================================ MASTHEAD ====== -->
+  <header class="masthead">
+    <div class="slug">
+      <span>A Civic Legibility Audit · Columbia County, NY</span>
+      <span><span class="vol">Vol. I</span> · Kinderhook Node · Pilot Edition</span>
+    </div>
+    <h1 class="title">The Kinderhook <em>Field Report</em></h1>
+    <p class="subtitle">How findable Kinderhook is to the channels its commerce depends on.</p>
+    <div class="byline">
+      Conducted by <strong>Harmonic Systems</strong> · A civic-vitality and machine-legibility report on <strong>Kinderhook, NY</strong>
+    </div>
+  </header>
+
+  <!-- ============================================ EDITOR'S NOTE - -->
+  <article class="editors-note">
+    <div class="label">Editor's Note</div>
+    <div>
+      <p>Kinderhook holds an unusual amount for a village of its size: a Manhattan gallery's upstate space at the Knitting Mill, the Aviary's cathedral-ceilinged dining room, the Old Dutch Inn on Broad Street, the Saturday farmers' market from May through October, the Van Buren grave a short walk from the village green. Generations of work — by residents, the village government, the county tourism board, the businesses themselves, and the volunteer organizations that hold so much of it together — have built and maintained this. The cultural and commercial ground is real.</p>
+      <p>The geography around it is favorable. Two and a half hours from New York City, twenty-five minutes from Albany, a fifteen-minute drive from Amtrak service that puts Manhattan inside two hours by rail. Kinderhook sits inside the weekend reach of seventeen million people, just upstream of the Hudson Valley wave that has already reshaped Hudson, Rhinebeck, and Beacon. NYC visitors are looking for villages exactly like this one.</p>
+      <p>Increasingly, those visitors plan trips by asking phones, search engines, and AI assistants <em>"where should we go for a weekend in the Hudson Valley?"</em> Those channels can recommend what they can structurally read. This report reads what those channels currently see when they look for Kinderhook — across the county tourism site, the village's own pages, state and federal records, and the broader commons — and proposes the publishing patterns that would let the village's existing assets show up where today's visitors are looking. The work the village has already done is the foundation; this report is about what to add on top of it.</p>
+    </div>
+  </article>
+
+  <!-- ============================================ FINDING ====== -->
+  <section class="finding" aria-label="Headline finding">
+    <div class="finding-label">A Finding</div>
+    <div id="finding-body">
+      <p class="finding-lede">Reading…</p>
+    </div>
+  </section>
+
+  <!-- ============================================ SOURCES ======= -->
+  <aside class="sources" aria-label="Data sources">
+    <div class="sources-col">
+      <div class="sources-label">Snapshotted at build time, read locally</div>
+      <ul>
+        <li><a href="https://columbiacountytourism.org/wp-json/wp/v2/" target="_blank" rel="noopener">columbiacountytourism.org</a> — WP REST, TEC, search, business directory (594 pages)</li>
+        <li><a href="https://www.villageofkinderhook.org/" target="_blank" rel="noopener">villageofkinderhook.org</a> — municipal business directory (58 entries)</li>
+        <li><a href="https://query.wikidata.org/" target="_blank" rel="noopener">query.wikidata.org</a> — SPARQL: municipal IDs, historic sites and people</li>
+        <li><a href="https://overpass-api.de/" target="_blank" rel="noopener">overpass-api.de</a> — OpenStreetMap named features</li>
+        <li><a href="https://en.wikipedia.org/api/rest_v1/" target="_blank" rel="noopener">en.wikipedia.org/api/rest_v1</a> — page summaries for key articles</li>
+        <li><a href="https://www.loc.gov/collections/chronicling-america/" target="_blank" rel="noopener">loc.gov/chronicling-america</a> — historic newspaper mentions</li>
+        <li><a href="./schema/places/manifest.json" target="_blank" rel="noopener">schema/places/</a> · <a href="./schema/coverage/manifest.json" target="_blank" rel="noopener">schema/coverage/</a> — this report's curated corpora</li>
+        <li><a href="./data/snapshots/" target="_blank" rel="noopener">data/snapshots/</a> — every dated pull, diffable in git</li>
+      </ul>
+    </div>
+    <div class="sources-col">
+      <div class="sources-label">Citing as primary source</div>
+      <ul>
+        <li><a href="https://www.villageofkinderhook.org/" target="_blank" rel="noopener">villageofkinderhook.org</a> — municipal government</li>
+        <li><a href="https://www.nps.gov/mava/" target="_blank" rel="noopener">nps.gov/mava</a> — Martin Van Buren NHS (Lindenwald)</li>
+        <li><a href="https://en.wikipedia.org/wiki/Kinderhook_(village),_New_York" target="_blank" rel="noopener">en.wikipedia.org</a> — village &amp; town articles</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ============================================ CONTENTS ===== -->
+  <nav class="contents" aria-label="Contents">
+    <div class="contents-label">Contents</div>
+    <div class="contents-parts">
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part1">Part One · Who's coming through</a>
+        <ol class="contents-list">
+          <li><a href="#sec-acs"><span class="c-num">§ I</span> Demographics</a></li>
+          <li><a href="#sec-transport"><span class="c-num">§ II</span> Transportation</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part2">Part Two · What's here</a>
+        <ol class="contents-list">
+          <li><a href="#sec-businesses"><span class="c-num">§ III</span> CCT Businesses</a></li>
+          <li><a href="#sec-hours"><span class="c-num">§ IV</span> Open Hours</a></li>
+          <li><a href="#sec-curated"><span class="c-num">§ V</span> Curated Places</a></li>
+          <li><a href="#sec-markets"><span class="c-num">§ VI</span> Farmers Markets</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part3">Part Three · What pulls people in</a>
+        <ol class="contents-list">
+          <li><a href="#sec-historic"><span class="c-num">§ VII</span> Historic Layer</a></li>
+          <li><a href="#sec-coverage"><span class="c-num">§ VIII</span> Independent Coverage</a></li>
+          <li><a href="#sec-editorial"><span class="c-num">§ IX</span> Editorial Record</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part4">Part Four · What it costs to operate here</a>
+        <ol class="contents-list">
+          <li><a href="#sec-assessments"><span class="c-num">§ X</span> Assessments</a></li>
+          <li><a href="#sec-market"><span class="c-num">§ XI</span> Market Movement</a></li>
+          <li><a href="#sec-csc"><span class="c-num">§ XII</span> Climate Smart</a></li>
+          <li><a href="#sec-fema"><span class="c-num">§ XIII</span> Disaster Record</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part5">Part Five · Whether anyone can find you</a>
+        <ol class="contents-list">
+          <li><a href="#sec-footprint"><span class="c-num">§ XIV</span> CCT Footprint</a></li>
+          <li><a href="#sec-ontology"><span class="c-num">§ XV</span> Ontology</a></li>
+          <li><a href="#sec-events"><span class="c-num">§ XVI</span> Events</a></li>
+          <li><a href="#sec-venues"><span class="c-num">§ XVII</span> Event Venues</a></li>
+          <li><a href="#sec-crossrefs"><span class="c-num">§ XVIII</span> Cross-references</a></li>
+          <li><a href="#sec-gaps"><span class="c-num">§ XIX</span> Diagnostic</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part6">Part Six · What would change this</a>
+        <ol class="contents-list">
+          <li><a href="#sec-schema"><span class="c-num">§ XX</span> Proposed Schema</a></li>
+        </ol>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ======================================== PART ONE -->
+  <div class="part-header" id="part1">
+    <div class="part-num">Part One</div>
+    <h2 class="part-title">Who's coming through</h2>
+  </div>
+
+    <!-- ============================================ §I DEMOGRAPHICS -->
+  <section class="plate" id="sec-acs">
+    <div class="section-head">
+      <div class="section-num">§ I · Demographics</div>
+      <h2 class="section-title">Who the Census <em>says we are</em></h2>
+      <div class="endpoint">api.census.gov · acs/acs5</div>
+    </div>
+    <p class="dek">American Community Survey 5-Year estimates for two geographies: the incorporated Village of Kinderhook (place 36-39562) and the surrounding Town of Kinderhook (county subdivision 36-021-39573). The two are not the same place; the difference is most of the local story.</p>
+    <div class="status" id="acs-status">Loading snapshot…</div>
+    <div id="acs-body"></div>
+  </section>
+    <!-- ============================================ §II TRANSPORTATION -->
+  <section class="plate" id="sec-transport">
+    <div class="section-head">
+      <div class="section-num">§ II · Transportation</div>
+      <h2 class="section-title">The roads that <em>carry</em> the village</h2>
+      <div class="endpoint">data.ny.gov · 6amx-2pbv · wpyb-cjy8</div>
+    </div>
+    <p class="dek">NYSDOT publishes Annual Average Daily Traffic counts for every roadway segment under state inventory, and condition data for every state-owned bridge. Below: how many vehicles pass through Kinderhook on a given day, and the structures that carry them across the village's creeks.</p>
+    <div class="status" id="transport-status">Loading snapshot…</div>
+    <div id="transport-body"></div>
+  </section>
+
+  <!-- ======================================== PART TWO -->
+  <div class="part-header" id="part2">
+    <div class="part-num">Part Two</div>
+    <h2 class="part-title">What's here</h2>
+  </div>
+
+    <!-- ============================================ §III CCT BUSINESSES -->
+  <section class="plate" id="sec-businesses">
+    <div class="section-head">
+      <div class="section-num">§ III · CCT Businesses</div>
+      <h2 class="section-title">Everywhere CCT <em>points</em> in the village</h2>
+      <div class="endpoint">/business/{slug}/ × 594</div>
+    </div>
+    <p class="dek">The biggest single drill-down: the county's full business directory, fetched page-by-page at build time from the Yoast sitemap, then filtered to our village by address. This is what CCT tells the world about Kinderhook when it lists businesses.</p>
+    <div class="status" id="businesses-status">Loading snapshot…</div>
+    <div class="entity-list" id="businesses-list"></div>
+  </section>
+    <!-- ============================================ §IV OPEN HOURS -->
+  <section class="plate" id="sec-hours">
+    <div class="section-head">
+      <div class="section-num">§ IV · Open Hours</div>
+      <h2 class="section-title">When the village is <em>actually open</em></h2>
+      <div class="endpoint">schema/hours/manifest.json</div>
+    </div>
+    <p class="dek">Neither CCT nor the village directory publishes machine-readable opening hours for any business in Kinderhook. The corpus below is hand-curated, in the editorial pattern of <span style="font-family:var(--mono);">schema/places/</span>: weekly hours per business, expressed as schema.org <span style="font-family:var(--mono);">openingHoursSpecification</span>. A reader (human or machine) can answer "what's open at 4 p.m. on a Sunday in April" without scraping a single page.</p>
+    <div class="status" id="hours-status">Loading corpus…</div>
+    <div class="gantt-wrap" id="hours-gantt"></div>
+  </section>
+    <!-- ============================================ §V CURATED PLACES -->
+  <section class="plate" id="sec-curated">
+    <div class="section-head">
+      <div class="section-num">§ V · Curated Places</div>
+      <h2 class="section-title">What <em>we</em> have written</h2>
+      <div class="endpoint">schema/places/*.json</div>
+    </div>
+    <p class="dek">The hand-kept corpus. Each entry is a JSON file under <span style="font-family:var(--mono);">schema/places/</span>, edited as a file, versioned in public, and loaded by this page at read-time. The county's data plus the commons' data plus these make a legible village.</p>
+    <div class="status" id="curated-status">Loading corpus…</div>
+    <div class="entity-list" id="curated-list"></div>
+  </section>
+    <!-- ============================================ §VI FARMERS MARKETS -->
+  <section class="plate" id="sec-markets">
+    <div class="section-head">
+      <div class="section-num">§ VI · Farmers Markets</div>
+      <h2 class="section-title">What the state <em>knows</em> about the market</h2>
+      <div class="endpoint">data.ny.gov · qq4h-8p86</div>
+    </div>
+    <p class="dek">The NYS Department of Agriculture and Markets keeps the authoritative public record of every farmers' market in the state — operating season, weekly hours, SNAP/EBT acceptance, contact. The Kinderhook Farmers' Market we curated by hand at <span style="font-family:var(--mono);">schema/places/</span> appears here too. The state is a primary source we cite; the curated entry is the editorial overlay.</p>
+    <div class="status" id="markets-status">Loading snapshot…</div>
+    <div id="markets-body"></div>
+  </section>
+
+  <!-- ======================================== PART THREE -->
+  <div class="part-header" id="part3">
+    <div class="part-num">Part Three</div>
+    <h2 class="part-title">What pulls people in</h2>
+  </div>
+
+    <!-- ============================================ §VII HISTORIC LAYER -->
+  <section class="plate" id="sec-historic">
+    <div class="section-head">
+      <div class="section-num">§ VII · Historic Layer</div>
+      <h2 class="section-title">Kinderhook as <em>deep time</em> already knows it</h2>
+      <div class="endpoint">wikidata · wikipedia · loc</div>
+    </div>
+    <p class="dek">Before the URL slug, the village. Structured historical knowledge the commons has already written down, snapshotted at build time: NRHP listings, notable residents, Wikipedia summaries of the canonical sites, and two centuries of newspaper mentions.</p>
+    <div class="status" id="historic-status">Loading snapshots…</div>
+    <div id="historic-body"></div>
+  </section>
+    <!-- ============================================ §VIII INDEPENDENT COVERAGE -->
+  <section class="plate" id="sec-coverage">
+    <div class="section-head">
+      <div class="section-num">§ VIII · Independent Coverage</div>
+      <h2 class="section-title">What journalists <em>outside</em> the establishment have written</h2>
+      <div class="endpoint">schema/coverage/*.json</div>
+    </div>
+    <p class="dek">Hand-curated. Independent reporting on Kinderhook from publications outside the tourism board's orbit. Each entry is a citation, not a republication — readers click through to the original; the publishers get the traffic. The list grows by editorial decision, not by scrape.</p>
+    <div class="status" id="coverage-status">Loading corpus…</div>
+    <div id="coverage-list"></div>
+  </section>
+    <!-- ============================================ §IX EDITORIAL RECORD -->
+  <section class="plate" id="sec-editorial">
+    <div class="section-head">
+      <div class="section-num">§ IX · Editorial Record</div>
+      <h2 class="section-title">What the county has <em>said about us</em></h2>
+      <div class="endpoint">/wp/v2/posts?categories=…</div>
+    </div>
+    <p class="dek">Articles tagged with this village by the tourism board's editors. A decade of travel writing, already categorized by place — an under-used affective layer.</p>
+    <div class="status" id="posts-status">Fetching posts…</div>
+    <div class="entity-list" id="posts-list"></div>
+  </section>
+
+  <!-- ======================================== PART FOUR -->
+  <div class="part-header" id="part4">
+    <div class="part-num">Part Four</div>
+    <h2 class="part-title">What it costs to operate here</h2>
+  </div>
+
+    <!-- ============================================ §X ASSESSMENTS -->
+  <section class="plate" id="sec-assessments">
+    <div class="section-head">
+      <div class="section-num">§ X · Assessments</div>
+      <h2 class="section-title">What every parcel is <em>worth on the books</em></h2>
+      <div class="endpoint">data.ny.gov · 7vem-aaz7 · bsmp-6um6</div>
+    </div>
+    <p class="dek">NY ORPTS publishes the annual assessment roll for every municipality. Read here for the village (SWIS 104401) and the surrounding town outside the village (104489): parcel count, total assessed value, total full-market value, and the dominant property classes. The Residential Assessment Ratio time series — the state's official assessed-to-market ratio — drives the calculator below.</p>
+    <div class="status" id="assess-status">Loading snapshot…</div>
+    <div class="assess-grid" id="assess-grid"></div>
+
+    <div class="calc" id="assess-calc" hidden>
+      <div class="calc-head">
+        <div class="calc-label">Assessment Calculator</div>
+        <div class="calc-sub">Enter a market price; see what the state's ratio would call its assessment.</div>
+      </div>
+      <div class="calc-body">
+        <label>
+          <span class="calc-cap">Market value</span>
+          <input type="number" id="calc-market" min="0" step="1000" value="450000" inputmode="numeric">
+        </label>
+        <label>
+          <span class="calc-cap">Jurisdiction</span>
+          <select id="calc-swis">
+            <option value="104400" selected>Town of Kinderhook (SWIS 104400)</option>
+            <option value="104401">Village pre-2005 (104401)</option>
+            <option value="104489">Town outside village (104489)</option>
+          </select>
+        </label>
+        <label>
+          <span class="calc-cap">Rate year</span>
+          <select id="calc-year"></select>
+        </label>
+      </div>
+      <div class="calc-out" id="calc-out"></div>
+      <p class="calc-foot">RAR is the state's official ratio between assessed value and full market value for residential property, derived from a sample of arm's-length sales each rate year. The result is the <em>typical</em> assessment for a property at this market value — individual parcels deviate; the variation band above is the state's coefficient of dispersion. Residential only; not applicable to commercial or vacant-land parcels.</p>
+    </div>
+  </section>
+    <!-- ============================================ §XI MARKET MOVEMENT -->
+  <section class="plate" id="sec-market">
+    <div class="section-head">
+      <div class="section-num">§ XI · Market Movement</div>
+      <h2 class="section-title">How the state <em>measures</em> the village's market</h2>
+      <div class="endpoint">data.ny.gov · 4sut-q3dt</div>
+    </div>
+    <p class="dek">The state does not publish parcel-level sales records as machine-readable data — only county-level PDFs. What it does publish, annually, is what the sales <em>imply</em>: a residential market-value ratio, a coefficient of dispersion, and a price-related differential, computed from arm's-length sales in the Town of Kinderhook. The series below is the only legible signal of the local residential market in two decades.</p>
+    <div class="status" id="market-status">Loading snapshot…</div>
+    <div id="market-body"></div>
+  </section>
+    <!-- ============================================ §XII CLIMATE SMART -->
+  <section class="plate" id="sec-csc">
+    <div class="section-head">
+      <div class="section-num">§ XII · Climate Smart</div>
+      <h2 class="section-title">What the village has <em>pledged</em></h2>
+      <div class="endpoint">data.ny.gov · 2c5p-4m2k</div>
+    </div>
+    <p class="dek">The Climate Smart Communities program, run by the NYS Department of Environmental Conservation, is a statewide ladder: jurisdictions take a pledge across ten policy categories, then earn points for documented actions to escalate from Registered → Bronze → Silver → Gold. Below: the village's certification status, the Columbia County peers it sits among, and the statewide context.</p>
+    <div class="status" id="csc-status">Loading snapshot…</div>
+    <div id="csc-body"></div>
+  </section>
+    <!-- ============================================ §XIII DISASTER RECORD -->
+  <section class="plate" id="sec-fema">
+    <div class="section-head">
+      <div class="section-num">§ XIII · Disaster Record</div>
+      <h2 class="section-title">What FEMA has <em>declared</em> here</h2>
+      <div class="endpoint">fema.gov/api/open/v2 · DisasterDeclarationsSummaries</div>
+    </div>
+    <p class="dek">Every federal disaster declaration that designated Columbia County, NY (FIPS 36-021), since 1965. One row per declaration. This is the legible record of what the federal government has said happened to this place — flood, fire, ice, pandemic — and which programs were authorized in response.</p>
+    <div class="status" id="fema-status">Loading snapshot…</div>
+    <div id="fema-body"></div>
+  </section>
+
+  <!-- ======================================== PART FIVE -->
+  <div class="part-header" id="part5">
+    <div class="part-num">Part Five</div>
+    <h2 class="part-title">Whether anyone can find you</h2>
+  </div>
+
+    <!-- ============================================ §XIV CCT FOOTPRINT -->
+  <section class="plate" id="sec-footprint">
+    <div class="section-head">
+      <div class="section-num">§ XIV · CCT Footprint</div>
+      <h2 class="section-title">Everything the county <em>machine-readably</em> knows</h2>
+      <div class="endpoint">/wp/v2/search?search=kinderhook</div>
+    </div>
+    <p class="dek">Columbia County Tourism's full published index of Kinderhook, across every content type it exposes to search. This is the overview; the next four sections drill into each type in turn.</p>
+    <div class="status" id="footprint-status">Querying…</div>
+    <div class="footprint-grid" id="footprint-grid"></div>
+  </section>
+    <!-- ============================================ §XV ONTOLOGY -->
+  <section class="plate" id="sec-ontology">
+    <div class="section-head">
+      <div class="section-num">§ XV · Ontology</div>
+      <h2 class="section-title">How the county <em>categorizes itself</em></h2>
+      <div class="endpoint">/wp/v2/{taxonomy}</div>
+    </div>
+    <p class="dek">Before writing our own schema we read theirs. CCT publishes four taxonomies via REST. Each card below shows the full term list, <em>county-wide</em>, with any Kinderhook entries highlighted in cinnabar. The Kinderhook match count is what every later section filters against — if a taxonomy has zero Kinderhook terms, the village is invisible to that surface of the site.</p>
+    <div class="status" id="ontology-status">Fetching taxonomies…</div>
+    <div class="taxonomy-grid" id="ontology-grid"></div>
+  </section>
+    <!-- ============================================ §XVI EVENTS -->
+  <section class="plate" id="sec-events">
+    <div class="section-head">
+      <div class="section-num">§ XVI · Events</div>
+      <h2 class="section-title">What <em>happens</em> in the village</h2>
+      <div class="endpoint">/tribe/events/v1/events</div>
+    </div>
+    <p class="dek">Upcoming events at Kinderhook venues, read live from The Events Calendar. Each appears below as it would if a machine were asking the county what is scheduled here.</p>
+    <div class="status" id="events-status">Fetching events…</div>
+    <div class="entity-list" id="events-list"></div>
+  </section>
+    <!-- ============================================ §XVII EVENT VENUES -->
+  <section class="plate" id="sec-venues">
+    <div class="section-head">
+      <div class="section-num">§ XVII · Event Venues</div>
+      <h2 class="section-title">Places that <em>host</em> things</h2>
+      <div class="endpoint">/tribe/events/v1/venues</div>
+    </div>
+    <p class="dek">A precise, narrow category: places in Kinderhook the county's event system currently recognizes as <em>hosting events</em>. Not the same as "places in Kinderhook" or even "businesses that could host an event" — a venue only appears here if something is scheduled in it.</p>
+    <div class="status" id="venues-status">Fetching event venues…</div>
+    <div class="entity-list" id="venues-list"></div>
+  </section>
+    <!-- ============================================ §XVIII CROSS-REFERENCES -->
+  <section class="plate" id="sec-crossrefs">
+    <div class="section-head">
+      <div class="section-num">§ XVIII · Cross-references</div>
+      <h2 class="section-title">What the <em>wider commons</em> already knows</h2>
+      <div class="endpoint">wikidata · overpass</div>
+    </div>
+    <p class="dek">Before we write new identifiers, we look for existing ones. Wikidata carries structured civic knowledge; OpenStreetMap carries the ground truth of named places. Both are authorities we can link to with <span style="font-family:var(--mono);">sameAs</span>.</p>
+
+    <div class="crossref-grid">
+      <div class="crossref-col">
+        <div class="crossref-head">
+          <h3>Wikidata</h3>
+          <div class="crossref-endpoint">query.wikidata.org/sparql</div>
+        </div>
+        <div class="status" id="wd-status">Querying…</div>
+        <div id="wd-list" class="crossref-list"></div>
+      </div>
+      <div class="crossref-col">
+        <div class="crossref-head">
+          <h3>OpenStreetMap</h3>
+          <div class="crossref-endpoint">overpass-api.de</div>
+        </div>
+        <div class="status" id="osm-status">Querying…</div>
+        <div id="osm-list" class="crossref-list"></div>
+      </div>
+    </div>
+    <p class="jsonld-note" id="crossref-note" style="margin-top:28px;"></p>
+  </section>
+    <!-- ============================================ §XIX DIAGNOSTIC -->
+  <section class="plate" id="sec-gaps">
+    <div class="section-head">
+      <div class="section-num">§ XIX · Diagnostic</div>
+      <h2 class="section-title">What the machines <em>cannot</em> see</h2>
+      <div class="endpoint">(derived)</div>
+    </div>
+    <p class="dek">The county's data model has shape. This is what we found missing from the public surface — the specific gaps that make Kinderhook less legible than it could be.</p>
+    <div class="gaps">
+      <div class="gaps-grid" id="gaps-grid">
+        <!-- populated by JS based on what was actually found -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================== PART SIX -->
+  <div class="part-header" id="part6">
+    <div class="part-num">Part Six</div>
+    <h2 class="part-title">What would change this</h2>
+  </div>
+
+    <!-- ============================================ §XX PROPOSED SCHEMA -->
+  <section class="plate" id="sec-schema">
+    <div class="section-head">
+      <div class="section-num">§ XX · Proposed Schema</div>
+      <h2 class="section-title">What we <em>would publish</em> instead</h2>
+      <div class="endpoint">schema.org · JSON-LD</div>
+    </div>
+    <p class="dek">Given what's already there, and the village-local judgement we add, here is the JSON-LD that would make the Kinderhook Farmers' Market correctly addressable by language models, assistants, and the next generation of discovery tools.</p>
+    <p class="dek" style="margin-top:-12px;">The same graph is also published as a single addressable file: <a href="./kinderhook.json" style="font-family:var(--mono);font-size:14px;color:var(--accent);">kinderhook.json</a>. Fetch that if you want this report's structured data in one piece.</p>
+    <div class="jsonld-wrap" id="jsonld-out">Awaiting data…</div>
+    <p class="jsonld-note">Every item above could carry one of these blocks. The taxonomy is the county's; the disambiguation and local judgement is ours. The machines stop guessing.</p>
+  </section>
+
+  <!-- ============================================ ASKS ========= -->
+  <section class="asks" aria-label="What we ask">
+    <div class="asks-label">What We Ask</div>
+    <div id="asks-body">
+      <p class="asks-lede">Five concrete things that, if implemented by the parties named, would close the largest legibility gaps in this report.</p>
+      <ol class="asks-list" id="asks-list"></ol>
+    </div>
+  </section>
+
+  <!-- ============================================ COLOPHON ===== -->
+  <footer class="colophon">
+    <div class="colophon-grid">
+      <div>
+        <h6>Method</h6>
+        <p>All data in this report is read live from publicly accessible JSON endpoints. Nothing is scraped, cached, or altered. Each section names the endpoint it reads from.</p>
+      </div>
+      <div>
+        <h6>Intent</h6>
+        <p>This is a pilot for a regional legibility project — Kinderhook as the first node. The goal is not to replace the county's site but to augment it with a structured-data layer that existing systems can read.</p>
+      </div>
+      <div>
+        <h6>Correspondence</h6>
+        <p>Corrections and additions welcome. This report is kept in public at <a href="https://github.com/harmonicsystems/field-report" style="color:var(--accent);">harmonicsystems/field-report</a>; the curated corpus lives under <span style="font-family:var(--mono);font-size:12px;">schema/places/</span>. If a fact here is wrong, open an issue or a pull request.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* =================================================================
+   THE KINDERHOOK FIELD REPORT
+   Live audit of columbiacountytourism.org via public WP REST API.
+   All fetches happen in-browser. No backend.
+   ================================================================= */
+
+const API = 'https://columbiacountytourism.org/wp-json';
+const $ = (sel) => document.querySelector(sel);
+
+/* Decode HTML entities the WordPress REST API hands us already-encoded
+   (things like `KJ&#8217;s` or `Saint Paul&#039;s`). Uses the DOM as
+   a canonical decoder rather than hand-rolling a table. Applied before
+   esc() so our escaping doesn't double-encode the entity. */
+const _decoder = typeof document !== 'undefined' ? document.createElement('textarea') : null;
+const decode = (s) => {
+  if (!s) return '';
+  if (!_decoder) return String(s);
+  _decoder.innerHTML = String(s);
+  return _decoder.value;
+};
+
+const esc = (s) => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const stripHtml = (s) => decode(String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+
+/* Loader for build-time snapshots committed under data/snapshots/.
+   The page reads ONLY from these — no external API calls at view time.
+   Returns null on 404 / parse error so each section degrades on its own. */
+async function loadSnapshot(path) {
+  try {
+    const r = await fetch(path);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+
+/* Paginated fetch for WP REST endpoints — retained for ad-hoc tooling.
+   Not used by the live page; all live data flows through loadSnapshot(). */
+async function fetchAll(path, maxPages = 5) {
+  const results = [];
+  for (let page = 1; page <= maxPages; page++) {
+    const sep = path.includes('?') ? '&' : '?';
+    const url = `${API}${path}${sep}per_page=100&page=${page}`;
+    const res = await fetch(url);
+    if (!res.ok) {
+      if (res.status === 400 && page > 1) break;
+      throw new Error(`${res.status} ${res.statusText} on ${url}`);
+    }
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) break;
+    results.push(...data);
+    if (data.length < 100) break;
+  }
+  return results;
+}
+
+/* Find any taxonomy term whose slug contains the town keyword. */
+function matchingTerms(terms, slug) {
+  const s = slug.toLowerCase();
+  return terms.filter(t => (t.slug || '').toLowerCase().includes(s) || (t.name || '').toLowerCase().includes(s));
+}
+
+/* =============================================== §I : ONTOLOGY == */
+async function renderOntology(town) {
+  const status = $('#ontology-status');
+  const grid = $('#ontology-grid');
+  status.textContent = 'Loading snapshot…';
+  grid.innerHTML = '';
+
+  const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-ontology.json');
+  if (!snap) {
+    status.className = 'status err';
+    status.textContent = '✗ No CCT ontology snapshot in this deploy. Run tools/fetch-cct.mjs.';
+    return {};
+  }
+
+  const taxonomies = [
+    {
+      key: 'categories',
+      path: '/wp/v2/categories',
+      label: 'Editorial categories',
+      tag: 'editorial',
+      caption: (items, matches) => {
+        const top = items.slice().sort((a,b)=>(b.count||0)-(a.count||0))[0];
+        const m = matches[0];
+        if (!m) return `Geographic + topical buckets for blog posts. ${decode(top.name)} dominates with ${top.count}.`;
+        const rank = items.slice().sort((a,b)=>(b.count||0)-(a.count||0)).findIndex(x => x.id === m.id) + 1;
+        return `Geographic + topical buckets for blog posts. Kinderhook holds ${m.count} ${m.count === 1 ? 'post' : 'posts'} (rank ${rank} of ${items.length}); ${decode(top.name)} dominates at ${top.count}.`;
+      },
+    },
+    {
+      key: 'tags',
+      path: '/wp/v2/tags',
+      label: 'Editorial tags',
+      tag: 'tags',
+      caption: (items) => {
+        const total = items.length;
+        const totalUses = items.reduce((n, t) => n + (t.count || 0), 0);
+        const golfish = items.filter(t => /golf|par|driving range|tee|green|fairway/i.test(t.name)).length;
+        const allGolf = total > 0 && golfish === total;
+        if (allGolf) return `WordPress free-text tags. All ${total} terms are golf-themed (${totalUses} ${totalUses === 1 ? 'use' : 'uses'} total). Tagging is functionally not in use sitewide.`;
+        return `WordPress free-text tags. ${total} term${total === 1 ? '' : 's'}, ${totalUses} use${totalUses === 1 ? '' : 's'} total.`;
+      },
+    },
+    {
+      key: 'tribe_events_cat',
+      path: '/wp/v2/tribe_events_cat',
+      label: 'Event categories',
+      tag: 'events',
+      caption: (items) => {
+        const names = items.map(i => decode(i.name)).join(' · ');
+        const totalUses = items.reduce((n, t) => n + (t.count || 0), 0);
+        return `The Events Calendar's category taxonomy. ${items.length} bucket${items.length === 1 ? '' : 's'} county-wide (${names}); ${totalUses} categorized event${totalUses === 1 ? '' : 's'} total. The vast majority of events have no category.`;
+      },
+    },
+    {
+      key: 'business_category',
+      path: '/wp/v2/business-category',
+      label: 'Business categories',
+      tag: 'business',
+      caption: (items) => {
+        // Detect overlapping categories (e.g., Dining 173 vs Restaurants 99).
+        const dining = items.find(i => /^dining$/i.test(decode(i.name)));
+        const rest = items.find(i => /^restaurants?$/i.test(decode(i.name)));
+        const overlapNote = (dining && rest)
+          ? ` "${decode(dining.name)}" (${dining.count}) and "${decode(rest.name)}" (${rest.count}) coexist as separate categories — the taxonomy overlaps itself.`
+          : '';
+        return `Functional, not geographic — what CCT calls each business.${overlapNote}`;
+      },
+    },
+  ];
+
+  const results = {};
+  const matchCounts = {};
+  for (const t of taxonomies) {
+    try {
+      const items = snap[t.key] || [];
+      results[t.tag] = items;
+      const matches = matchingTerms(items, town);
+      matchCounts[t.tag] = matches.length;
+
+      const sorted = items.slice().sort((a,b)=>(b.count||0)-(a.count||0)).slice(0, 30);
+      const cap = t.caption ? t.caption(items, matches) : '';
+      const matchClass = matches.length > 0 ? 'kh-hit' : 'kh-miss';
+
+      const card = document.createElement('div');
+      card.className = 'taxonomy';
+      card.innerHTML = `
+        <div class="tax-head">
+          <h3>${esc(t.label)}</h3>
+          <span class="tax-endpoint">${esc(t.path)}</span>
+        </div>
+        <div class="tax-numbers">
+          <div class="tax-stat">
+            <div class="tax-count">${items.length}</div>
+            <div class="tax-stat-label">term${items.length === 1 ? '' : 's'} county-wide</div>
+          </div>
+          <div class="tax-stat ${matchClass}">
+            <div class="tax-count">${matches.length}</div>
+            <div class="tax-stat-label">in ${esc(town)}</div>
+          </div>
+        </div>
+        ${cap ? `<p class="tax-caption">${esc(cap)}</p>` : ''}
+        <ul>
+          ${sorted.map(i => `
+            <li class="${matches.some(m => m.id === i.id) ? 'match' : ''}">
+              <span>${esc(decode(i.name))}</span>
+              <span class="n">${i.count || 0}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      grid.appendChild(card);
+    } catch (e) {
+      const card = document.createElement('div');
+      card.className = 'taxonomy';
+      card.innerHTML = `<div class="tax-head"><h3>${esc(t.label)}</h3></div><p style="font-size:12px;color:var(--accent);margin:8px 0 0;">unreachable: ${esc(e.message)}</p>`;
+      grid.appendChild(card);
+    }
+  }
+
+  const totalTerms = Object.values(results).reduce((n, a) => n + (a?.length || 0), 0);
+  const totalMatches = Object.values(matchCounts).reduce((n, x) => n + x, 0);
+  const stamp = (snap.fetchedAt || '').slice(0, 10);
+  status.textContent = `Four taxonomies · ${totalTerms} terms total · ${totalMatches} match ${town} · snapshot ${stamp}.`;
+  status.className = 'status ok';
+  return results;
+}
+
+/* =============================================== §II : FOOTPRINT  */
+
+const SUBTYPE_LABELS = {
+  tribe_events:    { label: 'Events',         dek: 'scheduled on the calendar' },
+  tribe_venue:     { label: 'Event Venues',   dek: 'places that host events' },
+  tribe_organizer: { label: 'Organizers',     dek: 'who runs the programs' },
+  post:            { label: 'Posts',          dek: 'editorial writing' },
+  page:            { label: 'Pages',          dek: 'static site pages' },
+  // business CPT is NOT in here — it's not exposed to search.
+};
+
+const SUBTYPE_ORDER = ['tribe_events', 'tribe_venue', 'tribe_organizer', 'post', 'page'];
+
+async function renderFootprint(town) {
+  const status = $('#footprint-status');
+  const grid = $('#footprint-grid');
+  status.textContent = 'Loading snapshot…';
+  grid.innerHTML = '';
+
+  try {
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-search-kinderhook.json');
+    if (!snap) throw new Error('no snapshot');
+    const hits = snap.hits || [];
+
+    const bySubtype = {};
+    for (const h of hits) {
+      (bySubtype[h.subtype] ||= []).push(h);
+    }
+
+    grid.innerHTML = SUBTYPE_ORDER
+      .filter(k => bySubtype[k]?.length)
+      .map(k => {
+        const arr = bySubtype[k];
+        const meta = SUBTYPE_LABELS[k] || { label: k, dek: '' };
+        const sample = arr.slice(0, 8);
+        return `
+          <div class="footprint-col">
+            <h3>${esc(meta.label)}</h3>
+            <div class="footprint-count">${arr.length}</div>
+            <div class="footprint-label">${esc(meta.dek)}</div>
+            <ul>
+              ${sample.map(h => `<li><a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(stripHtml(h.title))}</a></li>`).join('')}
+              ${arr.length > sample.length ? `<li style="color:var(--ink-soft);font-style:italic;">and ${arr.length - sample.length} more</li>` : ''}
+            </ul>
+          </div>
+        `;
+      }).join('');
+
+    status.className = 'status ok';
+    const total = hits.length;
+    const kinds = Object.keys(bySubtype).length;
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
+    status.textContent = `${total} items mentioning ${town} across ${kinds} content type${kinds === 1 ? '' : 's'} · snapshot ${stamp}. Note: CCT's 594-entry "business" directory is not exposed to this search, and is not represented below.`;
+    return { total, bySubtype };
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
+    return { total: 0, bySubtype: {} };
+  }
+}
+
+/* =============================================== §III : EVENTS == */
+async function renderEvents(town) {
+  const status = $('#events-status');
+  const list = $('#events-list');
+  status.textContent = 'Loading snapshot…';
+  list.innerHTML = '';
+
+  try {
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-events.json');
+    if (!snap) throw new Error('no snapshot');
+    const all = snap.events || [];
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
+    const matching = all.filter(e => {
+      const venue = e.venue?.city || e.venue?.venue || '';
+      const title = e.title || '';
+      return (venue + ' ' + title + ' ' + (e.description||'')).toLowerCase().includes(town.toLowerCase());
+    });
+
+    if (matching.length === 0) {
+      status.className = 'status';
+      status.textContent = `No upcoming events in ${town} (checked ${all.length} county-wide). Snapshot ${stamp}.`;
+      return { all, matching: [] };
+    }
+
+    matching.slice(0, 12).forEach(e => {
+      const when = e.start_date_details
+        ? `${e.start_date_details.month}/${e.start_date_details.day}`
+        : (e.start_date || '').slice(5, 10);
+      const wrap = document.createElement('div');
+      wrap.className = 'entity';
+      wrap.innerHTML = `
+        <div class="e-meta"><span class="when">${esc(when)}</span><br>${e.all_day ? 'all day' : esc((e.start_date || '').slice(11,16))}</div>
+        <div>
+          <h4><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(decode(e.title))}</a></h4>
+          <p class="e-desc">${esc(stripHtml(e.excerpt || e.description || '').slice(0, 220))}${stripHtml(e.excerpt || e.description || '').length > 220 ? '…' : ''}</p>
+        </div>
+        <div class="e-where">${esc(decode(e.venue?.venue || 'Venue unspecified'))}${e.venue?.city ? `<br><small>${esc(decode(e.venue.city))}</small>` : ''}</div>
+      `;
+      list.appendChild(wrap);
+    });
+
+    status.className = 'status ok';
+    status.textContent = `${matching.length} upcoming events in ${town} · ${all.length} county-wide · snapshot ${stamp}.`;
+    return { all, matching };
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
+    return { all: [], matching: [] };
+  }
+}
+
+/* =============================================== §III : VENUES == */
+async function renderVenues(town) {
+  const status = $('#venues-status');
+  const list = $('#venues-list');
+  status.textContent = 'Loading snapshot…';
+  list.innerHTML = '';
+
+  try {
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-venues.json');
+    if (!snap) throw new Error('no snapshot');
+    const venues = snap.venues || [];
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
+    const matching = venues.filter(v => {
+      const hay = [v.venue, v.city, v.address, v.description].join(' ').toLowerCase();
+      return hay.includes(town.toLowerCase());
+    });
+
+    if (matching.length === 0) {
+      status.className = 'status';
+      status.textContent = `0 of ${venues.length} county-wide venues are in ${town}. Snapshot ${stamp}.`;
+      return { matching: [], total: venues.length };
+    }
+
+    matching.forEach(v => {
+      const wrap = document.createElement('div');
+      wrap.className = 'entity';
+      wrap.innerHTML = `
+        <div class="e-meta">${esc(v.state || 'NY')}</div>
+        <div>
+          <h4>${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(decode(v.venue))}</a>` : esc(decode(v.venue))}</h4>
+          <p class="e-desc">${esc(stripHtml(v.description || '').slice(0, 200)) || '<em style="color:var(--rule);">No description published.</em>'}</p>
+        </div>
+        <div class="e-where">${[v.address, v.city, v.zip].filter(Boolean).map(esc).join(', ')}</div>
+      `;
+      list.appendChild(wrap);
+    });
+
+    status.className = 'status ok';
+    const pct = ((matching.length / venues.length) * 100).toFixed(0);
+    status.textContent = `${matching.length} of ${venues.length} county-wide venues (${pct}%) are in ${town} · snapshot ${stamp}.`;
+    return { matching, total: venues.length };
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
+    return { matching: [], total: 0 };
+  }
+}
+
+/* =============================================== §IV : POSTS ==== */
+async function renderPosts(town) {
+  const status = $('#posts-status');
+  const list = $('#posts-list');
+  status.textContent = 'Loading snapshot…';
+  list.innerHTML = '';
+
+  try {
+    const snap = await loadSnapshot('./data/snapshots/columbiacountytourism/latest-posts.json');
+    if (!snap) throw new Error('no snapshot');
+    const posts = snap.posts || [];
+    const stamp = (snap.fetchedAt || '').slice(0, 10);
+
+    if (posts.length === 0) {
+      status.className = 'status';
+      status.textContent = `Editorial category exists but holds no published posts. Snapshot ${stamp}.`;
+      return [];
+    }
+
+    posts.slice(0, 10).forEach(p => {
+      const date = (p.date || '').slice(0, 10);
+      const year = date.slice(0, 4);
+      const mon = date.slice(5, 7);
+      const wrap = document.createElement('div');
+      wrap.className = 'entity';
+      wrap.innerHTML = `
+        <div class="e-meta"><span class="when">${esc(year)}</span><br>${esc(mon)}</div>
+        <div>
+          <h4><a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(stripHtml(p.title?.rendered || ''))}</a></h4>
+          <p class="e-desc">${esc(stripHtml(p.excerpt?.rendered || '').slice(0, 240))}${stripHtml(p.excerpt?.rendered || '').length > 240 ? '…' : ''}</p>
+        </div>
+        <div class="e-where">Editorial</div>
+      `;
+      list.appendChild(wrap);
+    });
+
+    status.className = 'status ok';
+    status.textContent = `${posts.length} article(s) tagged with ${town} · showing ${Math.min(10, posts.length)} · snapshot ${stamp}.`;
+    return posts;
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}. Run tools/fetch-cct.mjs.`;
+    return [];
+  }
+}
+
+/* =============================================== §VII : CURATED = */
+
+async function renderCuratedPlaces(town) {
+  const status = $('#curated-status');
+  const list = $('#curated-list');
+  status.textContent = 'Reading manifest…';
+  list.innerHTML = '';
+
+  try {
+    const manifestRes = await fetch(`./schema/places/manifest.json`);
+    if (!manifestRes.ok) throw new Error(`manifest ${manifestRes.status}`);
+    const manifest = await manifestRes.json();
+
+    if (manifest.village !== town) {
+      status.className = 'status';
+      status.textContent = `Corpus is pinned to ${manifest.village}. No curated places for ${town} yet.`;
+      return [];
+    }
+
+    const results = await Promise.all(manifest.places.map(async (p) => {
+      try {
+        const res = await fetch(`./schema/places/${p.slug}.json`);
+        if (!res.ok) throw new Error(`${p.slug}: ${res.status}`);
+        return await res.json();
+      } catch (err) {
+        return { slug: p.slug, error: err.message, _manifest: p };
+      }
+    }));
+
+    list.innerHTML = results.map(r => {
+      if (r.error) {
+        return `<div class="entity"><div class="e-meta">err</div><div><h4>${esc(r.slug)}</h4><p class="e-desc" style="color:var(--accent);">${esc(r.error)}</p></div><div class="e-where">—</div></div>`;
+      }
+      const primary = (r.jsonld?.['@graph'] || [])[0] || {};
+      const types = [].concat(primary['@type'] || []).join(' · ');
+      const register = primary['kh:affectiveRegister'] || '';
+      const seasonality = primary['kh:seasonality']?.cadence || '';
+      return `
+        <div class="entity">
+          <div class="e-meta">
+            <span class="when">${esc(types)}</span><br>
+            reviewed ${esc(r.lastReviewed || '—')}
+          </div>
+          <div>
+            <h4><a href="./schema/places/${esc(r.slug)}.json" target="_blank" rel="noopener">${esc(primary.name || r.slug)}</a></h4>
+            <p class="e-desc">${esc(primary.description || '')}</p>
+            ${register ? `<p class="e-desc" style="font-style:italic;margin-top:6px;color:var(--slate);">${esc(register)}</p>` : ''}
+          </div>
+          <div class="e-where">${esc(seasonality || r._manifest?.kind || 'Village of Kinderhook')}</div>
+        </div>
+      `;
+    }).join('');
+
+    status.className = 'status ok';
+    const ok = results.filter(r => !r.error).length;
+    status.textContent = `✓ ${ok} of ${results.length} curated ${results.length === 1 ? 'entry' : 'entries'} loaded from schema/places/`;
+    return results.filter(r => !r.error);
+
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}`;
+    return [];
+  }
+}
+
+/* =============================================== §VI : CROSSREFS  */
+
+/* Per-town registry. Start with Kinderhook; extend by hand as the
+   corpus grows. Wikidata Q-IDs resolved via wbsearchentities, bboxes
+   eyeballed from OSM place nodes. */
+const PLACES = {
+  kinderhook: {
+    wikidata: ['Q3478629', 'Q3710663'], // village, town
+    bbox: [42.35, -73.72, 42.42, -73.65], // S, W, N, E — includes Lindenwald
+    wikipedia: 'Kinderhook_(village),_New_York',
+    officialSite: 'https://www.villageofkinderhook.org/',
+  },
+};
+
+/* wikidataQuery() and overpassQuery() retired with the snapshot refactor.
+   See tools/fetch-crossrefs.mjs for the build-time equivalents. */
+
+function osmKind(tags) {
+  return tags.historic || tags.tourism || tags.amenity || tags.shop || tags.memorial || '—';
+}
+
+function osmGroup(tags) {
+  if (tags.historic || tags.memorial || tags.tourism === 'museum') return 'Historic';
+  if (tags.amenity === 'place_of_worship') return 'Religious';
+  if (tags.amenity === 'school') return 'Civic';
+  if (['library','townhall','post_office','fire_station','community_centre','arts_centre','theatre'].includes(tags.amenity)) return 'Civic';
+  if (['restaurant','cafe','bar','pub'].includes(tags.amenity)) return 'Food & Drink';
+  if (tags.shop) return 'Commerce';
+  if (tags.tourism) return 'Lodging / Info';
+  return 'Other';
+}
+
+async function renderCrossrefs(town) {
+  const wdStatus = $('#wd-status');
+  const wdList = $('#wd-list');
+  const osmStatus = $('#osm-status');
+  const osmList = $('#osm-list');
+  const note = $('#crossref-note');
+
+  const cfg = PLACES[town];
+  if (!cfg) {
+    wdStatus.className = 'status';
+    wdStatus.textContent = `Cross-references currently pinned to Kinderhook.`;
+    osmStatus.className = 'status';
+    osmStatus.textContent = `Extend the PLACES registry to include ${town}.`;
+    wdList.innerHTML = ''; osmList.innerHTML = ''; note.textContent = '';
+    return { wikidata: [], osm: [] };
+  }
+
+  // ---------- Wikidata ----------
+  let wd = [];
+  const wdSnap = await loadSnapshot('./data/snapshots/wikidata/latest-kinderhook-crossrefs.json');
+  if (wdSnap) {
+    wd = wdSnap.entities || [];
+    const stamp = (wdSnap.fetchedAt || '').slice(0, 10);
+    wdList.innerHTML = wd.length === 0
+      ? `<p style="font-family:var(--display);font-style:italic;color:var(--ink-soft);margin:8px 0 0;">Wikidata knows the municipality but holds no directly-linked entities. This is the kind of structural gap the project fills.</p>`
+      : wd.map(r => `
+          <div class="xr">
+            <div>
+              <div class="xr-name"><a href="https://www.wikidata.org/wiki/${r.qid}" target="_blank" rel="noopener">${esc(r.name)}</a></div>
+              <span class="xr-kind">${esc(r.instance)}</span>
+            </div>
+            <div class="xr-id">${r.qid}</div>
+          </div>
+        `).join('');
+    wdStatus.className = 'status ok';
+    wdStatus.textContent = `${wd.length} entit${wd.length === 1 ? 'y' : 'ies'} linked to ${cfg.wikidata.join(' / ')} · snapshot ${stamp}.`;
+  } else {
+    wdStatus.className = 'status err';
+    wdStatus.textContent = `✗ No Wikidata snapshot. Run tools/fetch-crossrefs.mjs.`;
+  }
+
+  // ---------- OSM ----------
+  let osm = [];
+  const osmSnap = await loadSnapshot('./data/snapshots/openstreetmap/latest-kinderhook-features.json');
+  if (osmSnap) {
+    const els = osmSnap.features || [];
+    osm = els.map(e => ({
+      id: e.id,
+      type: e.type,
+      name: e.name,
+      kind: osmKind(e.tags || {}),
+      group: osmGroup(e.tags || {}),
+      lat: e.lat,
+      lon: e.lon,
+      tags: e.tags,
+    }));
+    const stamp = (osmSnap.fetchedAt || '').slice(0, 10);
+
+    const order = ['Historic','Civic','Religious','Food & Drink','Commerce','Lodging / Info','Other'];
+    const grouped = {};
+    for (const g of order) grouped[g] = [];
+    for (const r of osm) (grouped[r.group] ||= []).push(r);
+    for (const g of order) grouped[g].sort((a,b) => a.name.localeCompare(b.name));
+
+    osmList.innerHTML = order.filter(g => grouped[g].length).map(g => `
+      <div class="osm-group">
+        <div class="osm-group-head">${g} <span class="count">· ${grouped[g].length}</span></div>
+        <p class="osm-names">${grouped[g].map(r =>
+          `<a href="https://www.openstreetmap.org/${r.type}/${r.id}" target="_blank" rel="noopener" title="${esc(r.kind)}">${esc(r.name)}</a>`
+        ).join('<span class="osm-sep">·</span>')}</p>
+      </div>
+    `).join('');
+
+    osmStatus.className = 'status ok';
+    osmStatus.textContent = `${osm.length} named features in a ${(cfg.bbox[2]-cfg.bbox[0]).toFixed(2)}° × ${(cfg.bbox[3]-cfg.bbox[1]).toFixed(2)}° window · snapshot ${stamp}.`;
+  } else {
+    osmStatus.className = 'status err';
+    osmStatus.textContent = `✗ No OSM snapshot. Run tools/fetch-crossrefs.mjs.`;
+  }
+
+  note.textContent = `The municipality itself is known to Wikidata; its contents are not. OSM holds the ground truth — every named feature has a stable identifier we can cite.`;
+
+  return { wikidata: wd, osm, config: cfg };
+}
+
+/* =============================================== FINDING ======== */
+
+function renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses }) {
+  const el = $('#finding-body');
+  if (!el) return;
+
+  const v = venues?.length ?? 0;
+  const N = venueTotal ?? 0;
+  const K = village?.count ?? 0;
+  const C = Object.keys(village?.categories || {}).length;
+  const B = cctBizIndex?.totalBusinessUrls ?? null;
+  // Prefer the full-scrape address-based count; fall back to the slug count.
+  const BK = cctBusinesses?.kinderhookCount ?? cctBizIndex?.kinderhookBySlugCount ?? null;
+  const single = v === 1 ? decode(venues[0]?.venue) : null;
+
+  // Live numbers in bold; copy degrades sentence-by-sentence if a fetch fails.
+  // Framing: the data is real, the situation is shared, the path forward is
+  // additive. We name what's there before we name what's missing.
+  const lede = N
+    ? `Of <strong>${N}</strong> places currently hosting scheduled events on Columbia County Tourism's calendar, <strong>${v}</strong> ${v === 1 ? 'is' : 'are'} in the Village of Kinderhook${single ? ` — <em>${esc(single)}</em>` : ''}. CCT's broader business directory adds <strong>${BK ?? '?'}</strong> Kinderhook entries on top of that${B != null ? ` (out of ${B} county-wide)` : ''}; the village's own directory lists another <strong>${K ?? '?'}</strong>${C ? ` across <strong>${C}</strong> municipally-assigned categories` : ''}. The pages exist, the businesses are real, the storefronts are open.`
+    : `Columbia County Tourism's event-venue database could not be read on this load.`;
+
+  const foot = (K || B)
+    ? `What none of those pages currently carry is the structured markup — <span style="font-family:var(--mono);font-size:14px;">LocalBusiness</span>, <span style="font-family:var(--mono);font-size:14px;">Restaurant</span>, <span style="font-family:var(--mono);font-size:14px;">Hotel</span>, <span style="font-family:var(--mono);font-size:14px;">Place</span> — that lets a phone or an AI assistant identify them as recommendable destinations. Kinderhook's commerce depends on tourism. Its tourism depends on visitors finding it. Visitors find it through the same channels that publish every other Hudson Valley village. Those channels can only recommend what they can structurally read. Making the village's existing assets readable to them is the opportunity this report describes.`
+    : '';
+
+  el.innerHTML = `<p class="finding-lede">${lede}</p><p class="finding-foot">${foot}</p>`;
+}
+
+/* =============================================== §VI : COVERAGE = */
+
+async function renderCoverage(town) {
+  const status = $('#coverage-status');
+  const list = $('#coverage-list');
+  status.textContent = 'Reading manifest…';
+  list.innerHTML = '';
+
+  try {
+    const m = await fetch(`./schema/coverage/manifest.json`);
+    if (!m.ok) throw new Error(`manifest ${m.status}`);
+    const manifest = await m.json();
+
+    if (manifest.village !== town) {
+      status.className = 'status';
+      status.textContent = `Coverage corpus is pinned to ${manifest.village}.`;
+      return [];
+    }
+
+    const entries = await Promise.all(manifest.entries.map(async (e) => {
+      try {
+        const r = await fetch(`./schema/coverage/${e.slug}.json`);
+        if (!r.ok) throw new Error(`${e.slug}: ${r.status}`);
+        return await r.json();
+      } catch (err) {
+        return { slug: e.slug, error: err.message };
+      }
+    }));
+
+    // Sort: articles by datePublished desc, search entries last.
+    entries.sort((a, b) => {
+      if (a.type !== b.type) return a.type === 'search' ? 1 : -1;
+      return (b.datePublished || '').localeCompare(a.datePublished || '');
+    });
+
+    list.innerHTML = entries.map(c => {
+      if (c.error) {
+        return `<div class="cite"><div class="cite-pub">err</div><div><p class="cite-title">${esc(c.slug)}</p><p class="cite-summary" style="color:var(--accent);">${esc(c.error)}</p></div></div>`;
+      }
+      const date = c.datePublished ? c.datePublished.slice(0, 10) : '';
+      const isSearch = c.type === 'search';
+      return `
+        <div class="cite ${isSearch ? 'cite-search' : ''}">
+          <div class="cite-pub">
+            ${c.publicationUrl ? `<a href="${esc(c.publicationUrl)}" target="_blank" rel="noopener">${esc(c.publication)}</a>` : esc(c.publication)}
+            ${date ? `<span class="cite-when">${esc(date)}</span>` : ''}
+          </div>
+          <div>
+            <p class="cite-title"><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title || c.label || c.slug)}</a></p>
+            ${c.author ? `<p class="cite-byline">by ${esc(c.author)}</p>` : ''}
+            ${c.summary ? `<p class="cite-summary">${esc(c.summary)}</p>` : ''}
+            ${c.ourNote ? `<p class="cite-note">${esc(c.ourNote)}</p>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+
+    status.className = 'status ok';
+    const ok = entries.filter(e => !e.error).length;
+    status.textContent = `${ok} of ${entries.length} citations loaded from schema/coverage/. Curated by hand; new entries welcomed via PR.`;
+    return entries.filter(e => !e.error);
+  } catch (err) {
+    status.className = 'status err';
+    status.textContent = `✗ ${err.message}`;
+    return [];
+  }
+}
+
+/* =============================================== §VII : BUSINESSES */
+
+function renderCCTBusinesses(bizSnapshot) {
+  const status = $('#businesses-status');
+  const list = $('#businesses-list');
+
+  if (!bizSnapshot) {
+    status.className = 'status';
+    status.textContent = `No CCT businesses snapshot in this deploy. Run tools/fetch-cct-businesses.mjs to capture ~594 pages.`;
+    return;
+  }
+
+  const kh = bizSnapshot.kinderhook || [];
+  const total = bizSnapshot.succeededCount || bizSnapshot.businesses?.length || 0;
+
+  if (kh.length === 0) {
+    status.className = 'status';
+    status.textContent = `Snapshot has ${total} businesses but 0 identify as Kinderhook by addressLocality.`;
+    list.innerHTML = '';
+    return;
+  }
+
+  // Sort alphabetically by name for stability.
+  const sorted = [...kh].sort((a,b) => (a.name||'').localeCompare(b.name||''));
+
+  list.innerHTML = sorted.map(b => {
+    const street = b.address?.streetAddress || '';
+    const locality = b.address?.addressLocality || 'Kinderhook';
+    const zip = b.address?.postalCode || '';
+    const cityLine = [street, [locality, zip].filter(Boolean).join(' ')].filter(Boolean).join(' · ');
+    const desc = b.description ? esc(b.description.slice(0, 260)) + (b.description.length > 260 ? '…' : '') : '';
+    return `
+      <div class="entity">
+        <div class="e-meta">
+          <span class="when">${b.phone ? esc(b.phone) : 'no phone listed'}</span><br>
+          ${b.website ? `<a href="${esc(b.website)}" target="_blank" rel="noopener" style="color:var(--accent);">site↗</a>` : 'no website'}
+        </div>
+        <div>
+          <h4><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.name || '(untitled)')}</a></h4>
+          ${desc ? `<p class="e-desc">${desc}</p>` : ''}
+        </div>
+        <div class="e-where">${esc(cityLine)}</div>
+      </div>
+    `;
+  }).join('');
+
+  status.className = 'status ok';
+  const fetchedDate = (bizSnapshot.fetchedAt || '').slice(0, 10);
+  status.textContent = `${kh.length} of ${total} CCT businesses are in Kinderhook (by address). Snapshot ${fetchedDate}.`;
+}
+
+/* =============================================== §V : DIAGNOSTIC  */
+function renderGaps(town, data) {
+  const { events, venues, venueTotal, posts, ontology, village, cctBizIndex, footprint } = data;
+  const venueCount = venues?.length || 0;
+  const eventCount = events?.matching?.length || 0;
+  const postCount = posts?.length || 0;
+  const villageCount = village?.count || 0;
+  const villageCatCount = Object.keys(village?.categories || {}).length;
+  const cctBizTotal = cctBizIndex?.totalBusinessUrls || null;
+  const cctBizKh = cctBizIndex?.kinderhookBySlugCount || null;
+
+  // Diagnostic findings derived from the live taxonomy data in §I.
+  const cats = ontology?.editorial || [];
+  const tags = ontology?.tags || [];
+  const evCats = ontology?.events || [];
+  const bizCats = ontology?.business || [];
+  const tagsAllGolf = tags.length > 0 && tags.every(t => /golf|par|driving range|tee|green|fairway/i.test(t.name));
+  const tagsTotalUses = tags.reduce((n, t) => n + (t.count || 0), 0);
+  const evCatTotalUses = evCats.reduce((n, t) => n + (t.count || 0), 0);
+  const dining = bizCats.find(i => /^dining$/i.test(decode(i.name)));
+  const restaurants = bizCats.find(i => /^restaurants?$/i.test(decode(i.name)));
+
+  const gaps = [
+    {
+      verdict: 'missing',
+      title: `${venueCount} of ${venueTotal || '?'} county-wide event venues is in ${town}`,
+      body: `The Events Calendar's machine-readable list of places currently hosting events contains ${venueTotal || '?'} entries for the whole county. ${venueCount === 1 ? 'One' : venueCount} ${venueCount === 1 ? 'is' : 'are'} in ${town}${venueCount === 1 ? ' — a yoga studio.' : '.'} Hudson has eighteen. Chatham has eight. "Event venue" is a narrow category — a place only appears here if something is scheduled — but the gap still tells us the county is not publishing Kinderhook's hosting capacity to its own search surface.`,
+    },
+    ...(tagsAllGolf ? [{
+      verdict: 'missing',
+      title: `Editorial tag taxonomy: ${tags.length} terms, all golf-themed`,
+      body: `CCT's WordPress tag system contains exactly ${tags.length} terms (${tags.map(t => decode(t.name)).join(', ')}), applied ${tagsTotalUses} time${tagsTotalUses === 1 ? '' : 's'} total. Tagging is functionally not in use sitewide. Posts about Kinderhook — or anywhere else — carry no semantic tags a machine could group on.`,
+    }] : []),
+    ...(evCats.length > 0 && evCats.length <= 3 ? [{
+      verdict: 'missing',
+      title: `Event categories: ${evCats.length} bucket${evCats.length === 1 ? '' : 's'} county-wide`,
+      body: `The Events Calendar's category taxonomy holds ${evCats.length} term${evCats.length === 1 ? '' : 's'} (${evCats.map(t => `${decode(t.name)}: ${t.count}`).join(' · ')}). ${evCatTotalUses} event${evCatTotalUses === 1 ? '' : 's'} ${evCatTotalUses === 1 ? 'is' : 'are'} categorized at all; the rest carry no category. There is no way to say "this event is a market" or "this event is a lecture" in CCT's structured data.`,
+    }] : []),
+    ...((dining && restaurants) ? [{
+      verdict: 'partial',
+      title: `Business categories overlap: "Dining" (${dining.count}) vs "Restaurants" (${restaurants.count})`,
+      body: `CCT's business taxonomy carries "${decode(dining.name)}" and "${decode(restaurants.name)}" as separate categories with overlapping membership. A machine asking "what are the restaurants in Kinderhook?" gets a different answer depending on which category it queries. Internal taxonomy overlap reduces machine legibility even where the data exists.`,
+    }] : []),
+    {
+      verdict: 'missing',
+      title: cctBizTotal
+        ? `${cctBizTotal} business pages on the county site; 0 as LocalBusiness JSON-LD`
+        : 'No LocalBusiness JSON-LD on the county site',
+      body: cctBizTotal
+        ? `CCT's full business directory lists ${cctBizTotal} entries (sitemap count). The custom post type is not exposed to REST; ${cctBizKh} identify as Kinderhook by URL slug alone, and more would be visible if we fetched addresses from each page. Yoast emits WebPage, BreadcrumbList, and Organization schema on each, but no LocalBusiness or Place markup for the business itself. The pages exist; the structured surface does not.`
+        : `CCT's own site lists ${(ontology.business||[]).length} business categories but the custom post type is not exposed to the REST API, and no schema.org LocalBusiness markup is published in the page source.`,
+    },
+    {
+      verdict: 'missing',
+      title: `Village directory: ${villageCount || '?'} businesses, 0 as structured data`,
+      body: villageCount
+        ? `The Village of Kinderhook itself maintains a directory of ${villageCount} businesses across ${villageCatCount} municipally-assigned categories (ACCOUNTING through RETAIL SHOPS). None are published as JSON-LD, RSS, iCal, or any other machine-readable feed. The information exists; the surface does not.`
+        : `The village's own business directory exists at villageofkinderhook.org but is not currently loaded into this report. See data/snapshots/villageofkinderhook/ once a snapshot is committed.`,
+    },
+    {
+      verdict: 'missing',
+      title: 'No llms.txt or AI-facing canonical',
+      body: 'There is no file at either site root that tells language models what this county is, who it represents, or how its content is structured. AI assistants reconstruct their picture from HTML alone.',
+    },
+    {
+      verdict: eventCount > 0 ? 'present' : 'partial',
+      title: 'Events carry partial Event schema',
+      body: eventCount > 0
+        ? `The Events Calendar emits Event JSON-LD on individual event pages. This is the one structured-data win on the current site. It does not extend to series, seasonality, or vendor-level information.`
+        : `No upcoming events in ${town} were returned. Either none are scheduled, or the village's seasonal activity is not represented in-system during quiet months.`,
+    },
+    {
+      verdict: postCount > 0 ? 'partial' : 'missing',
+      title: 'Editorial voice is trapped in HTML',
+      body: postCount > 0
+        ? `${postCount} articles mention ${town}, but none carry schema.org CreativeWork markup that would link them back to the Place they describe. The affective layer is legible to people, invisible to machines.`
+        : `No editorial articles in the ${town} category — the affective record of the village is absent from the county's written record.`,
+    },
+    {
+      verdict: 'missing',
+      title: 'No functional-proximity model',
+      body: 'Every place in the county is represented only by its containing municipality. Nothing encodes the 15-minute functional distance between villages, the river crossings that change drive time, or the cultural orbits that make Hudson and Kinderhook more adjacent than their coordinates suggest.',
+    },
+  ];
+
+  const grid = $('#gaps-grid');
+  grid.innerHTML = gaps.map(g => `
+    <div class="gap">
+      <div class="verdict ${g.verdict}">${g.verdict}</div>
+      <h5>${esc(g.title)}</h5>
+      <p>${esc(g.body)}</p>
+    </div>
+  `).join('');
+}
+
+/* =============================================== ASKS ============ */
+
+function renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint }) {
+  const list = $('#asks-list');
+  if (!list) return;
+
+  const B = cctBizIndex?.totalBusinessUrls ?? null;
+  const BK = cctBusinesses?.kinderhookCount ?? null;
+  const K = village?.count ?? null;
+  const C = village ? Object.keys(village.categories || {}).length : null;
+  const evCats = ontology?.events || [];
+  const evCatNames = evCats.map(t => decode(t.name)).join(', ');
+  const evCount = footprint?.bySubtype?.tribe_events?.length ?? null;
+  const tags = ontology?.tags || [];
+  const tagsCount = tags.length;
+
+  const asks = [
+    {
+      actor: 'Columbia County Tourism',
+      action: 'Emit LocalBusiness JSON-LD on every business detail page.',
+      rationale: B
+        ? `Adds <strong>${B}</strong> currently-invisible entities to the structured-data web — including the <strong>${BK ?? '?'}</strong> in Kinderhook this report had to fetch page-by-page to surface. Yoast already emits Organization and BreadcrumbList; adding LocalBusiness or Place is a configuration change, not a development project.`
+        : `Adds the entire CCT business directory to the structured-data web. Yoast already emits other schemas; adding LocalBusiness or Place is a configuration change.`,
+    },
+    {
+      actor: 'Village of Kinderhook',
+      action: 'Expose the business directory as JSON; the calendar as iCal.',
+      rationale: K
+        ? `<strong>${K}</strong> currently-invisible entities across <strong>${C}</strong> municipally-assigned categories. Until the village publishes a feed, this report maintains a daily snapshot at <span style="font-family:var(--mono);font-size:13px;">data/snapshots/villageofkinderhook/</span>. We would prefer to read yours.`
+        : `The village's business directory and event calendar live as HTML pages. A small feed at the site root would let every assistant, search engine, and civic project consume them directly.`,
+    },
+    {
+      actor: 'Columbia County Tourism',
+      action: 'Categorize the events calendar.',
+      rationale: evCats.length > 0
+        ? `The Events Calendar's category taxonomy currently holds <strong>${evCats.length}</strong> bucket${evCats.length === 1 ? '' : 's'} (${esc(evCatNames)})${evCount ? ` against <strong>${evCount}</strong> events surfacing for Kinderhook alone` : ''}. Adding categories like <em>Market</em>, <em>Festival</em>, <em>Lecture</em>, <em>Outdoors</em> would let language models answer "what's happening in Kinderhook this Saturday."`
+        : `Add categories to The Events Calendar so events can be grouped semantically — markets, lectures, festivals, outdoor activities — and surfaced by intent rather than by date alone.`,
+    },
+    {
+      actor: 'Both sites',
+      action: 'Publish /llms.txt at the site root.',
+      rationale: `A short text file at <span style="font-family:var(--mono);font-size:13px;">/llms.txt</span> declaring what the site is, who maintains it, what authoritative sources exist, and how its structured data is organized. Highest legibility-per-line-of-code change available. We will draft both files on request.`,
+    },
+    {
+      actor: 'Columbia County Tourism',
+      action: 'Use the WordPress tag system for editorial pieces.',
+      rationale: tagsCount > 0
+        ? `The tag taxonomy contains <strong>${tagsCount}</strong> term${tagsCount === 1 ? '' : 's'}, all golf-themed, applied once. The <em>Tee Off in Columbia County</em> piece (the only article that uses tags at all) shouldn't be the model — it should be the example of what the rest of the editorial archive could be doing. Tagging is a free win for discoverability, both for human readers and for AI assistants citing your work.`
+        : `Use the WordPress tag system across editorial content. Tagging is a free win for discoverability, both for human readers and for AI assistants citing your work.`,
+    },
+  ];
+
+  list.innerHTML = asks.map(a => `
+    <li>
+      <div>
+        <div class="ask-actor">${esc(a.actor)}</div>
+        <p class="ask-action">${a.action}</p>
+        <p class="ask-rationale">${a.rationale}</p>
+      </div>
+    </li>
+  `).join('');
+}
+
+/* =============================================== §X : HISTORIC == */
+
+function renderHistoricLayer({ sites, people, summaries, newspapers }) {
+  const status = $('#historic-status');
+  const body = $('#historic-body');
+
+  const loaded = [sites, people, summaries, newspapers].filter(Boolean).length;
+  if (loaded === 0) {
+    status.className = 'status';
+    status.textContent = 'No historical snapshots in this deploy. Run tools/fetch-historical.mjs.';
+    return;
+  }
+
+  // ---------- Opener: Wikipedia summary for the village. ----------
+  const villageSummary = summaries?.summaries?.find(s => /village|kinderhook.*york/i.test(s.displayTitle || s.title || ''));
+  const opener = villageSummary?.extract
+    ? `<p class="historic-opener">${esc(villageSummary.extract)} <a href="${esc(villageSummary.url)}" target="_blank" rel="noopener">— Wikipedia</a></p>`
+    : '';
+
+  // ---------- Historic sites: sort by NRHP number presence, then name. ----------
+  const siteList = (sites?.sites || []).slice()
+    .sort((a, b) => (b.nrhp ? 1 : 0) - (a.nrhp ? 1 : 0) || (a.name||'').localeCompare(b.name||''));
+
+  const sitesHtml = siteList.map(s => {
+    const href = s.wikipedia || (s.qid ? `https://www.wikidata.org/wiki/${s.qid}` : '#');
+    const metaLabel = s.nrhp ? `NRHP #${esc(s.nrhp)}` : (s.instance ? esc(s.instance).slice(0, 18) : '');
+    return `
+      <div class="hist-row">
+        <div class="hist-meta">${metaLabel}</div>
+        <div>
+          <div class="hist-name"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(s.name || s.qid)}</a></div>
+          ${s.description ? `<div class="hist-sub">${esc(s.description)}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  // ---------- People: sort by sitelinks (salience), then by birth date. ----------
+  const peopleList = (people?.people || [])
+    .filter(p => p.birth || p.death)
+    .slice()
+    .sort((a, b) => (b.sitelinks || 0) - (a.sitelinks || 0))
+    .slice(0, 14);
+
+  const peopleHtml = peopleList.map(p => {
+    const b = (p.birth || '').slice(0, 4);
+    const d = (p.death || '').slice(0, 4);
+    const span = b && d ? `${b}–${d}` : (b ? `${b}–` : (d ? `–${d}` : ''));
+    const href = p.wikipedia || `https://www.wikidata.org/wiki/${p.qid}`;
+    return `
+      <div class="hist-row">
+        <div class="hist-meta">${esc(span)}</div>
+        <div>
+          <div class="hist-name"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(p.name || p.qid)}</a></div>
+          ${p.description ? `<div class="hist-sub">${esc(p.description)}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  // ---------- Chronicling America block. ----------
+  let newspapersHtml = '';
+  if (newspapers) {
+    const maxDecade = Math.max(1, ...Object.values(newspapers.byDecade || {}));
+    const decadeRows = Object.entries(newspapers.byDecade || {})
+      .sort(([a],[b]) => a.localeCompare(b))
+      .map(([dec, n]) => {
+        const width = Math.round((n / maxDecade) * 22);
+        return `
+          <div class="dec">${dec}</div>
+          <div class="bar">${'▬'.repeat(width)}</div>
+          <div class="n">${n}</div>`;
+      }).join('');
+
+    const sample = (newspapers.items || []).slice(0, 6).map(i => `
+      <div class="hist-sample">
+        <div class="d">${esc((i.date || '').slice(0, 10))}</div>
+        <div><a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.title || '(untitled)')}</a></div>
+      </div>`).join('');
+
+    newspapersHtml = `
+      <div class="hist-newspapers">
+        <h3>Chronicling America</h3>
+        <div class="hist-total">${newspapers.total?.toLocaleString() || '?'}</div>
+        <p class="hist-caption">appearances of the word <em>Kinderhook</em> across digitized historic US newspapers (Library of Congress). A sampled distribution, by decade:</p>
+        <div class="hist-decade-grid">${decadeRows}</div>
+        <div class="hist-sample-head">Sample (first ${Math.min(6, (newspapers.items||[]).length)} of ${newspapers.sampled} retrieved)</div>
+        ${sample}
+      </div>`;
+  }
+
+  body.innerHTML = opener
+    + `<div class="historic-two-col">
+         <div>
+           <div class="historic-col-head"><h3>Historic Sites</h3><span class="count">${siteList.length}</span></div>
+           ${sitesHtml || '<p style="color:var(--ink-soft);font-style:italic;">No sites snapshot in this deploy.</p>'}
+         </div>
+         <div>
+           <div class="historic-col-head"><h3>Notable People</h3><span class="count">${peopleList.length}</span></div>
+           ${peopleHtml || '<p style="color:var(--ink-soft);font-style:italic;">No people snapshot in this deploy.</p>'}
+         </div>
+       </div>`
+    + newspapersHtml;
+
+  status.className = 'status ok';
+  const stamp = (sites?.fetchedAt || newspapers?.fetchedAt || '').slice(0, 10);
+  status.textContent = `${siteList.length} sites · ${peopleList.length} people · ${newspapers?.total?.toLocaleString() || '?'} newspaper mentions · snapshot ${stamp}`;
+}
+
+/* =============================================== §XIII : ASSESSMENTS = */
+function renderAssessments({ parcels, rar }) {
+  const status = $('#assess-status');
+  const grid   = $('#assess-grid');
+  const calc   = $('#assess-calc');
+
+  if (!parcels) {
+    status.className = 'status';
+    status.textContent = 'No ORPTS snapshot in this deploy. Run tools/fetch-orpts.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  const stamp = (parcels.fetchedAt || '').slice(0, 10);
+  status.textContent = `${parcels.counts.total.toLocaleString()} parcels · roll year ${parcels.rollYear} · snapshot ${stamp}`;
+
+  const fmt$ = (n) => n == null ? '—' : '$' + Math.round(n).toLocaleString();
+  const fmtN = (n) => n == null ? '—' : Math.round(n).toLocaleString();
+
+  const villageBucket = parcels.parcels.filter(p => p.swis_code === '104401');
+  const townBucket    = parcels.parcels.filter(p => p.swis_code === '104489');
+  const sumA = (rows) => rows.reduce((s, p) => s + (Number(p.assessment_total) || 0), 0);
+  const sumM = (rows) => rows.reduce((s, p) => s + (Number(p.full_market_value) || 0), 0);
+
+  const card = (label, rows) => {
+    const A = sumA(rows), M = sumM(rows);
+    return `
+      <div class="assess-card">
+        <div class="assess-card-head">${esc(label)}</div>
+        <div class="assess-stat"><span class="k">parcels</span><span class="v">${fmtN(rows.length)}</span></div>
+        <div class="assess-stat"><span class="k">assessed total</span><span class="v">${fmt$(A)}</span></div>
+        <div class="assess-stat"><span class="k">full market total</span><span class="v">${fmt$(M)}</span></div>
+        <div class="assess-stat"><span class="k">equalization rate</span><span class="v">${M ? (100 * A / M).toFixed(1) + '%' : '—'}</span></div>
+      </div>`;
+  };
+
+  const exemptNote = `<p class="m-foot" style="margin-top:6px;">Assessed totals are <em>pre-exemption</em>: STAR, veterans, and senior exemptions are not netted out, so the actual taxable roll is lower. Full market value in the parcel data is computed by ORPTS as <span class="mono">assessment_total ÷ equalization_rate</span>, so the equalization rate above is recovered from the data by definition — a sanity check rather than an independent measurement.</p>`;
+
+  const topClasses = parcels.propertyClasses.slice(0, 6).map(c =>
+    `<tr><td class="mono">${esc(c.code)}</td><td>${esc(c.description || '')}</td><td class="num">${fmtN(c.count)}</td><td class="num">${fmt$(c.assessedTotal)}</td></tr>`
+  ).join('');
+
+  grid.innerHTML = `
+    ${card('Village (SWIS 104401)', villageBucket)}
+    ${card('Town outside village (104489)', townBucket)}
+    <div class="assess-classes">
+      <div class="assess-card-head">Top property classes</div>
+      <table class="assess-table">
+        <thead><tr><th>Code</th><th>Description</th><th class="num">Parcels</th><th class="num">Assessed</th></tr></thead>
+        <tbody>${topClasses}</tbody>
+      </table>
+    </div>
+    <div class="full-span">${exemptNote}</div>
+  `;
+
+  // Calculator wiring — uses the RAR series for assessed-from-market.
+  if (!rar) return;
+  calc.hidden = false;
+  const yearSel   = $('#calc-year');
+  const swisSel   = $('#calc-swis');
+  const marketIn  = $('#calc-market');
+  const out       = $('#calc-out');
+
+  function fillYears() {
+    const swis = swisSel.value;
+    const years = (rar.series[swis] || []).map(r => r.year).sort((a,b) => b - a);
+    yearSel.innerHTML = years.map((y, i) => `<option value="${y}"${i === 0 ? ' selected' : ''}>${y}</option>`).join('')
+      || '<option value="">—</option>';
+  }
+  function lookupRatio() {
+    const swis = swisSel.value;
+    const yr   = Number(yearSel.value);
+    const series = rar.series[swis] || [];
+    const row = series.find(r => r.year === yr);
+    return row?.ratio ?? null;
+  }
+  fillYears();
+  swisSel.addEventListener('change', () => { fillYears(); recompute(); });
+  function recompute() {
+    const market = Number(marketIn.value) || 0;
+    const ratio  = lookupRatio();
+    if (ratio == null) { out.innerHTML = '<em>No RAR for this jurisdiction/year.</em>'; return; }
+    const assessed = market * (ratio / 100);
+    // Coefficient of dispersion: typical % deviation an individual parcel
+    // shows from the median assessment ratio. Pulls from the latest equity
+    // stats snapshot (window-scoped from renderMarket; may be undefined).
+    const cod = window.__latestCOD;
+    const band = cod ? `<div class="calc-line"><span class="k">Typical individual variation</span><span class="v">±${cod.toFixed(0)}%</span></div>` : '';
+    out.innerHTML = `
+      <div class="calc-line"><span class="k">RAR (${esc(swisSel.value)} · ${esc(yearSel.value)})</span><span class="v">${ratio.toFixed(2)}%</span></div>
+      <div class="calc-line big"><span class="k">Typical assessed value</span><span class="v">${fmt$(assessed)}</span></div>
+      ${band}`;
+  }
+  [marketIn, swisSel, yearSel].forEach(el => el.addEventListener('input', recompute));
+  recompute();
+}
+
+/* =============================================== §XIV : MARKET == */
+function renderMarket(eq) {
+  const status = $('#market-status');
+  const body   = $('#market-body');
+  if (!eq) {
+    status.className = 'status';
+    status.textContent = 'No NY market-equity snapshot in this deploy. Run tools/fetch-ny-sales.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  status.textContent = `${eq.series.length} years · ${eq.municipality} (SWIS ${eq.swis}) · snapshot ${(eq.fetchedAt||'').slice(0,10)}`;
+  // Expose COD to the §XIII calculator so the variation band can render.
+  if (eq.latest?.residential_cod != null) window.__latestCOD = eq.latest.residential_cod;
+
+  // Sparkline of residential_market_value_ratio over time.
+  const series = eq.series.filter(r => r.residential_market_value_ratio != null);
+  const max = Math.max(...series.map(r => r.residential_market_value_ratio));
+  const rows = series.map(r => {
+    const w = Math.round((r.residential_market_value_ratio / max) * 32);
+    return `<div class="m-row">
+      <div class="m-yr">${r.year}</div>
+      <div class="m-bar">${'▬'.repeat(w)}</div>
+      <div class="m-val">${r.residential_market_value_ratio?.toFixed(0)}%</div>
+      <div class="m-method">${esc(r.method_residential || '')}</div>
+    </div>`;
+  }).join('');
+
+  const latest = eq.latest;
+  body.innerHTML = `
+    <div class="m-head">
+      <div class="m-stat"><div class="k">Latest market-value ratio</div><div class="v">${latest.residential_market_value_ratio}%</div></div>
+      <div class="m-stat"><div class="k">Method</div><div class="v">${esc(latest.method_residential || '—')}</div></div>
+      <div class="m-stat"><div class="k">Coefficient of dispersion</div><div class="v">${latest.residential_cod ?? '—'}</div></div>
+      <div class="m-stat"><div class="k">Price-related differential</div><div class="v">${latest.residential_prd ?? '—'}</div></div>
+    </div>
+    <div class="m-grid">${rows}</div>
+    <p class="m-foot">A market-value ratio dropping over time means assessed values are lagging an appreciating market — the state's machine-readable trace of price movement here.</p>
+  `;
+}
+
+/* =============================================== §XV : ACS ==== */
+function renderACS({ village, town }) {
+  const status = $('#acs-status');
+  const body   = $('#acs-body');
+  if (!village && !town) {
+    status.className = 'status';
+    status.textContent = 'No ACS snapshot in this deploy. Run tools/fetch-acs.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  const stamp = (village?.fetchedAt || town?.fetchedAt || '').slice(0, 10);
+  status.textContent = `ACS 5-Year ${village?.vintage || town?.vintage} · village + town · snapshot ${stamp}`;
+
+  const fmt$ = (n) => n == null ? '—' : '$' + Math.round(n).toLocaleString();
+  const fmtN = (n) => n == null ? '—' : Math.round(n).toLocaleString();
+  const fmtPct = (num, den) => (num == null || !den) ? '—' : (100 * num / den).toFixed(1) + '%';
+
+  const e = (snap) => snap?.estimates || {};
+  const V = e(village), T = e(town);
+
+  const groups = [
+    ['People', [
+      ['Population',                 fmtN(V.population_total),                 fmtN(T.population_total)],
+      ['Median age',                 V.median_age ?? '—',                      T.median_age ?? '—'],
+      ['Hispanic or Latino',         fmtPct(V.hispanic_or_latino, V.population_total), fmtPct(T.hispanic_or_latino, T.population_total)],
+      ['White alone',                fmtPct(V.race_white_alone, V.population_total),   fmtPct(T.race_white_alone, T.population_total)],
+      ['Black alone',                fmtPct(V.race_black_alone, V.population_total),   fmtPct(T.race_black_alone, T.population_total)],
+      ['Asian alone',                fmtPct(V.race_asian_alone, V.population_total),   fmtPct(T.race_asian_alone, T.population_total)],
+    ]],
+    ['Households', [
+      ['Households',                 fmtN(V.households_total),                 fmtN(T.households_total)],
+      ['Avg household size',         V.avg_household_size ?? '—',              T.avg_household_size ?? '—'],
+      ['Family households',          fmtPct(V.households_family, V.households_total), fmtPct(T.households_family, T.households_total)],
+      ['Non-family households',      fmtPct(V.households_nonfamily, V.households_total), fmtPct(T.households_nonfamily, T.households_total)],
+    ]],
+    ['Housing', [
+      ['Housing units',              fmtN(V.housing_units_total),              fmtN(T.housing_units_total)],
+      ['Owner-occupied',             fmtPct(V.tenure_owner_occupied, V.housing_units_occupied), fmtPct(T.tenure_owner_occupied, T.housing_units_occupied)],
+      ['Renter-occupied',            fmtPct(V.tenure_renter_occupied, V.housing_units_occupied), fmtPct(T.tenure_renter_occupied, T.housing_units_occupied)],
+      ['Vacant',                     fmtPct(V.housing_units_vacant, V.housing_units_total), fmtPct(T.housing_units_vacant, T.housing_units_total)],
+      ['Built 1939 or earlier',      fmtPct(V.yrbuilt_1939_or_earlier, V.yrbuilt_total), fmtPct(T.yrbuilt_1939_or_earlier, T.yrbuilt_total)],
+      ['Built 1940–1949',            fmtPct(V.yrbuilt_1940_1949, V.yrbuilt_total), fmtPct(T.yrbuilt_1940_1949, T.yrbuilt_total)],
+      ['Built 2014 or later',        fmtPct(V.yrbuilt_2014_or_later, V.yrbuilt_total), fmtPct(T.yrbuilt_2014_or_later, T.yrbuilt_total)],
+      ['Median home value',          fmt$(V.median_value_owner_occupied),      fmt$(T.median_value_owner_occupied)],
+      ['Median gross rent',          fmt$(V.median_gross_rent),                fmt$(T.median_gross_rent)],
+    ]],
+    ['Income & poverty', [
+      ['Median household income',    fmt$(V.median_household_income),          fmt$(T.median_household_income)],
+      ['Per capita income',          fmt$(V.per_capita_income),                fmt$(T.per_capita_income)],
+      ['Below poverty',              fmtPct(V.income_below_poverty_level, V.poverty_universe), fmtPct(T.income_below_poverty_level, T.poverty_universe)],
+    ]],
+    ['Age & education', [
+      ['Population under 18',        fmtPct(V.pop_under_18, V.population_total), fmtPct(T.pop_under_18, T.population_total)],
+      ['Population 65 +',            fmtPct(V.pop_65_plus, V.population_total),  fmtPct(T.pop_65_plus, T.population_total)],
+      ['Bachelor’s degree or higher (25+)', fmtPct(V.edu_bachelors_or_higher, V.edu_total_25_plus), fmtPct(T.edu_bachelors_or_higher, T.edu_total_25_plus)],
+      ['Graduate or professional degree (25+)', fmtPct(V.edu_graduate_or_higher, V.edu_total_25_plus), fmtPct(T.edu_graduate_or_higher, T.edu_total_25_plus)],
+    ]],
+    ['Connectivity & service', [
+      ['Households with broadband',  fmtPct(V.internet_with_broadband, V.internet_universe), fmtPct(T.internet_with_broadband, T.internet_universe)],
+      ['Households with no internet subscription', fmtPct(V.internet_no_subscription, V.internet_universe), fmtPct(T.internet_no_subscription, T.internet_universe)],
+      ['Veterans (civilian 18+)',    fmtPct(V.veterans, V.veteran_universe), fmtPct(T.veterans, T.veteran_universe)],
+    ]],
+    ['Commute', [
+      ['Drove alone',                fmtPct(V.commute_drove_alone, V.commute_mode_total), fmtPct(T.commute_drove_alone, T.commute_mode_total)],
+      ['Carpooled',                  fmtPct(V.commute_carpool, V.commute_mode_total),     fmtPct(T.commute_carpool, T.commute_mode_total)],
+      ['Public transit',             fmtPct(V.commute_public_transit, V.commute_mode_total), fmtPct(T.commute_public_transit, T.commute_mode_total)],
+      ['Walked',                     fmtPct(V.commute_walked, V.commute_mode_total),       fmtPct(T.commute_walked, T.commute_mode_total)],
+      ['Bicycle',                    fmtPct(V.commute_bicycle, V.commute_mode_total),      fmtPct(T.commute_bicycle, T.commute_mode_total)],
+      ['Worked from home',           fmtPct(V.commute_worked_from_home, V.commute_mode_total), fmtPct(T.commute_worked_from_home, T.commute_mode_total)],
+      ['Commute ≥ 60 min',           fmtPct(V.commute_60_plus_min, V.commute_total_workers), fmtPct(T.commute_60_plus_min, T.commute_total_workers)],
+    ]],
+  ];
+
+  const rowsHtml = groups.map(([groupName, rows]) => {
+    const head = `<tr class="acs-section-row"><th colspan="3">${esc(groupName)}</th></tr>`;
+    const body = rows
+      .filter(([, v, t]) => v !== '—' || t !== '—')
+      .map(([k,v,t]) => `<tr><th>${esc(k)}</th><td class="num">${esc(String(v))}</td><td class="num">${esc(String(t))}</td></tr>`)
+      .join('');
+    return head + body;
+  }).join('');
+
+  // ---------- Auto-derived insights ----------
+  const insights = [];
+  const pct = (n, d) => (n != null && d) ? (100 * n / d) : null;
+
+  if (V.median_age && T.median_age) {
+    const diff = +(V.median_age - T.median_age).toFixed(1);
+    if (Math.abs(diff) >= 1) {
+      insights.push(`The village skews <strong>${Math.abs(diff)} years ${diff > 0 ? 'older' : 'younger'}</strong> than the surrounding town (${V.median_age} vs ${T.median_age}).`);
+    }
+  }
+
+  // Pre-1950 housing combined.
+  const vPre50 = (V.yrbuilt_1939_or_earlier || 0) + (V.yrbuilt_1940_1949 || 0);
+  const tPre50 = (T.yrbuilt_1939_or_earlier || 0) + (T.yrbuilt_1940_1949 || 0);
+  if (V.yrbuilt_total && T.yrbuilt_total) {
+    const vp = pct(vPre50, V.yrbuilt_total), tp = pct(tPre50, T.yrbuilt_total);
+    insights.push(`<strong>${vp.toFixed(0)}%</strong> of village homes were built before 1950 (${tp.toFixed(0)}% in the surrounding town) — the historic-core effect made tangible.`);
+  }
+
+  // Vacancy contrast.
+  const vVac = pct(V.housing_units_vacant, V.housing_units_total);
+  const tVac = pct(T.housing_units_vacant, T.housing_units_total);
+  if (vVac != null && tVac != null && (tVac - vVac) >= 3) {
+    insights.push(`Village vacancy is <strong>${vVac.toFixed(1)}%</strong> versus the town's <strong>${tVac.toFixed(1)}%</strong> — the seasonal-second-home pattern lives in the surrounding farmland, not the village core.`);
+  }
+
+  // Home-value premium.
+  if (V.median_value_owner_occupied && T.median_value_owner_occupied) {
+    const diff = V.median_value_owner_occupied - T.median_value_owner_occupied;
+    if (Math.abs(diff) >= 5000) {
+      insights.push(`Median home value is <strong>${fmt$(V.median_value_owner_occupied)}</strong> in the village versus <strong>${fmt$(T.median_value_owner_occupied)}</strong> in the town — a ${fmt$(Math.abs(diff))} ${diff > 0 ? 'premium' : 'discount'} for the village footprint.`);
+    }
+  }
+
+  // Per-capita vs household income — the smaller-household effect.
+  if (V.per_capita_income && T.per_capita_income && V.median_household_income && T.median_household_income
+      && V.per_capita_income > T.per_capita_income && V.median_household_income < T.median_household_income) {
+    insights.push(`Per-capita income is higher in the village (<strong>${fmt$(V.per_capita_income)}</strong> vs ${fmt$(T.per_capita_income)}), but household income is lower (${fmt$(V.median_household_income)} vs ${fmt$(T.median_household_income)}). The math: village households are smaller (<strong>${V.avg_household_size}</strong> vs ${T.avg_household_size}) — many one-person.`);
+  }
+
+  // Hispanic share.
+  const vHisp = pct(V.hispanic_or_latino, V.population_total);
+  const tHisp = pct(T.hispanic_or_latino, T.population_total);
+  if (vHisp != null && tHisp != null) {
+    insights.push(`Hispanic or Latino population: <strong>${vHisp.toFixed(1)}%</strong> in the village, <strong>${tHisp.toFixed(1)}%</strong> in the surrounding town.`);
+  }
+
+  // Non-family households.
+  const vNF = pct(V.households_nonfamily, V.households_total);
+  const tNF = pct(T.households_nonfamily, T.households_total);
+  if (vNF != null && tNF != null && (vNF - tNF) >= 5) {
+    insights.push(`<strong>${vNF.toFixed(0)}%</strong> of village households are non-family (one person living alone, or unrelated roommates), versus ${tNF.toFixed(0)}% in the surrounding town.`);
+  }
+
+  // Aging skew: percent over 65 vs percent under 18.
+  const vOver65 = pct(V.pop_65_plus, V.population_total);
+  const vUnder18 = pct(V.pop_under_18, V.population_total);
+  if (vOver65 != null && vUnder18 != null && vOver65 > vUnder18) {
+    insights.push(`<strong>${vOver65.toFixed(0)}%</strong> of village residents are 65 or older; <strong>${vUnder18.toFixed(0)}%</strong> are under 18. The village has more retirees than children.`);
+  }
+
+  // Educational attainment, village vs town.
+  const vBA = pct(V.edu_bachelors_or_higher, V.edu_total_25_plus);
+  const tBA = pct(T.edu_bachelors_or_higher, T.edu_total_25_plus);
+  if (vBA != null && tBA != null) {
+    const diff = +(vBA - tBA).toFixed(0);
+    if (Math.abs(diff) >= 3) {
+      insights.push(`<strong>${vBA.toFixed(0)}%</strong> of village adults 25+ hold a bachelor's degree or higher (${tBA.toFixed(0)}% in the town) — a ${Math.abs(diff)}-point ${diff > 0 ? 'higher' : 'lower'} share for the village.`);
+    }
+  }
+
+  // Work-from-home — the post-pandemic civic shape.
+  const vWFH = pct(V.commute_worked_from_home, V.commute_mode_total);
+  const tWFH = pct(T.commute_worked_from_home, T.commute_mode_total);
+  if (vWFH != null && tWFH != null) {
+    insights.push(`<strong>${vWFH.toFixed(0)}%</strong> of village commuters now work from home (<strong>${tWFH.toFixed(0)}%</strong> in the town). The traditional drive-alone share is correspondingly compressed.`);
+  }
+
+  // Broadband subscription — the legibility-of-the-village-itself metric.
+  const vBB = pct(V.internet_with_broadband, V.internet_universe);
+  const tBB = pct(T.internet_with_broadband, T.internet_universe);
+  if (vBB != null && tBB != null) {
+    const noBB = pct(V.internet_no_subscription, V.internet_universe);
+    insights.push(`<strong>${vBB.toFixed(0)}%</strong> of village households have a broadband subscription (${tBB.toFixed(0)}% in the town); <strong>${(noBB || 0).toFixed(0)}%</strong> have no internet at all. Civic legibility runs both directions — a village that can't read the web is also harder to write.`);
+  }
+
+  const insightsHtml = insights.length
+    ? `<div class="acs-insights">
+         <div class="acs-insights-h">Reading the table</div>
+         <ul>${insights.map(s => `<li>${s}</li>`).join('')}</ul>
+       </div>`
+    : '';
+
+  body.innerHTML = `
+    <table class="acs-table">
+      <colgroup>
+        <col class="acs-c-label">
+        <col class="acs-c-num">
+        <col class="acs-c-num">
+      </colgroup>
+      <thead><tr><th></th><th class="num">Village (place)</th><th class="num">Town (MCD)</th></tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+    ${insightsHtml}
+    <p class="m-foot">Two distinct geographies. The town's count includes the village and the surrounding farmland; the difference between the two columns is the village's footprint as a Census-defined place. ACS 5-Year estimates pool five years of survey responses (so each value is an average centered on the vintage year, not a point-in-time count); margins of error are not shown here, but are non-trivial for a ${fmtN(V.population_total)}-person place — treat differences smaller than ~10% as inconclusive.</p>
+  `;
+}
+
+/* =============================================== §XVI : FEMA == */
+function renderFEMA(snap) {
+  const status = $('#fema-status');
+  const body   = $('#fema-body');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No FEMA snapshot in this deploy. Run tools/fetch-fema.mjs.';
+    return;
+  }
+  status.className = 'status ok';
+  status.textContent = `${snap.counts.declarationsTotal} declarations · ${snap.geography.name} · snapshot ${(snap.fetchedAt||'').slice(0,10)}`;
+
+  const types = Object.entries(snap.byIncidentType).sort((a,b) => b[1] - a[1]);
+  const typesHtml = types.map(([t, n]) => `<span class="fema-chip">${esc(t)} <em>${n}</em></span>`).join('');
+
+  const rowFor = (d) => {
+    const yr = (d.declarationDate || '').slice(0, 4);
+    const programs = [
+      d.iaProgramDeclared ? 'IA' : null,
+      d.paProgramDeclared ? 'PA' : null,
+      d.hmProgramDeclared ? 'HM' : null,
+    ].filter(Boolean).join(' · ');
+    return `
+      <div class="fema-row">
+        <div class="fema-yr">${esc(yr)}</div>
+        <div>
+          <div class="fema-name">${esc(d.declarationTitle || d.incidentType)}</div>
+          <div class="fema-sub">${esc(d.incidentType)} · ${esc(d.declarationType)}-${esc(String(d.disasterNumber))}${programs ? ' · ' + esc(programs) : ''}</div>
+        </div>
+        <div class="fema-tail">${esc((d.incidentBeginDate||'').slice(0,10))} → ${esc((d.incidentEndDate||'').slice(0,10) || 'open')}</div>
+      </div>`;
+  };
+
+  const head = snap.declarations.slice(0, 6).map(rowFor).join('');
+  const rest = snap.declarations.slice(6).map(rowFor).join('');
+  const restBlock = rest
+    ? `<details class="fold"><summary>Show the remaining ${snap.declarations.length - 6} declarations · back to ${(snap.declarations[snap.declarations.length-1].declarationDate||'').slice(0,4)}</summary><div class="fema-list">${rest}</div></details>`
+    : '';
+
+  body.innerHTML = `
+    <div class="fema-types">${typesHtml}</div>
+    <div class="fema-list">${head}</div>
+    ${restBlock}
+    <p class="m-foot"><span class="mono">DR</span> = Major Disaster Declaration · <span class="mono">EM</span> = Emergency Declaration · program flags: <span class="mono">IA</span> Individual Assistance, <span class="mono">PA</span> Public Assistance, <span class="mono">HM</span> Hazard Mitigation. EM declarations are typically narrower in scope than DRs.</p>
+  `;
+}
+
+/* =============================================== §XVII : HOURS = */
+/* =============================================== §XIX : MARKETS  */
+function renderFarmersMarkets(snap) {
+  const status = $('#markets-status');
+  const body   = $('#markets-body');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No farmers-markets snapshot in this deploy. Run tools/fetch-farmers-markets.mjs.';
+    return;
+  }
+  const stamp = (snap.fetchedAt || '').slice(0, 10);
+  status.className = 'status ok';
+  status.textContent = `${snap.counts.county} markets in Columbia County · ${snap.counts.statewide ?? '?'} statewide · snapshot ${stamp}`;
+
+  const v = snap.village;
+  const flag = (val, label) => {
+    const on = String(val || '').toLowerCase().includes('y') || String(val || '').toLowerCase().includes('accept');
+    return `<span class="market-flag${on ? '' : ' off'}">${esc(label)}${on ? '' : ' · no'}</span>`;
+  };
+
+  const villageHtml = v ? `
+    <div class="market-card">
+      <div>
+        <div class="market-card-sub">State record</div>
+        <p class="market-card-h">${esc(v.name)}</p>
+        <div>${flag(v.snapStatus, 'SNAP / EBT')}${flag(v.fmnp, 'FMNP coupons')}</div>
+      </div>
+      <dl class="market-meta">
+        ${v.location ? `<dt>Location</dt><dd>${esc(v.location)}</dd>` : ''}
+        ${v.address  ? `<dt>Address</dt><dd>${esc(v.address)}${v.zip ? ', ' + esc(v.zip) : ''}</dd>` : ''}
+        ${v.operationSeason ? `<dt>Season</dt><dd>${esc(v.operationSeason)}</dd>` : ''}
+        ${v.operationHours  ? `<dt>Hours</dt><dd>${esc(v.operationHours)}</dd>` : ''}
+        ${v.contact ? `<dt>Contact</dt><dd>${esc(v.contact)}</dd>` : ''}
+        ${v.website ? `<dt>Website</dt><dd><a href="${esc(v.website)}" target="_blank" rel="noopener">${esc(v.website)}</a></dd>` : ''}
+      </dl>
+    </div>` : `<p class="m-foot">No state record found for a Kinderhook market.</p>`;
+
+  const peers = (snap.county || []).filter(m => !v || m.name !== v.name);
+  const peersHtml = peers.length ? `
+    <div class="csc-block-h">Other Columbia County markets</div>
+    <div class="csc-county">
+      ${peers.map(m => `
+        <div class="csc-peer">
+          <span class="csc-peer-name">${esc(m.name)} <em>${esc(m.city || '')}</em></span>
+          <span class="csc-peer-status">${esc((m.operationSeason || '').slice(0, 18))}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  body.innerHTML = `
+    ${villageHtml}
+    ${peersHtml}
+    <p class="m-foot">Source: NYS Department of Agriculture and Markets, published via data.ny.gov dataset qq4h-8p86. The hand-curated entry at <span style="font-family:var(--mono);">schema/places/kinderhook-farmers-market.json</span> overlays editorial detail (organizer, cultural orbit, kh: namespace fields) on the state's record.</p>
+  `;
+}
+
+/* =============================================== §XX : TRANSPORT  */
+function renderTransportation({ aadt, bridges }) {
+  const status = $('#transport-status');
+  const body   = $('#transport-body');
+  if (!aadt && !bridges) {
+    status.className = 'status';
+    status.textContent = 'No transportation snapshot in this deploy. Run tools/fetch-transportation.mjs.';
+    return;
+  }
+  const stamps = [aadt?.fetchedAt, bridges?.fetchedAt].filter(Boolean).map(s => s.slice(0, 10));
+  status.className = 'status ok';
+  const aadtCount = aadt?.stations?.length || 0;
+  const brCount = bridges?.bridges?.length || 0;
+  const brPoor = bridges?.counts?.poor || 0;
+  status.textContent = `${aadtCount} traffic stations (year ${aadt?.latestYear || '?'}) · ${brCount} bridges (${brPoor} poor) · snapshot ${stamps[0] || '—'}`;
+
+  const allStations = aadt?.stations || [];
+  const headStations = allStations.slice(0, 6);
+  const restStations = allStations.slice(6);
+  const maxAadt = Math.max(1, ...allStations.map(s => s.aadt || 0));
+  const fmt = (n) => n == null ? '—' : n.toLocaleString();
+
+  const renderAadtRow = (s) => {
+    const w = ((s.aadt || 0) / maxAadt * 100).toFixed(1);
+    return `
+      <div class="aadt-row">
+        <div class="aadt-route">${esc((s.signing || '') + ' ' + (s.route || ''))}</div>
+        <div class="aadt-bar-cell">
+          <div class="aadt-bar" style="width:${w}%"></div>
+          <div class="aadt-seg">${esc(s.from)} → ${esc(s.to)}</div>
+        </div>
+        <div class="aadt-num">${fmt(s.aadt)}</div>
+      </div>`;
+  };
+
+  const aadtHtml = allStations.length ? `
+    <div>
+      <h3 class="transport-h">Annual Average Daily Traffic · ${esc(aadt.latestYear)} · ${allStations.length} segments</h3>
+      ${headStations.map(renderAadtRow).join('')}
+      ${restStations.length ? `
+        <details class="fold">
+          <summary>Show the remaining ${restStations.length} segments</summary>
+          ${restStations.map(renderAadtRow).join('')}
+        </details>` : ''}
+    </div>` : '';
+
+  const bridgeHtml = (bridges?.bridges || []).length ? `
+    <div>
+      <h3 class="transport-h">State-inventoried bridges · ${bridges.bridges.length}</h3>
+      ${bridges.bridges.map(b => `
+        <div class="bridge-row${b.poor ? ' poor' : ''}">
+          <div class="bridge-bin">BIN ${esc(b.bin)}</div>
+          <div class="bridge-name">${esc(b.feature)} <span class="bridge-sub">over ${esc(b.crosses)}</span></div>
+          <div class="bridge-when">${esc(String(b.yearBuilt || '?'))} · insp ${esc((b.lastInspection || '?').slice(0, 7))}${b.poor ? ' · POOR' : ''}</div>
+        </div>`).join('')}
+    </div>` : '';
+
+  // Editorial findings.
+  const insights = [];
+  if (stations.length) {
+    const top = stations[0];
+    insights.push(`<strong>${fmt(top.aadt)}</strong> vehicles per day on the busiest segment through Kinderhook (${esc(top.signing)} ${esc(top.route)}: ${esc(top.from)} → ${esc(top.to)}).`);
+    const total = stations.reduce((s, x) => s + (x.aadt || 0), 0);
+    insights.push(`Across all <strong>${stations.length}</strong> measured segments in the municipality, NYSDOT recorded a combined <strong>${total.toLocaleString()}</strong> daily vehicle-passes in ${esc(aadt.latestYear)}. (Note: passes overlap; this is segment-sum, not unique vehicles.)`);
+  }
+  if ((bridges?.bridges || []).length) {
+    const oldest = bridges.bridges.filter(b => b.yearBuilt).sort((a,b) => a.yearBuilt - b.yearBuilt)[0];
+    if (oldest) insights.push(`The oldest state-inventoried bridge in Kinderhook was built in <strong>${oldest.yearBuilt}</strong> (${esc(oldest.feature)} over ${esc(oldest.crosses)}, ${esc(oldest.owner)}, last inspected ${esc(oldest.lastInspection || 'unknown')}).`);
+    if (brPoor === 0) insights.push(`<strong>0</strong> of the ${brCount} bridges are flagged Poor in NYSDOT's most recent inspection round.`);
+    else insights.push(`<strong>${brPoor}</strong> of ${brCount} bridges are flagged Poor — see the rows highlighted above.`);
+  }
+
+  body.innerHTML = `
+    <div class="transport-grid">
+      ${aadtHtml}
+      ${bridgeHtml}
+    </div>
+    <div class="acs-insights">
+      <div class="acs-insights-h">Reading the infrastructure</div>
+      <ul>${insights.map(s => `<li>${s}</li>`).join('')}</ul>
+    </div>
+    <p class="m-foot">Sources: NYSDOT Traffic Data (data.ny.gov 6amx-2pbv) and Bridge Conditions (wpyb-cjy8). AADT is the most-recent vintage (2019); the source has 770+ historical Kinderhook rows back to 1977 if a longer time series is wanted. Bridge data covers structures owned by NYSDOT, the County, and other public owners.</p>
+  `;
+}
+
+/* =============================================== §XVIII : CSC == */
+function renderClimateSmart(snap) {
+  const status = $('#csc-status');
+  const body   = $('#csc-body');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No Climate Smart snapshot in this deploy. Run tools/fetch-climate-smart.mjs.';
+    return;
+  }
+  const stamp = (snap.fetchedAt || '').slice(0, 10);
+  status.className = 'status ok';
+  status.textContent = `${snap.counts.countyTotal} of ${snap.counts.statewideTotal} NYS jurisdictions in Columbia County · snapshot ${stamp}`;
+
+  const v = snap.village;
+  const t = snap.town;
+
+  const heroHtml = v ? `
+    <div class="csc-hero">
+      <div>
+        <p class="csc-status-badge">
+          <span class="csc-tier">Status</span>
+          ${esc(v.status)}
+        </p>
+      </div>
+      <dl class="csc-hero-meta">
+        <dt>Pledged</dt><dd>${esc(v.pledgedOn || '—')}</dd>
+        <dt>Certification expires</dt><dd>${esc(v.certificationExpires || 'n/a')}</dd>
+        <dt>Population at pledge (2010 Census)</dt><dd>${esc((v.population2010 || '—').toLocaleString ? v.population2010.toLocaleString() : '—')}</dd>
+        <dt>NYSDEC Region</dt><dd>${esc(v.decRegion || '—')}</dd>
+      </dl>
+    </div>` : `
+    <div class="csc-hero">
+      <p class="csc-status-badge"><span class="csc-tier">Status</span>Not enrolled</p>
+      <p>The Village of Kinderhook is not currently a Climate Smart Community participant.</p>
+    </div>`;
+
+  // Statewide context chips.
+  const sortStatuses = (obj) => Object.entries(obj)
+    .sort(([a], [b]) => {
+      const order = ['Gold Certified','Silver Certified','Bronze Certified','Registered'];
+      return order.indexOf(a) - order.indexOf(b);
+    });
+
+  const statewideHtml = sortStatuses(snap.counts.statewideByStatus)
+    .map(([s, n]) => `<span class="csc-stat-chip">${esc(s)} <em>${n}</em></span>`).join('');
+
+  // County peers, ranked by status then alphabetical.
+  const peerHtml = snap.countyParticipants.map(j => {
+    const isVillage = j.name === 'Kinderhook' && /village/i.test(j.type);
+    const tierClass = /Silver/.test(j.status) ? 'tier-silver'
+      : /Bronze/.test(j.status) ? 'tier-bronze'
+      : 'tier-registered';
+    const cls = `csc-peer ${tierClass}${isVillage ? ' tier-self' : ''}`;
+    return `
+      <div class="${cls}">
+        <span class="csc-peer-name">${esc(j.name)} <em>${esc(j.type)}</em></span>
+        <span class="csc-peer-status">${esc(j.status.replace(' Certified',''))}</span>
+      </div>`;
+  }).join('');
+
+  // Editorial findings.
+  const insights = [];
+  if (v && !t) {
+    insights.push(`The <strong>village</strong> is enrolled (${esc(v.status)}, since ${esc(v.pledgedOn?.slice(0,4) || '?')}). The surrounding <strong>town of Kinderhook</strong> is <strong>not</strong> a participant.`);
+  }
+  const certifiedCount = snap.countyParticipants.filter(j => /Bronze|Silver|Gold/.test(j.status)).length;
+  insights.push(`<strong>${certifiedCount}</strong> of ${snap.countyParticipants.length} Columbia County participants are certified (Bronze or higher). The county itself enrolled in 2020 and is Bronze.`);
+  const silvers = snap.countyParticipants.filter(j => /Silver/.test(j.status));
+  if (silvers.length === 1) {
+    insights.push(`<strong>${esc(silvers[0].name)}</strong> ${esc(silvers[0].type)} is the only Silver-certified jurisdiction in Columbia County.`);
+  }
+  if (snap.counts.statewideByStatus['Gold Certified'] === undefined && !snap.counts.statewideByStatus['Gold Certified']) {
+    insights.push(`Statewide: <strong>${snap.counts.statewideByStatus['Silver Certified'] || 0}</strong> Silver, <strong>${snap.counts.statewideByStatus['Bronze Certified'] || 0}</strong> Bronze, <strong>${snap.counts.statewideByStatus['Registered'] || 0}</strong> Registered. No jurisdiction has reached Gold.`);
+  }
+
+  body.innerHTML = `
+    ${heroHtml}
+    <div class="csc-block-h">Statewide participation</div>
+    <div class="csc-statewide">${statewideHtml}</div>
+    <div class="csc-block-h">Columbia County peers (${snap.countyParticipants.length})</div>
+    <div class="csc-county">${peerHtml}</div>
+    <div class="acs-insights">
+      <div class="acs-insights-h">Reading the record</div>
+      <ul>${insights.map(s => `<li>${s}</li>`).join('')}</ul>
+    </div>
+    <p class="m-foot">Source: NYS DEC Climate Smart Communities, published via data.ny.gov dataset 2c5p-4m2k. Population figures are 2010 Census; current population for the village is <span style="font-family:var(--mono);">1,351</span> per ACS 5-Year 2022, see §XV.</p>
+  `;
+}
+
+function renderHours(snap) {
+  const status = $('#hours-status');
+  const wrap   = $('#hours-gantt');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No hours corpus committed yet. See schema/hours/manifest.json.';
+    return;
+  }
+  const verifiedCount = snap.businesses.filter(b => !b.provisional).length;
+  const provisionalCount = snap.businesses.length - verifiedCount;
+  status.className = 'status ok';
+  status.textContent = `${snap.businesses.length} businesses · ${verifiedCount} verified · ${provisionalCount} provisional · ${snap.updated}`;
+
+  const banner = provisionalCount > 0
+    ? `<div class="prov-banner">
+         <div class="prov-label">Provisional</div>
+         <div>${provisionalCount} of ${snap.businesses.length} entries below are placeholder shapes generated to seed the format. They have <em>not</em> been verified against the businesses themselves and are excluded from <span class="mono">kinderhook.json</span>. The corpus's editorial promise is that this banner shrinks to zero, in public, as entries are confirmed.</div>
+       </div>`
+    : '';
+
+  const days = ['Mo','Tu','We','Th','Fr','Sa','Su'];
+  const dayLabels = { Mo:'Mon', Tu:'Tue', We:'Wed', Th:'Thu', Fr:'Fri', Sa:'Sat', Su:'Sun' };
+  const TOTAL_MIN = 24 * 60;
+  const toMin = (hhmm) => { const [h,m] = hhmm.split(':').map(Number); return h*60 + m; };
+
+  const headHtml = `
+    <div class="g-row g-head">
+      <div class="g-name"></div>
+      <div class="g-tracks">
+        ${days.map(d => `<div class="g-day-h">${dayLabels[d]}</div>`).join('')}
+      </div>
+    </div>
+    <div class="g-row g-hours">
+      <div class="g-name"></div>
+      <div class="g-tracks">
+        ${days.map(() => `<div class="g-day g-hour-track">
+          <span class="g-tick" style="left:25%">6a</span>
+          <span class="g-tick" style="left:50%">12p</span>
+          <span class="g-tick" style="left:75%">6p</span>
+        </div>`).join('')}
+      </div>
+    </div>`;
+
+  const rows = snap.businesses.map(b => {
+    const tracks = days.map(d => {
+      const slots = b.hours.filter(h => h.day === d);
+      const blocks = slots.map(s => {
+        const left = (toMin(s.opens) / TOTAL_MIN) * 100;
+        const width = ((toMin(s.closes) - toMin(s.opens)) / TOTAL_MIN) * 100;
+        return `<div class="g-block${b.provisional ? ' g-prov' : ''}" style="left:${left.toFixed(2)}%;width:${width.toFixed(2)}%;" title="${esc(s.opens)}–${esc(s.closes)}"></div>`;
+      }).join('');
+      return `<div class="g-day">${blocks}</div>`;
+    }).join('');
+    return `
+      <div class="g-row${b.provisional ? ' g-row-prov' : ''}">
+        <div class="g-name">
+          <div class="g-biz">${esc(b.name)}${b.provisional ? ' <span class="g-prov-tag">prov.</span>' : ''}</div>
+          <div class="g-type">${esc(b.type || '')}${b.seasonal ? ` · ${esc(b.seasonal)}` : ''}</div>
+        </div>
+        <div class="g-tracks">${tracks}</div>
+      </div>`;
+  }).join('');
+
+  wrap.innerHTML = banner + headHtml + rows;
+}
+
+/* =============================================== §VI : SCHEMA === */
+function renderGeneratedSchema(town, data) {
+  const venues = data.venues || [];
+  const primaryVenue = venues.find(v => (v.venue || '').toLowerCase().includes('market')) || venues[0];
+  const matchingEvent = (data.events?.matching || [])[0];
+  const xr = data.crossrefs || { wikidata: [], osm: [], config: null };
+
+  // Try to match the primary venue to an OSM node by name.
+  const normalize = (s) => String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'');
+  const venueOsm = primaryVenue
+    ? xr.osm.find(o => normalize(o.name) === normalize(primaryVenue.venue)
+                    || normalize(o.name).includes(normalize(primaryVenue.venue))
+                    || normalize(primaryVenue.venue).includes(normalize(o.name)))
+    : null;
+
+  // Real, dereferenceable identifiers throughout. The village's @id is
+  // its Wikidata entity (Q3478629) — we describe Q3478629, we don't mint
+  // a new ID for a thing the commons already names. CCT venues use their
+  // CCT URL as @id.
+  const villageQid = (xr.config?.wikidata || ['Q3478629'])[0];
+  const VILLAGE_ID = `https://www.wikidata.org/wiki/${villageQid}`;
+  const venueId = primaryVenue?.url
+    || (primaryVenue ? `https://columbiacountytourism.org/venue/${(decode(primaryVenue.venue) || 'place').toLowerCase().replace(/[^a-z]+/g,'-')}/` : null);
+
+  const place = primaryVenue ? {
+    "@type": "Place",
+    "@id": venueId,
+    "name": decode(primaryVenue.venue),
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": primaryVenue.address || "",
+      "addressLocality": primaryVenue.city || town.charAt(0).toUpperCase() + town.slice(1),
+      "addressRegion": primaryVenue.state || "NY",
+      "postalCode": primaryVenue.zip || "",
+      "addressCountry": "US"
+    },
+    "containedInPlace": { "@id": VILLAGE_ID },
+    "sameAs": [
+      venueOsm ? `https://www.openstreetmap.org/${venueOsm.type}/${venueOsm.id}` : null,
+    ].filter(Boolean),
+    ...(venueOsm?.lat && venueOsm?.lon ? {
+      "geo": { "@type": "GeoCoordinates", "latitude": venueOsm.lat, "longitude": venueOsm.lon }
+    } : {})
+  } : null;
+
+  const schema = {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": "Place",
+        "@id": VILLAGE_ID,
+        "name": town.charAt(0).toUpperCase() + town.slice(1),
+        "alternateName": town === 'kinderhook' ? ["Kinderhoeck", "Old Kinderhook"] : [],
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Columbia County",
+          "sameAs": "https://www.wikidata.org/wiki/Q245071"
+        },
+        "sameAs": [
+          xr.config?.officialSite || null,
+          // Note: village @id is already Wikidata Q3478629; sameAs lists
+          // *other* identifiers for the same entity.
+          ...(xr.config?.wikidata || []).slice(1).map(q => `https://www.wikidata.org/wiki/${q}`),
+          xr.config?.wikipedia ? `https://en.wikipedia.org/wiki/${xr.config.wikipedia}` : null,
+          `https://columbiacountytourism.org/?s=${town}`,
+        ].filter(Boolean)
+      },
+      ...(place ? [place] : []),
+      ...(matchingEvent ? [{
+        "@type": "Event",
+        "@id": matchingEvent.url,
+        "name": matchingEvent.title,
+        "startDate": matchingEvent.start_date,
+        "endDate": matchingEvent.end_date,
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": place ? { "@id": place["@id"] } : undefined,
+        "organizer": matchingEvent.organizer?.[0] ? {
+          "@type": "Organization",
+          "name": matchingEvent.organizer[0].organizer
+        } : undefined,
+        "description": stripHtml(matchingEvent.excerpt || matchingEvent.description || '').slice(0, 300)
+      }] : []),
+      // Hand-curated entries from schema/places/ flow in as additional
+      // nodes of the same graph. The county's data, the commons' data,
+      // and the local corpus — one addressable JSON-LD document.
+      ...(data.curated || []).flatMap(c => (c.jsonld?.['@graph'] || [])),
+
+      // Historic sites from the Wikidata snapshot — published as Place
+      // entities with sameAs to Wikipedia / Wikidata. Capped at 15 so
+      // the document stays readable.
+      ...((data.histSites?.sites || []).slice(0, 15).map(s => ({
+        "@type": "Place",
+        "@id": s.wikipedia || `https://www.wikidata.org/wiki/${s.qid}`,
+        "name": s.name,
+        ...(s.description ? { "description": s.description } : {}),
+        ...(s.nrhp ? { "identifier": { "@type": "PropertyValue", "propertyID": "NRHP", "value": s.nrhp } } : {}),
+        ...(s.inception ? { "dateCreated": s.inception.slice(0, 10) } : {}),
+        "containedInPlace": { "@id": VILLAGE_ID },
+        "sameAs": [s.wikipedia, `https://www.wikidata.org/wiki/${s.qid}`].filter(Boolean),
+      }))),
+
+      // Independent journalism citations — each NewsArticle entity declares
+      // what the report endorses as worth reading. The publisher gets the
+      // traffic; we publish only the metadata of the citation.
+      ...((data.coverage || []).filter(c => c.type === 'article').map(c => ({
+        "@type": "NewsArticle",
+        "@id": c.url,
+        "headline": c.title,
+        "url": c.url,
+        ...(c.author ? { "author": { "@type": "Person", "name": c.author } } : {}),
+        ...(c.publication ? { "publisher": { "@type": "Organization", "name": c.publication, ...(c.publicationUrl ? { "url": c.publicationUrl } : {}) } } : {}),
+        ...(c.datePublished ? { "datePublished": c.datePublished } : {}),
+        ...(c.summary ? { "abstract": c.summary } : {}),
+        "about": { "@id": VILLAGE_ID },
+        "isAccessibleForFree": true,
+      }))),
+
+      // Top people from the Wikidata snapshot — Persons with their key dates.
+      // Capped at the 5 most-sitelinked to keep the graph legible.
+      ...((data.histPeople?.people || []).slice(0, 5).map(p => ({
+        "@type": "Person",
+        "@id": p.wikipedia || `https://www.wikidata.org/wiki/${p.qid}`,
+        "name": p.name,
+        ...(p.description ? { "description": p.description } : {}),
+        ...(p.birth ? { "birthDate": p.birth.slice(0, 10) } : {}),
+        ...(p.death ? { "deathDate": p.death.slice(0, 10) } : {}),
+        "birthPlace": { "@id": VILLAGE_ID },
+        "sameAs": [p.wikipedia, `https://www.wikidata.org/wiki/${p.qid}`].filter(Boolean),
+      }))),
+    ]
+  };
+
+  // Render a preview (first entity) + a <details> for the full graph.
+  // The full document is also addressable at /kinderhook.json — linked above.
+  const fullText = JSON.stringify(schema, null, 2);
+  const fullLines = fullText.split('\n').length;
+  const entityCount = schema['@graph'].length;
+  const ctxText = JSON.stringify({ "@context": schema['@context'] }, null, 2)
+    .replace(/^{|\n}$/g, '').replace(/^\s{2}/gm, '').trimEnd().replace(/,$/, '');
+  const firstEntity = JSON.stringify(schema['@graph'][0], null, 2)
+    .split('\n').map(l => '    ' + l).join('\n');
+
+  const previewText =
+`{
+  ${ctxText},
+  "@graph": [
+${firstEntity},
+    /* + ${entityCount - 1} more entities — expand below, or fetch /kinderhook.json */
+  ]
+}`;
+
+  $('#jsonld-out').innerHTML = `
+    <pre class="jsonld-preview">${esc(previewText)}</pre>
+    <details class="jsonld-full">
+      <summary>Show the full graph · ${entityCount} entities · ${fullLines.toLocaleString()} lines</summary>
+      <pre class="jsonld-pre">${esc(fullText)}</pre>
+    </details>
+  `;
+}
+
+/* =============================================== ORCHESTRATION == */
+async function audit(town) {
+  const t = (town || 'kinderhook').trim().toLowerCase();
+  document.title = `The ${t.charAt(0).toUpperCase() + t.slice(1)} Field Report`;
+
+  try {
+    const ontology = await renderOntology(t);
+    const [footprint, events, venuesData, posts, crossrefs, curated, coverage] = await Promise.all([
+      renderFootprint(t),
+      renderEvents(t),
+      renderVenues(t),
+      renderPosts(t),
+      renderCrossrefs(t),
+      renderCuratedPlaces(t),
+      renderCoverage(t),
+    ]);
+    const venues = venuesData.matching;
+    const venueTotal = venuesData.total;
+
+    // Auxiliary snapshots — used by the synthesizing sections (finding,
+    // gaps, schema, asks). Each can be absent without breaking the page.
+    const [village, cctBizIndex, cctBusinesses, histSites, histPeople, histSummaries, histNewspapers,
+           orptsParcels, orptsRar, marketEquity, acsVillage, acsTown, fema, hours, csc,
+           farmersMarkets, transportAadt, transportBridges] = await Promise.all([
+      loadSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
+      loadSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
+      loadSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
+      loadSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-sites.json'),
+      loadSnapshot('./data/snapshots/wikidata/latest-kinderhook-historic-people.json'),
+      loadSnapshot('./data/snapshots/wikipedia/latest-kinderhook-summaries.json'),
+      loadSnapshot('./data/snapshots/loc/latest-kinderhook-chronicling-america.json'),
+      loadSnapshot('./data/snapshots/orpts/latest-parcels.json'),
+      loadSnapshot('./data/snapshots/orpts/latest-rar.json'),
+      loadSnapshot('./data/snapshots/nysales/latest-equity.json'),
+      loadSnapshot('./data/snapshots/acs/latest-village.json'),
+      loadSnapshot('./data/snapshots/acs/latest-town.json'),
+      loadSnapshot('./data/snapshots/fema/latest-disasters.json'),
+      loadSnapshot('./schema/hours/manifest.json'),
+      loadSnapshot('./data/snapshots/climate-smart/latest.json'),
+      loadSnapshot('./data/snapshots/farmers-markets/latest.json'),
+      loadSnapshot('./data/snapshots/transportation/latest-aadt.json'),
+      loadSnapshot('./data/snapshots/transportation/latest-bridges.json'),
+    ]);
+
+    renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });
+    renderCCTBusinesses(cctBusinesses);
+    renderHistoricLayer({ sites: histSites, people: histPeople, summaries: histSummaries, newspapers: histNewspapers });
+    renderMarket(marketEquity);
+    renderAssessments({ parcels: orptsParcels, rar: orptsRar });
+    renderACS({ village: acsVillage, town: acsTown });
+    renderFEMA(fema);
+    renderHours(hours);
+    renderClimateSmart(csc);
+    renderFarmersMarkets(farmersMarkets);
+    renderTransportation({ aadt: transportAadt, bridges: transportBridges });
+    renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
+    renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople, coverage });
+    renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint });
+  } catch (err) {
+    console.error('Audit failed:', err);
+    document.querySelectorAll('.status').forEach(s => {
+      if (s.textContent.includes('Fetching')) {
+        s.className = 'status err';
+        s.textContent = `✗ ${err.message}`;
+      }
+    });
+  }
+}
+
+/* Hard-pinned to Kinderhook. The report is not a framework. */
+audit('kinderhook');
+</script>
+</body>
+</html>

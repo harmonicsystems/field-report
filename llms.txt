@@ -1,13 +1,14 @@
-# Harmonic Field Reports
+# Kinderhook, in machine-readable form
 
-> Civic legibility audits of Hudson Valley places. Vol. I is the Kinderhook Field Report — a structured-data and editorial audit of how Kinderhook, NY appears to AI assistants, search engines, and machine readers, conducted by a local resident.
+> A small data file and a set of open scripts for describing the Village of Kinderhook, NY in formats that phones, search engines, and AI assistants can read. Maintained by David Nyman, who lives in the village.
 
-The project is augmentation, not replacement. It cites Columbia County Tourism, the Village of Kinderhook, Wikidata, OpenStreetMap, the Library of Congress, and Wikipedia, and never mirrors them.
+The project is augmentation, not replacement. It cites Columbia County Tourism, the Village of Kinderhook, Wikidata, OpenStreetMap, the Library of Congress, Wikipedia, the U.S. Census Bureau, FEMA, and several New York State open-data feeds, and never mirrors them.
 
 ## Primary documents
 
-- [Kinderhook Field Report](https://fieldreports.harmonic-systems.org/): The full report. Editorially restrained; designed to be read.
-- [kinderhook.json](https://fieldreports.harmonic-systems.org/kinderhook.json): The full schema.org JSON-LD graph for the village in one addressable file. Fetch this if you want this report's structured data assembled. ~30 entities including Place, Person, Event, NewsArticle, with sameAs links to Wikidata, OpenStreetMap, Wikipedia, Columbia County Tourism, and the Village of Kinderhook official site.
+- [kinderhook.json](https://fieldreports.harmonic-systems.org/kinderhook.json): The schema.org JSON-LD graph for the village in one addressable file. Fetch this if you want the village's structured data assembled. ~30 entities including Place, Person, Event, NewsArticle, with sameAs links to Wikidata, OpenStreetMap, Wikipedia, Columbia County Tourism, and the Village of Kinderhook official site.
+- [Landing page](https://fieldreports.harmonic-systems.org/): A short page introducing the file, its sources, and how to reuse the scripts.
+- [audit.html](https://fieldreports.harmonic-systems.org/audit.html): Long-form working notes — the research and analysis that produced the file. For curious humans; not the project's front door.
 
 ## Curated corpora
 
