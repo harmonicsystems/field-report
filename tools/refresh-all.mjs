@@ -34,6 +34,7 @@ const tools = [
   { name: 'NY market equity stats',   script: 'tools/fetch-ny-sales.mjs' },
   { name: 'Census ACS 5-Year',        script: 'tools/fetch-acs.mjs' },
   { name: 'OpenFEMA disasters',       script: 'tools/fetch-fema.mjs' },
+  { name: 'Climate Smart (data.ny.gov)', script: 'tools/fetch-climate-smart.mjs' },
   { name: 'Build kinderhook.json',    script: 'tools/build-jsonld.mjs' },
 ];
 

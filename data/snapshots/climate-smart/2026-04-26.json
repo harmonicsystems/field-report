@@ -1,0 +1,254 @@
+{
+  "fetchedAt": "2026-04-26T13:51:26.718Z",
+  "fetcher": "tools/fetch-climate-smart.mjs",
+  "source": "https://data.ny.gov/resource/2c5p-4m2k.json",
+  "program": {
+    "name": "Climate Smart Communities",
+    "agency": "New York State Department of Environmental Conservation",
+    "url": "https://climatesmart.ny.gov/",
+    "description": "A statewide program in which local governments pledge to act across ten climate policy categories and earn points for documented actions, escalating their certification level over time.",
+    "statusLadder": [
+      "Registered",
+      "Bronze Certified",
+      "Silver Certified",
+      "Gold Certified"
+    ]
+  },
+  "counts": {
+    "statewideTotal": 391,
+    "statewideByStatus": {
+      "Bronze Certified": 125,
+      "Registered": 250,
+      "Silver Certified": 16
+    },
+    "countyTotal": 19,
+    "countyByStatus": {
+      "Silver Certified": 1,
+      "Bronze Certified": 13,
+      "Registered": 5
+    }
+  },
+  "village": {
+    "name": "Kinderhook",
+    "type": "village",
+    "status": "Bronze Certified",
+    "pledgedOn": "2016-05-11",
+    "certificationExpires": "2028-09-30",
+    "population2010": 1211,
+    "county": "Columbia",
+    "redcRegion": "Capital Region",
+    "decRegion": "4"
+  },
+  "town": null,
+  "countyParticipants": [
+    {
+      "name": "New Lebanon",
+      "type": "town",
+      "status": "Silver Certified",
+      "pledgedOn": "2020-02-11",
+      "certificationExpires": "2029-09-30",
+      "population2010": 2305,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Ancram",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2016-02-18",
+      "certificationExpires": "2027-09-30",
+      "population2010": 1573,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Austerlitz",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2017-08-17",
+      "certificationExpires": "2029-09-30",
+      "population2010": 1654,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Canaan",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2020-11-09",
+      "certificationExpires": "2028-09-30",
+      "population2010": 1710,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Chatham",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2015-07-16",
+      "certificationExpires": "2028-09-30",
+      "population2010": 3418,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Columbia",
+      "type": "County",
+      "status": "Bronze Certified",
+      "pledgedOn": "2020-11-10",
+      "certificationExpires": "2028-09-30",
+      "population2010": 49589,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Copake",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2009-06-09",
+      "certificationExpires": "2029-09-30",
+      "population2010": 3615,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Germantown",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2020-12-08",
+      "certificationExpires": "2027-09-30",
+      "population2010": 1954,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Ghent",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2016-05-19",
+      "certificationExpires": "2028-09-30",
+      "population2010": 4342,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Hillsdale",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2016-05-10",
+      "certificationExpires": "2029-09-30",
+      "population2010": 1927,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Hudson",
+      "type": "city",
+      "status": "Bronze Certified",
+      "pledgedOn": "2019-04-16",
+      "certificationExpires": "2026-09-30",
+      "population2010": 6713,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Kinderhook",
+      "type": "village",
+      "status": "Bronze Certified",
+      "pledgedOn": "2016-05-11",
+      "certificationExpires": "2028-09-30",
+      "population2010": 1211,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Philmont",
+      "type": "village",
+      "status": "Bronze Certified",
+      "pledgedOn": "2018-02-14",
+      "certificationExpires": "2029-09-30",
+      "population2010": 1379,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Taghkanic",
+      "type": "town",
+      "status": "Bronze Certified",
+      "pledgedOn": "2020-11-09",
+      "certificationExpires": "2028-09-30",
+      "population2010": 1310,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Claverack",
+      "type": "town",
+      "status": "Registered",
+      "pledgedOn": "2020-08-13",
+      "certificationExpires": null,
+      "population2010": 4642,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Clermont",
+      "type": "town",
+      "status": "Registered",
+      "pledgedOn": "2021-06-07",
+      "certificationExpires": null,
+      "population2010": 1965,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Gallatin",
+      "type": "town",
+      "status": "Registered",
+      "pledgedOn": "2022-10-18",
+      "certificationExpires": null,
+      "population2010": 1668,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Stuyvesant",
+      "type": "town",
+      "status": "Registered",
+      "pledgedOn": "2021-12-09",
+      "certificationExpires": null,
+      "population2010": 2027,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    },
+    {
+      "name": "Valatie",
+      "type": "village",
+      "status": "Registered",
+      "pledgedOn": "2022-02-08",
+      "certificationExpires": null,
+      "population2010": 1819,
+      "county": "Columbia",
+      "redcRegion": "Capital Region",
+      "decRegion": "4"
+    }
+  ]
+}

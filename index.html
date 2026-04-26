@@ -1366,6 +1366,74 @@
     letter-spacing: 0.04em; }
   .fema-tail { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
 
+  /* ============================================ §XVIII : CSC == */
+  .csc-hero {
+    display: grid; grid-template-columns: 220px 1fr; gap: 32px;
+    align-items: baseline;
+    padding: 24px 28px; margin: 12px 0 28px;
+    background: var(--bg-plate); border: 1px solid var(--rule);
+  }
+  .csc-status-badge {
+    font-family: var(--display); font-variation-settings: 'opsz' 60;
+    font-size: 30px; line-height: 1.1; color: var(--accent);
+    margin: 0;
+  }
+  .csc-status-badge .csc-tier {
+    display: block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .csc-hero-meta { display: grid; gap: 6px; font-size: 14px; }
+  .csc-hero-meta dt {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .csc-hero-meta dd { margin: 0 0 8px; color: var(--ink); font-family: var(--body); }
+
+  .csc-block-h {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin: 24px 0 8px;
+  }
+  .csc-county {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px 18px; margin-bottom: 18px;
+  }
+  .csc-peer {
+    display: grid; grid-template-columns: 1fr auto; gap: 8px;
+    padding: 7px 0; border-bottom: 1px dotted var(--rule);
+    font-size: 14px; align-items: baseline;
+  }
+  .csc-peer-name { color: var(--ink); }
+  .csc-peer-name em { color: var(--ink-soft); font-style: italic; font-size: 11px; margin-left: 4px; }
+  .csc-peer-status {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .csc-peer.tier-silver .csc-peer-status { color: #6b6b8a; font-weight: 600; }
+  .csc-peer.tier-bronze .csc-peer-status { color: var(--accent); }
+  .csc-peer.tier-registered .csc-peer-status { color: var(--ink-soft); }
+  .csc-peer.tier-self {
+    background: rgba(166, 61, 42, 0.06);
+    padding-left: 8px; padding-right: 8px;
+    border-bottom: 1px solid var(--accent);
+  }
+  .csc-peer.tier-self .csc-peer-name { color: var(--accent); font-weight: 600; }
+
+  .csc-statewide {
+    display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 24px;
+  }
+  .csc-stat-chip {
+    font-family: var(--mono); font-size: 12px; padding: 4px 10px;
+    border: 1px solid var(--rule); background: rgba(255,255,255,0.5);
+    color: var(--ink-soft);
+  }
+  .csc-stat-chip em { color: var(--accent); font-style: normal; margin-left: 4px; font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .csc-hero { grid-template-columns: 1fr; gap: 16px; padding: 18px 18px; }
+    .csc-status-badge { font-size: 24px; }
+  }
+
   /* ============================================ §XVII : HOURS = */
   .gantt-wrap { margin-top: 18px; }
   .g-row { display: grid; grid-template-columns: 200px 1fr; gap: 14px;
@@ -1753,6 +1821,18 @@
     <p class="dek">Neither CCT nor the village directory publishes machine-readable opening hours for any business in Kinderhook. The corpus below is hand-curated, in the editorial pattern of <span style="font-family:var(--mono);">schema/places/</span>: weekly hours per business, expressed as schema.org <span style="font-family:var(--mono);">openingHoursSpecification</span>. A reader (human or machine) can answer "what's open at 4 p.m. on a Sunday in April" without scraping a single page.</p>
     <div class="status" id="hours-status">Loading corpus…</div>
     <div class="gantt-wrap" id="hours-gantt"></div>
+  </section>
+
+  <!-- ============================================ §XVIII CSC === -->
+  <section class="plate" id="sec-csc">
+    <div class="section-head">
+      <div class="section-num">§ XVIII · Climate Smart</div>
+      <h2 class="section-title">What the village has <em>pledged</em></h2>
+      <div class="endpoint">data.ny.gov · 2c5p-4m2k</div>
+    </div>
+    <p class="dek">The Climate Smart Communities program, run by the NYS Department of Environmental Conservation, is a statewide ladder: jurisdictions take a pledge across ten policy categories, then earn points for documented actions to escalate from Registered → Bronze → Silver → Gold. Below: the village's certification status, the Columbia County peers it sits among, and the statewide context.</p>
+    <div class="status" id="csc-status">Loading snapshot…</div>
+    <div id="csc-body"></div>
   </section>
 
   <!-- ============================================ §XII SCHEMA == -->
@@ -3170,6 +3250,95 @@ function renderFEMA(snap) {
 }
 
 /* =============================================== §XVII : HOURS = */
+/* =============================================== §XVIII : CSC == */
+function renderClimateSmart(snap) {
+  const status = $('#csc-status');
+  const body   = $('#csc-body');
+  if (!snap) {
+    status.className = 'status';
+    status.textContent = 'No Climate Smart snapshot in this deploy. Run tools/fetch-climate-smart.mjs.';
+    return;
+  }
+  const stamp = (snap.fetchedAt || '').slice(0, 10);
+  status.className = 'status ok';
+  status.textContent = `${snap.counts.countyTotal} of ${snap.counts.statewideTotal} NYS jurisdictions in Columbia County · snapshot ${stamp}`;
+
+  const v = snap.village;
+  const t = snap.town;
+
+  const heroHtml = v ? `
+    <div class="csc-hero">
+      <div>
+        <p class="csc-status-badge">
+          <span class="csc-tier">Status</span>
+          ${esc(v.status)}
+        </p>
+      </div>
+      <dl class="csc-hero-meta">
+        <dt>Pledged</dt><dd>${esc(v.pledgedOn || '—')}</dd>
+        <dt>Certification expires</dt><dd>${esc(v.certificationExpires || 'n/a')}</dd>
+        <dt>Population at pledge (2010 Census)</dt><dd>${esc((v.population2010 || '—').toLocaleString ? v.population2010.toLocaleString() : '—')}</dd>
+        <dt>NYSDEC Region</dt><dd>${esc(v.decRegion || '—')}</dd>
+      </dl>
+    </div>` : `
+    <div class="csc-hero">
+      <p class="csc-status-badge"><span class="csc-tier">Status</span>Not enrolled</p>
+      <p>The Village of Kinderhook is not currently a Climate Smart Community participant.</p>
+    </div>`;
+
+  // Statewide context chips.
+  const sortStatuses = (obj) => Object.entries(obj)
+    .sort(([a], [b]) => {
+      const order = ['Gold Certified','Silver Certified','Bronze Certified','Registered'];
+      return order.indexOf(a) - order.indexOf(b);
+    });
+
+  const statewideHtml = sortStatuses(snap.counts.statewideByStatus)
+    .map(([s, n]) => `<span class="csc-stat-chip">${esc(s)} <em>${n}</em></span>`).join('');
+
+  // County peers, ranked by status then alphabetical.
+  const peerHtml = snap.countyParticipants.map(j => {
+    const isVillage = j.name === 'Kinderhook' && /village/i.test(j.type);
+    const tierClass = /Silver/.test(j.status) ? 'tier-silver'
+      : /Bronze/.test(j.status) ? 'tier-bronze'
+      : 'tier-registered';
+    const cls = `csc-peer ${tierClass}${isVillage ? ' tier-self' : ''}`;
+    return `
+      <div class="${cls}">
+        <span class="csc-peer-name">${esc(j.name)} <em>${esc(j.type)}</em></span>
+        <span class="csc-peer-status">${esc(j.status.replace(' Certified',''))}</span>
+      </div>`;
+  }).join('');
+
+  // Editorial findings.
+  const insights = [];
+  if (v && !t) {
+    insights.push(`The <strong>village</strong> is enrolled (${esc(v.status)}, since ${esc(v.pledgedOn?.slice(0,4) || '?')}). The surrounding <strong>town of Kinderhook</strong> is <strong>not</strong> a participant.`);
+  }
+  const certifiedCount = snap.countyParticipants.filter(j => /Bronze|Silver|Gold/.test(j.status)).length;
+  insights.push(`<strong>${certifiedCount}</strong> of ${snap.countyParticipants.length} Columbia County participants are certified (Bronze or higher). The county itself enrolled in 2020 and is Bronze.`);
+  const silvers = snap.countyParticipants.filter(j => /Silver/.test(j.status));
+  if (silvers.length === 1) {
+    insights.push(`<strong>${esc(silvers[0].name)}</strong> ${esc(silvers[0].type)} is the only Silver-certified jurisdiction in Columbia County.`);
+  }
+  if (snap.counts.statewideByStatus['Gold Certified'] === undefined && !snap.counts.statewideByStatus['Gold Certified']) {
+    insights.push(`Statewide: <strong>${snap.counts.statewideByStatus['Silver Certified'] || 0}</strong> Silver, <strong>${snap.counts.statewideByStatus['Bronze Certified'] || 0}</strong> Bronze, <strong>${snap.counts.statewideByStatus['Registered'] || 0}</strong> Registered. No jurisdiction has reached Gold.`);
+  }
+
+  body.innerHTML = `
+    ${heroHtml}
+    <div class="csc-block-h">Statewide participation</div>
+    <div class="csc-statewide">${statewideHtml}</div>
+    <div class="csc-block-h">Columbia County peers (${snap.countyParticipants.length})</div>
+    <div class="csc-county">${peerHtml}</div>
+    <div class="acs-insights">
+      <div class="acs-insights-h">Reading the record</div>
+      <ul>${insights.map(s => `<li>${s}</li>`).join('')}</ul>
+    </div>
+    <p class="m-foot">Source: NYS DEC Climate Smart Communities, published via data.ny.gov dataset 2c5p-4m2k. Population figures are 2010 Census; current population for the village is <span style="font-family:var(--mono);">1,351</span> per ACS 5-Year 2022, see §XV.</p>
+  `;
+}
+
 function renderHours(snap) {
   const status = $('#hours-status');
   const wrap   = $('#hours-gantt');
@@ -3422,7 +3591,7 @@ async function audit(town) {
     // Auxiliary snapshots — used by the synthesizing sections (finding,
     // gaps, schema, asks). Each can be absent without breaking the page.
     const [village, cctBizIndex, cctBusinesses, histSites, histPeople, histSummaries, histNewspapers,
-           orptsParcels, orptsRar, marketEquity, acsVillage, acsTown, fema, hours] = await Promise.all([
+           orptsParcels, orptsRar, marketEquity, acsVillage, acsTown, fema, hours, csc] = await Promise.all([
       loadSnapshot('./data/snapshots/villageofkinderhook/latest-businesses.json'),
       loadSnapshot('./data/snapshots/columbiacountytourism/latest-business-index.json'),
       loadSnapshot('./data/snapshots/columbiacountytourism/latest-businesses.json'),
@@ -3437,6 +3606,7 @@ async function audit(town) {
       loadSnapshot('./data/snapshots/acs/latest-town.json'),
       loadSnapshot('./data/snapshots/fema/latest-disasters.json'),
       loadSnapshot('./schema/hours/manifest.json'),
+      loadSnapshot('./data/snapshots/climate-smart/latest.json'),
     ]);
 
     renderHeadlineFinding({ venues, venueTotal, village, cctBizIndex, cctBusinesses });
@@ -3447,6 +3617,7 @@ async function audit(town) {
     renderACS({ village: acsVillage, town: acsTown });
     renderFEMA(fema);
     renderHours(hours);
+    renderClimateSmart(csc);
     renderGaps(t, { events, venues, venueTotal, posts, ontology, village, cctBizIndex, cctBusinesses, footprint });
     renderGeneratedSchema(t, { events, venues, posts, ontology, crossrefs, curated, cctBusinesses, histSites, histPeople, coverage });
     renderAsks({ ontology, cctBizIndex, cctBusinesses, village, footprint });
