@@ -1366,6 +1366,53 @@
     letter-spacing: 0.04em; }
   .fema-tail { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
 
+  /* ============================================ PART HEADERS = */
+  .part-header {
+    margin: 96px 0 48px;
+    padding: 36px 0 14px;
+    border-top: 3px solid var(--ink);
+    position: relative;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: baseline;
+  }
+  .part-header::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 0; right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+  .part-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .part-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 60;
+    font-size: 38px;
+    line-height: 1.05;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .part-header:first-of-type { margin-top: 56px; }
+
+  @media (max-width: 760px) {
+    .part-header {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 56px;
+      padding-top: 24px;
+    }
+    .part-title { font-size: 28px; }
+  }
+
   /* ============================================ CONTENTS ===== */
   .contents {
     padding: 24px 28px; margin-bottom: 56px;
@@ -1374,29 +1421,48 @@
   }
   .contents-label {
     font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
   }
+  .contents-parts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px 28px;
+  }
+  .contents-part {
+    display: flex; flex-direction: column;
+  }
+  .contents-part-h {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.4;
+  }
+  .contents-part-h:hover { color: var(--ink); border-bottom-color: var(--ink); }
   .contents-list {
     list-style: none; margin: 0; padding: 0;
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 4px 24px;
   }
-  .contents-list li { padding: 4px 0; }
+  .contents-list li { padding: 3px 0; }
   .contents-list a {
     font-family: var(--body); font-size: 14px; color: var(--ink);
     text-decoration: none; display: grid;
-    grid-template-columns: 70px 1fr; gap: 10px; align-items: baseline;
+    grid-template-columns: 56px 1fr; gap: 8px; align-items: baseline;
   }
   .contents-list a:hover { color: var(--accent); }
   .contents-list a:hover .c-num { color: var(--accent); }
   .contents-list .c-num {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--ink-soft);
     text-align: right;
   }
   @media (max-width: 600px) {
     .contents { padding: 18px 16px; margin-bottom: 32px; }
-    .contents-list { grid-template-columns: 1fr; gap: 0; }
+    .contents-parts { grid-template-columns: 1fr; gap: 16px; }
   }
 
   /* ============================================ §XIX : MARKETS  */
@@ -1697,82 +1763,173 @@
   <!-- ============================================ CONTENTS ===== -->
   <nav class="contents" aria-label="Contents">
     <div class="contents-label">Contents</div>
-    <ol class="contents-list">
-      <li><a href="#sec-ontology"><span class="c-num">§ I</span> Ontology</a></li>
-      <li><a href="#sec-footprint"><span class="c-num">§ II</span> CCT Footprint</a></li>
-      <li><a href="#sec-events"><span class="c-num">§ III</span> Events</a></li>
-      <li><a href="#sec-venues"><span class="c-num">§ IV</span> Event Venues</a></li>
-      <li><a href="#sec-editorial"><span class="c-num">§ V</span> Editorial Record</a></li>
-      <li><a href="#sec-coverage"><span class="c-num">§ VI</span> Independent Coverage</a></li>
-      <li><a href="#sec-businesses"><span class="c-num">§ VII</span> CCT Businesses</a></li>
-      <li><a href="#sec-gaps"><span class="c-num">§ VIII</span> Diagnostic</a></li>
-      <li><a href="#sec-crossrefs"><span class="c-num">§ IX</span> Cross-references</a></li>
-      <li><a href="#sec-curated"><span class="c-num">§ X</span> Curated Places</a></li>
-      <li><a href="#sec-historic"><span class="c-num">§ XI</span> Historic Layer</a></li>
-      <li><a href="#sec-assess"><span class="c-num">§ XIII</span> Assessments</a></li>
-      <li><a href="#sec-market"><span class="c-num">§ XIV</span> Market Movement</a></li>
-      <li><a href="#sec-acs"><span class="c-num">§ XV</span> Demographics</a></li>
-      <li><a href="#sec-fema"><span class="c-num">§ XVI</span> Disaster Record</a></li>
-      <li><a href="#sec-hours"><span class="c-num">§ XVII</span> Open Hours</a></li>
-      <li><a href="#sec-csc"><span class="c-num">§ XVIII</span> Climate Smart</a></li>
-      <li><a href="#sec-markets"><span class="c-num">§ XIX</span> Farmers Markets</a></li>
-      <li><a href="#sec-transport"><span class="c-num">§ XX</span> Transportation</a></li>
-      <li><a href="#sec-schema"><span class="c-num">§ XII</span> Proposed Schema</a></li>
-    </ol>
+    <div class="contents-parts">
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part1">Part One · Who's coming through</a>
+        <ol class="contents-list">
+          <li><a href="#sec-acs"><span class="c-num">§ I</span> Demographics</a></li>
+          <li><a href="#sec-transport"><span class="c-num">§ II</span> Transportation</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part2">Part Two · What's here</a>
+        <ol class="contents-list">
+          <li><a href="#sec-businesses"><span class="c-num">§ III</span> CCT Businesses</a></li>
+          <li><a href="#sec-hours"><span class="c-num">§ IV</span> Open Hours</a></li>
+          <li><a href="#sec-curated"><span class="c-num">§ V</span> Curated Places</a></li>
+          <li><a href="#sec-markets"><span class="c-num">§ VI</span> Farmers Markets</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part3">Part Three · What pulls people in</a>
+        <ol class="contents-list">
+          <li><a href="#sec-historic"><span class="c-num">§ VII</span> Historic Layer</a></li>
+          <li><a href="#sec-coverage"><span class="c-num">§ VIII</span> Independent Coverage</a></li>
+          <li><a href="#sec-editorial"><span class="c-num">§ IX</span> Editorial Record</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part4">Part Four · What it costs to operate here</a>
+        <ol class="contents-list">
+          <li><a href="#sec-assessments"><span class="c-num">§ X</span> Assessments</a></li>
+          <li><a href="#sec-market"><span class="c-num">§ XI</span> Market Movement</a></li>
+          <li><a href="#sec-csc"><span class="c-num">§ XII</span> Climate Smart</a></li>
+          <li><a href="#sec-fema"><span class="c-num">§ XIII</span> Disaster Record</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part5">Part Five · Whether anyone can find you</a>
+        <ol class="contents-list">
+          <li><a href="#sec-footprint"><span class="c-num">§ XIV</span> CCT Footprint</a></li>
+          <li><a href="#sec-ontology"><span class="c-num">§ XV</span> Ontology</a></li>
+          <li><a href="#sec-events"><span class="c-num">§ XVI</span> Events</a></li>
+          <li><a href="#sec-venues"><span class="c-num">§ XVII</span> Event Venues</a></li>
+          <li><a href="#sec-crossrefs"><span class="c-num">§ XVIII</span> Cross-references</a></li>
+          <li><a href="#sec-gaps"><span class="c-num">§ XIX</span> Diagnostic</a></li>
+        </ol>
+      </div>
+      <div class="contents-part">
+        <a class="contents-part-h" href="#part6">Part Six · What would change this</a>
+        <ol class="contents-list">
+          <li><a href="#sec-schema"><span class="c-num">§ XX</span> Proposed Schema</a></li>
+        </ol>
+      </div>
+    </div>
   </nav>
 
-  <!-- ============================================ §I ONTOLOGY === -->
-  <section class="plate" id="sec-ontology">
+
+  <!-- ======================================== PART ONE -->
+  <div class="part-header" id="part1">
+    <div class="part-num">Part One</div>
+    <h2 class="part-title">Who's coming through</h2>
+  </div>
+
+    <!-- ============================================ §I DEMOGRAPHICS -->
+  <section class="plate" id="sec-acs">
     <div class="section-head">
-      <div class="section-num">§ I · Ontology</div>
-      <h2 class="section-title">How the county <em>categorizes itself</em></h2>
-      <div class="endpoint">/wp/v2/{taxonomy}</div>
+      <div class="section-num">§ I · Demographics</div>
+      <h2 class="section-title">Who the Census <em>says we are</em></h2>
+      <div class="endpoint">api.census.gov · acs/acs5</div>
     </div>
-    <p class="dek">Before writing our own schema we read theirs. CCT publishes four taxonomies via REST. Each card below shows the full term list, <em>county-wide</em>, with any Kinderhook entries highlighted in cinnabar. The Kinderhook match count is what every later section filters against — if a taxonomy has zero Kinderhook terms, the village is invisible to that surface of the site.</p>
-    <div class="status" id="ontology-status">Fetching taxonomies…</div>
-    <div class="taxonomy-grid" id="ontology-grid"></div>
+    <p class="dek">American Community Survey 5-Year estimates for two geographies: the incorporated Village of Kinderhook (place 36-39562) and the surrounding Town of Kinderhook (county subdivision 36-021-39573). The two are not the same place; the difference is most of the local story.</p>
+    <div class="status" id="acs-status">Loading snapshot…</div>
+    <div id="acs-body"></div>
+  </section>
+    <!-- ============================================ §II TRANSPORTATION -->
+  <section class="plate" id="sec-transport">
+    <div class="section-head">
+      <div class="section-num">§ II · Transportation</div>
+      <h2 class="section-title">The roads that <em>carry</em> the village</h2>
+      <div class="endpoint">data.ny.gov · 6amx-2pbv · wpyb-cjy8</div>
+    </div>
+    <p class="dek">NYSDOT publishes Annual Average Daily Traffic counts for every roadway segment under state inventory, and condition data for every state-owned bridge. Below: how many vehicles pass through Kinderhook on a given day, and the structures that carry them across the village's creeks.</p>
+    <div class="status" id="transport-status">Loading snapshot…</div>
+    <div id="transport-body"></div>
   </section>
 
-  <!-- ============================================ §II FOOTPRINT  -->
-  <section class="plate" id="sec-footprint">
+  <!-- ======================================== PART TWO -->
+  <div class="part-header" id="part2">
+    <div class="part-num">Part Two</div>
+    <h2 class="part-title">What's here</h2>
+  </div>
+
+    <!-- ============================================ §III CCT BUSINESSES -->
+  <section class="plate" id="sec-businesses">
     <div class="section-head">
-      <div class="section-num">§ II · The CCT Footprint</div>
-      <h2 class="section-title">Everything the county <em>machine-readably</em> knows</h2>
-      <div class="endpoint">/wp/v2/search?search=kinderhook</div>
+      <div class="section-num">§ III · CCT Businesses</div>
+      <h2 class="section-title">Everywhere CCT <em>points</em> in the village</h2>
+      <div class="endpoint">/business/{slug}/ × 594</div>
     </div>
-    <p class="dek">Columbia County Tourism's full published index of Kinderhook, across every content type it exposes to search. This is the overview; the next four sections drill into each type in turn.</p>
-    <div class="status" id="footprint-status">Querying…</div>
-    <div class="footprint-grid" id="footprint-grid"></div>
+    <p class="dek">The biggest single drill-down: the county's full business directory, fetched page-by-page at build time from the Yoast sitemap, then filtered to our village by address. This is what CCT tells the world about Kinderhook when it lists businesses.</p>
+    <div class="status" id="businesses-status">Loading snapshot…</div>
+    <div class="entity-list" id="businesses-list"></div>
+  </section>
+    <!-- ============================================ §IV OPEN HOURS -->
+  <section class="plate" id="sec-hours">
+    <div class="section-head">
+      <div class="section-num">§ IV · Open Hours</div>
+      <h2 class="section-title">When the village is <em>actually open</em></h2>
+      <div class="endpoint">schema/hours/manifest.json</div>
+    </div>
+    <p class="dek">Neither CCT nor the village directory publishes machine-readable opening hours for any business in Kinderhook. The corpus below is hand-curated, in the editorial pattern of <span style="font-family:var(--mono);">schema/places/</span>: weekly hours per business, expressed as schema.org <span style="font-family:var(--mono);">openingHoursSpecification</span>. A reader (human or machine) can answer "what's open at 4 p.m. on a Sunday in April" without scraping a single page.</p>
+    <div class="status" id="hours-status">Loading corpus…</div>
+    <div class="gantt-wrap" id="hours-gantt"></div>
+  </section>
+    <!-- ============================================ §V CURATED PLACES -->
+  <section class="plate" id="sec-curated">
+    <div class="section-head">
+      <div class="section-num">§ V · Curated Places</div>
+      <h2 class="section-title">What <em>we</em> have written</h2>
+      <div class="endpoint">schema/places/*.json</div>
+    </div>
+    <p class="dek">The hand-kept corpus. Each entry is a JSON file under <span style="font-family:var(--mono);">schema/places/</span>, edited as a file, versioned in public, and loaded by this page at read-time. The county's data plus the commons' data plus these make a legible village.</p>
+    <div class="status" id="curated-status">Loading corpus…</div>
+    <div class="entity-list" id="curated-list"></div>
+  </section>
+    <!-- ============================================ §VI FARMERS MARKETS -->
+  <section class="plate" id="sec-markets">
+    <div class="section-head">
+      <div class="section-num">§ VI · Farmers Markets</div>
+      <h2 class="section-title">What the state <em>knows</em> about the market</h2>
+      <div class="endpoint">data.ny.gov · qq4h-8p86</div>
+    </div>
+    <p class="dek">The NYS Department of Agriculture and Markets keeps the authoritative public record of every farmers' market in the state — operating season, weekly hours, SNAP/EBT acceptance, contact. The Kinderhook Farmers' Market we curated by hand at <span style="font-family:var(--mono);">schema/places/</span> appears here too. The state is a primary source we cite; the curated entry is the editorial overlay.</p>
+    <div class="status" id="markets-status">Loading snapshot…</div>
+    <div id="markets-body"></div>
   </section>
 
-  <!-- ============================================ §III EVENTS == -->
-  <section class="plate" id="sec-events">
-    <div class="section-head">
-      <div class="section-num">§ III · Events</div>
-      <h2 class="section-title">What <em>happens</em> in the village</h2>
-      <div class="endpoint">/tribe/events/v1/events</div>
-    </div>
-    <p class="dek">Upcoming events at Kinderhook venues, read live from The Events Calendar. Each appears below as it would if a machine were asking the county what is scheduled here.</p>
-    <div class="status" id="events-status">Fetching events…</div>
-    <div class="entity-list" id="events-list"></div>
-  </section>
+  <!-- ======================================== PART THREE -->
+  <div class="part-header" id="part3">
+    <div class="part-num">Part Three</div>
+    <h2 class="part-title">What pulls people in</h2>
+  </div>
 
-  <!-- ============================================ §IV EVENT VENUES -->
-  <section class="plate" id="sec-venues">
+    <!-- ============================================ §VII HISTORIC LAYER -->
+  <section class="plate" id="sec-historic">
     <div class="section-head">
-      <div class="section-num">§ IV · Event Venues</div>
-      <h2 class="section-title">Places that <em>host</em> things</h2>
-      <div class="endpoint">/tribe/events/v1/venues</div>
+      <div class="section-num">§ VII · Historic Layer</div>
+      <h2 class="section-title">Kinderhook as <em>deep time</em> already knows it</h2>
+      <div class="endpoint">wikidata · wikipedia · loc</div>
     </div>
-    <p class="dek">A precise, narrow category: places in Kinderhook the county's event system currently recognizes as <em>hosting events</em>. Not the same as "places in Kinderhook" or even "businesses that could host an event" — a venue only appears here if something is scheduled in it.</p>
-    <div class="status" id="venues-status">Fetching event venues…</div>
-    <div class="entity-list" id="venues-list"></div>
+    <p class="dek">Before the URL slug, the village. Structured historical knowledge the commons has already written down, snapshotted at build time: NRHP listings, notable residents, Wikipedia summaries of the canonical sites, and two centuries of newspaper mentions.</p>
+    <div class="status" id="historic-status">Loading snapshots…</div>
+    <div id="historic-body"></div>
   </section>
-
-  <!-- ============================================ §V EDITORIAL == -->
+    <!-- ============================================ §VIII INDEPENDENT COVERAGE -->
+  <section class="plate" id="sec-coverage">
+    <div class="section-head">
+      <div class="section-num">§ VIII · Independent Coverage</div>
+      <h2 class="section-title">What journalists <em>outside</em> the establishment have written</h2>
+      <div class="endpoint">schema/coverage/*.json</div>
+    </div>
+    <p class="dek">Hand-curated. Independent reporting on Kinderhook from publications outside the tourism board's orbit. Each entry is a citation, not a republication — readers click through to the original; the publishers get the traffic. The list grows by editorial decision, not by scrape.</p>
+    <div class="status" id="coverage-status">Loading corpus…</div>
+    <div id="coverage-list"></div>
+  </section>
+    <!-- ============================================ §IX EDITORIAL RECORD -->
   <section class="plate" id="sec-editorial">
     <div class="section-head">
-      <div class="section-num">§ V · Editorial Record</div>
+      <div class="section-num">§ IX · Editorial Record</div>
       <h2 class="section-title">What the county has <em>said about us</em></h2>
       <div class="endpoint">/wp/v2/posts?categories=…</div>
     </div>
@@ -1781,103 +1938,16 @@
     <div class="entity-list" id="posts-list"></div>
   </section>
 
-  <!-- ============================================ §VI COVERAGE == -->
-  <section class="plate" id="sec-coverage">
-    <div class="section-head">
-      <div class="section-num">§ VI · Independent Coverage</div>
-      <h2 class="section-title">What journalists <em>outside</em> the establishment have written</h2>
-      <div class="endpoint">schema/coverage/*.json</div>
-    </div>
-    <p class="dek">Hand-curated. Independent reporting on Kinderhook from publications outside the tourism board's orbit. Each entry is a citation, not a republication — readers click through to the original; the publishers get the traffic. The list grows by editorial decision, not by scrape.</p>
-    <div class="status" id="coverage-status">Loading corpus…</div>
-    <div id="coverage-list"></div>
-  </section>
+  <!-- ======================================== PART FOUR -->
+  <div class="part-header" id="part4">
+    <div class="part-num">Part Four</div>
+    <h2 class="part-title">What it costs to operate here</h2>
+  </div>
 
-  <!-- ============================================ §VII BUSINESSES -->
-  <section class="plate" id="sec-businesses">
-    <div class="section-head">
-      <div class="section-num">§ VII · CCT Businesses</div>
-      <h2 class="section-title">Everywhere CCT <em>points</em> in the village</h2>
-      <div class="endpoint">/business/{slug}/ × 594</div>
-    </div>
-    <p class="dek">The biggest single drill-down: the county's full business directory, fetched page-by-page at build time from the Yoast sitemap, then filtered to our village by address. This is what CCT tells the world about Kinderhook when it lists businesses.</p>
-    <div class="status" id="businesses-status">Loading snapshot…</div>
-    <div class="entity-list" id="businesses-list"></div>
-  </section>
-
-  <!-- ============================================ §VIII GAPS == -->
-  <section class="plate" id="sec-gaps">
-    <div class="section-head">
-      <div class="section-num">§ VIII · Diagnostic</div>
-      <h2 class="section-title">What the machines <em>cannot</em> see</h2>
-      <div class="endpoint">(derived)</div>
-    </div>
-    <p class="dek">The county's data model has shape. This is what we found missing from the public surface — the specific gaps that make Kinderhook less legible than it could be.</p>
-    <div class="gaps">
-      <div class="gaps-grid" id="gaps-grid">
-        <!-- populated by JS based on what was actually found -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ §VI CROSSREFS  -->
-  <section class="plate" id="sec-crossrefs">
-    <div class="section-head">
-      <div class="section-num">§ IX · Cross-references</div>
-      <h2 class="section-title">What the <em>wider commons</em> already knows</h2>
-      <div class="endpoint">wikidata · overpass</div>
-    </div>
-    <p class="dek">Before we write new identifiers, we look for existing ones. Wikidata carries structured civic knowledge; OpenStreetMap carries the ground truth of named places. Both are authorities we can link to with <span style="font-family:var(--mono);">sameAs</span>.</p>
-
-    <div class="crossref-grid">
-      <div class="crossref-col">
-        <div class="crossref-head">
-          <h3>Wikidata</h3>
-          <div class="crossref-endpoint">query.wikidata.org/sparql</div>
-        </div>
-        <div class="status" id="wd-status">Querying…</div>
-        <div id="wd-list" class="crossref-list"></div>
-      </div>
-      <div class="crossref-col">
-        <div class="crossref-head">
-          <h3>OpenStreetMap</h3>
-          <div class="crossref-endpoint">overpass-api.de</div>
-        </div>
-        <div class="status" id="osm-status">Querying…</div>
-        <div id="osm-list" class="crossref-list"></div>
-      </div>
-    </div>
-    <p class="jsonld-note" id="crossref-note" style="margin-top:28px;"></p>
-  </section>
-
-  <!-- ============================================ §VII CURATED = -->
-  <section class="plate" id="sec-curated">
-    <div class="section-head">
-      <div class="section-num">§ X · Curated Places</div>
-      <h2 class="section-title">What <em>we</em> have written</h2>
-      <div class="endpoint">schema/places/*.json</div>
-    </div>
-    <p class="dek">The hand-kept corpus. Each entry is a JSON file under <span style="font-family:var(--mono);">schema/places/</span>, edited as a file, versioned in public, and loaded by this page at read-time. The county's data plus the commons' data plus these make a legible village.</p>
-    <div class="status" id="curated-status">Loading corpus…</div>
-    <div class="entity-list" id="curated-list"></div>
-  </section>
-
-  <!-- ============================================ §X HISTORIC == -->
-  <section class="plate" id="sec-historic">
-    <div class="section-head">
-      <div class="section-num">§ XI · Historic Layer</div>
-      <h2 class="section-title">Kinderhook as <em>deep time</em> already knows it</h2>
-      <div class="endpoint">wikidata · wikipedia · loc</div>
-    </div>
-    <p class="dek">Before the URL slug, the village. Structured historical knowledge the commons has already written down, snapshotted at build time: NRHP listings, notable residents, Wikipedia summaries of the canonical sites, and two centuries of newspaper mentions.</p>
-    <div class="status" id="historic-status">Loading snapshots…</div>
-    <div id="historic-body"></div>
-  </section>
-
-  <!-- ============================================ §XIII ASSESSMENTS -->
+    <!-- ============================================ §X ASSESSMENTS -->
   <section class="plate" id="sec-assessments">
     <div class="section-head">
-      <div class="section-num">§ XIII · Assessments</div>
+      <div class="section-num">§ X · Assessments</div>
       <h2 class="section-title">What every parcel is <em>worth on the books</em></h2>
       <div class="endpoint">data.ny.gov · 7vem-aaz7 · bsmp-6um6</div>
     </div>
@@ -1912,11 +1982,10 @@
       <p class="calc-foot">RAR is the state's official ratio between assessed value and full market value for residential property, derived from a sample of arm's-length sales each rate year. The result is the <em>typical</em> assessment for a property at this market value — individual parcels deviate; the variation band above is the state's coefficient of dispersion. Residential only; not applicable to commercial or vacant-land parcels.</p>
     </div>
   </section>
-
-  <!-- ============================================ §XIV MARKET == -->
+    <!-- ============================================ §XI MARKET MOVEMENT -->
   <section class="plate" id="sec-market">
     <div class="section-head">
-      <div class="section-num">§ XIV · Market Movement</div>
+      <div class="section-num">§ XI · Market Movement</div>
       <h2 class="section-title">How the state <em>measures</em> the village's market</h2>
       <div class="endpoint">data.ny.gov · 4sut-q3dt</div>
     </div>
@@ -1924,23 +1993,21 @@
     <div class="status" id="market-status">Loading snapshot…</div>
     <div id="market-body"></div>
   </section>
-
-  <!-- ============================================ §XV ACS == -->
-  <section class="plate" id="sec-acs">
+    <!-- ============================================ §XII CLIMATE SMART -->
+  <section class="plate" id="sec-csc">
     <div class="section-head">
-      <div class="section-num">§ XV · Demographics</div>
-      <h2 class="section-title">Who the Census <em>says we are</em></h2>
-      <div class="endpoint">api.census.gov · acs/acs5</div>
+      <div class="section-num">§ XII · Climate Smart</div>
+      <h2 class="section-title">What the village has <em>pledged</em></h2>
+      <div class="endpoint">data.ny.gov · 2c5p-4m2k</div>
     </div>
-    <p class="dek">American Community Survey 5-Year estimates for two geographies: the incorporated Village of Kinderhook (place 36-39562) and the surrounding Town of Kinderhook (county subdivision 36-021-39573). The two are not the same place; the difference is most of the local story.</p>
-    <div class="status" id="acs-status">Loading snapshot…</div>
-    <div id="acs-body"></div>
+    <p class="dek">The Climate Smart Communities program, run by the NYS Department of Environmental Conservation, is a statewide ladder: jurisdictions take a pledge across ten policy categories, then earn points for documented actions to escalate from Registered → Bronze → Silver → Gold. Below: the village's certification status, the Columbia County peers it sits among, and the statewide context.</p>
+    <div class="status" id="csc-status">Loading snapshot…</div>
+    <div id="csc-body"></div>
   </section>
-
-  <!-- ============================================ §XVI FEMA == -->
+    <!-- ============================================ §XIII DISASTER RECORD -->
   <section class="plate" id="sec-fema">
     <div class="section-head">
-      <div class="section-num">§ XVI · Disaster Record</div>
+      <div class="section-num">§ XIII · Disaster Record</div>
       <h2 class="section-title">What FEMA has <em>declared</em> here</h2>
       <div class="endpoint">fema.gov/api/open/v2 · DisasterDeclarationsSummaries</div>
     </div>
@@ -1949,58 +2016,110 @@
     <div id="fema-body"></div>
   </section>
 
-  <!-- ============================================ §XVII HOURS == -->
-  <section class="plate" id="sec-hours">
+  <!-- ======================================== PART FIVE -->
+  <div class="part-header" id="part5">
+    <div class="part-num">Part Five</div>
+    <h2 class="part-title">Whether anyone can find you</h2>
+  </div>
+
+    <!-- ============================================ §XIV CCT FOOTPRINT -->
+  <section class="plate" id="sec-footprint">
     <div class="section-head">
-      <div class="section-num">§ XVII · Open Hours</div>
-      <h2 class="section-title">When the village is <em>actually open</em></h2>
-      <div class="endpoint">schema/hours/manifest.json</div>
+      <div class="section-num">§ XIV · CCT Footprint</div>
+      <h2 class="section-title">Everything the county <em>machine-readably</em> knows</h2>
+      <div class="endpoint">/wp/v2/search?search=kinderhook</div>
     </div>
-    <p class="dek">Neither CCT nor the village directory publishes machine-readable opening hours for any business in Kinderhook. The corpus below is hand-curated, in the editorial pattern of <span style="font-family:var(--mono);">schema/places/</span>: weekly hours per business, expressed as schema.org <span style="font-family:var(--mono);">openingHoursSpecification</span>. A reader (human or machine) can answer "what's open at 4 p.m. on a Sunday in April" without scraping a single page.</p>
-    <div class="status" id="hours-status">Loading corpus…</div>
-    <div class="gantt-wrap" id="hours-gantt"></div>
+    <p class="dek">Columbia County Tourism's full published index of Kinderhook, across every content type it exposes to search. This is the overview; the next four sections drill into each type in turn.</p>
+    <div class="status" id="footprint-status">Querying…</div>
+    <div class="footprint-grid" id="footprint-grid"></div>
+  </section>
+    <!-- ============================================ §XV ONTOLOGY -->
+  <section class="plate" id="sec-ontology">
+    <div class="section-head">
+      <div class="section-num">§ XV · Ontology</div>
+      <h2 class="section-title">How the county <em>categorizes itself</em></h2>
+      <div class="endpoint">/wp/v2/{taxonomy}</div>
+    </div>
+    <p class="dek">Before writing our own schema we read theirs. CCT publishes four taxonomies via REST. Each card below shows the full term list, <em>county-wide</em>, with any Kinderhook entries highlighted in cinnabar. The Kinderhook match count is what every later section filters against — if a taxonomy has zero Kinderhook terms, the village is invisible to that surface of the site.</p>
+    <div class="status" id="ontology-status">Fetching taxonomies…</div>
+    <div class="taxonomy-grid" id="ontology-grid"></div>
+  </section>
+    <!-- ============================================ §XVI EVENTS -->
+  <section class="plate" id="sec-events">
+    <div class="section-head">
+      <div class="section-num">§ XVI · Events</div>
+      <h2 class="section-title">What <em>happens</em> in the village</h2>
+      <div class="endpoint">/tribe/events/v1/events</div>
+    </div>
+    <p class="dek">Upcoming events at Kinderhook venues, read live from The Events Calendar. Each appears below as it would if a machine were asking the county what is scheduled here.</p>
+    <div class="status" id="events-status">Fetching events…</div>
+    <div class="entity-list" id="events-list"></div>
+  </section>
+    <!-- ============================================ §XVII EVENT VENUES -->
+  <section class="plate" id="sec-venues">
+    <div class="section-head">
+      <div class="section-num">§ XVII · Event Venues</div>
+      <h2 class="section-title">Places that <em>host</em> things</h2>
+      <div class="endpoint">/tribe/events/v1/venues</div>
+    </div>
+    <p class="dek">A precise, narrow category: places in Kinderhook the county's event system currently recognizes as <em>hosting events</em>. Not the same as "places in Kinderhook" or even "businesses that could host an event" — a venue only appears here if something is scheduled in it.</p>
+    <div class="status" id="venues-status">Fetching event venues…</div>
+    <div class="entity-list" id="venues-list"></div>
+  </section>
+    <!-- ============================================ §XVIII CROSS-REFERENCES -->
+  <section class="plate" id="sec-crossrefs">
+    <div class="section-head">
+      <div class="section-num">§ XVIII · Cross-references</div>
+      <h2 class="section-title">What the <em>wider commons</em> already knows</h2>
+      <div class="endpoint">wikidata · overpass</div>
+    </div>
+    <p class="dek">Before we write new identifiers, we look for existing ones. Wikidata carries structured civic knowledge; OpenStreetMap carries the ground truth of named places. Both are authorities we can link to with <span style="font-family:var(--mono);">sameAs</span>.</p>
+
+    <div class="crossref-grid">
+      <div class="crossref-col">
+        <div class="crossref-head">
+          <h3>Wikidata</h3>
+          <div class="crossref-endpoint">query.wikidata.org/sparql</div>
+        </div>
+        <div class="status" id="wd-status">Querying…</div>
+        <div id="wd-list" class="crossref-list"></div>
+      </div>
+      <div class="crossref-col">
+        <div class="crossref-head">
+          <h3>OpenStreetMap</h3>
+          <div class="crossref-endpoint">overpass-api.de</div>
+        </div>
+        <div class="status" id="osm-status">Querying…</div>
+        <div id="osm-list" class="crossref-list"></div>
+      </div>
+    </div>
+    <p class="jsonld-note" id="crossref-note" style="margin-top:28px;"></p>
+  </section>
+    <!-- ============================================ §XIX DIAGNOSTIC -->
+  <section class="plate" id="sec-gaps">
+    <div class="section-head">
+      <div class="section-num">§ XIX · Diagnostic</div>
+      <h2 class="section-title">What the machines <em>cannot</em> see</h2>
+      <div class="endpoint">(derived)</div>
+    </div>
+    <p class="dek">The county's data model has shape. This is what we found missing from the public surface — the specific gaps that make Kinderhook less legible than it could be.</p>
+    <div class="gaps">
+      <div class="gaps-grid" id="gaps-grid">
+        <!-- populated by JS based on what was actually found -->
+      </div>
+    </div>
   </section>
 
-  <!-- ============================================ §XVIII CSC === -->
-  <section class="plate" id="sec-csc">
-    <div class="section-head">
-      <div class="section-num">§ XVIII · Climate Smart</div>
-      <h2 class="section-title">What the village has <em>pledged</em></h2>
-      <div class="endpoint">data.ny.gov · 2c5p-4m2k</div>
-    </div>
-    <p class="dek">The Climate Smart Communities program, run by the NYS Department of Environmental Conservation, is a statewide ladder: jurisdictions take a pledge across ten policy categories, then earn points for documented actions to escalate from Registered → Bronze → Silver → Gold. Below: the village's certification status, the Columbia County peers it sits among, and the statewide context.</p>
-    <div class="status" id="csc-status">Loading snapshot…</div>
-    <div id="csc-body"></div>
-  </section>
+  <!-- ======================================== PART SIX -->
+  <div class="part-header" id="part6">
+    <div class="part-num">Part Six</div>
+    <h2 class="part-title">What would change this</h2>
+  </div>
 
-  <!-- ============================================ §XIX MARKETS = -->
-  <section class="plate" id="sec-markets">
-    <div class="section-head">
-      <div class="section-num">§ XIX · Farmers Markets</div>
-      <h2 class="section-title">What the state <em>knows</em> about the market</h2>
-      <div class="endpoint">data.ny.gov · qq4h-8p86</div>
-    </div>
-    <p class="dek">The NYS Department of Agriculture and Markets keeps the authoritative public record of every farmers' market in the state — operating season, weekly hours, SNAP/EBT acceptance, contact. The Kinderhook Farmers' Market we curated by hand at <span style="font-family:var(--mono);">schema/places/</span> appears here too. The state is a primary source we cite; the curated entry is the editorial overlay.</p>
-    <div class="status" id="markets-status">Loading snapshot…</div>
-    <div id="markets-body"></div>
-  </section>
-
-  <!-- ============================================ §XX TRANSPORT  -->
-  <section class="plate" id="sec-transport">
-    <div class="section-head">
-      <div class="section-num">§ XX · Transportation Infrastructure</div>
-      <h2 class="section-title">The roads that <em>carry</em> the village</h2>
-      <div class="endpoint">data.ny.gov · 6amx-2pbv · wpyb-cjy8</div>
-    </div>
-    <p class="dek">NYSDOT publishes Annual Average Daily Traffic counts for every roadway segment under state inventory, and condition data for every state-owned bridge. Below: how many vehicles pass through Kinderhook on a given day, and the structures that carry them across the village's creeks.</p>
-    <div class="status" id="transport-status">Loading snapshot…</div>
-    <div id="transport-body"></div>
-  </section>
-
-  <!-- ============================================ §XII SCHEMA == -->
+    <!-- ============================================ §XX PROPOSED SCHEMA -->
   <section class="plate" id="sec-schema">
     <div class="section-head">
-      <div class="section-num">§ XII · Proposed Schema</div>
+      <div class="section-num">§ XX · Proposed Schema</div>
       <h2 class="section-title">What we <em>would publish</em> instead</h2>
       <div class="endpoint">schema.org · JSON-LD</div>
     </div>
