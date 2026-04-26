@@ -89,10 +89,20 @@ function parseBusinessPage(html, url) {
 
   out.phone = html.match(/href="tel:([^"]+)"/)?.[1]?.replace(/\s+/g, '') || null;
 
-  // External website: first http(s) link to a non-CCT, non-social domain.
+  // External website: first http(s) link that is plausibly the
+  // business's own site. We skip:
+  //   - CCT itself and its chrome (iloveny / travelhudsonvalley /
+  //     columbiacountyny / constantcontact / the web designer credit)
+  //   - directions / maps URLs
+  //   - common social platforms
+  //   - asset hosts (fonts, gravatar, etc.)
+  // CCT puts I LOVE NY and partner badges in elementor widgets BEFORE
+  // the actual "Visit Website" link, so without this filter every
+  // business ends up labelled iloveny.com.
+  const CHROME = /columbiacountytourism\.org|maps\.google|goo\.gl|tel:|mailto:|facebook\.com|instagram\.com|twitter\.com|x\.com|linkedin\.com|youtube\.com|fonts\.|gstatic|googleapis|gravatar|w\.org|gmpg|iloveny\.com|travelhudsonvalley\.com|columbiacountyny\.com|constantcontactpages\.com|constantcontact\.com|trevellyan\.biz/i;
   const externals = [...html.matchAll(/<a[^>]+href="(https?:\/\/[^"]+)"/g)]
     .map(m => m[1])
-    .filter(u => !/columbiacountytourism\.org|maps\.google|goo\.gl|tel:|mailto:|facebook\.com|instagram\.com|twitter\.com|x\.com|linkedin\.com|youtube\.com|fonts\.|gstatic|googleapis|gravatar|w\.org|gmpg/i.test(u));
+    .filter(u => !CHROME.test(u));
   out.website = externals[0] || null;
 
   // Description: first reasonably long paragraph that isn't the address or newsletter CTA.
