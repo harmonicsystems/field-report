@@ -2978,10 +2978,29 @@ function renderACS({ village, town }) {
       ['Median home value',          fmt$(V.median_value_owner_occupied),      fmt$(T.median_value_owner_occupied)],
       ['Median gross rent',          fmt$(V.median_gross_rent),                fmt$(T.median_gross_rent)],
     ]],
-    ['Income & commute', [
+    ['Income & poverty', [
       ['Median household income',    fmt$(V.median_household_income),          fmt$(T.median_household_income)],
       ['Per capita income',          fmt$(V.per_capita_income),                fmt$(T.per_capita_income)],
       ['Below poverty',              fmtPct(V.income_below_poverty_level, V.poverty_universe), fmtPct(T.income_below_poverty_level, T.poverty_universe)],
+    ]],
+    ['Age & education', [
+      ['Population under 18',        fmtPct(V.pop_under_18, V.population_total), fmtPct(T.pop_under_18, T.population_total)],
+      ['Population 65 +',            fmtPct(V.pop_65_plus, V.population_total),  fmtPct(T.pop_65_plus, T.population_total)],
+      ['Bachelor’s degree or higher (25+)', fmtPct(V.edu_bachelors_or_higher, V.edu_total_25_plus), fmtPct(T.edu_bachelors_or_higher, T.edu_total_25_plus)],
+      ['Graduate or professional degree (25+)', fmtPct(V.edu_graduate_or_higher, V.edu_total_25_plus), fmtPct(T.edu_graduate_or_higher, T.edu_total_25_plus)],
+    ]],
+    ['Connectivity & service', [
+      ['Households with broadband',  fmtPct(V.internet_with_broadband, V.internet_universe), fmtPct(T.internet_with_broadband, T.internet_universe)],
+      ['Households with no internet subscription', fmtPct(V.internet_no_subscription, V.internet_universe), fmtPct(T.internet_no_subscription, T.internet_universe)],
+      ['Veterans (civilian 18+)',    fmtPct(V.veterans, V.veteran_universe), fmtPct(T.veterans, T.veteran_universe)],
+    ]],
+    ['Commute', [
+      ['Drove alone',                fmtPct(V.commute_drove_alone, V.commute_mode_total), fmtPct(T.commute_drove_alone, T.commute_mode_total)],
+      ['Carpooled',                  fmtPct(V.commute_carpool, V.commute_mode_total),     fmtPct(T.commute_carpool, T.commute_mode_total)],
+      ['Public transit',             fmtPct(V.commute_public_transit, V.commute_mode_total), fmtPct(T.commute_public_transit, T.commute_mode_total)],
+      ['Walked',                     fmtPct(V.commute_walked, V.commute_mode_total),       fmtPct(T.commute_walked, T.commute_mode_total)],
+      ['Bicycle',                    fmtPct(V.commute_bicycle, V.commute_mode_total),      fmtPct(T.commute_bicycle, T.commute_mode_total)],
+      ['Worked from home',           fmtPct(V.commute_worked_from_home, V.commute_mode_total), fmtPct(T.commute_worked_from_home, T.commute_mode_total)],
       ['Commute ≥ 60 min',           fmtPct(V.commute_60_plus_min, V.commute_total_workers), fmtPct(T.commute_60_plus_min, T.commute_total_workers)],
     ]],
   ];
@@ -3047,6 +3066,38 @@ function renderACS({ village, town }) {
   const tNF = pct(T.households_nonfamily, T.households_total);
   if (vNF != null && tNF != null && (vNF - tNF) >= 5) {
     insights.push(`<strong>${vNF.toFixed(0)}%</strong> of village households are non-family (one person living alone, or unrelated roommates), versus ${tNF.toFixed(0)}% in the surrounding town.`);
+  }
+
+  // Aging skew: percent over 65 vs percent under 18.
+  const vOver65 = pct(V.pop_65_plus, V.population_total);
+  const vUnder18 = pct(V.pop_under_18, V.population_total);
+  if (vOver65 != null && vUnder18 != null && vOver65 > vUnder18) {
+    insights.push(`<strong>${vOver65.toFixed(0)}%</strong> of village residents are 65 or older; <strong>${vUnder18.toFixed(0)}%</strong> are under 18. The village has more retirees than children.`);
+  }
+
+  // Educational attainment, village vs town.
+  const vBA = pct(V.edu_bachelors_or_higher, V.edu_total_25_plus);
+  const tBA = pct(T.edu_bachelors_or_higher, T.edu_total_25_plus);
+  if (vBA != null && tBA != null) {
+    const diff = +(vBA - tBA).toFixed(0);
+    if (Math.abs(diff) >= 3) {
+      insights.push(`<strong>${vBA.toFixed(0)}%</strong> of village adults 25+ hold a bachelor's degree or higher (${tBA.toFixed(0)}% in the town) — a ${Math.abs(diff)}-point ${diff > 0 ? 'higher' : 'lower'} share for the village.`);
+    }
+  }
+
+  // Work-from-home — the post-pandemic civic shape.
+  const vWFH = pct(V.commute_worked_from_home, V.commute_mode_total);
+  const tWFH = pct(T.commute_worked_from_home, T.commute_mode_total);
+  if (vWFH != null && tWFH != null) {
+    insights.push(`<strong>${vWFH.toFixed(0)}%</strong> of village commuters now work from home (<strong>${tWFH.toFixed(0)}%</strong> in the town). The traditional drive-alone share is correspondingly compressed.`);
+  }
+
+  // Broadband subscription — the legibility-of-the-village-itself metric.
+  const vBB = pct(V.internet_with_broadband, V.internet_universe);
+  const tBB = pct(T.internet_with_broadband, T.internet_universe);
+  if (vBB != null && tBB != null) {
+    const noBB = pct(V.internet_no_subscription, V.internet_universe);
+    insights.push(`<strong>${vBB.toFixed(0)}%</strong> of village households have a broadband subscription (${tBB.toFixed(0)}% in the town); <strong>${(noBB || 0).toFixed(0)}%</strong> have no internet at all. Civic legibility runs both directions — a village that can't read the web is also harder to write.`);
   }
 
   const insightsHtml = insights.length
