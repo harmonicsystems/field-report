@@ -1,0 +1,42 @@
+{
+  "slug": "kinderhook-historic-preservation-overlay",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://ecode360.com/12306677",
+    "https://ecode360.com/12306737",
+    "https://ecode360.com/12307601",
+    "data/snapshots/ecode360/KI0572/ch75_landmarks-and-historic-districts.md",
+    "data/snapshots/ecode360/KI0572/ch130_zoning.md",
+    "data/snapshots/ecode360/KI0572/zoning-map.pdf",
+    "data/snapshots/village-of-kinderhook/2008-10_historic-preservation-overlay-district-review.pdf"
+  ],
+  "notes": "The locally-regulated historic district. This is the boundary that triggers Historic Preservation Commission review and certificates of appropriateness for exterior alterations under Village Code Ch. 75. Boundary is graphical, depicted on the Village Zoning Map (Ch. 130, Attachment 4) per § 75-5. Distinct from — and much smaller than — the federal National Register district.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": ["Place", "AdministrativeArea"],
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json",
+        "name": "Historic Preservation Overlay District",
+        "alternateName": [
+          "H Overlay",
+          "Village of Kinderhook Historic Preservation District"
+        ],
+        "description": "The locally-regulated historic overlay district of the Village of Kinderhook. Properties inside this boundary require a certificate of appropriateness from the Historic Preservation Commission for exterior alterations, new construction, restoration, or demolition. Concentrated on the historic commercial and residential core: Broad Street, Hudson Street, the Albany Avenue spine, Maiden Lane, Church Street, Silvester Street, and the Rothermel area.",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "kh:regulatoryEffect": "Triggers HPC review and certificates of appropriateness under Village Code Ch. 75.",
+        "kh:boundarySource": "Graphical; depicted on the Village Zoning Map (Ch. 130, Attachment 4) and on a separate Historic Preservation Map on file with the Village Clerk per § 75-5.",
+        "kh:establishedBy": "Village of Kinderhook Board of Trustees, Local Law (Ch. 75); overlay shown on Zoning Map.",
+        "kh:administeredBy": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-commission.json" },
+        "sameAs": [
+          "https://ecode360.com/12306737",
+          "https://ecode360.com/12307601"
+        ]
+      }
+    ]
+  }
+}

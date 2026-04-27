@@ -41,7 +41,19 @@
         "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
         "kh:localNotes": [
           { "date": "2026-04-24", "note": "The building outlives its tenants. Model it as a durable Place so future occupants attach to it without losing continuity." }
-        ]
+        ],
+        "kh:codeReview": {
+          "zoningDistrict": "R",
+          "zoningDistrictName": "Residential (per § 130-3, the historic core is mostly R; the immediately adjacent block faces are B-1)",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "medium",
+          "method": "The Knitting Mill is a known nineteenth-century building inside the historic core. Visual inspection of the Village Zoning Map shows the Mill block in the R district immediately east of the B-1 commercial core; the Historic Preservation Overlay clearly contains it. Exact zoning at the parcel needs to be verified against tax-parcel GIS.",
+          "reviewedAt": "2026-04-26",
+          "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75. As a contributing nineteenth-century industrial structure, the Mill's exterior character is precisely what the overlay was created to protect."
+        }
       }
     ]
   }

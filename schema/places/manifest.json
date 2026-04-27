@@ -1,7 +1,7 @@
 {
   "village": "kinderhook",
   "updated": "2026-04-26",
-  "note": "Hand-curated corpus for kinderhook.json. Each slug resolves to schema/places/{slug}.json. Two patterns coexist: (1) richer entries with kh: namespace fields (affective register, cultural orbit, seasonality) for places we know intimately enough to characterize; (2) minimal factual entries (name, type, address, phone, website, sameAs) for places drawn from publicly available directory information. Any business represented here is welcome to revise or remove their entry — open a GitHub issue at github.com/harmonicsystems/field-report or write to davenyman@gmail.com.",
+  "note": "Hand-curated corpus for kinderhook.json. Each slug resolves to schema/places/{slug}.json. Three patterns coexist: (1) richer entries with kh: namespace fields (affective register, cultural orbit, seasonality) for places we know intimately enough to characterize; (2) minimal factual entries (name, type, address, phone, website, sameAs) for places drawn from publicly available directory information; (3) civic-infrastructure entries — overlay districts and government bodies sourced from the Village Code on ecode360. Any business represented here is welcome to revise or remove their entry — open a GitHub issue at github.com/harmonicsystems/field-report or write to davenyman@gmail.com.",
   "places": [
     { "slug": "kinderhook-farmers-market", "display": "Kinderhook Farmers' Market", "primaryType": "Event",        "kind": "market",   "shape": "rich" },
     { "slug": "the-aviary",                "display": "The Aviary",                 "primaryType": "Restaurant",   "kind": "food",     "shape": "rich" },
@@ -12,6 +12,11 @@
     { "slug": "saisonnier",                "display": "Saisonnier",                 "primaryType": "LiquorStore",  "kind": "commerce", "shape": "minimal" },
     { "slug": "kinderhook-bottle-shop",    "display": "The Kinderhook Bottle Shop", "primaryType": "LiquorStore",  "kind": "commerce", "shape": "minimal" },
     { "slug": "brooklyn-pizzeria",         "display": "The Brooklyn Pizzeria",      "primaryType": "Restaurant",   "kind": "food",     "shape": "minimal" },
-    { "slug": "kinderhook-post-office",    "display": "United States Post Office",  "primaryType": "PostOffice",   "kind": "civic",    "shape": "minimal" }
+    { "slug": "kinderhook-post-office",    "display": "United States Post Office",  "primaryType": "PostOffice",   "kind": "civic",    "shape": "minimal" },
+    { "slug": "kinderhook-historic-preservation-overlay",   "display": "Historic Preservation Overlay District",       "primaryType": "AdministrativeArea",    "kind": "overlay",   "shape": "civic" },
+    { "slug": "kinderhook-national-register-district",      "display": "Kinderhook Village Historic District (NRHP)",  "primaryType": "AdministrativeArea",    "kind": "overlay",   "shape": "civic" },
+    { "slug": "kinderhook-historic-preservation-commission","display": "Historic Preservation Commission",             "primaryType": "GovernmentOrganization","kind": "gov-body",  "shape": "civic" },
+    { "slug": "kinderhook-village-planning-board",          "display": "Village Planning Board",                       "primaryType": "GovernmentOrganization","kind": "gov-body",  "shape": "civic" },
+    { "slug": "kinderhook-village-zoning-board-of-appeals", "display": "Village Zoning Board of Appeals",              "primaryType": "GovernmentOrganization","kind": "gov-body",  "shape": "civic" }
   ]
 }

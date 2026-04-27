@@ -1,0 +1,37 @@
+{
+  "slug": "kinderhook-village-planning-board",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://ecode360.com/12306490",
+    "data/snapshots/ecode360/KI0572/ch21_planning-board.md"
+  ],
+  "notes": "Established under Village Code Ch. 21 (originally adopted 1961, amended 2022) pursuant to NY Village Law § 7-718. Five regular members, optional one alternate.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": "GovernmentOrganization",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-village-planning-board.json",
+        "name": "Village of Kinderhook Planning Board",
+        "alternateName": ["Kinderhook Village Planning Board"],
+        "description": "Five-member planning board appointed pursuant to NY Village Law § 7-718. Reviews subdivision applications, site plans, and other land-use matters for the Village of Kinderhook.",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Village of Kinderhook Board of Trustees",
+          "url": "https://www.villageofkinderhook.org/"
+        },
+        "kh:establishedBy": "Village of Kinderhook Local Law (adopted 3-3-1961 as § 20-1 of the 1978 Code; codified at Ch. 21; amended 3-9-2022 by L.L. No. 1-2022).",
+        "kh:enablingStatute": "NY Village Law § 7-718",
+        "kh:memberCount": 5,
+        "sameAs": [
+          "https://ecode360.com/12306490"
+        ]
+      }
+    ]
+  }
+}

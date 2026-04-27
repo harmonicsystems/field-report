@@ -34,7 +34,19 @@
         },
         "sameAs": [
           "https://www.villageofkinderhook.org/community/business_detail_T28_R60.php"
-        ]
+        ],
+        "kh:codeReview": {
+          "zoningDistrict": "B-1",
+          "zoningDistrictName": "Business",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "high",
+          "method": "Address (3 Hudson Street) is at the village square commercial core. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map. Not yet verified against tax-parcel GIS.",
+          "reviewedAt": "2026-04-26",
+          "implications": "As a USPS-leased federal facility, federal property is constitutionally exempt from local zoning enforcement; building alterations are governed by federal preservation rules rather than Village Code Ch. 75. The site nonetheless sits inside both the local Historic Preservation Overlay and the National Register district as a matter of geography."
+        }
       }
     ]
   }

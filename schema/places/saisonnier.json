@@ -30,7 +30,19 @@
         "url": "https://www.saisonnier.us/",
         "sameAs": [
           "https://columbiacountytourism.org/business/saisonnier/"
-        ]
+        ],
+        "kh:codeReview": {
+          "zoningDistrict": "B-1",
+          "zoningDistrictName": "Business",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "medium",
+          "method": "Address (11 Chatham Street) sits on the Chatham Street corridor running east from the village square. Chatham Street near the square is shown inside the local Historic Preservation Overlay on the CPEA 2008 map. Zoning at #11 is most likely B-1 but could be R; visual inspection of the low-resolution Zoning Map cannot resolve the exact lot. Not yet verified against tax-parcel GIS.",
+          "reviewedAt": "2026-04-26",
+          "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+        }
       }
     ]
   }

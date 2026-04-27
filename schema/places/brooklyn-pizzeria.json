@@ -31,7 +31,19 @@
         "url": "https://thebrooklynpizzeriaa.com/",
         "sameAs": [
           "https://columbiacountytourism.org/business/the-brooklyn-pizzeria/"
-        ]
+        ],
+        "kh:codeReview": {
+          "zoningDistrict": "B-1",
+          "zoningDistrictName": "Business",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "high",
+          "method": "Address (7 Hudson Street) is at the village square commercial core. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map. Not yet verified against tax-parcel GIS.",
+          "reviewedAt": "2026-04-26",
+          "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+        }
       }
     ]
   }

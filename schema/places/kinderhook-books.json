@@ -27,7 +27,19 @@
         "sameAs": [
           "https://columbiacountytourism.org/business/kinderhook-books/"
         ],
-        "kh:affectiveRegister": "A village bookseller in the old sense of the phrase — walkable, browsable, knowing."
+        "kh:affectiveRegister": "A village bookseller in the old sense of the phrase — walkable, browsable, knowing.",
+        "kh:codeReview": {
+          "zoningDistrict": "B-1",
+          "zoningDistrictName": "Business",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "medium",
+          "method": "Street address not yet recorded for this entry. Local knowledge places the shop on the village square commercial core, which is uniformly B-1 and inside both districts. Confidence will move to high once the street address is captured and confirmed against the Village Zoning Map.",
+          "reviewedAt": "2026-04-26",
+          "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+        }
       }
     ]
   }

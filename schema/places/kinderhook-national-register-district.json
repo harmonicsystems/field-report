@@ -1,0 +1,37 @@
+{
+  "slug": "kinderhook-national-register-district",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Kinderhook_Village_Historic_District",
+    "https://www.wikidata.org/wiki/Q14690927",
+    "data/snapshots/village-of-kinderhook/2008-10_historic-preservation-overlay-district-review.pdf"
+  ],
+  "notes": "The federal National Register of Historic Places listing for Kinderhook Village. Distinct from — and much larger than — the local Historic Preservation Overlay. NRHP listing has no regulatory effect on private exterior alterations; it makes properties eligible for federal historic preservation tax credits and triggers Section 106 review only when federal funding or permits are involved. Listed on the NRHP in 1974; expanded in 2003.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": ["Place", "AdministrativeArea", "LandmarksOrHistoricalBuildings"],
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json",
+        "name": "Kinderhook Village Historic District (NRHP)",
+        "alternateName": [
+          "Kinderhook Village Historic District",
+          "NRHP Village Historic District"
+        ],
+        "description": "Federal National Register of Historic Places district covering the historic core of the Village of Kinderhook and substantial surrounding lands extending south to Kinderhook Creek and along the Albany Avenue corridor. The NRHP district is significantly larger than the locally-regulated Historic Preservation Overlay; the two should not be conflated.",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "identifier": { "@type": "PropertyValue", "propertyID": "NRHP", "value": "74001225" },
+        "kh:regulatoryEffect": "None for private exterior alterations. Confers federal historic-tax-credit eligibility; triggers Section 106 review when federal action is involved.",
+        "kh:contrastWith": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Kinderhook_Village_Historic_District",
+          "https://www.wikidata.org/wiki/Q14690927"
+        ]
+      }
+    ]
+  }
+}

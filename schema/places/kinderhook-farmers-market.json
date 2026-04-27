@@ -64,7 +64,19 @@
         "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
         "isAccessibleForFree": true,
         "publicAccess": true,
-        "kh:functionalProximity": "The centre. Everything in the village is measured from here."
+        "kh:functionalProximity": "The centre. Everything in the village is measured from here.",
+        "kh:codeReview": {
+          "zoningDistrict": "B-1",
+          "zoningDistrictName": "Business",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "high",
+          "method": "The Village Green is the geometric centre of the Hudson/Broad/Albany intersection that anchors the B-1 district and the local Historic Preservation Overlay on every map of the village.",
+          "reviewedAt": "2026-04-26",
+          "implications": "Public open space at the centre of both protected districts; any change to its physical features would be subject to Historic Preservation Commission review."
+        }
       }
     ]
   }

@@ -32,7 +32,19 @@
         "kh:affectiveRegister": "The village's canonical lodging. Rooms in a house whose exterior has been there long enough to orient the rest of the street.",
         "kh:culturalOrbit": [
           { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green" }
-        ]
+        ],
+        "kh:codeReview": {
+          "zoningDistrict": "B-1",
+          "zoningDistrictName": "Business",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "high",
+          "method": "Inn fronts the village square (Broad Street side) at the historic commercial core. OSM cross-reference (node 10873536573) confirms location. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map.",
+          "reviewedAt": "2026-04-26",
+          "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75. The building is itself a contributing structure to the Village character that the overlay protects."
+        }
       }
     ]
   }

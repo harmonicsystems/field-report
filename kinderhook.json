@@ -133,7 +133,23 @@
       },
       "isAccessibleForFree": true,
       "publicAccess": true,
-      "kh:functionalProximity": "The centre. Everything in the village is measured from here."
+      "kh:functionalProximity": "The centre. Everything in the village is measured from here.",
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "high",
+        "method": "The Village Green is the geometric centre of the Hudson/Broad/Albany intersection that anchors the B-1 district and the local Historic Preservation Overlay on every map of the village.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Public open space at the centre of both protected districts; any change to its physical features would be subject to Historic Preservation Commission review."
+      }
     },
     {
       "@type": "Restaurant",
@@ -178,7 +194,23 @@
           "date": "2026-04-24",
           "note": "The building outlives its tenants. Model it as a durable Place so future occupants attach to it without losing continuity."
         }
-      ]
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "R",
+        "zoningDistrictName": "Residential (per § 130-3, the historic core is mostly R; the immediately adjacent block faces are B-1)",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "medium",
+        "method": "The Knitting Mill is a known nineteenth-century building inside the historic core. Visual inspection of the Village Zoning Map shows the Mill block in the R district immediately east of the B-1 commercial core; the Historic Preservation Overlay clearly contains it. Exact zoning at the parcel needs to be verified against tax-parcel GIS.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75. As a contributing nineteenth-century industrial structure, the Mill's exterior character is precisely what the overlay was created to protect."
+      }
     },
     {
       "@type": "BookStore",
@@ -197,7 +229,23 @@
       "sameAs": [
         "https://columbiacountytourism.org/business/kinderhook-books/"
       ],
-      "kh:affectiveRegister": "A village bookseller in the old sense of the phrase — walkable, browsable, knowing."
+      "kh:affectiveRegister": "A village bookseller in the old sense of the phrase — walkable, browsable, knowing.",
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "medium",
+        "method": "Street address not yet recorded for this entry. Local knowledge places the shop on the village square commercial core, which is uniformly B-1 and inside both districts. Confidence will move to high once the street address is captured and confirmed against the Village Zoning Map.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+      }
     },
     {
       "@type": [
@@ -225,7 +273,23 @@
         {
           "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json#village-green"
         }
-      ]
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "high",
+        "method": "Inn fronts the village square (Broad Street side) at the historic commercial core. OSM cross-reference (node 10873536573) confirms location. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75. The building is itself a contributing structure to the Village character that the overlay protects."
+      }
     },
     {
       "@type": [
@@ -250,7 +314,23 @@
       "url": "https://www.broadstreetbagelco.com/",
       "sameAs": [
         "https://columbiacountytourism.org/business/broad-street-bagel-co/"
-      ]
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "high",
+        "method": "Address (1 Broad Street) is at the village square commercial core. Visual inspection of Village Zoning Map (Ch. 130, Att. 4) and CPEA 2008 HD overlay review map. Not yet verified against Columbia County tax-parcel GIS.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+      }
     },
     {
       "@type": "Restaurant",
@@ -273,7 +353,23 @@
       "url": "https://www.hamrahs.com/",
       "sameAs": [
         "https://columbiacountytourism.org/business/hamrahs-lebanese-foods/"
-      ]
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "high",
+        "method": "Address (3 Albany Avenue) is at the village square commercial core. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map. Not yet verified against tax-parcel GIS.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+      }
     },
     {
       "@type": [
@@ -298,7 +394,23 @@
       "url": "https://www.saisonnier.us/",
       "sameAs": [
         "https://columbiacountytourism.org/business/saisonnier/"
-      ]
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "medium",
+        "method": "Address (11 Chatham Street) sits on the Chatham Street corridor running east from the village square. Chatham Street near the square is shown inside the local Historic Preservation Overlay on the CPEA 2008 map. Zoning at #11 is most likely B-1 but could be R; visual inspection of the low-resolution Zoning Map cannot resolve the exact lot. Not yet verified against tax-parcel GIS.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+      }
     },
     {
       "@type": "LiquorStore",
@@ -318,7 +430,23 @@
       "telephone": "+1-518-610-8443",
       "sameAs": [
         "https://www.villageofkinderhook.org/community/business_detail_T28_R118.php"
-      ]
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "high",
+        "method": "Address (8 Hudson Street) is at the village square commercial core. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map. Not yet verified against tax-parcel GIS.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+      }
     },
     {
       "@type": "Restaurant",
@@ -341,7 +469,23 @@
       "url": "https://thebrooklynpizzeriaa.com/",
       "sameAs": [
         "https://columbiacountytourism.org/business/the-brooklyn-pizzeria/"
-      ]
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "high",
+        "method": "Address (7 Hudson Street) is at the village square commercial core. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map. Not yet verified against tax-parcel GIS.",
+        "reviewedAt": "2026-04-26",
+        "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+      }
     },
     {
       "@type": [
@@ -370,6 +514,153 @@
       },
       "sameAs": [
         "https://www.villageofkinderhook.org/community/business_detail_T28_R60.php"
+      ],
+      "kh:codeReview": {
+        "zoningDistrict": "B-1",
+        "zoningDistrictName": "Business",
+        "withinHistoricPreservationOverlay": true,
+        "withinHistoricPreservationOverlayId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+        },
+        "withinNationalRegisterDistrict": true,
+        "withinNationalRegisterDistrictId": {
+          "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json"
+        },
+        "confidence": "high",
+        "method": "Address (3 Hudson Street) is at the village square commercial core. Visual inspection of Village Zoning Map and CPEA 2008 HD overlay map. Not yet verified against tax-parcel GIS.",
+        "reviewedAt": "2026-04-26",
+        "implications": "As a USPS-leased federal facility, federal property is constitutionally exempt from local zoning enforcement; building alterations are governed by federal preservation rules rather than Village Code Ch. 75. The site nonetheless sits inside both the local Historic Preservation Overlay and the National Register district as a matter of geography."
+      }
+    },
+    {
+      "@type": [
+        "Place",
+        "AdministrativeArea"
+      ],
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json",
+      "name": "Historic Preservation Overlay District",
+      "alternateName": [
+        "H Overlay",
+        "Village of Kinderhook Historic Preservation District"
+      ],
+      "description": "The locally-regulated historic overlay district of the Village of Kinderhook. Properties inside this boundary require a certificate of appropriateness from the Historic Preservation Commission for exterior alterations, new construction, restoration, or demolition. Concentrated on the historic commercial and residential core: Broad Street, Hudson Street, the Albany Avenue spine, Maiden Lane, Church Street, Silvester Street, and the Rothermel area.",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "kh:regulatoryEffect": "Triggers HPC review and certificates of appropriateness under Village Code Ch. 75.",
+      "kh:boundarySource": "Graphical; depicted on the Village Zoning Map (Ch. 130, Attachment 4) and on a separate Historic Preservation Map on file with the Village Clerk per § 75-5.",
+      "kh:establishedBy": "Village of Kinderhook Board of Trustees, Local Law (Ch. 75); overlay shown on Zoning Map.",
+      "kh:administeredBy": {
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-commission.json"
+      },
+      "sameAs": [
+        "https://ecode360.com/12306737",
+        "https://ecode360.com/12307601"
+      ]
+    },
+    {
+      "@type": [
+        "Place",
+        "AdministrativeArea",
+        "LandmarksOrHistoricalBuildings"
+      ],
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json",
+      "name": "Kinderhook Village Historic District (NRHP)",
+      "alternateName": [
+        "Kinderhook Village Historic District",
+        "NRHP Village Historic District"
+      ],
+      "description": "Federal National Register of Historic Places district covering the historic core of the Village of Kinderhook and substantial surrounding lands extending south to Kinderhook Creek and along the Albany Avenue corridor. The NRHP district is significantly larger than the locally-regulated Historic Preservation Overlay; the two should not be conflated.",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NRHP",
+        "value": "74001225"
+      },
+      "kh:regulatoryEffect": "None for private exterior alterations. Confers federal historic-tax-credit eligibility; triggers Section 106 review when federal action is involved.",
+      "kh:contrastWith": {
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+      },
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Kinderhook_Village_Historic_District",
+        "https://www.wikidata.org/wiki/Q14690927"
+      ]
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-commission.json",
+      "name": "Village of Kinderhook Historic Preservation Commission",
+      "alternateName": [
+        "HPC",
+        "Kinderhook HPC"
+      ],
+      "description": "Five-member commission appointed by the Village Board of Trustees. Reviews applications for certificates of appropriateness for alteration, demolition, and new construction within the Historic Preservation Overlay District; recommends landmark designations to the Trustees; conducts surveys and adopts design guidelines.",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Village of Kinderhook Board of Trustees",
+        "url": "https://www.villageofkinderhook.org/"
+      },
+      "kh:establishedBy": "Village of Kinderhook Local Law; codified at § 75-3, amended 3-9-2022 by L.L. No. 1-2022.",
+      "kh:memberCount": 5,
+      "kh:memberTerm": "5 years, staggered",
+      "kh:quorum": 3,
+      "kh:administers": {
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json"
+      },
+      "sameAs": [
+        "https://ecode360.com/12306677"
+      ]
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-village-planning-board.json",
+      "name": "Village of Kinderhook Planning Board",
+      "alternateName": [
+        "Kinderhook Village Planning Board"
+      ],
+      "description": "Five-member planning board appointed pursuant to NY Village Law § 7-718. Reviews subdivision applications, site plans, and other land-use matters for the Village of Kinderhook.",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Village of Kinderhook Board of Trustees",
+        "url": "https://www.villageofkinderhook.org/"
+      },
+      "kh:establishedBy": "Village of Kinderhook Local Law (adopted 3-3-1961 as § 20-1 of the 1978 Code; codified at Ch. 21; amended 3-9-2022 by L.L. No. 1-2022).",
+      "kh:enablingStatute": "NY Village Law § 7-718",
+      "kh:memberCount": 5,
+      "sameAs": [
+        "https://ecode360.com/12306490"
+      ]
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-village-zoning-board-of-appeals.json",
+      "name": "Village of Kinderhook Zoning Board of Appeals",
+      "alternateName": [
+        "ZBA",
+        "Kinderhook ZBA"
+      ],
+      "description": "Five-member board that hears appeals from administrative determinations made under the Village Zoning Code, grants area and use variances, and approves changes of nonconforming use. Mayor appoints members and the Chairperson, subject to Board of Trustees approval.",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "parentOrganization": {
+        "@type": "GovernmentOrganization",
+        "name": "Village of Kinderhook Board of Trustees",
+        "url": "https://www.villageofkinderhook.org/"
+      },
+      "kh:establishedBy": "Village of Kinderhook Code Ch. 130, Art. VIII, § 130-38; most recent amendment 3-9-2022 by L.L. No. 1-2022.",
+      "kh:memberCount": 5,
+      "kh:memberTerm": "5 years, staggered (one expires each Village year)",
+      "sameAs": [
+        "https://ecode360.com/12308302"
       ]
     },
     {
@@ -1330,7 +1621,7 @@
   ],
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-04-27T00:10:25.745Z",
+    "builtAt": "2026-04-27T00:58:19.044Z",
     "sources": {
       "events": "2026-04-25T14:43:53.230Z",
       "venues": "2026-04-25T14:43:54.718Z",
@@ -1345,8 +1636,8 @@
       "fema": "2026-04-25T18:57:00.068Z"
     },
     "counts": {
-      "graph": 67,
-      "curatedPlaces": 10,
+      "graph": 72,
+      "curatedPlaces": 15,
       "coverageArticles": 2,
       "historicSites": 15,
       "historicPeople": 5,

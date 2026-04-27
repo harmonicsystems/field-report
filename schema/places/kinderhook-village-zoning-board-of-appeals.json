@@ -1,0 +1,37 @@
+{
+  "slug": "kinderhook-village-zoning-board-of-appeals",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://ecode360.com/12308302",
+    "data/snapshots/ecode360/KI0572/ch130_art8_zoning-board-of-appeals.md"
+  ],
+  "notes": "Established inside the Zoning chapter (Ch. 130, Article VIII) rather than as a separate chapter — the standard New York Village Law pattern. Five members appointed by the Mayor with Board of Trustees approval; staggered five-year terms.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": "GovernmentOrganization",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-village-zoning-board-of-appeals.json",
+        "name": "Village of Kinderhook Zoning Board of Appeals",
+        "alternateName": ["ZBA", "Kinderhook ZBA"],
+        "description": "Five-member board that hears appeals from administrative determinations made under the Village Zoning Code, grants area and use variances, and approves changes of nonconforming use. Mayor appoints members and the Chairperson, subject to Board of Trustees approval.",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Village of Kinderhook Board of Trustees",
+          "url": "https://www.villageofkinderhook.org/"
+        },
+        "kh:establishedBy": "Village of Kinderhook Code Ch. 130, Art. VIII, § 130-38; most recent amendment 3-9-2022 by L.L. No. 1-2022.",
+        "kh:memberCount": 5,
+        "kh:memberTerm": "5 years, staggered (one expires each Village year)",
+        "sameAs": [
+          "https://ecode360.com/12308302"
+        ]
+      }
+    ]
+  }
+}

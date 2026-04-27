@@ -30,7 +30,19 @@
         "url": "https://www.broadstreetbagelco.com/",
         "sameAs": [
           "https://columbiacountytourism.org/business/broad-street-bagel-co/"
-        ]
+        ],
+        "kh:codeReview": {
+          "zoningDistrict": "B-1",
+          "zoningDistrictName": "Business",
+          "withinHistoricPreservationOverlay": true,
+          "withinHistoricPreservationOverlayId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-historic-preservation-overlay.json" },
+          "withinNationalRegisterDistrict": true,
+          "withinNationalRegisterDistrictId": { "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-national-register-district.json" },
+          "confidence": "high",
+          "method": "Address (1 Broad Street) is at the village square commercial core. Visual inspection of Village Zoning Map (Ch. 130, Att. 4) and CPEA 2008 HD overlay review map. Not yet verified against Columbia County tax-parcel GIS.",
+          "reviewedAt": "2026-04-26",
+          "implications": "Exterior alterations require a certificate of appropriateness from the Historic Preservation Commission per Village Code Ch. 75."
+        }
       }
     ]
   }
