@@ -228,6 +228,151 @@
       ]
     },
     {
+      "@type": [
+        "Bakery",
+        "FoodEstablishment"
+      ],
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/broad-street-bagel-co.json",
+      "name": "Broad Street Bagel Co.",
+      "description": "Baked goods, bagels, sandwiches, wraps, soups, handcrafted coffee, and tea.",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Broad Street",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-518-758-8084",
+      "url": "https://www.broadstreetbagelco.com/",
+      "sameAs": [
+        "https://columbiacountytourism.org/business/broad-street-bagel-co/"
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/hamrahs-lebanese-foods.json",
+      "name": "Hamrah's Lebanese Foods",
+      "description": "Lebanese cooking and takeaway in the Village of Kinderhook.",
+      "servesCuisine": "Lebanese",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Albany Avenue",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-518-610-8235",
+      "url": "https://www.hamrahs.com/",
+      "sameAs": [
+        "https://columbiacountytourism.org/business/hamrahs-lebanese-foods/"
+      ]
+    },
+    {
+      "@type": [
+        "LiquorStore",
+        "FoodEstablishment"
+      ],
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/saisonnier.json",
+      "name": "Saisonnier",
+      "description": "A bar shop specializing in independent craft beer and local cheeses and provisions.",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11 Chatham Street",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-518-610-8100",
+      "url": "https://www.saisonnier.us/",
+      "sameAs": [
+        "https://columbiacountytourism.org/business/saisonnier/"
+      ]
+    },
+    {
+      "@type": "LiquorStore",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-bottle-shop.json",
+      "name": "The Kinderhook Bottle Shop",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8 Hudson Street",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-518-610-8443",
+      "sameAs": [
+        "https://www.villageofkinderhook.org/community/business_detail_T28_R118.php"
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/brooklyn-pizzeria.json",
+      "name": "The Brooklyn Pizzeria",
+      "description": "Pizzeria in the Village of Kinderhook.",
+      "servesCuisine": "Pizza",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7 Hudson Street",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-518-828-3375",
+      "url": "https://thebrooklynpizzeriaa.com/",
+      "sameAs": [
+        "https://columbiacountytourism.org/business/the-brooklyn-pizzeria/"
+      ]
+    },
+    {
+      "@type": [
+        "PostOffice",
+        "GovernmentOffice"
+      ],
+      "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-post-office.json",
+      "name": "United States Post Office, Kinderhook",
+      "alternateName": "Kinderhook Post Office",
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Hudson Street",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-518-758-7782",
+      "branchOf": {
+        "@type": "GovernmentOrganization",
+        "name": "United States Postal Service",
+        "url": "https://www.usps.com/"
+      },
+      "sameAs": [
+        "https://www.villageofkinderhook.org/community/business_detail_T28_R60.php"
+      ]
+    },
+    {
       "@type": "NewsArticle",
       "@id": "https://themountainsmedia.com/2023/05/pit-stop-kinderhooked/",
       "headline": "Knitting Mill in Kinderhook New York",
@@ -566,7 +711,43 @@
         "language_population_5_plus": null,
         "language_english_only": null,
         "commute_total_workers": 523,
-        "commute_60_plus_min": 18
+        "commute_60_plus_min": 18,
+        "edu_total_25_plus": 1047,
+        "edu_high_school_diploma": 172,
+        "edu_ged": 17,
+        "edu_associates": 114,
+        "edu_bachelors": 234,
+        "edu_masters": 269,
+        "edu_professional": 62,
+        "edu_doctorate": 9,
+        "pop_under_18": 218,
+        "pop_male_65_66": 24,
+        "pop_male_67_69": 31,
+        "pop_male_70_74": 47,
+        "pop_male_75_79": 25,
+        "pop_male_80_84": 22,
+        "pop_male_85_plus": 9,
+        "pop_female_65_66": 35,
+        "pop_female_67_69": 35,
+        "pop_female_70_74": 68,
+        "pop_female_75_79": 21,
+        "pop_female_80_84": 20,
+        "pop_female_85_plus": 54,
+        "internet_universe": 622,
+        "internet_with_broadband": 568,
+        "internet_no_subscription": 31,
+        "veteran_universe": 1133,
+        "veterans": 82,
+        "commute_mode_total": 660,
+        "commute_drove_alone": 401,
+        "commute_carpool": 57,
+        "commute_public_transit": 2,
+        "commute_bicycle": 7,
+        "commute_walked": 30,
+        "commute_worked_from_home": 137,
+        "pop_65_plus": 391,
+        "edu_bachelors_or_higher": 574,
+        "edu_graduate_or_higher": 340
       },
       "kh:town": {
         "_name": "Kinderhook town, Columbia County, New York",
@@ -600,7 +781,43 @@
         "language_population_5_plus": null,
         "language_english_only": null,
         "commute_total_workers": 3284,
-        "commute_60_plus_min": 75
+        "commute_60_plus_min": 75,
+        "edu_total_25_plus": 6253,
+        "edu_high_school_diploma": 1543,
+        "edu_ged": 237,
+        "edu_associates": 675,
+        "edu_bachelors": 1289,
+        "edu_masters": 970,
+        "edu_professional": 152,
+        "edu_doctorate": 79,
+        "pop_under_18": 1571,
+        "pop_male_65_66": 137,
+        "pop_male_67_69": 243,
+        "pop_male_70_74": 223,
+        "pop_male_75_79": 122,
+        "pop_male_80_84": 103,
+        "pop_male_85_plus": 120,
+        "pop_female_65_66": 135,
+        "pop_female_67_69": 235,
+        "pop_female_70_74": 303,
+        "pop_female_75_79": 149,
+        "pop_female_80_84": 85,
+        "pop_female_85_plus": 285,
+        "internet_universe": 3334,
+        "internet_with_broadband": 2959,
+        "internet_no_subscription": 342,
+        "veteran_universe": 6670,
+        "veterans": 535,
+        "commute_mode_total": 3825,
+        "commute_drove_alone": 2895,
+        "commute_carpool": 216,
+        "commute_public_transit": 21,
+        "commute_bicycle": 7,
+        "commute_walked": 67,
+        "commute_worked_from_home": 541,
+        "pop_65_plus": 2140,
+        "edu_bachelors_or_higher": 2490,
+        "edu_graduate_or_higher": 1201
       }
     },
     {
@@ -1113,7 +1330,7 @@
   ],
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-04-25T19:16:53.980Z",
+    "builtAt": "2026-04-27T00:10:25.745Z",
     "sources": {
       "events": "2026-04-25T14:43:53.230Z",
       "venues": "2026-04-25T14:43:54.718Z",
@@ -1123,13 +1340,13 @@
       "orptsParcels": "2026-04-25T19:06:13.652Z",
       "orptsRar": "2026-04-25T19:06:13.894Z",
       "marketEquity": "2026-04-25T18:56:17.773Z",
-      "acsVillage": "2026-04-25T19:13:37.981Z",
-      "acsTown": "2026-04-25T19:13:37.983Z",
+      "acsVillage": "2026-04-26T13:39:46.075Z",
+      "acsTown": "2026-04-26T13:39:46.077Z",
       "fema": "2026-04-25T18:57:00.068Z"
     },
     "counts": {
-      "graph": 61,
-      "curatedPlaces": 4,
+      "graph": 67,
+      "curatedPlaces": 10,
       "coverageArticles": 2,
       "historicSites": 15,
       "historicPeople": 5,

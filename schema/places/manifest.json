@@ -1,11 +1,17 @@
 {
   "village": "kinderhook",
-  "updated": "2026-04-24",
-  "note": "Hand-curated corpus for the Kinderhook Field Report. Each slug resolves to schema/places/{slug}.json. Order is editorial, not alphabetical — it reflects the order we want a reader (human or machine) to encounter the village in.",
+  "updated": "2026-04-26",
+  "note": "Hand-curated corpus for kinderhook.json. Each slug resolves to schema/places/{slug}.json. Two patterns coexist: (1) richer entries with kh: namespace fields (affective register, cultural orbit, seasonality) for places we know intimately enough to characterize; (2) minimal factual entries (name, type, address, phone, website, sameAs) for places drawn from publicly available directory information. Any business represented here is welcome to revise or remove their entry — open a GitHub issue at github.com/harmonicsystems/field-report or write to davenyman@gmail.com.",
   "places": [
-    { "slug": "kinderhook-farmers-market", "display": "Kinderhook Farmers' Market", "primaryType": "Event", "kind": "market" },
-    { "slug": "the-aviary",                "display": "The Aviary",                  "primaryType": "Restaurant", "kind": "food" },
-    { "slug": "kinderhook-books",          "display": "Kinderhook Books",             "primaryType": "BookStore", "kind": "commerce" },
-    { "slug": "old-dutch-inn",             "display": "Old Dutch Inn",                "primaryType": "Hotel",     "kind": "lodging" }
+    { "slug": "kinderhook-farmers-market", "display": "Kinderhook Farmers' Market", "primaryType": "Event",        "kind": "market",   "shape": "rich" },
+    { "slug": "the-aviary",                "display": "The Aviary",                 "primaryType": "Restaurant",   "kind": "food",     "shape": "rich" },
+    { "slug": "kinderhook-books",          "display": "Kinderhook Books",           "primaryType": "BookStore",    "kind": "commerce", "shape": "rich" },
+    { "slug": "old-dutch-inn",             "display": "Old Dutch Inn",              "primaryType": "Hotel",        "kind": "lodging",  "shape": "rich" },
+    { "slug": "broad-street-bagel-co",     "display": "Broad Street Bagel Co.",     "primaryType": "Bakery",       "kind": "food",     "shape": "minimal" },
+    { "slug": "hamrahs-lebanese-foods",    "display": "Hamrah's Lebanese Foods",    "primaryType": "Restaurant",   "kind": "food",     "shape": "minimal" },
+    { "slug": "saisonnier",                "display": "Saisonnier",                 "primaryType": "LiquorStore",  "kind": "commerce", "shape": "minimal" },
+    { "slug": "kinderhook-bottle-shop",    "display": "The Kinderhook Bottle Shop", "primaryType": "LiquorStore",  "kind": "commerce", "shape": "minimal" },
+    { "slug": "brooklyn-pizzeria",         "display": "The Brooklyn Pizzeria",      "primaryType": "Restaurant",   "kind": "food",     "shape": "minimal" },
+    { "slug": "kinderhook-post-office",    "display": "United States Post Office",  "primaryType": "PostOffice",   "kind": "civic",    "shape": "minimal" }
   ]
 }

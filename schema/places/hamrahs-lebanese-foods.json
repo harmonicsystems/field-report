@@ -1,0 +1,38 @@
+{
+  "slug": "hamrahs-lebanese-foods",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://columbiacountytourism.org/business/hamrahs-lebanese-foods/"
+  ],
+  "notes": "Minimal factual entry — name, type, address, phone, website, sameAs only. Drafted from publicly available information. The business is welcome to revise or remove this entry; see schema/places/manifest.json.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": "Restaurant",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/hamrahs-lebanese-foods.json",
+        "name": "Hamrah's Lebanese Foods",
+        "description": "Lebanese cooking and takeaway in the Village of Kinderhook.",
+        "servesCuisine": "Lebanese",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 Albany Avenue",
+          "addressLocality": "Kinderhook",
+          "addressRegion": "NY",
+          "postalCode": "12106",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-518-610-8235",
+        "url": "https://www.hamrahs.com/",
+        "sameAs": [
+          "https://columbiacountytourism.org/business/hamrahs-lebanese-foods/"
+        ]
+      }
+    ]
+  }
+}

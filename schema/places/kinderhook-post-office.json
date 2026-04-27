@@ -1,0 +1,41 @@
+{
+  "slug": "kinderhook-post-office",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://www.villageofkinderhook.org/community/business_detail_T28_R60.php"
+  ],
+  "notes": "Minimal factual entry for the federal post office serving Kinderhook (ZIP 12106). Drafted from the Village of Kinderhook's published directory.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": ["PostOffice", "GovernmentOffice"],
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-post-office.json",
+        "name": "United States Post Office, Kinderhook",
+        "alternateName": "Kinderhook Post Office",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 Hudson Street",
+          "addressLocality": "Kinderhook",
+          "addressRegion": "NY",
+          "postalCode": "12106",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-518-758-7782",
+        "branchOf": {
+          "@type": "GovernmentOrganization",
+          "name": "United States Postal Service",
+          "url": "https://www.usps.com/"
+        },
+        "sameAs": [
+          "https://www.villageofkinderhook.org/community/business_detail_T28_R60.php"
+        ]
+      }
+    ]
+  }
+}

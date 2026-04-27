@@ -1,0 +1,37 @@
+{
+  "slug": "saisonnier",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://columbiacountytourism.org/business/saisonnier/"
+  ],
+  "notes": "Minimal factual entry — name, type, address, phone, website, sameAs only. Drafted from publicly available information. The business is welcome to revise or remove this entry; see schema/places/manifest.json.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": ["LiquorStore", "FoodEstablishment"],
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/saisonnier.json",
+        "name": "Saisonnier",
+        "description": "A bar shop specializing in independent craft beer and local cheeses and provisions.",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "11 Chatham Street",
+          "addressLocality": "Kinderhook",
+          "addressRegion": "NY",
+          "postalCode": "12106",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-518-610-8100",
+        "url": "https://www.saisonnier.us/",
+        "sameAs": [
+          "https://columbiacountytourism.org/business/saisonnier/"
+        ]
+      }
+    ]
+  }
+}

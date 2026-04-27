@@ -1,0 +1,35 @@
+{
+  "slug": "kinderhook-bottle-shop",
+  "editor": "david@harmonic-systems.org",
+  "lastReviewed": "2026-04-26",
+  "sources": [
+    "https://www.villageofkinderhook.org/community/business_detail_T28_R118.php"
+  ],
+  "notes": "Minimal factual entry — name, type, address, phone, sameAs only. Drafted from the Village of Kinderhook's published business directory. The business is welcome to revise or remove this entry; see schema/places/manifest.json.",
+  "jsonld": {
+    "@context": [
+      "https://schema.org",
+      { "kh": "https://fieldreports.harmonic-systems.org/ns/kh#" }
+    ],
+    "@graph": [
+      {
+        "@type": "LiquorStore",
+        "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-bottle-shop.json",
+        "name": "The Kinderhook Bottle Shop",
+        "containedInPlace": { "@id": "https://www.wikidata.org/wiki/Q3478629" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "8 Hudson Street",
+          "addressLocality": "Kinderhook",
+          "addressRegion": "NY",
+          "postalCode": "12106",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-518-610-8443",
+        "sameAs": [
+          "https://www.villageofkinderhook.org/community/business_detail_T28_R118.php"
+        ]
+      }
+    ]
+  }
+}
