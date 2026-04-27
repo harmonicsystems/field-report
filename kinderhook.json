@@ -774,6 +774,24 @@
     },
     {
       "@type": "Place",
+      "@id": "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex",
+      "name": "Wild's Mill Complex",
+      "description": "historic buildings in Valatie, New York, United States",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NRHP",
+        "value": "82003353"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex",
+        "https://www.wikidata.org/wiki/Q8000428"
+      ]
+    },
+    {
+      "@type": "Place",
       "@id": "https://en.wikipedia.org/wiki/First_Presbyterian_Church_(Valatie,_New_York)",
       "name": "First Presbyterian Church",
       "description": "church in Valatie, New York",
@@ -909,18 +927,6 @@
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117648524"
-      ]
-    },
-    {
-      "@type": "Place",
-      "@id": "https://www.wikidata.org/wiki/Q110667203",
-      "name": "Stuyvesant Falls Cemetery",
-      "description": "cemetery in Hudson, New York",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q110667203"
       ]
     },
     {
@@ -1621,19 +1627,19 @@
   ],
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-04-27T00:58:19.044Z",
+    "builtAt": "2026-04-27T07:58:57.859Z",
     "sources": {
-      "events": "2026-04-25T14:43:53.230Z",
-      "venues": "2026-04-25T14:43:54.718Z",
-      "osm": "2026-04-25T14:43:59.513Z",
-      "historicSites": "2026-04-24T19:40:20.806Z",
-      "historicPeople": "2026-04-24T19:40:20.806Z",
-      "orptsParcels": "2026-04-25T19:06:13.652Z",
-      "orptsRar": "2026-04-25T19:06:13.894Z",
-      "marketEquity": "2026-04-25T18:56:17.773Z",
-      "acsVillage": "2026-04-26T13:39:46.075Z",
-      "acsTown": "2026-04-26T13:39:46.077Z",
-      "fema": "2026-04-25T18:57:00.068Z"
+      "events": "2026-04-27T07:30:47.655Z",
+      "venues": "2026-04-27T07:30:49.017Z",
+      "osm": "2026-04-27T07:56:47.628Z",
+      "historicSites": "2026-04-27T07:56:59.889Z",
+      "historicPeople": "2026-04-27T07:56:59.889Z",
+      "orptsParcels": "2026-04-27T07:58:48.502Z",
+      "orptsRar": "2026-04-27T07:58:48.813Z",
+      "marketEquity": "2026-04-27T07:58:49.586Z",
+      "acsVillage": "2026-04-27T07:58:54.911Z",
+      "acsTown": "2026-04-27T07:58:54.913Z",
+      "fema": "2026-04-27T07:58:55.743Z"
     },
     "counts": {
       "graph": 72,
