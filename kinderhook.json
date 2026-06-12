@@ -67,8 +67,8 @@
       "eventSchedule": {
         "@type": "Schedule",
         "byDay": "https://schema.org/Saturday",
-        "startTime": "09:00",
-        "endTime": "13:00",
+        "startTime": "08:30",
+        "endTime": "12:30",
         "startDate": "2026-05-02",
         "endDate": "2026-10-31",
         "scheduleTimezone": "America/New_York"
@@ -87,7 +87,7 @@
       ],
       "kh:seasonality": {
         "season": "May–October",
-        "cadence": "Saturdays 09:00–13:00",
+        "cadence": "Saturdays 08:30–12:30",
         "dormantMonths": [
           "November",
           "December",
@@ -110,6 +110,10 @@
         {
           "date": "2026-04-24",
           "note": "Entry created. Season dates reflect typical pattern; verify against current KBPA announcement before the opening Saturday."
+        },
+        {
+          "date": "2026-06-12",
+          "note": "Hours corrected 09:00–13:00 → 08:30–12:30 per editor verification. The conflict between this file and schema/hours/manifest.json was surfaced as finding zero of the first AI surface audit cycle; the manifest's window was the correct one."
         }
       ]
     },
@@ -1642,7 +1646,7 @@
   },
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-06-12T19:01:10.102Z",
+    "builtAt": "2026-06-12T19:22:33.221Z",
     "sources": {
       "events": "2026-04-25T14:43:53.230Z",
       "venues": "2026-04-25T14:43:54.718Z",

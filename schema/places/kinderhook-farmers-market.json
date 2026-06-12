@@ -1,7 +1,7 @@
 {
   "slug": "kinderhook-farmers-market",
   "editor": "david@harmonic-systems.org",
-  "lastReviewed": "2026-04-25",
+  "lastReviewed": "2026-06-12",
   "sources": [
     "https://columbiacountytourism.org/business/kinderhook-farmers-market/",
     "local knowledge (Kinderhook resident)"
@@ -21,8 +21,8 @@
         "eventSchedule": {
           "@type": "Schedule",
           "byDay": "https://schema.org/Saturday",
-          "startTime": "09:00",
-          "endTime": "13:00",
+          "startTime": "08:30",
+          "endTime": "12:30",
           "startDate": "2026-05-02",
           "endDate": "2026-10-31",
           "scheduleTimezone": "America/New_York"
@@ -37,7 +37,7 @@
         ],
         "kh:seasonality": {
           "season": "May–October",
-          "cadence": "Saturdays 09:00–13:00",
+          "cadence": "Saturdays 08:30–12:30",
           "dormantMonths": ["November", "December", "January", "February", "March", "April"]
         },
         "kh:affectiveRegister": "The weekly rhythm that tells the village it is summer. Small, volunteer-run, unhurried.",
@@ -46,7 +46,8 @@
           { "@id": "https://fieldreports.harmonic-systems.org/schema/places/the-aviary.json" }
         ],
         "kh:localNotes": [
-          { "date": "2026-04-24", "note": "Entry created. Season dates reflect typical pattern; verify against current KBPA announcement before the opening Saturday." }
+          { "date": "2026-04-24", "note": "Entry created. Season dates reflect typical pattern; verify against current KBPA announcement before the opening Saturday." },
+          { "date": "2026-06-12", "note": "Hours corrected 09:00–13:00 → 08:30–12:30 per editor verification. The conflict between this file and schema/hours/manifest.json was surfaced as finding zero of the first AI surface audit cycle; the manifest's window was the correct one." }
         ]
       },
       {

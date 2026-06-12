@@ -13,7 +13,7 @@
       "cited_sources": ["https://example.com/regional-listicle-2023"],
       "assessment": "factual-error",
       "entity_ref": "kinderhook-farmers-market",
-      "discrepancy": "Canonical hours are Saturdays 09:00–13:00, May–October (schema/places/kinderhook-farmers-market.json). The observed answer shifts the window an hour later and omits the season entirely — a winter visitor would drive to a closed green.",
+      "discrepancy": "Canonical hours are Saturdays 08:30–12:30, May–October (schema/places/kinderhook-farmers-market.json). The observed answer shifts the window later and omits the season entirely — a winter visitor would drive to a closed green.",
       "traced_source": "https://example.com/regional-listicle-2023",
       "fix_applied": null,
       "status": "open",
