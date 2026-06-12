@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "status": "draft",
+  "note": "DRAFT — placeholder query set for the AI surface audit. The maintainer finalizes wording, coverage, and entity refs after running cycle one by hand. Each query is asked verbatim on every surface, once per monthly cycle. entity_refs resolve against schema/places/manifest.json and schema/hours/manifest.json slugs.",
+  "queries": [
+    { "id": "q-farmers-market-hours",  "query": "When is the Kinderhook farmers market open?",                              "intent": "factual",   "entity_refs": ["kinderhook-farmers-market"] },
+    { "id": "q-farmers-market-season", "query": "Is the Kinderhook farmers market open in the winter?",                     "intent": "factual",   "entity_refs": ["kinderhook-farmers-market"] },
+    { "id": "q-restaurants",           "query": "Where should I eat in Kinderhook NY?",                                     "intent": "discovery", "entity_refs": ["the-aviary", "brooklyn-pizzeria", "hamrahs-lebanese-foods", "old-dutch-inn"] },
+    { "id": "q-coffee-breakfast",      "query": "Coffee or breakfast in Kinderhook village",                                "intent": "discovery", "entity_refs": ["broad-street-bagel-co", "ok-pantry"] },
+    { "id": "q-bookstore",             "query": "Is there a bookstore in Kinderhook?",                                      "intent": "factual",   "entity_refs": ["kinderhook-books"] },
+    { "id": "q-bookstore-hours",       "query": "Kinderhook Books hours",                                                   "intent": "factual",   "entity_refs": ["kinderhook-books"] },
+    { "id": "q-aviary",                "query": "What is the Aviary in Kinderhook?",                                        "intent": "factual",   "entity_refs": ["the-aviary"] },
+    { "id": "q-lodging",               "query": "Where to stay in Kinderhook NY",                                           "intent": "discovery", "entity_refs": ["old-dutch-inn"] },
+    { "id": "q-wine",                  "query": "Where can I buy wine in Kinderhook?",                                      "intent": "factual",   "entity_refs": ["kinderhook-bottle-shop", "saisonnier"] },
+    { "id": "q-pizza",                 "query": "Pizza in Kinderhook NY",                                                   "intent": "factual",   "entity_refs": ["brooklyn-pizzeria"] },
+    { "id": "q-post-office-hours",     "query": "Kinderhook post office hours",                                             "intent": "factual",   "entity_refs": ["kinderhook-post-office"] },
+    { "id": "q-groceries",             "query": "Grocery store near Kinderhook village",                                    "intent": "factual",   "entity_refs": ["samascott-garden-market", "ok-pantry"] },
+    { "id": "q-things-to-do",          "query": "Things to do in Kinderhook NY",                                            "intent": "discovery", "entity_refs": ["the-aviary", "kinderhook-farmers-market", "kinderhook-books"] },
+    { "id": "q-day-trip",              "query": "Is Kinderhook worth a day trip from NYC?",                                 "intent": "narrative", "entity_refs": [] },
+    { "id": "q-van-buren",             "query": "Can you visit Martin Van Buren's home in Kinderhook?",                     "intent": "factual",   "entity_refs": [] },
+    { "id": "q-historic-district",     "query": "What is the Kinderhook historic district?",                                "intent": "factual",   "entity_refs": ["kinderhook-national-register-district", "kinderhook-historic-preservation-overlay"] },
+    { "id": "q-preservation-rules",    "query": "Do I need approval to renovate a house in the Kinderhook historic district?", "intent": "factual", "entity_refs": ["kinderhook-historic-preservation-commission", "kinderhook-historic-preservation-overlay"] },
+    { "id": "q-planning-board",        "query": "When does the Kinderhook planning board meet?",                            "intent": "factual",   "entity_refs": ["kinderhook-village-planning-board"] },
+    { "id": "q-zoning-appeals",        "query": "How do I appeal a zoning decision in Kinderhook?",                         "intent": "factual",   "entity_refs": ["kinderhook-village-zoning-board-of-appeals"] },
+    { "id": "q-weekend-itinerary",     "query": "Plan a Saturday in Kinderhook NY",                                         "intent": "narrative", "entity_refs": ["kinderhook-farmers-market", "the-aviary"] }
+  ]
+}

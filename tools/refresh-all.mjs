@@ -38,6 +38,7 @@ const tools = [
   { name: 'Farmers Markets (data.ny.gov)', script: 'tools/fetch-farmers-markets.mjs' },
   { name: 'Transportation: AADT + Bridges', script: 'tools/fetch-transportation.mjs' },
   { name: 'Build kinderhook.json',    script: 'tools/build-jsonld.mjs' },
+  { name: 'AI surface audit page',    script: 'tools/build-audit-page.mjs' },
 ];
 
 function run(scriptPath) {

@@ -1619,9 +1619,30 @@
       ]
     }
   ],
+  "audit": {
+    "method": "Manual monthly observation of AI surfaces; full log at https://fieldreports.harmonic-systems.org/ai-audit.html",
+    "queries": 20,
+    "queriesStatus": "draft",
+    "cycles": [
+      {
+        "cycle": "2026-06",
+        "draft": true,
+        "observations": 4,
+        "byAssessment": {
+          "accurate": 1,
+          "factual-error": 2,
+          "omission": 1,
+          "narrative-gap": 0
+        },
+        "open": 2,
+        "fixedAtSource": 0,
+        "verifiedResolved": 1
+      }
+    ]
+  },
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-04-27T00:58:19.044Z",
+    "builtAt": "2026-06-12T19:01:10.102Z",
     "sources": {
       "events": "2026-04-25T14:43:53.230Z",
       "venues": "2026-04-25T14:43:54.718Z",

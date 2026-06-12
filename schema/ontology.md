@@ -146,3 +146,36 @@ deploy could not keep.
 - Phone numbers and hours we cannot verify from a public primary source.
 - Menu items, prices, vendor lists — volatile and not our job.
 - Sentiment or "rating" fields. We describe, we do not rank.
+
+## The AI surface audit (`schema/audit/`)
+
+A monthly, hand-collected log of what AI surfaces (Google AI Overviews,
+map assistants, Claude, ChatGPT) claim about the village, assessed
+against this corpus. Schema is v0-provisional (`schema_version: 0.1`);
+the first real cycle will revise it. Documented calls:
+
+- **Observations are not graph entities.** An observation is a claim
+  about an AI surface at a moment in time, not a fact about the village.
+  kinderhook.json exports cycle-level stats only (top-level `audit`
+  block); the full observation text stays in `schema/audit/` and on
+  `/ai-audit.html`. Hearsay does not enter the canonical graph.
+
+- **The page is a `Dataset`**, one `distribution` per cycle file plus the
+  query set. `ClaimReview` per resolved observation was considered and
+  deferred: an honest mapping needs verbatim claim text and a defensible
+  rating scale, and the v0 capture format guarantees neither. Revisit
+  after cycle one.
+
+- **Draft cycles carry `"draft": true`** — the provisional-hours
+  precedent. The page renders them under an explicit example banner;
+  exported stats keep the flag so downstream consumers can filter.
+  Machine surfaces never assert placeholder observations as fact.
+
+- **`accurate` entries carry no `status`.** The status lifecycle
+  (`open` → `fixed-at-source` → `verified-resolved`) tracks defects;
+  an accurate answer has no defect to track.
+
+- **Fixes happen in the canonical corpora**, never here. The audit
+  references entities by slug (`schema/places/` ∪ `schema/hours/`
+  manifests) and points at what to fix; hours and facts change through
+  the normal editorial flow.

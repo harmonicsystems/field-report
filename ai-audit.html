@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the Machines Say — Kinderhook AI Surface Audit</title>
+<meta name="description" content="A monthly, hand-collected audit of what AI surfaces claim about the Village of Kinderhook, NY, checked against the village's canonical structured data and tracked to resolution.">
+<link rel="canonical" href="https://fieldreports.harmonic-systems.org/ai-audit.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": [
+    "https://schema.org",
+    {
+      "kh": "https://fieldreports.harmonic-systems.org/ns/kh#"
+    }
+  ],
+  "@type": "Dataset",
+  "@id": "https://fieldreports.harmonic-systems.org/ai-audit.html#dataset",
+  "name": "Kinderhook AI surface audit",
+  "url": "https://fieldreports.harmonic-systems.org/ai-audit.html",
+  "description": "Monthly, hand-collected observations of what AI surfaces (Google AI Overviews, map assistants, Claude, ChatGPT) claim about the Village of Kinderhook, NY, assessed against the village’s canonical structured data, traced to source, and tracked to resolution.",
+  "creator": {
+    "@type": "Person",
+    "name": "David Nyman"
+  },
+  "spatialCoverage": {
+    "@id": "https://www.wikidata.org/wiki/Q3478629"
+  },
+  "measurementTechnique": "A fixed query set is run manually against each surface once per monthly cycle; answers are transcribed by hand and assessed against the schema/ canonical corpus. No scraping, no SERP APIs, no headless browsers.",
+  "isBasedOn": [
+    "https://fieldreports.harmonic-systems.org/schema/places/manifest.json",
+    "https://fieldreports.harmonic-systems.org/schema/hours/manifest.json"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Fixed query set",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://fieldreports.harmonic-systems.org/schema/audit/queries.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Observation cycle 2026-06",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://fieldreports.harmonic-systems.org/schema/audit/cycles/2026-06.json",
+      "kh:draft": true
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #f4efe4;
+    --bg-plate: #ede7d7;
+    --ink: #1a1614;
+    --ink-soft: #3b342e;
+    --rule: #c9c0ae;
+    --rule-soft: #d8d0bc;
+    --accent: #a63d2a;
+    --slate: #4a5a4e;
+    --warn: #8a6a1e;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --serif: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+    --display: 'Newsreader', Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--ink);
+    font-family: var(--serif); font-size: 18px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1080px; margin: 0 auto; padding: 0 40px 120px; }
+
+  .top-banner {
+    margin: 32px 0 0; padding: 14px 22px;
+    background: var(--bg-plate); border: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 12px; line-height: 1.5; color: var(--ink-soft);
+  }
+  .top-banner p { margin: 0; }
+  .top-banner a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .top-banner a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .top-banner .back { float: right; }
+  @media (max-width: 640px) { .top-banner .back { float: none; display: block; margin-top: 6px; } }
+
+  header.masthead { padding: 64px 0 36px; border-bottom: 1px solid var(--ink); margin-bottom: 48px; position: relative; }
+  .masthead::before { content: ''; position: absolute; top: 64px; left: 0; right: 0; height: 3px; background: var(--ink); }
+  .masthead::after  { content: ''; position: absolute; top: 70px; left: 0; right: 0; height: 1px; background: var(--ink); }
+  .slug {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-soft); padding-top: 18px;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  }
+  .slug .vol { color: var(--accent); }
+  h1.title {
+    font-family: var(--display); font-weight: 400; font-variation-settings: 'opsz' 72;
+    font-size: clamp(40px, 7vw, 64px); line-height: 1.02; letter-spacing: -0.015em;
+    margin: 26px 0 18px;
+  }
+  .dek {
+    font-family: var(--display); font-style: italic; font-size: 18px; color: var(--ink-soft);
+    max-width: 700px; line-height: 1.45; margin: 0;
+  }
+
+  .draft-plate {
+    margin: 0 0 56px; padding: 20px 24px;
+    border: 1px solid var(--accent); background: rgba(166, 61, 42, 0.04);
+  }
+  .draft-plate .cap { color: var(--accent); }
+  .draft-plate p { margin: 8px 0 0; font-size: 15px; line-height: 1.55; max-width: 760px; }
+
+  section.plate { margin-bottom: 80px; }
+  .section-head {
+    display: grid; grid-template-columns: 160px 1fr auto; gap: 32px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--ink); position: relative;
+  }
+  .section-head::after { content: ''; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: var(--ink); }
+  .section-num {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); padding-top: 10px;
+  }
+  h2.section-title {
+    font-family: var(--display); font-weight: 400; font-variation-settings: 'opsz' 60;
+    font-size: 36px; line-height: 1; letter-spacing: -0.01em; margin: 0;
+  }
+  h2.section-title em { font-style: italic; color: var(--slate); }
+  .endpoint { font-family: var(--mono); font-size: 10px; color: var(--ink-soft); letter-spacing: 0.05em; white-space: nowrap; padding-top: 12px; }
+  .section-prose { max-width: 700px; margin: 0 0 26px 192px; font-size: 16px; line-height: 1.6; }
+  .section-prose p { margin: 0 0 12px; }
+  .section-prose a { color: var(--ink); border-bottom: 1px dotted var(--rule); text-decoration: none; }
+  .section-prose a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  @media (max-width: 760px) {
+    .section-head { grid-template-columns: 1fr; gap: 6px; }
+    .section-prose { margin-left: 0; }
+  }
+
+  .cap {
+    display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px;
+  }
+
+  .badge {
+    display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 2px 7px 3px; white-space: nowrap;
+  }
+  .b-accurate       { color: var(--slate); border: 1px solid var(--slate); }
+  .b-factual-error  { color: var(--bg); background: var(--accent); border: 1px solid var(--accent); }
+  .b-omission       { color: var(--warn); border: 1px solid var(--warn); }
+  .b-narrative-gap  { color: var(--ink-soft); border: 1px dashed var(--ink-soft); }
+
+  .stamp {
+    display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 2px 8px 3px;
+  }
+  .s-open              { color: var(--accent); border: 1px solid var(--accent); }
+  .s-fixed-at-source   { color: var(--warn); border: 1px solid var(--warn); }
+  .s-verified-resolved { color: var(--slate); border: 1px solid var(--slate); }
+
+  .grid-scroll { overflow-x: auto; }
+  table.cycle-grid { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .cycle-grid th, .cycle-grid td { padding: 7px 10px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: baseline; }
+  .cycle-grid th {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 1px solid var(--ink);
+  }
+  .cycle-grid td.q-col { font-size: 14px; line-height: 1.45; min-width: 260px; }
+  .cycle-grid .q-id { display: block; font-family: var(--mono); font-size: 10px; color: var(--ink-soft); letter-spacing: 0.04em; }
+  .cycle-grid td.s-col { white-space: nowrap; }
+  .cycle-grid td.empty { color: var(--rule); font-family: var(--mono); }
+  .grid-legend { margin-top: 14px; font-size: 13px; color: var(--ink-soft); font-style: italic; }
+  .grid-legend .badge { margin-right: 4px; }
+
+  article.disc { border: 1px solid var(--rule); background: rgba(255,255,255,0.35); margin-bottom: 28px; }
+  .disc-meta {
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: baseline;
+    padding: 12px 22px; border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--mono); font-size: 11px; color: var(--ink-soft);
+  }
+  .disc-id { color: var(--ink); }
+  .disc-meta .stamp { margin-left: auto; }
+  .disc-body { padding: 18px 22px 22px; }
+  .disc-query { font-family: var(--display); font-style: italic; font-size: 20px; margin: 0 0 16px; }
+  .disc-answer { border-left: 3px solid var(--rule); padding: 2px 0 2px 16px; margin: 0 0 16px; }
+  .disc-answer p { margin: 0; font-size: 15px; line-height: 1.55; }
+  .disc-vs { border-left: 3px solid var(--accent); padding: 2px 0 2px 16px; margin: 0 0 16px; }
+  .disc-vs p { margin: 0; font-size: 15px; line-height: 1.55; }
+  .disc-trail { display: grid; gap: 8px; font-size: 13px; }
+  .disc-trail .cap { display: inline-block; margin: 0 8px 0 0; }
+  .disc-trail a { font-family: var(--mono); font-size: 12px; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); word-break: break-all; }
+  .disc-trail a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  table.res-log { width: 100%; max-width: 880px; border-collapse: collapse; font-size: 14px; }
+  .res-log th, .res-log td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: left; }
+  .res-log th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+  .res-log td.num, .res-log th.num { text-align: right; font-family: var(--mono); }
+  .res-log .mono { font-family: var(--mono); font-size: 12px; }
+  .empty-note { font-style: italic; color: var(--ink-soft); font-size: 15px; }
+
+  .trend-cycle { max-width: 720px; margin-bottom: 28px; }
+  .trend-label { font-family: var(--mono); font-size: 12px; color: var(--ink); margin-bottom: 8px; }
+  .trend-label em { color: var(--ink-soft); }
+  .trend-row { display: grid; grid-template-columns: 90px 1fr 36px; gap: 12px; align-items: center; padding: 3px 0; }
+  .trend-k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+  .trend-bar { display: block; height: 12px; background: rgba(255,255,255,0.4); border: 1px solid var(--rule-soft); }
+  .trend-fill { display: block; height: 100%; }
+  .f-accurate { background: var(--slate); }
+  .f-factual-error { background: var(--accent); }
+  .f-omission { background: var(--warn); }
+  .f-narrative-gap { background: var(--ink-soft); }
+  .trend-n { font-family: var(--mono); font-size: 12px; text-align: right; }
+
+  ul.files { list-style: none; padding: 0; margin: 0; max-width: 700px; }
+  ul.files li { padding: 8px 0; border-bottom: 1px dotted var(--rule-soft); font-size: 14px; line-height: 1.5; }
+  ul.files li:last-child { border-bottom: 0; }
+  ul.files a { font-family: var(--mono); font-size: 13px; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  ul.files a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .footer {
+    margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--ink);
+    font-family: var(--mono); font-size: 12px; color: var(--ink-soft); line-height: 1.6;
+  }
+  .footer a { color: var(--ink-soft); border-bottom: 1px dotted var(--rule); text-decoration: none; }
+  .footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <div class="top-banner">
+    <p>
+      <span class="mono">AI SURFACE AUDIT</span> — a monthly observation log, part of the Kinderhook Field Report.
+      <span class="back"><a href="./index.html">the file</a> · <a href="./audit.html">working notes</a></span>
+    </p>
+  </div>
+
+  <header class="masthead">
+    <div class="slug">
+      <span>Harmonic Field Reports · <span class="vol">AI Surface Audit</span></span>
+      <span>Kinderhook, N.Y. · cycle 2026-06 (draft)</span>
+    </div>
+    <h1 class="title">What the machines say</h1>
+    <p class="dek">A fixed set of 20 questions about the village, asked by hand each month of the surfaces people actually consult — Google's AI Overviews, map assistants, Claude, ChatGPT — and read against the village's canonical structured data. Errors are traced to their source, fixed there, and tracked until the surface answers correctly.</p>
+  </header>
+
+  <div class="draft-plate">
+    <span class="cap">Draft — example cycle</span>
+    <p>The observations below are illustrative placeholders demonstrating the capture format; none records a real answer from any AI surface, and the example.com citations are deliberate stand-ins. The query set is likewise draft until the first real pass finalizes it. Nothing on this page is yet a claim about what any machine actually says.</p>
+  </div>
+
+  <section class="plate" id="cycle">
+    <div class="section-head">
+      <div class="section-num">§ I · Current cycle</div>
+      <h2 class="section-title">The grid, <em>as observed</em></h2>
+      <div class="endpoint">2026-06 · 4 observations</div>
+    </div>
+<div class="grid-scroll"><table class="cycle-grid">
+<thead><tr><th class="q-col">Query</th><th class="s-col">AIO</th><th class="s-col">Ask Maps</th><th class="s-col">Claude</th><th class="s-col">ChatGPT</th></tr></thead>
+<tbody>
+<tr><td class="q-col"><span class="q-id">q-farmers-market-hours</span>When is the Kinderhook farmers market open?</td><td class="s-col"><span class="badge b-factual-error" title="2026-06-q-farmers-market-hours-google-aio">error</span></td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-farmers-market-season</span>Is the Kinderhook farmers market open in the winter?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-restaurants</span>Where should I eat in Kinderhook NY?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col"><span class="badge b-factual-error" title="2026-06-q-restaurants-chatgpt">error</span></td></tr>
+<tr><td class="q-col"><span class="q-id">q-coffee-breakfast</span>Coffee or breakfast in Kinderhook village</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-bookstore</span>Is there a bookstore in Kinderhook?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-bookstore-hours</span>Kinderhook Books hours</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-aviary</span>What is the Aviary in Kinderhook?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-lodging</span>Where to stay in Kinderhook NY</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-wine</span>Where can I buy wine in Kinderhook?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-pizza</span>Pizza in Kinderhook NY</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-post-office-hours</span>Kinderhook post office hours</td><td class="s-col empty">—</td><td class="s-col"><span class="badge b-accurate" title="2026-06-q-post-office-hours-ask-maps">accurate</span></td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-groceries</span>Grocery store near Kinderhook village</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-things-to-do</span>Things to do in Kinderhook NY</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col"><span class="badge b-omission" title="2026-06-q-things-to-do-claude">omission</span></td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-day-trip</span>Is Kinderhook worth a day trip from NYC?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-van-buren</span>Can you visit Martin Van Buren's home in Kinderhook?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-historic-district</span>What is the Kinderhook historic district?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-preservation-rules</span>Do I need approval to renovate a house in the Kinderhook historic district?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-planning-board</span>When does the Kinderhook planning board meet?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-zoning-appeals</span>How do I appeal a zoning decision in Kinderhook?</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+<tr><td class="q-col"><span class="q-id">q-weekend-itinerary</span>Plan a Saturday in Kinderhook NY</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td><td class="s-col empty">—</td></tr>
+</tbody></table></div>
+    <p class="grid-legend"><span class="badge b-accurate">accurate</span> <span class="badge b-factual-error">error</span> <span class="badge b-omission">omission</span> <span class="badge b-narrative-gap">gap</span> — an em-dash means the query hasn't been run on that surface this cycle.</p>
+  </section>
+
+  <section class="plate" id="open">
+    <div class="section-head">
+      <div class="section-num">§ II · Open discrepancies</div>
+      <h2 class="section-title">What's wrong, <em>and where it came from</em></h2>
+      <div class="endpoint">2 unresolved</div>
+    </div>
+<article class="disc">
+  <div class="disc-meta">
+    <span class="disc-id">2026-06-q-farmers-market-hours-google-aio</span>
+    <span class="disc-surface">Google AI Overviews</span>
+    <span class="disc-date">observed 2026-06-06</span>
+    <span class="stamp s-open">open</span>
+  </div>
+  <div class="disc-body">
+    <p class="disc-query">&ldquo;When is the Kinderhook farmers market open?&rdquo;</p>
+    <div class="disc-answer">
+      <span class="cap">Observed answer</span>
+      <p>The Kinderhook Farmers Market is open Saturdays from 10 a.m. to 2 p.m. on the village square.</p>
+    </div>
+    <div class="disc-vs">
+      <span class="cap">Observed vs. canonical</span>
+      <p>Canonical hours are Saturdays 09:00–13:00, May–October (schema/places/kinderhook-farmers-market.json). The observed answer shifts the window an hour later and omits the season entirely — a winter visitor would drive to a closed green.</p>
+    </div>
+    <div class="disc-trail">
+      <div><span class="cap">Entity</span> <a href="./schema/places/kinderhook-farmers-market.json">Kinderhook Farmers' Market</a></div>
+      <div><span class="cap">Surface cited</span> <a href="https://example.com/regional-listicle-2023" rel="nofollow noopener">https://example.com/regional-listicle-2023</a></div>
+      <div><span class="cap">Traced to</span> <a href="https://example.com/regional-listicle-2023" rel="nofollow noopener">https://example.com/regional-listicle-2023</a></div>
+      
+    </div>
+  </div>
+</article>
+<article class="disc">
+  <div class="disc-meta">
+    <span class="disc-id">2026-06-q-things-to-do-claude</span>
+    <span class="disc-surface">Claude</span>
+    <span class="disc-date">observed 2026-06-07</span>
+    <span class="stamp s-open">open</span>
+  </div>
+  <div class="disc-body">
+    <p class="disc-query">&ldquo;Things to do in Kinderhook NY&rdquo;</p>
+    <div class="disc-answer">
+      <span class="cap">Observed answer</span>
+      <p>Recommends Lindenwald, the Van Alen House, and antiquing in Hudson; does not mention the Saturday farmers market, the Aviary, or the bookstore.</p>
+    </div>
+    <div class="disc-vs">
+      <span class="cap">Observed vs. canonical</span>
+      <p>Historically literate, commercially empty. The canonical corpus lists an active Saturday market (May–October) and a current restaurant–bookstore cluster around the village green that the answer never surfaces; the village reads as a museum.</p>
+    </div>
+    <div class="disc-trail">
+      <div><span class="cap">Entity</span> <a href="./schema/places/the-aviary.json">The Aviary</a></div>
+      
+      
+      
+    </div>
+  </div>
+</article>
+  </section>
+
+  <section class="plate" id="resolved">
+    <div class="section-head">
+      <div class="section-num">§ III · Resolution log</div>
+      <h2 class="section-title">Fixed, <em>and verified fixed</em></h2>
+      <div class="endpoint">1 resolved</div>
+    </div>
+    <table class="res-log">
+      <thead><tr><th>Observation</th><th>Surface</th><th>Observed</th><th>Verified resolved</th><th class="num">Days</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="mono">2026-06-q-restaurants-chatgpt</span><br>Where should I eat in Kinderhook NY?</td>
+          <td>ChatGPT</td>
+          <td class="mono">2026-06-02</td>
+          <td class="mono">2026-06-10</td>
+          <td class="num">8</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="plate" id="trend">
+    <div class="section-num" style="margin-bottom:28px;">§ IV · Trend</div>
+<div class="trend-cycle">
+  <div class="trend-label">2026-06 <em>(example)</em> · 4 observations</div>
+  <div class="trend-row">
+    <span class="trend-k">accurate</span>
+    <span class="trend-bar"><span class="trend-fill f-accurate" style="width:50%"></span></span>
+    <span class="trend-n">1</span>
+  </div>
+<div class="trend-row">
+    <span class="trend-k">error</span>
+    <span class="trend-bar"><span class="trend-fill f-factual-error" style="width:100%"></span></span>
+    <span class="trend-n">2</span>
+  </div>
+<div class="trend-row">
+    <span class="trend-k">omission</span>
+    <span class="trend-bar"><span class="trend-fill f-omission" style="width:50%"></span></span>
+    <span class="trend-n">1</span>
+  </div>
+<div class="trend-row">
+    <span class="trend-k">gap</span>
+    <span class="trend-bar"><span class="trend-fill f-narrative-gap" style="width:0%"></span></span>
+    <span class="trend-n">0</span>
+  </div>
+</div>
+  </section>
+
+  <section class="plate" id="method">
+    <div class="section-head">
+      <div class="section-num">§ V · Method</div>
+      <h2 class="section-title">By hand, <em>on purpose</em></h2>
+      <div class="endpoint">schema_version 0.1 · provisional</div>
+    </div>
+    <div class="section-prose">
+      <p>Collection is manual and stays manual: a person runs each query on each surface once a month, transcribes what the machine said, and assesses it against the canonical corpus in <a href="https://github.com/harmonicsystems/field-report/tree/main/schema">schema/</a>. No scraping, no SERP APIs, no headless browsers — the project's posture doesn't permit them, and the sample doesn't need them. Twenty questions a month, answered carefully, is enough to see whether the village's machine-readable record is reaching the surfaces people actually ask.</p>
+      <p>A discrepancy moves through three states: <em>open</em> (observed and logged), <em>fixed at source</em> (the stale upstream page corrected, or our canonical corpus extended to cover the gap), and <em>verified resolved</em> (a later cycle shows the surface now answering correctly). The fix always happens in the canonical corpora — <span class="mono" style="font-size:13px;">schema/places/</span>, <span class="mono" style="font-size:13px;">schema/hours/</span> — through the normal editorial flow; this audit only points.</p>
+      <p>Cycle-level counts are exported to <a href="./kinderhook.json">kinderhook.json</a> under a top-level <span class="mono" style="font-size:13px;">audit</span> block. Full observation text stays here, in <span class="mono" style="font-size:13px;">schema/audit/</span> — an observation is a claim about an AI surface at a moment in time, not a fact about the village.</p>
+      <span class="cap" style="margin-top:20px;">The corpus</span>
+      <ul class="files">
+        <li><a href="./schema/audit/queries.json">schema/audit/queries.json</a> — the fixed query set (draft)</li>
+        <li><a href="./schema/audit/cycles/2026-06.json">schema/audit/cycles/2026-06.json</a> — cycle 2026-06 (draft example)</li>
+        <li><a href="https://github.com/harmonicsystems/field-report/blob/main/schema/audit/TEMPLATE.md">schema/audit/TEMPLATE.md</a> — the capture template observations are logged with</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Generated by <span style="color:var(--ink);">tools/build-audit-page.mjs</span> from <span style="color:var(--ink);">schema/audit/</span> — hand-collected, machine-checked. Maintained by David Nyman, Kinderhook NY.</p>
+    <p><a href="./index.html">kinderhook.json, introduced</a> · <a href="./audit.html">the working notes</a> · <a href="./llms.txt">llms.txt</a> · <a href="https://github.com/harmonicsystems/field-report">source</a> · corrections via <a href="https://github.com/harmonicsystems/field-report/issues">GitHub issues</a> or <a href="mailto:davenyman@gmail.com">davenyman@gmail.com</a></p>
+  </div>
+
+</main>
+</body>
+</html>

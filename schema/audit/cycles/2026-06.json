@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.1",
+  "cycle": "2026-06",
+  "draft": true,
+  "note": "EXAMPLE CYCLE — every entry below is an illustrative placeholder demonstrating the capture format. None is a real observation of any AI surface, and the cited example.com URLs are deliberate stand-ins. The first real audit pass replaces this file's entries and drops the draft flag.",
+  "entries": [
+    {
+      "id": "2026-06-q-farmers-market-hours-google-aio",
+      "query_id": "q-farmers-market-hours",
+      "surface": "google-aio",
+      "observed_at": "2026-06-06",
+      "observed_answer": "The Kinderhook Farmers Market is open Saturdays from 10 a.m. to 2 p.m. on the village square.",
+      "cited_sources": ["https://example.com/regional-listicle-2023"],
+      "assessment": "factual-error",
+      "entity_ref": "kinderhook-farmers-market",
+      "discrepancy": "Canonical hours are Saturdays 09:00–13:00, May–October (schema/places/kinderhook-farmers-market.json). The observed answer shifts the window an hour later and omits the season entirely — a winter visitor would drive to a closed green.",
+      "traced_source": "https://example.com/regional-listicle-2023",
+      "fix_applied": null,
+      "status": "open",
+      "resolved_at": null
+    },
+    {
+      "id": "2026-06-q-post-office-hours-ask-maps",
+      "query_id": "q-post-office-hours",
+      "surface": "ask-maps",
+      "observed_at": "2026-06-06",
+      "observed_answer": "Window hours given match the USPS listing and the canonical record; counter and lobby distinguished correctly.",
+      "cited_sources": ["https://tools.usps.com/"],
+      "assessment": "accurate",
+      "entity_ref": "kinderhook-post-office"
+    },
+    {
+      "id": "2026-06-q-things-to-do-claude",
+      "query_id": "q-things-to-do",
+      "surface": "claude",
+      "observed_at": "2026-06-07",
+      "observed_answer": "Recommends Lindenwald, the Van Alen House, and antiquing in Hudson; does not mention the Saturday farmers market, the Aviary, or the bookstore.",
+      "cited_sources": [],
+      "assessment": "omission",
+      "entity_ref": "the-aviary",
+      "discrepancy": "Historically literate, commercially empty. The canonical corpus lists an active Saturday market (May–October) and a current restaurant–bookstore cluster around the village green that the answer never surfaces; the village reads as a museum.",
+      "traced_source": null,
+      "fix_applied": null,
+      "status": "open",
+      "resolved_at": null
+    },
+    {
+      "id": "2026-06-q-restaurants-chatgpt",
+      "query_id": "q-restaurants",
+      "surface": "chatgpt",
+      "observed_at": "2026-06-02",
+      "observed_answer": "Dining list led with an establishment that closed several years ago, placed on the wrong street; two current restaurants absent.",
+      "cited_sources": ["https://example.com/stale-dining-roundup"],
+      "assessment": "factual-error",
+      "discrepancy": "A closed business presented as open. Current canonical restaurants (the Aviary, the Brooklyn Pizzeria, Hamrah's) absent from the answer.",
+      "traced_source": "https://example.com/stale-dining-roundup",
+      "fix_applied": "Published structured hours for current restaurants via kinderhook.json (schema/hours/); re-ran the query after the surface's index refreshed.",
+      "status": "verified-resolved",
+      "resolved_at": "2026-06-10"
+    }
+  ]
+}

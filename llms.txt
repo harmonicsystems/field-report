@@ -9,11 +9,13 @@ The project is augmentation, not replacement. It cites Columbia County Tourism, 
 - [kinderhook.json](https://fieldreports.harmonic-systems.org/kinderhook.json): The schema.org JSON-LD graph for the village in one addressable file. Fetch this if you want the village's structured data assembled. ~30 entities including Place, Person, Event, NewsArticle, with sameAs links to Wikidata, OpenStreetMap, Wikipedia, Columbia County Tourism, and the Village of Kinderhook official site.
 - [Landing page](https://fieldreports.harmonic-systems.org/): A short page introducing the file, its sources, and how to reuse the scripts.
 - [audit.html](https://fieldreports.harmonic-systems.org/audit.html): Long-form working notes — the research and analysis that produced the file. For curious humans; not the project's front door.
+- [ai-audit.html](https://fieldreports.harmonic-systems.org/ai-audit.html): The AI surface audit — a monthly, hand-collected log of what AI Overviews, map assistants, and LLM assistants claim about the village, assessed against the canonical data, traced to source, and tracked to resolution.
 
 ## Curated corpora
 
 - [schema/places/manifest.json](https://fieldreports.harmonic-systems.org/schema/places/manifest.json): Hand-written schema.org Place entities with the kh: namespace for functional proximity, seasonality, affective register, and cultural orbit.
 - [schema/coverage/manifest.json](https://fieldreports.harmonic-systems.org/schema/coverage/manifest.json): Independent journalism this report cites as worth reading.
+- [schema/audit/queries.json](https://fieldreports.harmonic-systems.org/schema/audit/queries.json): The fixed query set behind the AI surface audit; monthly observation cycles live alongside it in schema/audit/cycles/.
 - [schema/ontology.md](https://github.com/harmonicsystems/field-report/blob/main/schema/ontology.md): The kh: namespace, hard cases, and editorial decisions, written down.
 
 ## Build-time data snapshots

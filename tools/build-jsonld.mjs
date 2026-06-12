@@ -19,6 +19,7 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadAuditCorpus, loadCanonicalSlugs, validateAudit, summarizeCycles } from './validate-audit.mjs';
 
 const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '../..');
 const TOWN = 'kinderhook';
@@ -47,6 +48,16 @@ async function readJson(rel, fallback = null) {
 const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
 
 async function main() {
+  // --- AI surface audit corpus (validated; a bad entry fails the build) ---
+  const auditCorpus = await loadAuditCorpus(REPO_ROOT);
+  const auditCheck = validateAudit(auditCorpus, await loadCanonicalSlugs(REPO_ROOT));
+  for (const w of auditCheck.warnings) console.warn(`[build-jsonld] audit warn  ${w}`);
+  if (auditCheck.errors.length) {
+    for (const e of auditCheck.errors) console.error(`[build-jsonld] audit ERROR ${e}`);
+    console.error(`[build-jsonld] schema/audit/ is invalid (${auditCheck.errors.length} error(s)) — refusing to build`);
+    process.exit(1);
+  }
+
   // --- snapshot inputs ---
   const events     = await readJson('data/snapshots/columbiacountytourism/latest-events.json');
   const venues     = await readJson('data/snapshots/columbiacountytourism/latest-venues.json');
@@ -337,8 +348,18 @@ async function main() {
 
   // Carry the build metadata as a separate top-level property (outside @graph
   // so it doesn't get treated as a schema.org entity).
+  //
+  // The audit block is cycle-level stats only: full observation text stays in
+  // schema/audit/ and never ships downstream. Draft cycles carry draft: true
+  // (the provisional-hours precedent) so consumers can filter them.
   const wrapped = {
     ...document,
+    "audit": {
+      "method": "Manual monthly observation of AI surfaces; full log at https://fieldreports.harmonic-systems.org/ai-audit.html",
+      "queries": auditCorpus.queries.queries?.length ?? 0,
+      "queriesStatus": auditCorpus.queries.status === 'draft' ? 'draft' : 'final',
+      "cycles": summarizeCycles(auditCorpus),
+    },
     "_meta": {
       builder: "tools/build-jsonld.mjs",
       builtAt: new Date().toISOString(),
