@@ -463,6 +463,67 @@
     line-height: 1.45;
   }
 
+  /* HISTORIC DISTRICTS PROSE (§ VIIb) ============================== */
+  .hd-prose {
+    max-width: 680px;
+    margin: 0 0 32px 220px;
+  }
+  .hd-prose p {
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .hd-prose p:last-child { margin-bottom: 0; }
+  .hd-prose strong {
+    font-weight: 600;
+    font-variant-numeric: lining-nums;
+  }
+  .hd-figure {
+    max-width: 920px;
+    margin: 32px 0 32px 220px;
+  }
+  .hd-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    background: #fff;
+  }
+  .hd-figure figcaption {
+    margin-top: 12px;
+    font-family: var(--display);
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .hd-fig-title {
+    display: block;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .hd-fig-meta {
+    display: block;
+    font-size: 13px;
+  }
+  .hd-fig-meta a { color: var(--accent); }
+  .hd-sources {
+    max-width: 680px;
+    margin: 24px 0 0 220px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .hd-sources a { color: var(--accent); }
+  @media (max-width: 880px) {
+    .hd-prose,
+    .hd-figure,
+    .hd-sources { margin-left: 0; }
+  }
+
   /* DATA DISPLAY ================================================== */
   .status {
     font-family: var(--mono);
@@ -1813,6 +1874,7 @@
         <a class="contents-part-h" href="#part3">Part Three · What pulls people in</a>
         <ol class="contents-list">
           <li><a href="#sec-historic"><span class="c-num">§ VII</span> Historic Layer</a></li>
+          <li><a href="#sec-historic-districts"><span class="c-num">§ VIIb</span> Historic Districts</a></li>
           <li><a href="#sec-coverage"><span class="c-num">§ VIII</span> Independent Coverage</a></li>
           <li><a href="#sec-editorial"><span class="c-num">§ IX</span> Editorial Record</a></li>
         </ol>
@@ -1943,6 +2005,38 @@
     <p class="dek">Before the URL slug, the village. Structured historical knowledge the commons has already written down, snapshotted at build time: NRHP listings, notable residents, Wikipedia summaries of the canonical sites, and two centuries of newspaper mentions.</p>
     <div class="status" id="historic-status">Loading snapshots…</div>
     <div id="historic-body"></div>
+  </section>
+    <!-- ============================================ §VIIb HISTORIC DISTRICTS (REGULATORY) -->
+  <section class="plate" id="sec-historic-districts">
+    <div class="section-head">
+      <div class="section-num">§ VIIb · Historic Districts</div>
+      <h2 class="section-title">Two maps say <em>historic</em>. Only one is <em>in force</em>.</h2>
+      <div class="endpoint">ecode360 ch 75 · ch 130 · cpea 2008</div>
+    </div>
+    <p class="dek">A house in the village can be on the National Register and free to renovate. Another, two streets away, can be off the federal register and still need permission to repaint its trim. The village code distinguishes the two; residents commonly conflate them. The map below is the clearest published depiction we have of both boundaries on the same sheet.</p>
+
+    <div class="hd-prose">
+      <p>Two boundaries govern what the word <em>historic</em> means inside the Village of Kinderhook, and they are not the same shape.</p>
+
+      <p>The smaller of the two is the <strong>Historic Preservation Overlay District</strong>, established by Village Code Chapter 75 and depicted on the Zoning Map (Chapter 130, Attachment 4). It covers the historic commercial and residential core: Broad, Hudson, the Albany Avenue spine, Maiden, Church, Silvester, the Rothermel area. Properties inside this overlay need a <em>certificate of appropriateness</em> from the village's Historic Preservation Commission before they can alter exterior features, build additions, or demolish. This is the regulatory boundary — it is the one a property owner has to know.</p>
+
+      <p>The larger is the <strong>Kinderhook Village Historic District</strong> on the National Register of Historic Places (NRHP listing #74001225). It extends south to Kinderhook Creek, covers the southern village agricultural lands, and reaches further north along Albany Avenue. Federal listing only. It confers eligibility for federal historic-preservation tax credits and triggers federal Section 106 review when federal funding or permits are in play. It has no effect on what a property owner can do to a private exterior on their own dime.</p>
+
+      <p>The two boundaries overlap but do not match. A property in the pink (NRHP) zone but outside the hatched (overlay) zone is "historic" in the federal sense but free of any village review. A property in both zones is subject to the village's certificate-of-appropriateness process. A property in neither — perhaps an older home on a quieter outer block — is governed only by general zoning.</p>
+
+      <p>The conflation matters because it cuts both ways. Some residents believe their property is regulated when it is not, and ask permission they don't need. Others believe their property is unregulated when it is not, and find out otherwise mid-project. Both surprises are avoidable from the same map.</p>
+    </div>
+
+    <figure class="hd-figure">
+      <img src="data/snapshots/village-of-kinderhook/img/2008-cpea-hd-overlay.jpg"
+           alt="Map of the Village of Kinderhook showing the smaller hatched local Historic Preservation Overlay District and the larger pink National Register Village Historic District, drawn over property boundaries and street names.">
+      <figcaption>
+        <span class="hd-fig-title">Village of Kinderhook — Historic Preservation Overlay District, 2008</span>
+        <span class="hd-fig-meta">Hatched: local Historic Preservation Overlay (regulated). Pink fill: National Register district (federal listing only). Prepared by Community Planning &amp; Environmental Associates (Nan Stolzenburg, AICP) with GIS by Don Meltz, October 2008. <a href="data/snapshots/village-of-kinderhook/2008-10_historic-preservation-overlay-district-review.pdf">Source PDF</a>.</span>
+      </figcaption>
+    </figure>
+
+    <p class="hd-sources">Source documents read for this section: <a href="https://ecode360.com/12306677">Village Code Ch. 75 — Landmarks and Historic Districts</a> · <a href="https://ecode360.com/12307601">Village Code Ch. 130 — Zoning</a> · <a href="data/snapshots/ecode360/KI0572/zoning-map.pdf">Village Zoning Map</a> · <a href="data/snapshots/village-of-kinderhook/2008-10_historic-preservation-overlay-district-review.pdf">CPEA 2008 HD overlay review map</a>. All snapshotted at <a href="data/snapshots/">/data/snapshots/</a> with provenance.</p>
   </section>
     <!-- ============================================ §VIII INDEPENDENT COVERAGE -->
   <section class="plate" id="sec-coverage">
@@ -3109,11 +3203,15 @@ function renderHistoricLayer({ sites, people, summaries, newspapers }) {
       </div>`;
   }).join('');
 
-  // ---------- People: sort by sitelinks (salience), then by birth date. ----------
+  // ---------- People: sort by sitelinks (salience), then earliest birth. ----------
+  // parseInt on an ISO date yields the year; missing/blank births fall to 9999
+  // so they sort last rather than jumping to the front.
   const peopleList = (people?.people || [])
     .filter(p => p.birth || p.death)
     .slice()
-    .sort((a, b) => (b.sitelinks || 0) - (a.sitelinks || 0))
+    .sort((a, b) =>
+      (b.sitelinks || 0) - (a.sitelinks || 0) ||
+      (parseInt(a.birth) || 9999) - (parseInt(b.birth) || 9999))
     .slice(0, 14);
 
   const peopleHtml = peopleList.map(p => {
@@ -3667,11 +3765,11 @@ function renderTransportation({ aadt, bridges }) {
 
   // Editorial findings.
   const insights = [];
-  if (stations.length) {
-    const top = stations[0];
+  if (allStations.length) {
+    const top = allStations[0];
     insights.push(`<strong>${fmt(top.aadt)}</strong> vehicles per day on the busiest segment through Kinderhook (${esc(top.signing)} ${esc(top.route)}: ${esc(top.from)} → ${esc(top.to)}).`);
-    const total = stations.reduce((s, x) => s + (x.aadt || 0), 0);
-    insights.push(`Across all <strong>${stations.length}</strong> measured segments in the municipality, NYSDOT recorded a combined <strong>${total.toLocaleString()}</strong> daily vehicle-passes in ${esc(aadt.latestYear)}. (Note: passes overlap; this is segment-sum, not unique vehicles.)`);
+    const total = allStations.reduce((s, x) => s + (x.aadt || 0), 0);
+    insights.push(`Across all <strong>${allStations.length}</strong> measured segments in the municipality, NYSDOT recorded a combined <strong>${total.toLocaleString()}</strong> daily vehicle-passes in ${esc(aadt.latestYear)}. (Note: passes overlap; this is segment-sum, not unique vehicles.)`);
   }
   if ((bridges?.bridges || []).length) {
     const oldest = bridges.bridges.filter(b => b.yearBuilt).sort((a,b) => a.yearBuilt - b.yearBuilt)[0];
