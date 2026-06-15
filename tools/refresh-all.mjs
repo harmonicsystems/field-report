@@ -23,6 +23,10 @@ const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '../..');
 const args = process.argv.slice(2);
 const skipBusinesses = args.includes('--skip-cct-businesses');
 
+// Fetchers pull external sources; builders assemble published artifacts from
+// whatever snapshots are on disk. The distinction drives the failure policy
+// below: a fetcher failing is tolerable (we keep last-known data and still
+// publish), a builder failing is not (the artifact is wrong).
 const tools = [
   { name: 'CCT REST snapshots',       script: 'tools/fetch-cct.mjs' },
   { name: 'CCT business index',       script: 'tools/fetch-cct-business-index.mjs' },
@@ -37,31 +41,61 @@ const tools = [
   { name: 'Climate Smart (data.ny.gov)', script: 'tools/fetch-climate-smart.mjs' },
   { name: 'Farmers Markets (data.ny.gov)', script: 'tools/fetch-farmers-markets.mjs' },
   { name: 'Transportation: AADT + Bridges', script: 'tools/fetch-transportation.mjs' },
-  { name: 'Build kinderhook.json',    script: 'tools/build-jsonld.mjs' },
-  { name: 'AI surface audit page',    script: 'tools/build-audit-page.mjs' },
+  { name: 'Build kinderhook.json',    script: 'tools/build-jsonld.mjs',      builder: true },
+  { name: 'AI surface audit page',    script: 'tools/build-audit-page.mjs',  builder: true },
 ];
 
+// Resolves with an exit code rather than rejecting, so the driver — not an
+// exception — decides what a failure means.
 function run(scriptPath) {
-  return new Promise((resolveP, rejectP) => {
+  return new Promise((resolveP) => {
     const child = spawn('node', [scriptPath], { stdio: 'inherit', cwd: REPO_ROOT });
-    child.on('exit', code => code === 0 ? resolveP() : rejectP(new Error(`${scriptPath} exit ${code}`)));
-    child.on('error', rejectP);
+    child.on('exit', code => resolveP(code ?? 1));
+    child.on('error', () => resolveP(1));
   });
 }
 
 async function main() {
   const start = Date.now();
+  const fetcherFails = [];
+  const builderFails = [];
+  let fetchersRun = 0;
+
   for (const t of tools) {
     if (t.slow && skipBusinesses) {
       console.log(`\n--- SKIP  ${t.name}\n`);
       continue;
     }
     console.log(`\n--- RUN   ${t.name}  (${t.script})\n`);
-    await run(t.script);
+    const code = await run(t.script);
+    if (t.builder) {
+      if (code !== 0) builderFails.push(t.name);
+    } else {
+      fetchersRun++;
+      if (code !== 0) {
+        // Tolerate it: the fetcher leaves its last-known snapshot in place,
+        // and one flaky external source must never freeze the whole corpus
+        // (an unguarded LoC 403 silently did exactly that for weeks).
+        fetcherFails.push(t.name);
+        console.warn(`\n--- WARN  ${t.name} exited ${code} — continuing; last-known snapshot retained.\n`);
+      }
+    }
   }
+
   const dur = Math.round((Date.now() - start) / 1000);
   console.log(`\n[refresh-all] complete in ${dur}s`);
+  if (fetcherFails.length) console.warn(`[refresh-all] fetchers skipped (${fetcherFails.length}): ${fetcherFails.join(', ')}`);
+  if (builderFails.length) console.error(`[refresh-all] builders FAILED (${builderFails.length}): ${builderFails.join(', ')}`);
   console.log(`[refresh-all] commit data/snapshots/ to publish.`);
+
+  // Fail the run only when an artifact is actually broken: a builder failed,
+  // or every fetcher failed (total outage). Partial fetcher failure is a
+  // healthy refresh of whatever was reachable.
+  if (builderFails.length) process.exit(1);
+  if (fetchersRun > 0 && fetcherFails.length === fetchersRun) {
+    console.error('[refresh-all] every fetcher failed — treating as fatal.');
+    process.exit(1);
+  }
 }
 
 main().catch(err => { console.error('\n[refresh-all] FAILED:', err.message); process.exit(1); });

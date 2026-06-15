@@ -18,7 +18,7 @@
  * Usage: node tools/fetch-historical.mjs
  */
 
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -36,6 +36,16 @@ async function writeSnap(relDir, name, data) {
   await writeFile(out, payload);
   await writeFile(latest, payload);
   console.log(`[write] ${relDir}/${name}`);
+}
+
+// Last-known snapshot, for graceful degradation when a source is unreachable.
+async function readLatestSnap(relDir, name) {
+  try {
+    const p = resolve(REPO_ROOT, 'data/snapshots', relDir, `latest-${name}.json`);
+    return JSON.parse(await readFile(p, 'utf-8'));
+  } catch {
+    return null;
+  }
 }
 
 /* ---------- Wikidata SPARQL ---------- */
@@ -189,9 +199,25 @@ async function fetchChroniclingAmerica() {
   // LoC search API for historic newspaper pages mentioning Kinderhook.
   // The old chroniclingamerica.loc.gov endpoint now redirects to the
   // unified www.loc.gov/collections/chronicling-america search.
+  //
+  // NOTE: www.loc.gov bot-protection 403s requests from datacenter IP
+  // ranges (incl. GitHub Actions' Azure runners), even though the same
+  // request succeeds from a residential IP. So this call routinely fails
+  // in CI and routinely works locally. Retry a couple of times for
+  // transient 429/5xx, but the caller treats any final failure as
+  // non-fatal and keeps the last-known snapshot — a 403 here must never
+  // abort the weekly refresh (it did, silently, for weeks).
   const url = 'https://www.loc.gov/collections/chronicling-america/?q=Kinderhook&fo=json&c=50';
-  const r = await fetch(url, { headers: { 'User-Agent': UA } });
-  if (!r.ok) throw new Error(`LoC ${r.status}`);
+  let r;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    r = await fetch(url, { headers: { 'User-Agent': UA, 'Accept': 'application/json' } });
+    if (r.ok) break;
+    if (attempt < 3 && (r.status === 429 || r.status >= 500)) {
+      await sleep(attempt * 1500);
+      continue;
+    }
+    throw new Error(`LoC ${r.status}`);
+  }
   const d = await r.json();
   const total = d.pagination?.of ?? 0;
   const results = d.results || [];
@@ -223,31 +249,67 @@ async function fetchChroniclingAmerica() {
 
 async function main() {
   console.log(`[start] ${today}`);
-
-  console.log('[wikidata] historic sites…');
-  const sites = await fetchHistoricSites();
-  console.log(`  ${sites.length} sites`);
-
-  console.log('[wikidata] historic people…');
-  const people = await fetchHistoricPeople();
-  console.log(`  ${people.length} people (top: ${people.slice(0,3).map(p=>p.name).join(', ')})`);
-
-  console.log('[wikipedia] summaries…');
-  const summaries = await fetchWikipediaSummaries();
-  console.log(`  ${summaries.filter(s => !s.error).length}/${summaries.length} ok`);
-
-  console.log('[loc] chronicling america…');
-  const newspapers = await fetchChroniclingAmerica();
-  console.log(`  ${newspapers.total} total, sampled ${newspapers.sampled}`);
-
   const meta = { fetchedAt: new Date().toISOString(), fetcher: 'tools/fetch-historical.mjs' };
 
-  await writeSnap('wikidata', 'kinderhook-historic-sites', { ...meta, source: 'query.wikidata.org/sparql', bbox: 'SW(-73.75, 42.35) → NE(-73.62, 42.43)', count: sites.length, sites });
-  await writeSnap('wikidata', 'kinderhook-historic-people', { ...meta, source: 'query.wikidata.org/sparql', count: people.length, people });
-  await writeSnap('wikipedia', 'kinderhook-summaries', { ...meta, source: 'en.wikipedia.org/api/rest_v1/page/summary/', articles: KEY_ARTICLES, summaries });
-  await writeSnap('loc', 'kinderhook-chronicling-america', { ...meta, source: 'www.loc.gov/collections/chronicling-america/', ...newspapers });
+  // Each source is isolated: a failure in one is recorded and skipped, never
+  // allowed to discard the others or abort the script. Snapshots are written
+  // as each source succeeds. A source that fails simply leaves its previous
+  // latest-*.json in place (last-known data), so downstream builders and the
+  // page keep working. The script fails (exit 1) only on a total wipeout —
+  // every source down — which is a real signal worth a red build.
+  const failures = [];
+  let wrote = 0;
 
-  console.log('[done]');
+  // 1. Wikidata — historic sites
+  try {
+    console.log('[wikidata] historic sites…');
+    const sites = await fetchHistoricSites();
+    console.log(`  ${sites.length} sites`);
+    await writeSnap('wikidata', 'kinderhook-historic-sites', { ...meta, source: 'query.wikidata.org/sparql', bbox: 'SW(-73.75, 42.35) → NE(-73.62, 42.43)', count: sites.length, sites });
+    wrote++;
+  } catch (e) { failures.push(['wikidata historic-sites', e.message]); console.error(`  [fail] ${e.message}`); }
+
+  // 2. Wikidata — historic people
+  try {
+    console.log('[wikidata] historic people…');
+    const people = await fetchHistoricPeople();
+    console.log(`  ${people.length} people (top: ${people.slice(0,3).map(p=>p.name).join(', ')})`);
+    await writeSnap('wikidata', 'kinderhook-historic-people', { ...meta, source: 'query.wikidata.org/sparql', count: people.length, people });
+    wrote++;
+  } catch (e) { failures.push(['wikidata historic-people', e.message]); console.error(`  [fail] ${e.message}`); }
+
+  // 3. Wikipedia — summaries
+  try {
+    console.log('[wikipedia] summaries…');
+    const summaries = await fetchWikipediaSummaries();
+    console.log(`  ${summaries.filter(s => !s.error).length}/${summaries.length} ok`);
+    await writeSnap('wikipedia', 'kinderhook-summaries', { ...meta, source: 'en.wikipedia.org/api/rest_v1/page/summary/', articles: KEY_ARTICLES, summaries });
+    wrote++;
+  } catch (e) { failures.push(['wikipedia summaries', e.message]); console.error(`  [fail] ${e.message}`); }
+
+  // 4. Library of Congress — Chronicling America (non-fatal; see fetcher note)
+  try {
+    console.log('[loc] chronicling america…');
+    const newspapers = await fetchChroniclingAmerica();
+    console.log(`  ${newspapers.total} total, sampled ${newspapers.sampled}`);
+    await writeSnap('loc', 'kinderhook-chronicling-america', { ...meta, source: 'www.loc.gov/collections/chronicling-america/', ...newspapers });
+    wrote++;
+  } catch (e) {
+    failures.push(['loc chronicling-america', e.message]);
+    const kept = await readLatestSnap('loc', 'kinderhook-chronicling-america');
+    const since = kept?.fetchedAt ? kept.fetchedAt.slice(0, 10) : null;
+    console.warn(`  [skip] LoC unavailable (${e.message}) — keeping last-known snapshot${since ? ` from ${since}` : ' (none on disk yet)'}.`);
+  }
+
+  if (failures.length) {
+    console.warn(`\n[historical] ${failures.length} source(s) did not refresh this run:`);
+    for (const [name, msg] of failures) console.warn(`  - ${name}: ${msg}`);
+  }
+  if (wrote === 0) {
+    console.error('[historical] every source failed — treating as fatal.');
+    process.exit(1);
+  }
+  console.log(`[done] ${wrote} source(s) refreshed, ${failures.length} skipped.`);
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
