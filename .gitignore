@@ -5,3 +5,4 @@ dist/
 .env.local
 .vscode/
 .idea/
+runsheet.html
