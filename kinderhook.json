@@ -48,16 +48,20 @@
     },
     {
       "@type": "Event",
-      "@id": "https://columbiacountytourism.org/event/opening-day-kinderhook-farmers-market/",
-      "name": "Opening Day ~ Kinderhook Farmers Market",
-      "startDate": "2026-05-02 08:30:00",
-      "endDate": "2026-05-02 12:30:00",
+      "@id": "https://columbiacountytourism.org/event/hidden-heroes-extraordinary-stories-of-courage-from-9-11/",
+      "name": "Hidden Heroes: Extraordinary Stories of Courage from 9/11",
+      "startDate": "2026-09-10 18:00:00",
+      "endDate": "2026-09-10 20:00:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@id": "https://columbiacountytourism.org/venue/village-yoga/"
       },
-      "description": "Come out for Opening Day for the Market!\nEnjoy selections from local farmers offering a wide variety of goods, produce, naturally raised meats, baked goods, flowers, plants, honey, crafts, live music and MORE!!"
+      "organizer": {
+        "@type": "Organization",
+        "name": "FASNY Museum of Firefighting"
+      },
+      "description": "As most of you surely know, 2026 marks the 25th anniversary of the 9/11 terrorist attacks. To commemorate the anniversary of this tragic event, the FASNY Museum of Firefighting’s Assistant Curator, Lauryn Czyzewski, will share a presentation titled Hidden Heroes: Extraordinary Stories of Courage fro"
     },
     {
       "@type": "Event",
@@ -728,6 +732,24 @@
     },
     {
       "@type": "Place",
+      "@id": "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex",
+      "name": "Wild's Mill Complex",
+      "description": "historic buildings in Valatie, New York, United States",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NRHP",
+        "value": "82003353"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex",
+        "https://www.wikidata.org/wiki/Q8000428"
+      ]
+    },
+    {
+      "@type": "Place",
       "@id": "https://en.wikipedia.org/wiki/Kinderhook_Cemetery",
       "name": "Kinderhook Cemetery",
       "description": "cemetery in Kinderhook, New York",
@@ -913,18 +935,6 @@
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117648524"
-      ]
-    },
-    {
-      "@type": "Place",
-      "@id": "https://www.wikidata.org/wiki/Q110667203",
-      "name": "Stuyvesant Falls Cemetery",
-      "description": "cemetery in Hudson, New York",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q110667203"
       ]
     },
     {
@@ -1150,7 +1160,7 @@
     {
       "@type": "Event",
       "@id": "https://www.fema.gov/disaster/3434",
-      "name": "COVID-19 ",
+      "name": "COVID-19",
       "eventStatus": "https://schema.org/EventCompleted",
       "startDate": "2020-01-20",
       "endDate": "2023-05-11",
@@ -1646,19 +1656,19 @@
   },
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-06-12T19:22:33.221Z",
+    "builtAt": "2026-08-31T11:46:12.986Z",
     "sources": {
-      "events": "2026-04-25T14:43:53.230Z",
-      "venues": "2026-04-25T14:43:54.718Z",
-      "osm": "2026-04-25T14:43:59.513Z",
-      "historicSites": "2026-04-24T19:40:20.806Z",
-      "historicPeople": "2026-04-24T19:40:20.806Z",
-      "orptsParcels": "2026-04-25T19:06:13.652Z",
-      "orptsRar": "2026-04-25T19:06:13.894Z",
-      "marketEquity": "2026-04-25T18:56:17.773Z",
+      "events": "2026-08-31T11:14:53.251Z",
+      "venues": "2026-08-31T11:14:54.767Z",
+      "osm": "2026-08-31T11:44:48.350Z",
+      "historicSites": "2026-08-31T11:44:48.380Z",
+      "historicPeople": "2026-08-31T11:44:48.380Z",
+      "orptsParcels": "2026-08-31T11:46:08.992Z",
+      "orptsRar": "2026-08-31T11:46:09.254Z",
+      "marketEquity": "2026-08-31T11:46:09.813Z",
       "acsVillage": "2026-04-26T13:39:46.075Z",
       "acsTown": "2026-04-26T13:39:46.077Z",
-      "fema": "2026-04-25T18:57:00.068Z"
+      "fema": "2026-08-31T11:46:11.008Z"
     },
     "counts": {
       "graph": 72,
