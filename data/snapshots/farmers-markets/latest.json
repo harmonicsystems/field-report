@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-26T14:07:31.077Z",
+  "fetchedAt": "2026-10-12T13:08:16.335Z",
   "fetcher": "tools/fetch-farmers-markets.mjs",
   "source": "https://data.ny.gov/resource/qq4h-8p86.json",
   "program": {
@@ -8,8 +8,8 @@
     "url": "https://agriculture.ny.gov/farming/farmers-markets"
   },
   "counts": {
-    "statewide": 457,
-    "county": 6
+    "statewide": 675,
+    "county": 7
   },
   "village": {
     "name": "Kinderhook Farmers' Market",
@@ -37,7 +37,7 @@
       "website": {
         "url": "http://www.scarecrowfarmny.com"
       },
-      "operationHours": "Daily 11am-4pm , closed Tue & Sat",
+      "operationHours": "Daily 11am-4pm, Closed Tue & Sat",
       "operationSeason": "July 1-November 1",
       "operationMonths": "M",
       "fmnp": "Y",
@@ -96,7 +96,7 @@
       "operationMonths": "P/M",
       "fmnp": "Y",
       "snapStatus": "Y",
-      "farmCount": "N",
+      "farmCount": "Y",
       "county": "Columbia"
     },
     {
@@ -115,6 +115,21 @@
       "fmnp": "N",
       "snapStatus": "Y",
       "farmCount": "Y",
+      "county": "Columbia"
+    },
+    {
+      "name": "The Barn at Miller's Crossing Farm Stand",
+      "location": "170 Route 217 Hudson",
+      "address": "170 Route 217",
+      "city": "Hudson",
+      "zip": "12534",
+      "contact": "Katie Smith",
+      "operationHours": "Daily 10am-6pm",
+      "operationSeason": "April 2-November 30",
+      "operationMonths": "P/M",
+      "fmnp": "Y",
+      "snapStatus": "N",
+      "farmCount": "N",
       "county": "Columbia"
     },
     {

@@ -1,40 +1,10 @@
 {
-  "fetchedAt": "2026-04-25T14:43:58.123Z",
+  "fetchedAt": "2026-10-12T12:36:05.562Z",
   "fetcher": "tools/fetch-cct.mjs",
   "source": "https://columbiacountytourism.org/wp-json/wp/v2/search?search=kinderhook",
   "town": "kinderhook",
-  "count": 52,
+  "count": 54,
   "hits": [
-    {
-      "id": 58409,
-      "title": "Opening Day ~ Kinderhook Farmers Market",
-      "url": "https://columbiacountytourism.org/event/opening-day-kinderhook-farmers-market/",
-      "type": "post",
-      "subtype": "tribe_events",
-      "_links": {
-        "self": [
-          {
-            "embeddable": true,
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58409",
-            "targetHints": {
-              "allow": [
-                "GET"
-              ]
-            }
-          }
-        ],
-        "about": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
-          }
-        ],
-        "collection": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
-          }
-        ]
-      }
-    },
     {
       "id": 58279,
       "title": "Kinderhook Books",
@@ -56,66 +26,6 @@
         "about": [
           {
             "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_organizer"
-          }
-        ],
-        "collection": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
-          }
-        ]
-      }
-    },
-    {
-      "id": 58166,
-      "title": "Kinderhook: Putt Through the Past",
-      "url": "https://columbiacountytourism.org/event/kinderhook-putt-through-the-past/",
-      "type": "post",
-      "subtype": "tribe_events",
-      "_links": {
-        "self": [
-          {
-            "embeddable": true,
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58166",
-            "targetHints": {
-              "allow": [
-                "GET"
-              ]
-            }
-          }
-        ],
-        "about": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
-          }
-        ],
-        "collection": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
-          }
-        ]
-      }
-    },
-    {
-      "id": 58107,
-      "title": "Kinderhook OK5k",
-      "url": "https://columbiacountytourism.org/event/kinderhook-ok5k/",
-      "type": "post",
-      "subtype": "tribe_events",
-      "_links": {
-        "self": [
-          {
-            "embeddable": true,
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58107",
-            "targetHints": {
-              "allow": [
-                "GET"
-              ]
-            }
-          }
-        ],
-        "about": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
           }
         ],
         "collection": [
@@ -1266,6 +1176,276 @@
       }
     },
     {
+      "id": 61470,
+      "title": "Revolutionary Columbia County w/ Chancellor Livingston",
+      "url": "https://columbiacountytourism.org/event/revolutionary-columbia-county-w-chancellor-livingston/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/61470",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 61463,
+      "title": "Columbia County Celebrates America 250",
+      "url": "https://columbiacountytourism.org/2026/09/columbia-county-celebrates-america-250/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/61463",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 61287,
+      "title": "Fall Preview: Autumn Adventures Across Columbia County",
+      "url": "https://columbiacountytourism.org/2026/09/fall-preview-autumn-adventures-across-columbia-county/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/61287",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 61176,
+      "title": "Fall Craft Market",
+      "url": "https://columbiacountytourism.org/event/fall-craft-market/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/61176",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 61068,
+      "title": "Apple Picking Season Arrives in Columbia County",
+      "url": "https://columbiacountytourism.org/2026/08/apple-picking-season-arrives-in-columbia-county/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/61068",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 61017,
+      "title": "Hidden Heroes: Extraordinary Stories of Courage from 9/11",
+      "url": "https://columbiacountytourism.org/event/hidden-heroes-extraordinary-stories-of-courage-from-9-11/",
+      "type": "post",
+      "subtype": "tribe_events",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/61017",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 60482,
+      "title": "Independence Day 2026",
+      "url": "https://columbiacountytourism.org/2026/07/independence-day-2026/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/60482",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 60360,
+      "title": "Cidiot Episode 134: Summer Like A Local &#8211; Visit Columbia County",
+      "url": "https://columbiacountytourism.org/2026/06/cidiot-episode-134-summer-like-a-local-visit-columbia-county/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/60360",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
+      "id": 59985,
+      "title": "Celebrating 250 Years: Hudson Flag Day Named Columbia County’s Official Semiquincentennial Celebration!",
+      "url": "https://columbiacountytourism.org/2026/06/hudson-flag-day/",
+      "type": "post",
+      "subtype": "post",
+      "_links": {
+        "self": [
+          {
+            "embeddable": true,
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/posts/59985",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "about": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
+          }
+        ]
+      }
+    },
+    {
       "id": 58884,
       "title": "Discovering the Treasures of Hudson Valley, New York &#8211; feat. Columbia County",
       "url": "https://columbiacountytourism.org/2026/04/discovering-the-treasures-of-hudson-valley-new-york-feat-columbia-county/",
@@ -1296,36 +1476,6 @@
       }
     },
     {
-      "id": 58406,
-      "title": "Story Walk at High Falls with Carole Lindstrom",
-      "url": "https://columbiacountytourism.org/event/story-walk-at-high-falls-with-carole-lindstrom/",
-      "type": "post",
-      "subtype": "tribe_events",
-      "_links": {
-        "self": [
-          {
-            "embeddable": true,
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/58406",
-            "targetHints": {
-              "allow": [
-                "GET"
-              ]
-            }
-          }
-        ],
-        "about": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
-          }
-        ],
-        "collection": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
-          }
-        ]
-      }
-    },
-    {
       "id": 57782,
       "title": "Columbia County&#8217;s Revolutionary Legacy: Countdown to America 250",
       "url": "https://columbiacountytourism.org/2026/03/columbia-countys-revolutionary-legacy-countdown-to-america-250/",
@@ -1346,96 +1496,6 @@
         "about": [
           {
             "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/post"
-          }
-        ],
-        "collection": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
-          }
-        ]
-      }
-    },
-    {
-      "id": 57805,
-      "title": "Next Stop Comedy presents Stand Up Comedy",
-      "url": "https://columbiacountytourism.org/event/next-stop-comedy-presents-stand-up-comedy/",
-      "type": "post",
-      "subtype": "tribe_events",
-      "_links": {
-        "self": [
-          {
-            "embeddable": true,
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/57805",
-            "targetHints": {
-              "allow": [
-                "GET"
-              ]
-            }
-          }
-        ],
-        "about": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
-          }
-        ],
-        "collection": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
-          }
-        ]
-      }
-    },
-    {
-      "id": 57763,
-      "title": "America 250: 250th Anniversary Lecture Series",
-      "url": "https://columbiacountytourism.org/event/250th-anniversary-lecture-series/",
-      "type": "post",
-      "subtype": "tribe_events",
-      "_links": {
-        "self": [
-          {
-            "embeddable": true,
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/57763",
-            "targetHints": {
-              "allow": [
-                "GET"
-              ]
-            }
-          }
-        ],
-        "about": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
-          }
-        ],
-        "collection": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/search"
-          }
-        ]
-      }
-    },
-    {
-      "id": 57474,
-      "title": "The Basics of Beekeeping with Bee Hollow Farm",
-      "url": "https://columbiacountytourism.org/event/the-basics-of-beekeeping-with-bee-hollow-farm/",
-      "type": "post",
-      "subtype": "tribe_events",
-      "_links": {
-        "self": [
-          {
-            "embeddable": true,
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/tribe_events/57474",
-            "targetHints": {
-              "allow": [
-                "GET"
-              ]
-            }
-          }
-        ],
-        "about": [
-          {
-            "href": "https://columbiacountytourism.org/wp-json/wp/v2/types/tribe_events"
           }
         ],
         "collection": [

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-24T19:40:20.806Z",
+  "fetchedAt": "2026-10-12T13:07:42.851Z",
   "fetcher": "tools/fetch-historical.mjs",
   "source": "query.wikidata.org/sparql",
   "bbox": "SW(-73.75, 42.35) → NE(-73.62, 42.43)",
@@ -34,6 +34,16 @@
       "inception": null,
       "nrhp": null,
       "wikipedia": null
+    },
+    {
+      "qid": "Q8000428",
+      "name": "Wild's Mill Complex",
+      "description": "historic buildings in Valatie, New York, United States",
+      "instance": "historic district",
+      "coord": "Point(-73.681111 42.413056)",
+      "inception": null,
+      "nrhp": "82003353",
+      "wikipedia": "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex"
     },
     {
       "qid": "Q7307504",
@@ -184,16 +194,6 @@
       "inception": null,
       "nrhp": null,
       "wikipedia": null
-    },
-    {
-      "qid": "Q8000428",
-      "name": "Wild's Mill Complex",
-      "description": "historic buildings in Valatie, New York, United States",
-      "instance": "historic district",
-      "coord": "Point(-73.681111 42.413056)",
-      "inception": null,
-      "nrhp": "82003353",
-      "wikipedia": "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex"
     }
   ]
 }

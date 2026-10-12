@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-24T19:40:20.806Z",
+  "fetchedAt": "2026-10-12T13:07:42.851Z",
   "fetcher": "tools/fetch-historical.mjs",
   "source": "en.wikipedia.org/api/rest_v1/page/summary/",
   "articles": [
@@ -24,30 +24,30 @@
         "lon": -73.705
       },
       "url": "https://en.wikipedia.org/wiki/Kinderhook_(village)%2C_New_York",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Columbia_County_New_York_incorporated_areas_Village_of_Kinderhook_highlighted.svg/330px-Columbia_County_New_York_incorporated_areas_Village_of_Kinderhook_highlighted.svg.png"
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Columbia_County_New_York_incorporated_areas_Village_of_Kinderhook_highlighted.svg/330px-Columbia_County_New_York_incorporated_areas_Village_of_Kinderhook_highlighted.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
     },
     {
       "title": "Kinderhook,_New_York",
       "displayTitle": "Kinderhook, New York",
       "description": "Town in New York, United States",
-      "extract": "Kinderhook is a town in the northern part of Columbia County, New York, United States. The population was 8,330 at the 2020 census, making it the most populous municipality in Columbia County. The name of the town means \"Children's Corner\" in the language of the original Dutch settlers (Kinderhoek). The name \"Kinderhook\" has its root in the landing of Henry Hudson in the area around present-day Stuyvesant, where he was greeted by Native Americans with many children. With the Dutch kind meaning \"child\" and hoek meaning \"corner\", it could be that the name refers to a bend in the river where the children are. The eighth president of the United States, Martin Van Buren, was born in Kinderhook and retired to it.",
+      "extract": "Kinderhook is a town in the northern part of Columbia County, New York, United States. The population was 8,330 at the 2020 census, making it the most populous municipality in Columbia County. The eighth president of the United States, Martin Van Buren, was born in Kinderhook and retired to it.",
       "wikibaseItem": "Q3710663",
       "coordinates": {
         "lat": 42.41277778,
         "lon": -73.68138889
       },
       "url": "https://en.wikipedia.org/wiki/Kinderhook%2C_New_York",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Main_square%2C_Kinderhook%2C_NY.jpg/330px-Main_square%2C_Kinderhook%2C_NY.jpg"
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Main_square%2C_Kinderhook%2C_NY.jpg/330px-Main_square%2C_Kinderhook%2C_NY.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
     },
     {
       "title": "Martin_Van_Buren",
       "displayTitle": "Martin Van Buren",
       "description": "President of the United States from 1837 to 1841",
-      "extract": "Martin Van Buren was the eighth president of the United States, serving from 1837 to 1841. Van Buren co-founded the Democratic Party with Andrew Jackson and became Jackson's vice president from 1833 to 1837.",
+      "extract": "Martin Van Buren was the eighth president of the United States, serving from 1837 to 1841. He co-founded the Democratic Party with Andrew Jackson and became Jackson's vice president from 1833 to 1837.",
       "wikibaseItem": "Q11820",
       "coordinates": null,
       "url": "https://en.wikipedia.org/wiki/Martin_Van_Buren",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Martin_Van_Buren_by_Mathew_Brady_c1855-58-%284%29.jpg/330px-Martin_Van_Buren_by_Mathew_Brady_c1855-58-%284%29.jpg"
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Martin_Van_Buren_by_Mathew_Brady_c1855-58-%284%29.jpg/330px-Martin_Van_Buren_by_Mathew_Brady_c1855-58-%284%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
     },
     {
       "title": "Martin_Van_Buren_National_Historic_Site",
@@ -60,20 +60,20 @@
         "lon": -73.70420556
       },
       "url": "https://en.wikipedia.org/wiki/Martin_Van_Buren_National_Historic_Site",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Lindenwald2006.jpg/330px-Lindenwald2006.jpg"
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Lindenwald2006.jpg/330px-Lindenwald2006.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
     },
     {
       "title": "Van_Alen_House",
       "displayTitle": "Van Alen House",
       "description": "Historic house in New York, United States",
-      "extract": "The Luykas Van Alen House is an historic Dutch Colonial farmhouse at 2589 New York State Route 9H in the town of Kinderhook, Columbia County, New York, United States. Built about 1737 and enlarged about 1750, it is one of the finest surviving examples of Dutch colonial architecture in upstate New York. It was designated a National Historic Landmark in 1967. It is now an historic house museum operated by the Columbia County Historical Society, and open for tours on weekends from June to October.",
+      "extract": "The Luykas Van Alen House is a historic Dutch Colonial farmhouse at 2589 New York State Route 9H in the town of Kinderhook, Columbia County, New York, United States. Built about 1737 and enlarged about 1750, it is one of the finest surviving examples of Dutch colonial architecture in upstate New York. It was designated a National Historic Landmark in 1967. It is now a historic house museum operated by the Columbia County Historical Society, and open for tours on weekends from June to October.",
       "wikibaseItem": "Q7913104",
       "coordinates": {
         "lat": 42.38109444,
         "lon": -73.69141667
       },
       "url": "https://en.wikipedia.org/wiki/Van_Alen_House",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/LuykasVanAlenHouse-1737.jpg/330px-LuykasVanAlenHouse-1737.jpg"
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/LuykasVanAlenHouse-1737.jpg/330px-LuykasVanAlenHouse-1737.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
     },
     {
       "title": "Ichabod_Crane",
@@ -83,7 +83,7 @@
       "wikibaseItem": "Q5986015",
       "coordinates": null,
       "url": "https://en.wikipedia.org/wiki/Ichabod_Crane",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/What_fearful_shapes_and_shadows_beset_his_path_-_The_Legend_of_Sleepy_Hollow_%281899%29%2C_frontispiece_-_BL.jpg/330px-What_fearful_shapes_and_shadows_beset_his_path_-_The_Legend_of_Sleepy_Hollow_%281899%29%2C_frontispiece_-_BL.jpg"
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/What_fearful_shapes_and_shadows_beset_his_path_-_The_Legend_of_Sleepy_Hollow_%281899%29%2C_frontispiece_-_BL.jpg/330px-What_fearful_shapes_and_shadows_beset_his_path_-_The_Legend_of_Sleepy_Hollow_%281899%29%2C_frontispiece_-_BL.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
     },
     {
       "title": "James_Vanderpoel_House",
@@ -100,7 +100,7 @@
         "lon": -73.69805556
       },
       "url": "https://en.wikipedia.org/wiki/Kinderhook_Village_District",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Main_square%2C_Kinderhook%2C_NY.jpg/330px-Main_square%2C_Kinderhook%2C_NY.jpg"
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Main_square%2C_Kinderhook%2C_NY.jpg/330px-Main_square%2C_Kinderhook%2C_NY.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
     }
   ]
 }

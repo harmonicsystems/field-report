@@ -1,10 +1,10 @@
 {
   "source": "https://columbiacountytourism.org/business-sitemap.xml + /business/{slug}/",
-  "fetchedAt": "2026-04-25T19:53:36.850Z",
+  "fetchedAt": "2026-10-12T13:07:33.948Z",
   "fetcher": "tools/fetch-cct-businesses.mjs",
   "attribution": "Columbia County Tourism — public business directory pages. Fetched once at build time, rate-limited to 1 req/sec.",
-  "plannedCount": 594,
-  "succeededCount": 594,
+  "plannedCount": 607,
+  "succeededCount": 607,
   "errorCount": 0,
   "kinderhookCount": 30,
   "byCity": {
@@ -23,23 +23,23 @@
     "12534": 19,
     "(unknown)": 10,
     "Claverack": 13,
-    "Elizaville": 4,
-    "Hudson": 224,
-    "Germantown": 19,
-    "Hillsdale": 28,
-    "Ghent": 19,
-    "Philmont": 7,
+    "Elizaville": 5,
+    "Hudson": 230,
+    "Germantown": 21,
+    "Hillsdale": 29,
+    "Philmont": 8,
     "Kinderhook": 24,
-    "Chatham": 51,
+    "Chatham": 52,
     "Valatie": 34,
-    "Livingston": 2,
-    "Copake": 15,
+    "Livingston": 3,
+    "Copake": 14,
     "New": 16,
     "Greenport": 8,
     "PO Box 1177": 1,
     "Craryville": 8,
     "Millerton": 1,
-    "Ancram": 12,
+    "Ancram": 11,
+    "Ghent": 20,
     "Canaan": 7,
     "Tivoli": 1,
     "Ancramdale": 3,
@@ -56,7 +56,7 @@
     "West": 3,
     "Stuyvesant": 2,
     "Schodack": 1,
-    "Old": 3,
+    "Old": 4,
     "Suite 101": 1,
     "Columbiaville": 1,
     "Suite 97": 1,
@@ -67,11 +67,11 @@
     "605 Warren Street": 1,
     "266 County Route 7A": 1,
     "Suite 8": 1,
-    "#3991": 1,
     "Door 15": 1,
     "Door 21": 1,
     "Studio 3": 1,
     "PO Box 204": 1,
+    "#3991": 1,
     "Suite 1": 1
   },
   "kinderhook": [
@@ -412,26 +412,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/the-school-khook.webp"
     },
     {
-      "url": "https://columbiacountytourism.org/business/martin-van-buren-national-historic-site/",
-      "name": "Martin Van Buren National Historic Site",
-      "description": "The home and farm of the founder of the Democratic Party and the eighth president of the United States.",
-      "phone": "518-758-9689",
-      "website": "https://www.nps.gov/mava/",
-      "address": {
-        "streetAddress": "1013 Old Post Road",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US",
-        "rawParts": [
-          "1013 Old Post Road",
-          "Kinderhook",
-          "12106"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/MVB-historic-site.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/the-brooklyn-pizzeria/",
       "name": "The Brooklyn Pizzeria",
       "description": "Taste the Difference right here! Brooklyn Pizza made by a Brooklyn Guy. Pizza is a way of life for our family, We have been making pizza for 75 years. We only use all the best ingredients in all of our pizzas!",
@@ -450,26 +430,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/07/brookyln-pizzeria.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/samascott-orchards/",
-      "name": "Samascott Orchards",
-      "description": "Open June-October for pick-your-own fruits and vegetables on 200 acres. Apple cider mill on premises. Farm stand offers apple cider, donuts, homemade hard ice cream, fresh eggs, free-range beef, pork and chicken. Open Daily 8am-6pm, in season",
-      "phone": "518-217-2868",
-      "website": "http://www.samascott.com/",
-      "address": {
-        "streetAddress": "5 Sunset Avenue",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US",
-        "rawParts": [
-          "5 Sunset Avenue",
-          "Kinderhook",
-          "12106"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/09/samascotts-corn-maze.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/morningbird/",
@@ -530,25 +490,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/download-16.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/kinderhook-farmers-market/",
-      "name": "Kinderhook Farmers’ Market",
-      "description": "Local farmers’ market offering a wide variety of goods: produce, naturally raised meats, free-range eggs, baked goods, flowers, bedding plants, honey, maple syrup, jams, draft beers, and crafts. Family activity areas and live music.",
-      "phone": "518-755-9293",
-      "website": "http://www.kinderhookfarmersmarket.com/",
-      "address": {
-        "streetAddress": "Kinderhook",
-        "addressLocality": "12106",
-        "addressRegion": "NY",
-        "postalCode": null,
-        "addressCountry": "US",
-        "rawParts": [
-          "Kinderhook",
-          "12106"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/khook-farmers-mrkt.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/martin-van-buren-grave-site/",
@@ -669,15 +610,74 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/09/hamrssss.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/martin-van-buren-national-historic-site/",
+      "name": "Martin Van Buren National Historic Site",
+      "description": "The home and farm of the founder of the Democratic Party and the eighth president of the United States.",
+      "phone": "518-758-9689",
+      "website": "https://www.nps.gov/mava/planyourvisit/hours.htm",
+      "address": {
+        "streetAddress": "1013 Old Post Road",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US",
+        "rawParts": [
+          "1013 Old Post Road",
+          "Kinderhook",
+          "12106"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/MVB-historic-site.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/kinderhook-farmers-market/",
+      "name": "Kinderhook Farmers’ Market",
+      "description": "Local farmers’ market offering a wide variety of goods: produce, naturally raised meats, free-range eggs, baked goods, flowers, bedding plants, honey, maple syrup, jams, draft beers, and crafts. Family activity areas and live music.",
+      "phone": "518-755-9293",
+      "website": "http://www.kinderhookfarmersmarket.com/",
+      "address": {
+        "streetAddress": "Kinderhook",
+        "addressLocality": "12106",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "Kinderhook",
+          "12106"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/khook-farmers-mrkt.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/samascott-orchards/",
+      "name": "Samascott Orchards",
+      "description": "Open June-October for pick-your-own fruits and vegetables on 200 acres. Apple cider mill on premises. Farm stand offers apple cider, donuts, homemade hard ice cream, fresh eggs, free-range beef, pork and chicken. Open Daily 8am-6pm, in season",
+      "phone": "518-217-2868",
+      "website": "http://www.samascott.com/",
+      "address": {
+        "streetAddress": "5 Sunset Avenue",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US",
+        "rawParts": [
+          "5 Sunset Avenue",
+          "Kinderhook",
+          "12106"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/09/samascotts-corn-maze.jpg"
     }
   ],
   "businesses": [
     {
       "url": "https://columbiacountytourism.org/business/",
       "name": "Businesses",
-      "description": "Cafe Mutton has opened a sibling restaurant in the space called Merkin — because of course they did — which chef-owner Shaina Loew-Banayan described as “an awesome new place to hang out, drink wine, listen to records, buy charcuterie, and eat sandwiches and maybe some soup.",
+      "description": "Seriously Good Coffee ~ Sandwiches ~ Pastries",
       "phone": "15188283375",
-      "website": null,
+      "website": "https://arthurspointfarm.com/collections/bareroot-plants",
       "address": null,
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/CCCTLogoRevised.png"
     },
@@ -822,26 +822,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2021/05/nautica.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/grimaldi-farm/",
-      "name": "Grimaldi Farm Store",
-      "description": "Farm store selling certified organic grass-fed beef.",
-      "phone": "518-929-3420",
-      "website": "https://www.grimaldifarmstore.com/",
-      "address": {
-        "streetAddress": "22 Old Talerico Road",
-        "addressLocality": "Ghent",
-        "addressRegion": "NY",
-        "postalCode": "12075",
-        "addressCountry": "US",
-        "rawParts": [
-          "22 Old Talerico Road",
-          "Ghent",
-          "12075"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/08/Grimaldi.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/robins-nest/",
       "name": "Robin’s Nest",
       "description": "Browse our workshop featuring re-imagined furniture, antiques, designer clothing and jewelry. Maybe you have a family heirloom that has seen better days, you love it for its history but it doesn’t fit with your living style today. Let us work with you to reimagine how it can be updated to fit into your today lifestyle. Visit our shop to see works in progress and imagine how your treasure can look with a facelift.",
@@ -920,65 +900,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/11/26169553_1393717237405842_335772723316490386_n.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/highland-farm/",
-      "name": "Highland Farm",
-      "description": "Your local source for responsibly farm-raised venison products and other game meats (venison, elk, bison, a wide variety of sausages, ostrich eggs and MORE!). We supply quality fresh and smoked products at reasonable prices to individuals, grocers and restaurants throughout the Hudson Valley and around the country.",
-      "phone": "518-537-6397",
-      "website": "https://www.eat-better-meat.com/",
-      "address": {
-        "streetAddress": "283 County Route 6",
-        "addressLocality": "Germantown",
-        "addressRegion": "NY",
-        "postalCode": "12526",
-        "addressCountry": "US",
-        "rawParts": [
-          "283 County Route 6",
-          "Germantown",
-          "12526"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/05/highland.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/hover-farms/",
-      "name": "Hover Farms",
-      "description": "Hover Farms is a sixth generation family farm, focusing on sustainable farming methods. We strive to produce natural, grass-fed, high quality meats for our community. We raise Red Devon cattle and Katahdin sheep on two farms, using rotational grazing methods. We also produce pastured poultry, all natural eggs, and raw honey. Come visit our farm store, where you can find all of our home grown offerings along with a variety of local products from farmers and makers in our community.",
-      "phone": "518-965-4059",
-      "website": null,
-      "address": {
-        "streetAddress": "25 Ford Road",
-        "addressLocality": "Germantown",
-        "addressRegion": "NY",
-        "postalCode": "12526",
-        "addressCountry": "US",
-        "rawParts": [
-          "25 Ford Road",
-          "Germantown",
-          "12526"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/02/FB_IMG_1582300035367.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/cold-spring-trees/",
-      "name": "Cold Spring Tree Farm",
-      "description": "Seasonal Holiday/Christmas Trees and Greens Shop – Family owned and run for over 40 years!",
-      "phone": "518-828-6285",
-      "website": "https://coldspringtreefarm.com/",
-      "address": {
-        "streetAddress": "Hudson",
-        "addressLocality": "12534",
-        "addressRegion": "NY",
-        "postalCode": null,
-        "addressCountry": "US",
-        "rawParts": [
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/10/outside-greenshop-wall.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/high-falls-pizzeria-tap-house/",
@@ -1079,26 +1000,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/01/Image_cont_6f2de4c83ddd8f33d421ad65dfc28ff357d7c354.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/letterbox-farm-collective/",
-      "name": "Letterbox Farm Collective",
-      "description": "Letterbox is a diversified organic farm in the heart of New York’s Hudson Valley. We grow vegetables, greens, herbs, and flowers; along with raising chickens, pigs, and rabbits for market. We also host place-based celebrations in our fields and love to research.",
-      "phone": "203-560-0322",
-      "website": "http://www.letterboxfarm.com/",
-      "address": {
-        "streetAddress": "4161 US Route 9",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "4161 US Route 9",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/03/letterbox-farm-logo.png"
     },
     {
       "url": "https://columbiacountytourism.org/business/little-red-book-shack/",
@@ -1867,26 +1768,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/08/unnamed.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/gulden-farm/",
-      "name": "Gulden Farm",
-      "description": "We raise healthy, grass fed, grass finished beef. Our farm strives to employ only biodynamic regenerative farming techniques on 700 acres in the Hudson Valley.",
-      "phone": "518-537-5534",
-      "website": "https://www.guldenfarm.com/",
-      "address": {
-        "streetAddress": "174 Dales Bridge Road",
-        "addressLocality": "Germantown",
-        "addressRegion": "NY",
-        "postalCode": "12526",
-        "addressCountry": "US",
-        "rawParts": [
-          "174 Dales Bridge Road",
-          "Germantown",
-          "12526"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/11/gulden.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/nolitas-bakery-cafe/",
       "name": "Nolita’s Cafe",
       "description": "Specializing in fresh baked goods, breakfast wraps, soup, delicious specialty sandwiches, and burgers.",
@@ -2538,25 +2419,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/10/220718_Kinderhook_004-opt.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/honey-dog-farms/",
-      "name": "Honey Dog Farm Stand",
-      "description": "Certified organic & eco-friendly, Honey Dog Farm is dedicated to sustainable, local agriculture. The Farm Stand, located at Long Hill Farm, is open June-December offering sunflowers, garlic, and a bounty of delicious farm-fresh vegetables – including beans, peas, carrots, celery, cucumbers, eggplant, leeks, and more!",
-      "phone": "518-325-1348",
-      "website": "https://honeydogfarm.com/",
-      "address": {
-        "streetAddress": "Hillsdale",
-        "addressLocality": "12529",
-        "addressRegion": "NY",
-        "postalCode": null,
-        "addressCountry": "US",
-        "rawParts": [
-          "Hillsdale",
-          "12529"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/honeyyy.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/historians-of-columbia-county/",
       "name": "Historians of Columbia County",
       "description": "This website is an educational website dedicated to engaging diverse audiences in the study of appreciation of the collective heritage of Columbia County, NY, and its environs. Its primary purpose is to promote public interest and participation in the preservation of the rich cultural heritage of our beautiful county.",
@@ -2575,25 +2437,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/02/historian-symbol.webp"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/woodlife-farm-market/",
-      "name": "Woodlife Farm Market",
-      "description": "Woodlife Farm Market is a destination for anyone that appreciates a spectacular array of locally cultivated delights. Our farm stand offers maple syrup and honey made on-site as well as local products including pickles, sauces, dressings, jams, and bread mixes. Pickled veggies including beets and asparagus as well as fresh local produce, meats, and cheeses will also be stocked through summer.",
-      "phone": "877-899-2232",
-      "website": "https://woodlifefarmmarket.com/",
-      "address": {
-        "streetAddress": "36 Old Route 20",
-        "addressLocality": "New",
-        "addressRegion": "NY",
-        "postalCode": null,
-        "addressCountry": "US",
-        "rawParts": [
-          "36 Old Route 20",
-          "New"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2023/05/wlr_market_400.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/farm-shoppe/",
@@ -2776,26 +2619,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/09/viac-scaled.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/disc-golf/",
-      "name": "Disc Golf",
-      "description": "Lake Taghkanic State Park now has Disc Golf!",
-      "phone": "518-851-3631",
-      "website": "https://parks.ny.gov/parks/laketaghkanic/details.aspx",
-      "address": {
-        "streetAddress": "1528 NY-82",
-        "addressLocality": "Ancram",
-        "addressRegion": "NY",
-        "postalCode": "12502",
-        "addressCountry": "US",
-        "rawParts": [
-          "1528 NY-82",
-          "Ancram",
-          "12502"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/09/DiscGolF.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/fork-whisk/",
       "name": "Fork & Whisk",
       "description": "In the heart of the quaint village of Chatham, come visit this wonderful cafe/bakery with delightful eats from Chef Dana.",
@@ -2892,26 +2715,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/16000107.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/lake-taghkanic-state-park/",
-      "name": "Lake Taghkanic State Park",
-      "description": "Camping (tent, trailer, cottages and cabins), swimming, boat rentals, kayak rentals and kayaking, trails, ice fishing, skating, cross country skiing, disc golf, and snowmobile trails; deer and turkey hunting (bow only) in designated areas in season. Camping season: May-October; park open year-round, fee to enter Memorial Day – Labor Day.",
-      "phone": "518-851-3631",
-      "website": "https://parks.ny.gov/parks/38/details.aspx",
-      "address": {
-        "streetAddress": "1528 Route 82",
-        "addressLocality": "Ancram",
-        "addressRegion": "NY",
-        "postalCode": "12502",
-        "addressCountry": "US",
-        "rawParts": [
-          "1528 Route 82",
-          "Ancram",
-          "12502"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/08/P1010288.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/art-school-of-columbia-county/",
@@ -3333,65 +3136,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/unnamed.png"
     },
     {
-      "url": "https://columbiacountytourism.org/business/chaseholm-farm/",
-      "name": "Chaseholm Farm Store",
-      "description": "A small multi-generational farm crafting many different styles of cheese, mostly in the French tradition; meats from the grazed cows, various sauerkraut, fermented veggies and raw milk.",
-      "phone": "518-339-2071",
-      "website": "https://www.cfcreamery.com/",
-      "address": {
-        "streetAddress": "115 Chase Road",
-        "addressLocality": "Ancram",
-        "addressRegion": "NY",
-        "postalCode": "12502",
-        "addressCountry": "US",
-        "rawParts": [
-          "115 Chase Road",
-          "Ancram",
-          "12502"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/chasehhhh.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/germantown-farmers-market/",
-      "name": "Germantown Farmers Market",
-      "description": "Connect with the individuals and families who are raising wholesome food and creating high quality products here in the Hudson Valley.",
-      "phone": "15188283375",
-      "website": "https://www.germantownfarmersmarket.com/",
-      "address": {
-        "streetAddress": "Germantown",
-        "addressLocality": "12526",
-        "addressRegion": "NY",
-        "postalCode": null,
-        "addressCountry": "US",
-        "rawParts": [
-          "Germantown",
-          "12526"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/02/germantown-farmers-market.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/hudson-farmers-market/",
-      "name": "Hudson Farmers Market",
-      "description": "Local producers only; meat, eggs, plants & flowers, cheese, fruits & vegetables in season, baked goods & prepared foods, wool, wool products and farm-made crafts. EBT/SNAP machine on site. April-November, Saturdays 9am-1pm (rain or shine)",
-      "phone": "518-300-3496",
-      "website": "https://www.hudsonfarmersmarketny.org/",
-      "address": {
-        "streetAddress": "6th & Columbia Street",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "6th & Columbia Street",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/unnamed-1.png"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/noble-house/",
       "name": "Taconic Ridge Farm",
       "description": "The property consists of a beautiful 1850’s farmhouse and a charming cottage set on 22 rambling acres and surrounded by miles of farmland.",
@@ -3410,26 +3154,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/02/tacridgeee.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/guiding-green-thumbs/",
-      "name": "Guiding Green Thumbs",
-      "description": null,
-      "phone": "15188283375",
-      "website": "https://www.guidinggreenthumbs.com/",
-      "address": {
-        "streetAddress": "278 Rigor Hill Road",
-        "addressLocality": "Chatham",
-        "addressRegion": "NY",
-        "postalCode": "12037",
-        "addressCountry": "US",
-        "rawParts": [
-          "278 Rigor Hill Road",
-          "Chatham",
-          "12037"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/02/guidinggree.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/tequila-sunrise-restaurant-bar/",
@@ -3550,26 +3274,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/02/AG14-9Nobletown-Ext-patio-ent.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/meisners-heritage-farm/",
-      "name": "Meisner’s Heritage Farm Market & Eatery",
-      "description": "Shop our seasonal produce, locally sourced meats, cheeses, flowers, provisions, and fresh-baked goods. Enjoy a curated Friday Night Dinner or Weekend Picnic basket featuring everything you’ll need for a memorable (and easy) meal.",
-      "phone": "518-965-9279",
-      "website": "http://meisnersheritagefarm.com/",
-      "address": {
-        "streetAddress": "3771 Route 9",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "3771 Route 9",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/07/meisners-farm-3c-3806x1175.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/magdalenas-menu/",
@@ -3791,26 +3495,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/01/ancram-little-store-logo.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/blue-moon-chocolate-gifts/",
-      "name": "Blue Moon Chocolate & Gifts",
-      "description": "A starlit collection of confections and handmade and delightful gifts. The chocolates, candies & fudge come from the best makers in the cosmos!",
-      "phone": "518-610-8833",
-      "website": "https://www.bluemoonchocolate.com/",
-      "address": {
-        "streetAddress": "3048 Main Street",
-        "addressLocality": "Valatie",
-        "addressRegion": "NY",
-        "postalCode": "12184",
-        "addressCountry": "US",
-        "rawParts": [
-          "3048 Main Street",
-          "Valatie",
-          "12184"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/06/bmoon11.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/marks-pizza/",
@@ -4491,26 +4175,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/CCCTLogoRevised.png"
     },
     {
-      "url": "https://columbiacountytourism.org/business/clarion-concerts-in-columbia-county/",
-      "name": "Clarion Concerts in Columbia County",
-      "description": "Clarion Concerts is dedicated to bringing world-class, live chamber music to the Hudson Valley area of New York state. Clarion Concerts seeks to expand the chamber music repertoire through the commissioning and performance of new works by contemporary composers.",
-      "phone": "413-551-9901",
-      "website": "https://www.clarionconcerts.org/",
-      "address": {
-        "streetAddress": "PO Box 43",
-        "addressLocality": "Copake",
-        "addressRegion": "NY",
-        "postalCode": "12516",
-        "addressCountry": "US",
-        "rawParts": [
-          "PO Box 43",
-          "Copake",
-          "12516"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/clarion-concerts.webp"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/concerts-in-the-village/",
       "name": "Concerts in the Village",
       "description": "Exceptional Classical Music Series performed in Kinderhook, New York. Choral and Orchestra directed by David Smith.",
@@ -4628,26 +4292,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/02/lightforms.png"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/mettabee-farm-arts/",
-      "name": "Mettabee Farm & Arts",
-      "description": "A 165-acre working farm dedicated to community wellness through organic farming and the arts. Seasonal contra dances, concerts, retreats, special events for children and adults, and educational programming and children’s camps.",
-      "phone": "518-567-5123",
-      "website": "http://www.mettabeefarm.com/",
-      "address": {
-        "streetAddress": "551 Harlemville Rd",
-        "addressLocality": "Hillsdale",
-        "addressRegion": "NY",
-        "postalCode": "12529",
-        "addressCountry": "US",
-        "rawParts": [
-          "551 Harlemville Rd",
-          "Hillsdale",
-          "12529"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/01/mettabee.jpeg"
     },
     {
       "url": "https://columbiacountytourism.org/business/peter-jung-fine-art/",
@@ -5300,26 +4944,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/01/livingston-state-forest.webp"
     },
     {
-      "url": "https://columbiacountytourism.org/business/martin-van-buren-national-historic-site/",
-      "name": "Martin Van Buren National Historic Site",
-      "description": "The home and farm of the founder of the Democratic Party and the eighth president of the United States.",
-      "phone": "518-758-9689",
-      "website": "https://www.nps.gov/mava/",
-      "address": {
-        "streetAddress": "1013 Old Post Road",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US",
-        "rawParts": [
-          "1013 Old Post Road",
-          "Kinderhook",
-          "12106"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/MVB-historic-site.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/meadowgreens-golf-course/",
       "name": "Meadowgreens Golf Course",
       "description": "A 9 hole, Par 36; 3012 yards golf course – Pull cart and riding cart rentals, public course.",
@@ -5772,46 +5396,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/four-brothers-2.png"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/green-acres-farm-market-bakery/",
-      "name": "Green Acres Farm Market & Bakery",
-      "description": "Large selection of heirloom tomatoes, heirloom vegetables, organic greens, raw honey, corn and all fall vegetables, farm fresh eggs, pumpkins and pies, breads, muffins, cookies, jams and jellies, apple butter and local cider. July 4-Thanksgiving, Thurs-Mon, 9am-6pm",
-      "phone": "518-851-7460",
-      "website": "http://www.greenacreshudson.com/",
-      "address": {
-        "streetAddress": "226 Route 82",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "226 Route 82",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/green-acres.webp"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/hawthorne-valley-farm/",
-      "name": "Hawthorne Valley Farm & Farm Store",
-      "description": "Since 1972, they have been producing high-quality Biodynamic® and organic foods while providing farm-based learning experiences for children and adults. The 900-acre Biodynamic® farm includes dairy cows, vegetables, a creamery, organic bakery, sauerkraut enterprise, and more. The farm store is a full line natural foods store open 7 days a week. Public tours by appointment, reservations needed or visitors may take a self guided tour; maps available at the farm store. Daily 7:30am-7:00pm.",
-      "phone": "518-672-7500x222",
-      "website": "https://store.hawthornevalley.org/",
-      "address": {
-        "streetAddress": "327 County Route 21C",
-        "addressLocality": "Ghent",
-        "addressRegion": "NY",
-        "postalCode": "12075",
-        "addressCountry": "US",
-        "rawParts": [
-          "327 County Route 21C",
-          "Ghent",
-          "12075"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/hawthorne-valley-farm-store.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/isaan-thai-star/",
@@ -6292,26 +5876,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/Aleksey-and-Inna-with-audience.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/samascott-orchards/",
-      "name": "Samascott Orchards",
-      "description": "Open June-October for pick-your-own fruits and vegetables on 200 acres. Apple cider mill on premises. Farm stand offers apple cider, donuts, homemade hard ice cream, fresh eggs, free-range beef, pork and chicken. Open Daily 8am-6pm, in season",
-      "phone": "518-217-2868",
-      "website": "http://www.samascott.com/",
-      "address": {
-        "streetAddress": "5 Sunset Avenue",
-        "addressLocality": "Kinderhook",
-        "addressRegion": "NY",
-        "postalCode": "12106",
-        "addressCountry": "US",
-        "rawParts": [
-          "5 Sunset Avenue",
-          "Kinderhook",
-          "12106"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/09/samascotts-corn-maze.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/cups-coffee/",
       "name": "Cups Coffee",
       "description": null,
@@ -6430,46 +5994,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/10/Barn-at-Millers-Crossing_road.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/holmquest-farms/",
-      "name": "Holmquest Farms",
-      "description": "As fourth generation family farmers, we are proud to continue the tradition that our great grandfather began in 1944. Today the farm is owned and operated by Tom Holmes, and it is comprised of over 500 acres. The farm keeps up with technology to help with the challenging task of running a private family farm. The greenhouses alone have a combined growing and sales area of over 30,000 square feet.",
-      "phone": "(518-851-9629",
-      "website": "https://holmquestfarms.com/",
-      "address": {
-        "streetAddress": "516 Spook Rock Road",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "516 Spook Rock Road",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/10/Snapshots2-600x414-1.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/chatham-farmers-makers-market/",
-      "name": "Chatham Farmers & Makers Market",
-      "description": "Fresh local produce, baked goods, local meats, and MORE!!",
-      "phone": "518-353-3923",
-      "website": "https://visitchathamny.com/chatham-farms-market/",
-      "address": {
-        "streetAddress": "248 Route 295",
-        "addressLocality": "Chatham",
-        "addressRegion": "NY",
-        "postalCode": "12037",
-        "addressCountry": "US",
-        "rawParts": [
-          "248 Route 295",
-          "Chatham",
-          "12037"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/10/FarmersMarket-300x153-1.png"
     },
     {
       "url": "https://columbiacountytourism.org/business/steelbow-farm/",
@@ -6631,26 +6155,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2023/04/Citroen-Themed-Cuisine-in-Ghent-New-York.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/mx-morningstar-farm/",
-      "name": "MX Morningstar Farm",
-      "description": "We grow a diverse array of vegetable crops and dedicated to bringing the highest quality produce to our local customers. We believe that managing a farm in a holistic and balanced way improves the flavor and productivity of the food we grow, benefitting our community and society as a whole. We farm using sustainable practices designed to maintain and build the health of our land long into the future.",
-      "phone": "518-918-7774",
-      "website": "https://www.mxmorningstarfarm.com/",
-      "address": {
-        "streetAddress": "5956 NY-9H",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "5956 NY-9H",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2023/03/mx-morningstar.webp"
     },
     {
       "url": "https://columbiacountytourism.org/business/hudson-bagels/",
@@ -8782,26 +8286,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/04/hereeee.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/the-maker/",
-      "name": "The Maker",
-      "description": "Rooms Collaborating with a wide range of creatives native to the Hudson Valley and beyond, The Maker brings a bespoke experience to hospitality and bohemian sensibility to design. The spaces are a sophisticated curation of different periods that create a home where eclectic design and comfort can exist harmoniously. Our property is an intimate sanctuary, comprised of 11 spacious rooms spread across three historic buildings. Every room is completely unique and has a story to tell.",
-      "phone": "518-509-2620",
-      "website": "https://www.themaker.com/",
-      "address": {
-        "streetAddress": "302 Warren Street",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "302 Warren Street",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2021/05/the-maker-entrance.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/the-modern-exchange/",
       "name": "The Modern Exchange",
       "description": "Vintage furniture, mid-century modern antiques, art, and home decor.",
@@ -9282,26 +8766,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/11/berkshire-pottery.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/altobelli-family-farm/",
-      "name": "Altobelli Family Farm",
-      "description": "Family farm featuring homegrown local vegetables – corn, tomatoes, squash, eggplant and cucumbers. Seasonal farm-stand.",
-      "phone": "518-755-3457",
-      "website": null,
-      "address": {
-        "streetAddress": "1202 Old Post Road",
-        "addressLocality": "Valatie",
-        "addressRegion": "NY",
-        "postalCode": "12184",
-        "addressCountry": "US",
-        "rawParts": [
-          "1202 Old Post Road",
-          "Valatie",
-          "12184"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/01/altobelli-farm.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/austerlitz-historical-society/",
       "name": "Austerlitz Historical Society",
       "description": "“Old Austerlitz” is a living history museum complex and home to the Austerlitz Historical Society, with its collection of artifacts, photos and memorabilia relating to the town. Interspersed among the bucolic grounds are eight functioning 18th and 19th century buildings, including the 1794 Morey-Devereaux House and Barn, a working blacksmith’s shop (1850s), a small community church (1853) and a one-room schoolhouse (1852). The society is well known for its annual annual Blueberry Festival.",
@@ -9402,26 +8866,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/08/columbia-county-fairgrounds.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/cool-whisper-farm/",
-      "name": "Cool Whisper Farm",
-      "description": "Farm-raised Scottish Highland beef, naturally raised pork, pastured chicken and eggs from free-range chickens, variety of sausage, bacon, and cuts of ham.",
-      "phone": "518-672-6939",
-      "website": null,
-      "address": {
-        "streetAddress": "1011 County Route 21",
-        "addressLocality": "Hillsdale",
-        "addressRegion": "NY",
-        "postalCode": "12529",
-        "addressCountry": "US",
-        "rawParts": [
-          "1011 County Route 21",
-          "Hillsdale",
-          "12529"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/11/cool-whisper-farm-2.webp"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/copake-auction-inc/",
       "name": "Copake Auction, Inc.",
       "description": "Specializing in monthly high quality estate auctions, including their world renowned annual bicycle auction and New Years Day auction.",
@@ -9504,47 +8948,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/11/dc-studios.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/eger-brothers-farm-stand/",
-      "name": "Eger Brothers Farm Stand",
-      "description": "Locally grown fruits and vegetables along with apple cider. Seasonal hours.",
-      "phone": "518-828-3510",
-      "website": null,
-      "address": {
-        "streetAddress": "4107 US Route 9",
-        "addressLocality": "#3991",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "4107 US Route 9",
-          "#3991",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/eger-brothers-farm-stand.webp"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/empire-farm/",
-      "name": "Empire Farm",
-      "description": "Home to the FarmOn! Foundation, nestled in an agricultural community in the heart of Columbia County. This historic 220-acres educational farm is home to the FarmOn! Accelerator in partnership with Google, SUNY, and Cornell College of Agriculture and Life Sciences, where young adults learn the business of food on an organic working farm tied to “applied learning” experiences by contract growing for New York City Celebrity Chefs in an entrepreneurial lens with three divisions for learning to build purpose and pathways to viable livelihoods.",
-      "phone": "518-329-3276",
-      "website": "https://farmon.org/empire-farm/",
-      "address": {
-        "streetAddress": "556 Empire Road",
-        "addressLocality": "Copake",
-        "addressRegion": "NY",
-        "postalCode": "12516",
-        "addressCountry": "US",
-        "rawParts": [
-          "556 Empire Road",
-          "Copake",
-          "12516"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/01/empire-farm.png"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/fahari-bazaar/",
       "name": "Fahari Bazaar",
       "description": "A market place for handmade products sourced at Fair Trade prices from artisans in Kenya and Tanzania.",
@@ -9621,26 +9024,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/finch-hudson.webp"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/fix-brothers-fruit-farm/",
-      "name": "Fix Brothers Fruit Farm",
-      "description": "Family fruit farm established in 1899. We have PYO Cherries in June/July, Peaches in August, and Apples, Pears and Pumpkins September/October.",
-      "phone": "518-828-4401",
-      "website": "http://www.fixbrosfruitfarm.com/",
-      "address": {
-        "streetAddress": "215 White Birch Road",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "215 White Birch Road",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/fix-farm.webp"
     },
     {
       "url": "https://columbiacountytourism.org/business/fred-e-trout/",
@@ -9722,65 +9105,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/07/geotourist.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/hawk-dance-farm/",
-      "name": "Hawk Dance Farm",
-      "description": "On 3 acres of farmland Hawk Dance Farm utilizes NO chemicals, pesticides or herbicides in their farming practices. A large variety of heirloom vegetables, herbs and flowers are grown and the produce, herbs and flowers are available at local farmers’ markets as well as natural food stores. They also sell their own handmade 100%-pure beeswax candles. Call for seasonal hours.",
-      "phone": "518-325-1430",
-      "website": "http://hawkdancefarm.com/",
-      "address": {
-        "streetAddress": "Hillsdale",
-        "addressLocality": "12529",
-        "addressRegion": "NY",
-        "postalCode": null,
-        "addressCountry": "US",
-        "rawParts": [
-          "Hillsdale",
-          "12529"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/hawk-dance-farm.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/hearty-roots-farm-market/",
-      "name": "Hearty Roots Farm & Market",
-      "description": "Hearty Roots is a family farm using sustainable and organic practices to grow the freshest, healthiest, tastiest food for our community.",
-      "phone": "518-537-3276",
-      "website": "https://www.heartyroots.com/",
-      "address": {
-        "streetAddress": "1822 Route 9",
-        "addressLocality": "Germantown",
-        "addressRegion": "NY",
-        "postalCode": "12526",
-        "addressCountry": "US",
-        "rawParts": [
-          "1822 Route 9",
-          "Germantown",
-          "12526"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/05/hearty-roots.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/herondale-farm/",
-      "name": "Herondale Farm",
-      "description": "Utilizes sustainable farming practices through holistic management and raises 100% grass-fed beef and lamb, pasture raised chicken and pork.",
-      "phone": "518-329-3769",
-      "website": "http://herondalefarm.com/",
-      "address": {
-        "streetAddress": "90 Wiltsie Bridge Road",
-        "addressLocality": "Ancramdale",
-        "addressRegion": "NY",
-        "postalCode": "12503",
-        "addressCountry": "US",
-        "rawParts": [
-          "90 Wiltsie Bridge Road",
-          "Ancramdale",
-          "12503"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/herondale-farm.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/hgs-home-chef/",
       "name": "HGS Home Chef",
       "description": "A kitchen store offering all the cookware, tools and gadgets that any home chef could possibly hope for, but what sets us apart is our two beautiful teaching kitchens. Within these inviting rooms, renowned national and local experts offer classes on how to prepare the most delicious food – from simple to sublime – and we also have create private classes or events, like brunches and teas, to mark your special occasion.",
@@ -9821,26 +9145,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/holmquest.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/hopedale-farm/",
-      "name": "Hopedale Farm",
-      "description": "Family owned and operated since 1916, nestled in the heart of the Hudson Valley, a small Pick-Your-Own Apple Orchard.",
-      "phone": "518-697-9322",
-      "website": "http://www.hopedalefarm.com/",
-      "address": {
-        "streetAddress": "15 Klibar Road",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "15 Klibar Road",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/11/hopedale-farm-4.webp"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/hudson-clothier/",
       "name": "Hudson Clothier",
       "description": "All American made clothing and accessories for women and men.",
@@ -9879,45 +9183,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/john-doe-records.webp"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/kinderhook-farm/",
-      "name": "Kinderhook Farm",
-      "description": "Premium grass-fed and grass-finished beef and lamb, as well as eggs and pastured chickens at on-site farm store. Daily 7am-6pm, Call for seasonal hours.",
-      "phone": "518-218-6648",
-      "website": "http://www.kinderhookfarm.com/",
-      "address": {
-        "streetAddress": "1958 County Route 21",
-        "addressLocality": "Valatie",
-        "addressRegion": "NY",
-        "postalCode": "12184",
-        "addressCountry": "US",
-        "rawParts": [
-          "1958 County Route 21",
-          "Valatie",
-          "12184"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/kinderhook-farm.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/kinderhook-farmers-market/",
-      "name": "Kinderhook Farmers’ Market",
-      "description": "Local farmers’ market offering a wide variety of goods: produce, naturally raised meats, free-range eggs, baked goods, flowers, bedding plants, honey, maple syrup, jams, draft beers, and crafts. Family activity areas and live music.",
-      "phone": "518-755-9293",
-      "website": "http://www.kinderhookfarmersmarket.com/",
-      "address": {
-        "streetAddress": "Kinderhook",
-        "addressLocality": "12106",
-        "addressRegion": "NY",
-        "postalCode": null,
-        "addressCountry": "US",
-        "rawParts": [
-          "Kinderhook",
-          "12106"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/khook-farmers-mrkt.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/la-maison-supreme/",
@@ -10217,26 +9482,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/paula-greif-ceramics.webp"
     },
     {
-      "url": "https://columbiacountytourism.org/business/philip-orchards/",
-      "name": "Philip Orchards",
-      "description": "Pick your own apples and pears. Seasonal",
-      "phone": "518-965-6037",
-      "website": "https://philiporchardsny.com/",
-      "address": {
-        "streetAddress": "270 Route 9H",
-        "addressLocality": "Claverack",
-        "addressRegion": "NY",
-        "postalCode": "12513",
-        "addressCountry": "US",
-        "rawParts": [
-          "270 Route 9H",
-          "Claverack",
-          "12513"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/philip-orchards.webp"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/pookstyle/",
       "name": "Pookstyle: thoughtful gifts",
       "description": "Thoughtful gifts, clean modern styles from around the world. Described as “a museum store without a museum” by Rural Intelligence.",
@@ -10453,26 +9698,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/11/shana-lee.webp"
     },
     {
-      "url": "https://columbiacountytourism.org/business/smith-farms/",
-      "name": "Smith Farms",
-      "description": "Pick your own peaches, nectarines, raspberries, cherries (sweet and sour) and apples. Seasonal, Mon-Fri, 10am-5pm, Sat & Sun, 10am-4pm.",
-      "phone": "518-828-1228",
-      "website": "http://www.smithfarmshudson.com/",
-      "address": {
-        "streetAddress": "200 White Birch Road",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "200 White Birch Road",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/smith-farms.webp"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/starons-farm-stand/",
       "name": "Staron’s Farm Stand",
       "description": "Berries, beef, vegetables, including potatoes, sweet corn, tomatoes; largest potato grower in Columbia County. June-Oct, Mon-Fri 9am-6pm, Sat & Sun 9am-5pm",
@@ -10574,26 +9799,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/10/jewelers-roost.webp"
     },
     {
-      "url": "https://columbiacountytourism.org/business/the-warm-ewe/",
-      "name": "The Warm Ewe",
-      "description": "A yarn store offering a wide selection of quality yarns and fabrics; along with patterns, books, magazines, needles, tools and accessories for the discriminating knitter, crocheter, and seamstress.",
-      "phone": "518-392-2929",
-      "website": "http://www.thewarmewe.com/",
-      "address": {
-        "streetAddress": "31 Main Street",
-        "addressLocality": "Chatham",
-        "addressRegion": "NY",
-        "postalCode": "12037",
-        "addressCountry": "US",
-        "rawParts": [
-          "31 Main Street",
-          "Chatham",
-          "12037"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/11/the-warm-ewe.png"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/tierra-farm/",
       "name": "Tierra Farm",
       "description": "A Certified Organic manufacturer and distributor of nuts, coffee and dried fruits.",
@@ -10652,26 +9857,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/white-oak-farm.webp"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/yonder-fruit-farm/",
-      "name": "Yonder Fruit Farms",
-      "description": "Apples, strawberries, tomatoes, vegetables and pumpkins in season. Pick your own available.",
-      "phone": "518-758-7011",
-      "website": "http://www.yonderfruitfarms.com/",
-      "address": {
-        "streetAddress": "3167 Route 9",
-        "addressLocality": "Valatie",
-        "addressRegion": "NY",
-        "postalCode": "12184",
-        "addressCountry": "US",
-        "rawParts": [
-          "3167 Route 9",
-          "Valatie",
-          "12184"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/yonder-fruit-farms.webp"
     },
     {
       "url": "https://columbiacountytourism.org/business/johanas-kitchen/",
@@ -10791,26 +9976,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/bagel-tyme-1.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/banque/",
-      "name": "Banque",
-      "description": "We believe that luxury should be accessible, that fine dining can be friendly, and that every bite should tell a story, From our handcrafted chocolates to our seasonally inspired menu, we invite our guests to experience Hudson’s vibrant food scene and embrace local flavors.",
-      "phone": "518-942-2678",
-      "website": "https://banquenewyork.com/",
-      "address": {
-        "streetAddress": "544 Warren Street",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "544 Warren Street",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/01/banque-hudson.webp"
     },
     {
       "url": "https://columbiacountytourism.org/business/camilas-pizzeria-grill/",
@@ -11171,26 +10336,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/12/585277404_122104161261120041_2900724168310604738_n.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/henry-in-hudson/",
-      "name": "Henry in Hudson",
-      "description": "An ever-evolving collection of art, textiles, antiques, and found objects.",
-      "phone": "(518)-828-2354",
-      "website": "https://www.nancyshaverartist.com/henry",
-      "address": {
-        "streetAddress": "348 Warren Street",
-        "addressLocality": "Hudson",
-        "addressRegion": "NY",
-        "postalCode": "12534",
-        "addressCountry": "US",
-        "rawParts": [
-          "348 Warren Street",
-          "Hudson",
-          "12534"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/CCCTLogoRevised.png"
     },
     {
       "url": "https://columbiacountytourism.org/business/freaks-ny/",
@@ -11772,26 +10917,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/01/Screenshot-2026-01-08-at-5.26.39-PM_1767911247.webp"
     },
     {
-      "url": "https://columbiacountytourism.org/business/golden-harvest-farms/",
-      "name": "Golden Harvest Farms",
-      "description": "Opened in 1957, the retail market, apple orchard, cider mill, and bakery. Voted best cider donuts in Capital District. Market sells a selection of local honey, maple syrup, jams & jellies, cheeses and condiments, organic nuts and granola. Peaches in season direct from Georgia. Local berries, sweet corn, vegetables, tomatoes, squash, and pumpkins in season.",
-      "phone": "518-758-7683",
-      "website": "http://www.goldenharvestfarms.com/",
-      "address": {
-        "streetAddress": "3074 Route 9",
-        "addressLocality": "Valatie",
-        "addressRegion": "NY",
-        "postalCode": "12184",
-        "addressCountry": "US",
-        "rawParts": [
-          "3074 Route 9",
-          "Valatie",
-          "12184"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/golden-harvest.webp"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/baba-louies-organic-sourdough-pizza-company/",
       "name": "Baba Louie’s",
       "description": "Organic pizza, pasta, and salad. Serving lunch and dinner.",
@@ -12007,27 +11132,6 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/08/60699799_305178773705338_5173078045476519936_n.jpg"
-    },
-    {
-      "url": "https://columbiacountytourism.org/business/hudson-river-homesteaders/",
-      "name": "Hudson River Homesteaders",
-      "description": "We are a family-owned and operated farm located in the picturesque town of Germantown, NY. Whether you’ve stopped by our retail store, our booth at the Germantown Farmer’s Market, visit our social media, or by word of mouth, we are glad to meet you! We know you will enjoy the various options of high-quality products we have to offer! We offer pasture-raised lamb, chicken, turkey, goat, pork, and eggs. We also offer a variety of goat milk soaps, body scrubs, and other bath/body products.",
-      "phone": "518-925-3515",
-      "website": "https://www.hudsonriverhomesteaders.com/",
-      "address": {
-        "streetAddress": "71 Palatine Park Rd",
-        "addressLocality": "Suite 1",
-        "addressRegion": "NY",
-        "postalCode": "12526",
-        "addressCountry": "US",
-        "rawParts": [
-          "71 Palatine Park Rd",
-          "Suite 1",
-          "Germantown",
-          "12526"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/04/hudson-river-homesteaders.jpg"
     },
     {
       "url": "https://columbiacountytourism.org/business/books-cake/",
@@ -12269,26 +11373,6 @@
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2023/05/returrnnn.jpg"
     },
     {
-      "url": "https://columbiacountytourism.org/business/maple-leaf-sugaring/",
-      "name": "Maple Leaf Sugaring",
-      "description": "We are a family owned and operated certified organic maple sugaring operation, producing high quality maple syrup from over 5,000 taps. We boil with a high efficiency wood fired evaporator that allows us to produce high quality maple syrup while consuming 25-35% less wood. Along with our certified organic maple syrup we produce maple cream, molded maple sugar, and maple cotton candy.",
-      "phone": "518-929-0484",
-      "website": "http://www.mapleleafsugaring.com/",
-      "address": {
-        "streetAddress": "93 Dupier Road",
-        "addressLocality": "Ghent",
-        "addressRegion": "NY",
-        "postalCode": "12075",
-        "addressCountry": "US",
-        "rawParts": [
-          "93 Dupier Road",
-          "Ghent",
-          "12075"
-        ]
-      },
-      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/03/IMG_2833.jpg"
-    },
-    {
       "url": "https://columbiacountytourism.org/business/tiny-town-farm-store/",
       "name": "Tiny Town Farm Store",
       "description": "A new rural farm store that blends everyday essentials with curated regional products and globally inspired pantry staples.",
@@ -12467,6 +11551,1181 @@
         ]
       },
       "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/09/hamrssss.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/wunderstop-cafe/",
+      "name": "Wunderstop Cafe",
+      "description": "Located inside the Hudson Amtrak Station, stop in for a tasty breakfast item, sandwich, expertly crafted coffee or a sweet treat.",
+      "phone": "15188283375",
+      "website": "https://www.wunderstop.com/",
+      "address": {
+        "streetAddress": "69 South Front Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "69 South Front Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/04/653048536_18399419368194166_6013642630269502454_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/martin-van-buren-national-historic-site/",
+      "name": "Martin Van Buren National Historic Site",
+      "description": "The home and farm of the founder of the Democratic Party and the eighth president of the United States.",
+      "phone": "518-758-9689",
+      "website": "https://www.nps.gov/mava/planyourvisit/hours.htm",
+      "address": {
+        "streetAddress": "1013 Old Post Road",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US",
+        "rawParts": [
+          "1013 Old Post Road",
+          "Kinderhook",
+          "12106"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/MVB-historic-site.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/the-maker/",
+      "name": "The Maker",
+      "description": "Rooms Collaborating with a wide range of creatives native to the Hudson Valley and beyond, The Maker brings a bespoke experience to hospitality and bohemian sensibility to design. The spaces are a sophisticated curation of different periods that create a home where eclectic design and comfort can exist harmoniously. Our property is an intimate sanctuary, comprised of 11 spacious rooms spread across three historic buildings. Every room is completely unique and has a story to tell.",
+      "phone": "518-509-2620",
+      "website": "https://www.themaker.com/",
+      "address": {
+        "streetAddress": "302 Warren Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "302 Warren Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2021/05/the-maker-entrance.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/serre/",
+      "name": "Serre",
+      "description": "Housed in a glass conservatory enveloped by layers of greenery, SERRE is a new restaurant led by Chef Jonas Offenbach, an ode to classic French technique reimagined through modern lens and guided by seasonality. Rooted in craft and clarity, each dish celebrates expression and precision with respect to ingredients.",
+      "phone": "518-509-2620",
+      "website": "https://www.themaker.com/serre",
+      "address": {
+        "streetAddress": "302 Warren Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "302 Warren Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/05/By-Francine-Zaslow2.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/golden-harvest-farms/",
+      "name": "Golden Harvest Farms",
+      "description": "Opened in 1957, the retail market, apple orchard, cider mill, and bakery. Voted best cider donuts in Capital District. Market sells a selection of local honey, maple syrup, jams & jellies, cheeses and condiments, organic nuts and granola. Peaches in season direct from Georgia. Local berries, sweet corn, vegetables, tomatoes, squash, and pumpkins in season.",
+      "phone": "518-758-7683",
+      "website": "http://www.goldenharvestfarms.com/",
+      "address": {
+        "streetAddress": "3074 Route 9",
+        "addressLocality": "Valatie",
+        "addressRegion": "NY",
+        "postalCode": "12184",
+        "addressCountry": "US",
+        "rawParts": [
+          "3074 Route 9",
+          "Valatie",
+          "12184"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/golden-harvest.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/woodlife-farm-market/",
+      "name": "Woodlife Farm Market",
+      "description": "Woodlife Farm Market is a destination for anyone that appreciates a spectacular array of locally cultivated delights. Our farm stand offers maple syrup and honey made on-site as well as local products including pickles, sauces, dressings, jams, and bread mixes. Pickled veggies including beets and asparagus as well as fresh local produce, meats, and cheeses will also be stocked through summer.",
+      "phone": "877-899-2232",
+      "website": "https://woodlifefarmmarket.com/",
+      "address": {
+        "streetAddress": "36 Old Route 20",
+        "addressLocality": "New",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "36 Old Route 20",
+          "New"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2023/05/wlr_market_400.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/haema/",
+      "name": "Haema",
+      "description": "An intimate restaurant and bar serving bold, globally inspired dishes alongside a thoughtfully curated beverage program ~ rooted in seasonal ingredients, regional Asian influences, and gracious hospitality.",
+      "phone": "518-697-7630",
+      "website": "https://www.haemahospitality.com/",
+      "address": {
+        "streetAddress": "538 Warren Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "538 Warren Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/05/502383309_17906192118164792_7838600660466012985_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/mr-cat-brasserie/",
+      "name": "Mr. Cat Brasserie",
+      "description": "A French restaurant rooted in classic brasserie cooking. We blend Parisian soul with Hudson Valley warmth, pairing timeless French dishes with fresh ingredients from local farms. Our wine list brings together French and American natural wines alongside reimagined classics made for lively upstate gatherings.",
+      "phone": "15188283375",
+      "website": null,
+      "address": {
+        "streetAddress": "60 S. Front Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "60 S. Front Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/05/645481101_18156586507435320_8073947954925292730_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/sparrowbush/",
+      "name": "Sparrowbush",
+      "description": "A wood-fired bakery making naturally leavened bread and pastry entirely with fresh stoneground flour from locally grown grains.",
+      "phone": "15188283375",
+      "website": "https://sparrowbushbakery.com/",
+      "address": {
+        "streetAddress": "5441 Route 9H",
+        "addressLocality": "Livingston",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "5441 Route 9H",
+          "Livingston",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/06/woodfired-bread.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/belle-meadow-farm/",
+      "name": "Belle Meadow Farm",
+      "description": "Local farmstand with fresh seasonal offerings.",
+      "phone": "15188283375",
+      "website": "https://www.bellemeadowfarmny.com/",
+      "address": {
+        "streetAddress": "48 Hog Trough Rd",
+        "addressLocality": "Germantown",
+        "addressRegion": "NY",
+        "postalCode": "12529",
+        "addressCountry": "US",
+        "rawParts": [
+          "48 Hog Trough Rd",
+          "Germantown",
+          "12529"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/06/714840277_17967250224075927_627229262998275974_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/henry-in-hudson/",
+      "name": "Henry in Hudson",
+      "description": "An ever-evolving collection of art, textiles, antiques, and found objects.",
+      "phone": "(518)-828-2354",
+      "website": "https://www.nancyshaverartist.com/henry",
+      "address": {
+        "streetAddress": "348 Warren Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "348 Warren Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/12/CCCTLogoRevised.png"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/blue-moon-chocolate-gifts/",
+      "name": "Blue Moon Chocolate & Gifts",
+      "description": "Our starlit shop features chocolates from the very best chocolatiers. We nostalgic candies, decadent truffles and beautiful gifts and greeting cards for every season Specialty Lattes & Hot Cocoa. House made syrups for our Blue Moon Latte, Mocha & Chai.",
+      "phone": "518-610-8833",
+      "website": "https://www.bluemoonchocolate.com/",
+      "address": {
+        "streetAddress": "3048 Main Street",
+        "addressLocality": "Valatie",
+        "addressRegion": "NY",
+        "postalCode": "12184",
+        "addressCountry": "US",
+        "rawParts": [
+          "3048 Main Street",
+          "Valatie",
+          "12184"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/06/689491338_122299609502199483_8000638771170807641_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/silver-brothers/",
+      "name": "Silver Brothers",
+      "description": "A family owned farm distillery crafting terrior-driven whiskeys from estate-grown grain and select New York State farms.",
+      "phone": "15188283375",
+      "website": "https://silverbrothers.com/",
+      "address": {
+        "streetAddress": "155 Shaker Museum Road",
+        "addressLocality": "Old",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "155 Shaker Museum Road",
+          "Old"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/06/695985935_1022659710269838_6564531570679149155_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/long-story-short/",
+      "name": "Long Story Short",
+      "description": "Long Story Short NY is born out of a three-generational passion for creating unique spaces and gathering humans inside of them. A mix of delicious historic vibes and proper modern comforts, our Hudson project is bohemian, relaxed, and real. A bit cheeky, a bit rebellious, a bit rock roll, with twists of ballet pink’s elegance tucked in. Room after room to chill with your dearest people, cozy nooks to tuck away all alone, and beds you just might want to lounge in all day. Spending time inside the historic walls of Long Story Short NY feels like hanging with one of your most beautiful memories and being with your most treasured person.",
+      "phone": "415-786-4649",
+      "website": "https://www.longstoryshortny.com/",
+      "address": {
+        "streetAddress": "131 Warren Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "131 Warren Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/06/livingroom_.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/the-campus/",
+      "name": "The Campus",
+      "description": "The Campus is a collaborative space by Bortolami, James Cohan, Kaufmann Repetto, Anton Ker, Andrew Kreps, & Kurimanzutto",
+      "phone": "15188283375",
+      "website": "https://thecampusupstate.com/",
+      "address": {
+        "streetAddress": "341 NY 217",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "341 NY 217",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/07/OIP.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/kikis-elizaville-diner/",
+      "name": "Kiki’s Elizaville Diner",
+      "description": "One of the last surviving examples of a Kullman Dutchess prefabricated diner car, a gleaming time capsule of American design and culture.",
+      "phone": "845-756-3559",
+      "website": "https://www.kikiselizavillediner.com/",
+      "address": {
+        "streetAddress": "573 E. Kerleys Corners Road",
+        "addressLocality": "Elizaville",
+        "addressRegion": "NY",
+        "postalCode": "12523",
+        "addressCountry": "US",
+        "rawParts": [
+          "573 E. Kerleys Corners Road",
+          "Elizaville",
+          "12523"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/07/682441061_122094095793297148_2796150974142095655_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/eger-brothers-farm-stand/",
+      "name": "Eger Brothers Farm Stand",
+      "description": "Locally grown fruits and vegetables along with apple cider. Seasonal hours.",
+      "phone": "518-828-3510",
+      "website": null,
+      "address": {
+        "streetAddress": "4107 US Route 9",
+        "addressLocality": "#3991",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "4107 US Route 9",
+          "#3991",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/eger-brothers-farm-stand.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/green-acres-farm-market-bakery/",
+      "name": "Green Acres Farm Market & Bakery",
+      "description": "Large selection of heirloom tomatoes, heirloom vegetables, organic greens, raw honey, corn and all fall vegetables, farm fresh eggs, pumpkins and pies, breads, muffins, cookies, jams and jellies, apple butter and local cider. July 4-Thanksgiving, Thurs-Mon, 9am-6pm",
+      "phone": "518-851-7460",
+      "website": "http://www.greenacreshudson.com/",
+      "address": {
+        "streetAddress": "226 Route 82",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "226 Route 82",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/green-acres.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/mx-morningstar-farm/",
+      "name": "MX Morningstar Farm",
+      "description": "We grow a diverse array of vegetable crops and dedicated to bringing the highest quality produce to our local customers. We believe that managing a farm in a holistic and balanced way improves the flavor and productivity of the food we grow, benefitting our community and society as a whole. We farm using sustainable practices designed to maintain and build the health of our land long into the future.",
+      "phone": "518-918-7774",
+      "website": "https://www.mxmorningstarfarm.com/",
+      "address": {
+        "streetAddress": "5956 NY-9H",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "5956 NY-9H",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2023/03/mx-morningstar.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/gulden-farm/",
+      "name": "Gulden Farm",
+      "description": "We raise healthy, grass fed, grass finished beef. Our farm strives to employ only biodynamic regenerative farming techniques on 700 acres in the Hudson Valley.",
+      "phone": "518-537-5534",
+      "website": "https://www.guldenfarm.com/",
+      "address": {
+        "streetAddress": "174 Dales Bridge Road",
+        "addressLocality": "Germantown",
+        "addressRegion": "NY",
+        "postalCode": "12526",
+        "addressCountry": "US",
+        "rawParts": [
+          "174 Dales Bridge Road",
+          "Germantown",
+          "12526"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/11/gulden.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/honey-dog-farms/",
+      "name": "Honey Dog Farm Stand",
+      "description": "Certified organic & eco-friendly, Honey Dog Farm is dedicated to sustainable, local agriculture. The Farm Stand, located at Long Hill Farm, is open June-December offering sunflowers, garlic, and a bounty of delicious farm-fresh vegetables – including beans, peas, carrots, celery, cucumbers, eggplant, leeks, and more!",
+      "phone": "518-325-1348",
+      "website": "https://honeydogfarm.com/",
+      "address": {
+        "streetAddress": "Hillsdale",
+        "addressLocality": "12529",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "Hillsdale",
+          "12529"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/honeyyy.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/altobelli-family-farm/",
+      "name": "Altobelli Family Farm",
+      "description": "Family farm featuring homegrown local vegetables – corn, tomatoes, squash, eggplant and cucumbers. Seasonal farm-stand.",
+      "phone": "518-755-3457",
+      "website": null,
+      "address": {
+        "streetAddress": "1202 Old Post Road",
+        "addressLocality": "Valatie",
+        "addressRegion": "NY",
+        "postalCode": "12184",
+        "addressCountry": "US",
+        "rawParts": [
+          "1202 Old Post Road",
+          "Valatie",
+          "12184"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/01/altobelli-farm.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/chaseholm-farm/",
+      "name": "Chaseholm Farm Store",
+      "description": "A small multi-generational farm crafting many different styles of cheese, mostly in the French tradition; meats from the grazed cows, various sauerkraut, fermented veggies and raw milk.",
+      "phone": "518-339-2071",
+      "website": "https://www.cfcreamery.com/",
+      "address": {
+        "streetAddress": "115 Chase Road",
+        "addressLocality": "Ancram",
+        "addressRegion": "NY",
+        "postalCode": "12502",
+        "addressCountry": "US",
+        "rawParts": [
+          "115 Chase Road",
+          "Ancram",
+          "12502"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/chasehhhh.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/chatham-farmers-makers-market/",
+      "name": "Chatham Farmers & Makers Market",
+      "description": "Fresh local produce, baked goods, local meats, and MORE!!",
+      "phone": "518-353-3923",
+      "website": "https://visitchathamny.com/chatham-farms-market/",
+      "address": {
+        "streetAddress": "248 Route 295",
+        "addressLocality": "Chatham",
+        "addressRegion": "NY",
+        "postalCode": "12037",
+        "addressCountry": "US",
+        "rawParts": [
+          "248 Route 295",
+          "Chatham",
+          "12037"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/10/FarmersMarket-300x153-1.png"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/cold-spring-trees/",
+      "name": "Cold Spring Tree Farm",
+      "description": "Seasonal Holiday/Christmas Trees and Greens Shop – Family owned and run for over 40 years!",
+      "phone": "518-828-6285",
+      "website": "https://coldspringtreefarm.com/",
+      "address": {
+        "streetAddress": "Hudson",
+        "addressLocality": "12534",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/10/outside-greenshop-wall.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/cool-whisper-farm/",
+      "name": "Cool Whisper Farm",
+      "description": "Farm-raised Scottish Highland beef, naturally raised pork, pastured chicken and eggs from free-range chickens, variety of sausage, bacon, and cuts of ham.",
+      "phone": "518-672-6939",
+      "website": null,
+      "address": {
+        "streetAddress": "1011 County Route 21",
+        "addressLocality": "Hillsdale",
+        "addressRegion": "NY",
+        "postalCode": "12529",
+        "addressCountry": "US",
+        "rawParts": [
+          "1011 County Route 21",
+          "Hillsdale",
+          "12529"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/11/cool-whisper-farm-2.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/empire-farm/",
+      "name": "Empire Farm",
+      "description": "Home to the FarmOn! Foundation, nestled in an agricultural community in the heart of Columbia County. This historic 220-acres educational farm is home to the FarmOn! Accelerator in partnership with Google, SUNY, and Cornell College of Agriculture and Life Sciences, where young adults learn the business of food on an organic working farm tied to “applied learning” experiences by contract growing for New York City Celebrity Chefs in an entrepreneurial lens with three divisions for learning to build purpose and pathways to viable livelihoods.",
+      "phone": "518-329-3276",
+      "website": "https://farmon.org/empire-farm/",
+      "address": {
+        "streetAddress": "556 Empire Road",
+        "addressLocality": "Copake",
+        "addressRegion": "NY",
+        "postalCode": "12516",
+        "addressCountry": "US",
+        "rawParts": [
+          "556 Empire Road",
+          "Copake",
+          "12516"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/01/empire-farm.png"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/germantown-farmers-market/",
+      "name": "Germantown Farmers Market",
+      "description": "Connect with the individuals and families who are raising wholesome food and creating high quality products here in the Hudson Valley.",
+      "phone": "15188283375",
+      "website": "https://www.germantownfarmersmarket.com/",
+      "address": {
+        "streetAddress": "Germantown",
+        "addressLocality": "12526",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "Germantown",
+          "12526"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/02/germantown-farmers-market.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/grimaldi-farm/",
+      "name": "Grimaldi Farm Store",
+      "description": "Farm store selling certified organic grass-fed beef.",
+      "phone": "518-929-3420",
+      "website": "https://www.grimaldifarmstore.com/",
+      "address": {
+        "streetAddress": "22 Old Talerico Road",
+        "addressLocality": "Ghent",
+        "addressRegion": "NY",
+        "postalCode": "12075",
+        "addressCountry": "US",
+        "rawParts": [
+          "22 Old Talerico Road",
+          "Ghent",
+          "12075"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/08/Grimaldi.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/guiding-green-thumbs/",
+      "name": "Guiding Green Thumbs",
+      "description": null,
+      "phone": "15188283375",
+      "website": "https://www.guidinggreenthumbs.com/",
+      "address": {
+        "streetAddress": "278 Rigor Hill Road",
+        "addressLocality": "Chatham",
+        "addressRegion": "NY",
+        "postalCode": "12037",
+        "addressCountry": "US",
+        "rawParts": [
+          "278 Rigor Hill Road",
+          "Chatham",
+          "12037"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/02/guidinggree.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/hawk-dance-farm/",
+      "name": "Hawk Dance Farm",
+      "description": "On 3 acres of farmland Hawk Dance Farm utilizes NO chemicals, pesticides or herbicides in their farming practices. A large variety of heirloom vegetables, herbs and flowers are grown and the produce, herbs and flowers are available at local farmers’ markets as well as natural food stores. They also sell their own handmade 100%-pure beeswax candles. Call for seasonal hours.",
+      "phone": "518-325-1430",
+      "website": "http://hawkdancefarm.com/",
+      "address": {
+        "streetAddress": "Hillsdale",
+        "addressLocality": "12529",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "Hillsdale",
+          "12529"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/hawk-dance-farm.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/hawthorne-valley-farm/",
+      "name": "Hawthorne Valley Farm & Farm Store",
+      "description": "Since 1972, they have been producing high-quality Biodynamic® and organic foods while providing farm-based learning experiences for children and adults. The 900-acre Biodynamic® farm includes dairy cows, vegetables, a creamery, organic bakery, sauerkraut enterprise, and more. The farm store is a full line natural foods store open 7 days a week. Public tours by appointment, reservations needed or visitors may take a self guided tour; maps available at the farm store. Daily 7:30am-7:00pm.",
+      "phone": "518-672-7500x222",
+      "website": "https://store.hawthornevalley.org/",
+      "address": {
+        "streetAddress": "327 County Route 21C",
+        "addressLocality": "Ghent",
+        "addressRegion": "NY",
+        "postalCode": "12075",
+        "addressCountry": "US",
+        "rawParts": [
+          "327 County Route 21C",
+          "Ghent",
+          "12075"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/hawthorne-valley-farm-store.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/hearty-roots-farm-market/",
+      "name": "Hearty Roots Farm & Market",
+      "description": "Hearty Roots is a family farm using sustainable and organic practices to grow the freshest, healthiest, tastiest food for our community.",
+      "phone": "518-537-3276",
+      "website": "https://www.heartyroots.com/",
+      "address": {
+        "streetAddress": "1822 Route 9",
+        "addressLocality": "Germantown",
+        "addressRegion": "NY",
+        "postalCode": "12526",
+        "addressCountry": "US",
+        "rawParts": [
+          "1822 Route 9",
+          "Germantown",
+          "12526"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/05/hearty-roots.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/herondale-farm/",
+      "name": "Herondale Farm",
+      "description": "Utilizes sustainable farming practices through holistic management and raises 100% grass-fed beef and lamb, pasture raised chicken and pork.",
+      "phone": "518-329-3769",
+      "website": "http://herondalefarm.com/",
+      "address": {
+        "streetAddress": "90 Wiltsie Bridge Road",
+        "addressLocality": "Ancramdale",
+        "addressRegion": "NY",
+        "postalCode": "12503",
+        "addressCountry": "US",
+        "rawParts": [
+          "90 Wiltsie Bridge Road",
+          "Ancramdale",
+          "12503"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/herondale-farm.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/highland-farm/",
+      "name": "Highland Farm",
+      "description": "Your local source for responsibly farm-raised venison products and other game meats (venison, elk, bison, a wide variety of sausages, ostrich eggs and MORE!). We supply quality fresh and smoked products at reasonable prices to individuals, grocers and restaurants throughout the Hudson Valley and around the country.",
+      "phone": "518-537-6397",
+      "website": "https://www.eat-better-meat.com/",
+      "address": {
+        "streetAddress": "283 County Route 6",
+        "addressLocality": "Germantown",
+        "addressRegion": "NY",
+        "postalCode": "12526",
+        "addressCountry": "US",
+        "rawParts": [
+          "283 County Route 6",
+          "Germantown",
+          "12526"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/05/highland.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/holmquest-farms/",
+      "name": "Holmquest Farms",
+      "description": "As fourth generation family farmers, we are proud to continue the tradition that our great grandfather began in 1944. Today the farm is owned and operated by Tom Holmes, and it is comprised of over 500 acres. The farm keeps up with technology to help with the challenging task of running a private family farm. The greenhouses alone have a combined growing and sales area of over 30,000 square feet.",
+      "phone": "(518-851-9629",
+      "website": "https://holmquestfarms.com/",
+      "address": {
+        "streetAddress": "516 Spook Rock Road",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "516 Spook Rock Road",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/10/Snapshots2-600x414-1.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/hover-farms/",
+      "name": "Hover Farms",
+      "description": "Hover Farms is a sixth generation family farm, focusing on sustainable farming methods. We strive to produce natural, grass-fed, high quality meats for our community. We raise Red Devon cattle and Katahdin sheep on two farms, using rotational grazing methods. We also produce pastured poultry, all natural eggs, and raw honey. Come visit our farm store, where you can find all of our home grown offerings along with a variety of local products from farmers and makers in our community.",
+      "phone": "518-965-4059",
+      "website": null,
+      "address": {
+        "streetAddress": "25 Ford Road",
+        "addressLocality": "Germantown",
+        "addressRegion": "NY",
+        "postalCode": "12526",
+        "addressCountry": "US",
+        "rawParts": [
+          "25 Ford Road",
+          "Germantown",
+          "12526"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2020/02/FB_IMG_1582300035367.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/hudson-farmers-market/",
+      "name": "Hudson Farmers Market",
+      "description": "Local producers only; meat, eggs, plants & flowers, cheese, fruits & vegetables in season, baked goods & prepared foods, wool, wool products and farm-made crafts. EBT/SNAP machine on site. April-November, Saturdays 9am-1pm (rain or shine)",
+      "phone": "518-300-3496",
+      "website": "https://www.hudsonfarmersmarketny.org/",
+      "address": {
+        "streetAddress": "6th & Columbia Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "6th & Columbia Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/unnamed-1.png"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/hudson-river-homesteaders/",
+      "name": "Hudson River Homesteaders",
+      "description": "We are a family-owned and operated farm located in the picturesque town of Germantown, NY. Whether you’ve stopped by our retail store, our booth at the Germantown Farmer’s Market, visit our social media, or by word of mouth, we are glad to meet you! We know you will enjoy the various options of high-quality products we have to offer! We offer pasture-raised lamb, chicken, turkey, goat, pork, and eggs. We also offer a variety of goat milk soaps, body scrubs, and other bath/body products.",
+      "phone": "518-925-3515",
+      "website": "https://www.hudsonriverhomesteaders.com/",
+      "address": {
+        "streetAddress": "71 Palatine Park Rd",
+        "addressLocality": "Suite 1",
+        "addressRegion": "NY",
+        "postalCode": "12526",
+        "addressCountry": "US",
+        "rawParts": [
+          "71 Palatine Park Rd",
+          "Suite 1",
+          "Germantown",
+          "12526"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2024/04/hudson-river-homesteaders.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/kinderhook-farm/",
+      "name": "Kinderhook Farm",
+      "description": "Premium grass-fed and grass-finished beef and lamb, as well as eggs and pastured chickens at on-site farm store. Daily 7am-6pm, Call for seasonal hours.",
+      "phone": "518-218-6648",
+      "website": "http://www.kinderhookfarm.com/",
+      "address": {
+        "streetAddress": "1958 County Route 21",
+        "addressLocality": "Valatie",
+        "addressRegion": "NY",
+        "postalCode": "12184",
+        "addressCountry": "US",
+        "rawParts": [
+          "1958 County Route 21",
+          "Valatie",
+          "12184"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/kinderhook-farm.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/kinderhook-farmers-market/",
+      "name": "Kinderhook Farmers’ Market",
+      "description": "Local farmers’ market offering a wide variety of goods: produce, naturally raised meats, free-range eggs, baked goods, flowers, bedding plants, honey, maple syrup, jams, draft beers, and crafts. Family activity areas and live music.",
+      "phone": "518-755-9293",
+      "website": "http://www.kinderhookfarmersmarket.com/",
+      "address": {
+        "streetAddress": "Kinderhook",
+        "addressLocality": "12106",
+        "addressRegion": "NY",
+        "postalCode": null,
+        "addressCountry": "US",
+        "rawParts": [
+          "Kinderhook",
+          "12106"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/khook-farmers-mrkt.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/letterbox-farm-collective/",
+      "name": "Letterbox Farm Collective",
+      "description": "Letterbox is a diversified organic farm in the heart of New York’s Hudson Valley. We grow vegetables, greens, herbs, and flowers; along with raising chickens, pigs, and rabbits for market. We also host place-based celebrations in our fields and love to research.",
+      "phone": "203-560-0322",
+      "website": "http://www.letterboxfarm.com/",
+      "address": {
+        "streetAddress": "4161 US Route 9",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "4161 US Route 9",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2022/03/letterbox-farm-logo.png"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/maple-leaf-sugaring/",
+      "name": "Maple Leaf Sugaring",
+      "description": "We are a family owned and operated certified organic maple sugaring operation, producing high quality maple syrup from over 5,000 taps. We boil with a high efficiency wood fired evaporator that allows us to produce high quality maple syrup while consuming 25-35% less wood. Along with our certified organic maple syrup we produce maple cream, molded maple sugar, and maple cotton candy.",
+      "phone": "518-929-0484",
+      "website": "http://www.mapleleafsugaring.com/",
+      "address": {
+        "streetAddress": "93 Dupier Road",
+        "addressLocality": "Ghent",
+        "addressRegion": "NY",
+        "postalCode": "12075",
+        "addressCountry": "US",
+        "rawParts": [
+          "93 Dupier Road",
+          "Ghent",
+          "12075"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2018/03/IMG_2833.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/meisners-heritage-farm/",
+      "name": "Meisner’s Heritage Farm Market & Eatery",
+      "description": "Shop our seasonal produce, locally sourced meats, cheeses, flowers, provisions, and fresh-baked goods. Enjoy a curated Friday Night Dinner or Weekend Picnic basket featuring everything you’ll need for a memorable (and easy) meal.",
+      "phone": "518-965-9279",
+      "website": "http://meisnersheritagefarm.com/",
+      "address": {
+        "streetAddress": "3771 Route 9",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "3771 Route 9",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/07/meisners-farm-3c-3806x1175.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/mettabee-farm-arts/",
+      "name": "Mettabee Farm & Arts",
+      "description": "A 165-acre working farm dedicated to community wellness through organic farming and the arts. Seasonal contra dances, concerts, retreats, special events for children and adults, and educational programming and children’s camps.",
+      "phone": "518-567-5123",
+      "website": "http://www.mettabeefarm.com/",
+      "address": {
+        "streetAddress": "551 Harlemville Rd",
+        "addressLocality": "Hillsdale",
+        "addressRegion": "NY",
+        "postalCode": "12529",
+        "addressCountry": "US",
+        "rawParts": [
+          "551 Harlemville Rd",
+          "Hillsdale",
+          "12529"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2019/01/mettabee.jpeg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/lake-taghkanic-state-park/",
+      "name": "Lake Taghkanic State Park",
+      "description": "Camping (tent, trailer, cottages and cabins), swimming, boat rentals, kayak rentals and kayaking, trails, ice fishing, skating, cross country skiing, disc golf, and snowmobile trails; deer and turkey hunting (bow only) in designated areas in season. Camping season: May-October; park open year-round, fee to enter Memorial Day – Labor Day.",
+      "phone": "518-851-3631",
+      "website": "https://parks.ny.gov/parks/38/details.aspx",
+      "address": {
+        "streetAddress": "1528 Route 82",
+        "addressLocality": "Ancram",
+        "addressRegion": "NY",
+        "postalCode": "12502",
+        "addressCountry": "US",
+        "rawParts": [
+          "1528 Route 82",
+          "Ancram",
+          "12502"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/08/P1010288.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/rigby-leigh/",
+      "name": "Rigby Leigh",
+      "description": null,
+      "phone": "15188283375",
+      "website": "https://www.rigbyleigh.com/",
+      "address": {
+        "streetAddress": "1 Main Street",
+        "addressLocality": "Chatham",
+        "addressRegion": "NY",
+        "postalCode": "12037",
+        "addressCountry": "US",
+        "rawParts": [
+          "1 Main Street",
+          "Chatham",
+          "12037"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/08/AR504050.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/samascott-orchards/",
+      "name": "Samascott Orchards",
+      "description": "Open June-October for pick-your-own fruits and vegetables on 200 acres. Apple cider mill on premises. Farm stand offers apple cider, donuts, homemade hard ice cream, fresh eggs, free-range beef, pork and chicken. Open Daily 8am-6pm, in season",
+      "phone": "518-217-2868",
+      "website": "http://www.samascott.com/",
+      "address": {
+        "streetAddress": "5 Sunset Avenue",
+        "addressLocality": "Kinderhook",
+        "addressRegion": "NY",
+        "postalCode": "12106",
+        "addressCountry": "US",
+        "rawParts": [
+          "5 Sunset Avenue",
+          "Kinderhook",
+          "12106"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2025/09/samascotts-corn-maze.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/hopedale-farm/",
+      "name": "Hopedale Farm",
+      "description": "Family owned and operated since 1916, nestled in the heart of the Hudson Valley, a small Pick-Your-Own Apple Orchard.",
+      "phone": "518-697-9322",
+      "website": "http://www.hopedalefarm.com/",
+      "address": {
+        "streetAddress": "15 Klibar Road",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "15 Klibar Road",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/11/hopedale-farm-4.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/philip-orchards/",
+      "name": "Philip Orchards",
+      "description": "Pick your own apples and pears. Seasonal",
+      "phone": "518-965-6037",
+      "website": "https://philiporchardsny.com/",
+      "address": {
+        "streetAddress": "270 Route 9H",
+        "addressLocality": "Claverack",
+        "addressRegion": "NY",
+        "postalCode": "12513",
+        "addressCountry": "US",
+        "rawParts": [
+          "270 Route 9H",
+          "Claverack",
+          "12513"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/philip-orchards.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/smith-farms/",
+      "name": "Smith Farms",
+      "description": "Pick your own peaches, nectarines, raspberries, cherries (sweet and sour) and apples. Seasonal, Mon-Fri, 10am-5pm, Sat & Sun, 10am-4pm.",
+      "phone": "518-828-1228",
+      "website": "http://www.smithfarmshudson.com/",
+      "address": {
+        "streetAddress": "200 White Birch Road",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "200 White Birch Road",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/smith-farms.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/yonder-fruit-farm/",
+      "name": "Yonder Fruit Farms",
+      "description": "Apples, strawberries, tomatoes, vegetables and pumpkins in season. Pick your own available.",
+      "phone": "518-758-7011",
+      "website": "http://www.yonderfruitfarms.com/",
+      "address": {
+        "streetAddress": "3167 Route 9",
+        "addressLocality": "Valatie",
+        "addressRegion": "NY",
+        "postalCode": "12184",
+        "addressCountry": "US",
+        "rawParts": [
+          "3167 Route 9",
+          "Valatie",
+          "12184"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/yonder-fruit-farms.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/fix-brothers-fruit-farm/",
+      "name": "Fix Brothers Fruit Farm",
+      "description": "Family fruit farm established in 1899. We have PYO Cherries in June/July, Peaches in August, and Apples, Pears and Pumpkins September/October.",
+      "phone": "518-828-4401",
+      "website": "http://www.fixbrosfruitfarm.com/",
+      "address": {
+        "streetAddress": "215 White Birch Road",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "215 White Birch Road",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/fix-farm.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/arthurs-point-farm/",
+      "name": "Arthur’s Point Farm",
+      "description": "Arthur’s Point Farm is home to a New York State-licensed nursery specializing in native and naturalized bare root and potted trees , shrubs , and native perennials with significant edible , medicinal , and ecological value. We favor species and cultivars with potential to adapt to expected changes in temperature, precipitation, and seasonality in the decades to come.",
+      "phone": "518-553-0335",
+      "website": "https://arthurspointfarm.com/collections/bareroot-plants",
+      "address": {
+        "streetAddress": "274 Normung Rd",
+        "addressLocality": "Ghent",
+        "addressRegion": "NY",
+        "postalCode": "12075",
+        "addressCountry": "US",
+        "rawParts": [
+          "274 Normung Rd",
+          "Ghent",
+          "12075"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/08/American_Bellflower_1.webp"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/nok-cafe-hudson/",
+      "name": "NOK Cafe Hudson",
+      "description": "Seriously Good Coffee ~ Sandwiches ~ Pastries",
+      "phone": "518-888-9888",
+      "website": "https://www.nokcafehudson.com/",
+      "address": {
+        "streetAddress": "719 Columbia Street",
+        "addressLocality": "Hudson",
+        "addressRegion": "NY",
+        "postalCode": "12534",
+        "addressCountry": "US",
+        "rawParts": [
+          "719 Columbia Street",
+          "Hudson",
+          "12534"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/09/825322321_18121892167922535_2650020097443104649_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/bridlewood-dressage-equestrian-center/",
+      "name": "BridleWood Dressage & Equestrian Center",
+      "description": "We (Martin, Christa, Sarah, Rachael and Matthias) are a family owned and operated training and boarding facility focused on classical dressage and holistic horsemanship.",
+      "phone": "518-965-4250",
+      "website": "https://bridlewooddressage.com/",
+      "address": {
+        "streetAddress": "35 Sir William Farm Road",
+        "addressLocality": "Hillsdale",
+        "addressRegion": "NY",
+        "postalCode": "12529",
+        "addressCountry": "US",
+        "rawParts": [
+          "35 Sir William Farm Road",
+          "Hillsdale",
+          "12529"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/09/unnamed.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/tousey-ny/",
+      "name": "Tousey NY",
+      "description": null,
+      "phone": "518-537-2222",
+      "website": null,
+      "address": {
+        "streetAddress": "1774 US Route 9",
+        "addressLocality": "Germantown",
+        "addressRegion": "NY",
+        "postalCode": "12526",
+        "addressCountry": "US",
+        "rawParts": [
+          "1774 US Route 9",
+          "Germantown",
+          "12526"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2026/06/725756783_18109430872864181_8857667359335910774_n.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/clarion-concerts-in-columbia-county/",
+      "name": "Clarion Concerts in Columbia County",
+      "description": null,
+      "phone": "518-217-8241",
+      "website": "http://clarionconcerts.org/",
+      "address": {
+        "streetAddress": "PO Box 462",
+        "addressLocality": "Philmont",
+        "addressRegion": "NY",
+        "postalCode": "12565",
+        "addressCountry": "US",
+        "rawParts": [
+          "PO Box 462",
+          "Philmont",
+          "12565"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/10/Logo-Red@4x-100-2.jpg"
+    },
+    {
+      "url": "https://columbiacountytourism.org/business/the-warm-ewe/",
+      "name": "The Warm Ewe",
+      "description": "A yarn store offering a wide selection of quality yarns and fabrics; along with patterns, books, magazines, needles, tools and accessories for the discriminating knitter, crocheter, and seamstress.",
+      "phone": "518-392-2929",
+      "website": "http://www.thewarmewe.com/",
+      "address": {
+        "streetAddress": "22 Main Street",
+        "addressLocality": "Chatham",
+        "addressRegion": "NY",
+        "postalCode": "12037",
+        "addressCountry": "US",
+        "rawParts": [
+          "22 Main Street",
+          "Chatham",
+          "12037"
+        ]
+      },
+      "thumbnail": "https://columbiacountytourism.org/wp-content/uploads/2017/11/the-warm-ewe.png"
     }
   ],
   "errors": []
