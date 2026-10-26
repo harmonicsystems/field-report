@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-25T19:06:13.652Z",
+  "fetchedAt": "2026-10-26T11:17:09.742Z",
   "fetcher": "tools/fetch-orpts.mjs",
   "source": "https://data.ny.gov/resource/7vem-aaz7.json?$where=swis_code in(\"104401\",\"104489\") AND roll_year='2025'",
   "swis": {

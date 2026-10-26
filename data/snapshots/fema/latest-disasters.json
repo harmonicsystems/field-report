@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-25T18:57:00.068Z",
+  "fetchedAt": "2026-10-26T11:17:12.569Z",
   "fetcher": "tools/fetch-fema.mjs",
   "source": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state eq 'NY' and fipsCountyCode eq '021'&$orderby=declarationDate desc",
   "geography": {
@@ -55,7 +55,7 @@
     {
       "disasterNumber": 3434,
       "declarationType": "EM",
-      "declarationTitle": "COVID-19 ",
+      "declarationTitle": "COVID-19",
       "incidentType": "Biological",
       "declarationDate": "2020-03-13T00:00:00.000Z",
       "incidentBeginDate": "2020-01-20T00:00:00.000Z",

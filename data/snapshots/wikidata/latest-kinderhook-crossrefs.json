@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-25T14:43:58.472Z",
+  "fetchedAt": "2026-10-26T11:14:50.574Z",
   "fetcher": "tools/fetch-crossrefs.mjs",
   "source": "query.wikidata.org/sparql",
   "config": {

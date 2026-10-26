@@ -48,19 +48,6 @@
     },
     {
       "@type": "Event",
-      "@id": "https://columbiacountytourism.org/event/opening-day-kinderhook-farmers-market/",
-      "name": "Opening Day ~ Kinderhook Farmers Market",
-      "startDate": "2026-05-02 08:30:00",
-      "endDate": "2026-05-02 12:30:00",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@id": "https://columbiacountytourism.org/venue/village-yoga/"
-      },
-      "description": "Come out for Opening Day for the Market!\nEnjoy selections from local farmers offering a wide variety of goods, produce, naturally raised meats, baked goods, flowers, plants, honey, crafts, live music and MORE!!"
-    },
-    {
-      "@type": "Event",
       "@id": "https://fieldreports.harmonic-systems.org/schema/places/kinderhook-farmers-market.json",
       "name": "Kinderhook Farmers' Market",
       "description": "Seasonal community farmers' market in the Village of Kinderhook. Saturdays, May through October.",
@@ -728,6 +715,24 @@
     },
     {
       "@type": "Place",
+      "@id": "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex",
+      "name": "Wild's Mill Complex",
+      "description": "historic buildings in Valatie, New York, United States",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NRHP",
+        "value": "82003353"
+      },
+      "containedInPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Wild%27s_Mill_Complex",
+        "https://www.wikidata.org/wiki/Q8000428"
+      ]
+    },
+    {
+      "@type": "Place",
       "@id": "https://en.wikipedia.org/wiki/Kinderhook_Cemetery",
       "name": "Kinderhook Cemetery",
       "description": "cemetery in Kinderhook, New York",
@@ -913,18 +918,6 @@
       },
       "sameAs": [
         "https://www.wikidata.org/wiki/Q117648524"
-      ]
-    },
-    {
-      "@type": "Place",
-      "@id": "https://www.wikidata.org/wiki/Q110667203",
-      "name": "Stuyvesant Falls Cemetery",
-      "description": "cemetery in Hudson, New York",
-      "containedInPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q110667203"
       ]
     },
     {
@@ -1150,7 +1143,7 @@
     {
       "@type": "Event",
       "@id": "https://www.fema.gov/disaster/3434",
-      "name": "COVID-19 ",
+      "name": "COVID-19",
       "eventStatus": "https://schema.org/EventCompleted",
       "startDate": "2020-01-20",
       "endDate": "2023-05-11",
@@ -1583,6 +1576,21 @@
       "name": "Peter Masterson",
       "description": "American actor, writer, film director/producer (1934–2018)",
       "birthDate": "1934-06-01",
+      "deathDate": "2018-12-19",
+      "birthPlace": {
+        "@id": "https://www.wikidata.org/wiki/Q3478629"
+      },
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Peter_Masterson",
+        "https://www.wikidata.org/wiki/Q369485"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://en.wikipedia.org/wiki/Peter_Masterson",
+      "name": "Peter Masterson",
+      "description": "American actor, writer, film director/producer (1934–2018)",
+      "birthDate": "1934-06-01",
       "deathDate": "2018-12-18",
       "birthPlace": {
         "@id": "https://www.wikidata.org/wiki/Q3478629"
@@ -1605,21 +1613,6 @@
       "sameAs": [
         "https://en.wikipedia.org/wiki/Benjamin_Franklin_Butler_(lawyer)",
         "https://www.wikidata.org/wiki/Q817486"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://en.wikipedia.org/wiki/Cornelius_P._Van_Ness",
-      "name": "Cornelius P. Van Ness",
-      "description": "American politician (1782-1852)",
-      "birthDate": "1782-01-26",
-      "deathDate": "1852-12-15",
-      "birthPlace": {
-        "@id": "https://www.wikidata.org/wiki/Q3478629"
-      },
-      "sameAs": [
-        "https://en.wikipedia.org/wiki/Cornelius_P._Van_Ness",
-        "https://www.wikidata.org/wiki/Q886196"
       ]
     }
   ],
@@ -1646,22 +1639,22 @@
   },
   "_meta": {
     "builder": "tools/build-jsonld.mjs",
-    "builtAt": "2026-06-12T19:22:33.221Z",
+    "builtAt": "2026-10-26T11:17:15.377Z",
     "sources": {
-      "events": "2026-04-25T14:43:53.230Z",
-      "venues": "2026-04-25T14:43:54.718Z",
+      "events": "2026-10-26T10:39:26.306Z",
+      "venues": "2026-10-26T10:39:28.972Z",
       "osm": "2026-04-25T14:43:59.513Z",
-      "historicSites": "2026-04-24T19:40:20.806Z",
-      "historicPeople": "2026-04-24T19:40:20.806Z",
-      "orptsParcels": "2026-04-25T19:06:13.652Z",
-      "orptsRar": "2026-04-25T19:06:13.894Z",
-      "marketEquity": "2026-04-25T18:56:17.773Z",
+      "historicSites": "2026-10-26T11:14:51.317Z",
+      "historicPeople": "2026-10-26T11:14:51.317Z",
+      "orptsParcels": "2026-10-26T11:17:09.742Z",
+      "orptsRar": "2026-10-26T11:17:10.141Z",
+      "marketEquity": "2026-10-26T11:17:11.260Z",
       "acsVillage": "2026-04-26T13:39:46.075Z",
       "acsTown": "2026-04-26T13:39:46.077Z",
-      "fema": "2026-04-25T18:57:00.068Z"
+      "fema": "2026-10-26T11:17:12.569Z"
     },
     "counts": {
-      "graph": 72,
+      "graph": 71,
       "curatedPlaces": 15,
       "coverageArticles": 2,
       "historicSites": 15,

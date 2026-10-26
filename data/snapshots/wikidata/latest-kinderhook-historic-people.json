@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-04-24T19:40:20.806Z",
+  "fetchedAt": "2026-10-26T11:14:51.317Z",
   "fetcher": "tools/fetch-historical.mjs",
   "source": "query.wikidata.org/sparql",
-  "count": 34,
+  "count": 40,
   "people": [
     {
       "qid": "Q11820",
@@ -11,7 +11,7 @@
       "birth": "1782-12-05T00:00:00Z",
       "death": "1862-07-24T00:00:00Z",
       "wikipedia": "https://en.wikipedia.org/wiki/Martin_Van_Buren",
-      "sitelinks": 145
+      "sitelinks": 146
     },
     {
       "qid": "Q255310",
@@ -21,6 +21,15 @@
       "death": "1819-02-05T00:00:00Z",
       "wikipedia": "https://en.wikipedia.org/wiki/Hannah_Van_Buren",
       "sitelinks": 25
+    },
+    {
+      "qid": "Q369485",
+      "name": "Peter Masterson",
+      "description": "American actor, writer, film director/producer (1934–2018)",
+      "birth": "1934-06-01T00:00:00Z",
+      "death": "2018-12-19T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peter_Masterson",
+      "sitelinks": 18
     },
     {
       "qid": "Q369485",
@@ -50,6 +59,42 @@
       "sitelinks": 8
     },
     {
+      "qid": "Q5171463",
+      "name": "Cornelius Van Alen Van Dyck",
+      "description": "American missionary (1818-1895)",
+      "birth": "1818-08-13T00:00:00Z",
+      "death": "1895-11-13T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cornelius_Van_Alen_Van_Dyck",
+      "sitelinks": 7
+    },
+    {
+      "qid": "Q1103463",
+      "name": "John Evert Van Alen",
+      "description": "American politician (1749-1807)",
+      "birth": "1749-01-01T00:00:00Z",
+      "death": "1807-02-27T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Evert_Van_Alen",
+      "sitelinks": 6
+    },
+    {
+      "qid": "Q1282062",
+      "name": "James Isaac Van Alen",
+      "description": "American politician (1772–1870)",
+      "birth": "1773-01-01T00:00:00Z",
+      "death": "1822-05-18T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/James_I._Van_Alen",
+      "sitelinks": 6
+    },
+    {
+      "qid": "Q1282062",
+      "name": "James Isaac Van Alen",
+      "description": "American politician (1772–1870)",
+      "birth": "1772-12-31T00:00:00Z",
+      "death": "1822-05-18T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/James_I._Van_Alen",
+      "sitelinks": 6
+    },
+    {
       "qid": "Q1416405",
       "name": "John F. Driggs",
       "description": "Union Army officer, politician (1813-1877)",
@@ -59,39 +104,12 @@
       "sitelinks": 6
     },
     {
-      "qid": "Q5171463",
-      "name": "Cornelius Van Alen Van Dyck",
-      "description": "American missionary (1818-1895)",
-      "birth": "1818-08-13T00:00:00Z",
-      "death": "1895-11-13T00:00:00Z",
-      "wikipedia": "https://en.wikipedia.org/wiki/Cornelius_Van_Alen_Van_Dyck",
-      "sitelinks": 6
-    },
-    {
-      "qid": "Q1103463",
-      "name": "John Evert Van Alen",
-      "description": "American politician (1749-1807)",
-      "birth": "1749-01-01T00:00:00Z",
-      "death": "1807-02-27T00:00:00Z",
-      "wikipedia": "https://en.wikipedia.org/wiki/John_Evert_Van_Alen",
-      "sitelinks": 5
-    },
-    {
-      "qid": "Q1282062",
-      "name": "James Isaac Van Alen",
-      "description": "American politician (1772–1870)",
-      "birth": "1773-01-01T00:00:00Z",
-      "death": "1822-05-18T00:00:00Z",
-      "wikipedia": "https://en.wikipedia.org/wiki/James_I._Van_Alen",
-      "sitelinks": 5
-    },
-    {
-      "qid": "Q1282062",
-      "name": "James Isaac Van Alen",
-      "description": "American politician (1772–1870)",
-      "birth": "1772-12-31T00:00:00Z",
-      "death": "1822-05-18T00:00:00Z",
-      "wikipedia": "https://en.wikipedia.org/wiki/James_I._Van_Alen",
+      "qid": "Q20988914",
+      "name": "Eleanor Lynn",
+      "description": "American actor and stage actor (1916-1996)",
+      "birth": "1916-10-29T00:00:00Z",
+      "death": "1996-12-26T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eleanor_Lynn",
       "sitelinks": 5
     },
     {
@@ -104,12 +122,21 @@
       "sitelinks": 5
     },
     {
-      "qid": "Q20988914",
-      "name": "Eleanor Lynn",
-      "description": "American actor and stage actor (1916-1996)",
-      "birth": "1916-10-29T00:00:00Z",
-      "death": "1996-12-26T00:00:00Z",
-      "wikipedia": "https://en.wikipedia.org/wiki/Eleanor_Lynn",
+      "qid": "Q2078354",
+      "name": "Peter Silvester",
+      "description": "American politician (1734-1808)",
+      "birth": "1734-01-01T00:00:00Z",
+      "death": "1808-10-21T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peter_Silvester_(1734%E2%80%931808)",
+      "sitelinks": 5
+    },
+    {
+      "qid": "Q2078354",
+      "name": "Peter Silvester",
+      "description": "American politician (1734-1808)",
+      "birth": "1734-01-01T00:00:00Z",
+      "death": "1808-10-15T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Peter_Silvester_(1734%E2%80%931808)",
       "sitelinks": 5
     },
     {
@@ -140,12 +167,30 @@
       "sitelinks": 4
     },
     {
+      "qid": "Q2688696",
+      "name": "John Hazard Reynolds",
+      "description": "Member of the US House of Representatives (1819–1875)",
+      "birth": "1819-06-21T00:00:00Z",
+      "death": "1875-07-01T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Hazard_Reynolds",
+      "sitelinks": 4
+    },
+    {
       "qid": "Q5294676",
       "name": "Donald L. Rutherford",
       "description": "American Army officer and a Roman Catholic priest",
       "birth": "1955-08-04T00:00:00Z",
       "death": null,
       "wikipedia": "https://en.wikipedia.org/wiki/Donald_L._Rutherford",
+      "sitelinks": 4
+    },
+    {
+      "qid": "Q5542281",
+      "name": "George McClellan",
+      "description": "American politician (1856-1927)",
+      "birth": "1856-10-10T00:00:00Z",
+      "death": "1927-02-20T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/George_McClellan_(New_York_politician)",
       "sitelinks": 4
     },
     {
@@ -156,6 +201,15 @@
       "death": "1870-02-02T00:00:00Z",
       "wikipedia": "https://en.wikipedia.org/wiki/Thomas_Beekman",
       "sitelinks": 4
+    },
+    {
+      "qid": "Q29261511",
+      "name": "Jesse Merwin",
+      "description": "American school teacher (1783-1852)",
+      "birth": "1783-04-03T00:00:00Z",
+      "death": "1852-11-08T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jesse_Merwin",
+      "sitelinks": 3
     },
     {
       "qid": "Q4669211",
@@ -177,7 +231,7 @@
     },
     {
       "qid": "Q6911684",
-      "name": "Morgan Henry Chrysler",
+      "name": "Q6911684",
       "description": "American general",
       "birth": "1822-09-30T00:00:00Z",
       "death": "1890-08-24T00:00:00Z",
@@ -188,7 +242,7 @@
       "qid": "Q7177949",
       "name": "Peter van Schaack",
       "description": "American lawyer",
-      "birth": "1747-03-01T00:00:00Z",
+      "birth": "1747-03-24T00:00:00Z",
       "death": "1832-09-17T00:00:00Z",
       "wikipedia": "https://en.wikipedia.org/wiki/Peter_van_Schaack",
       "sitelinks": 3
@@ -201,6 +255,24 @@
       "death": "1871-03-25T00:00:00Z",
       "wikipedia": "https://en.wikipedia.org/wiki/Isaac_V._Vanderpoel",
       "sitelinks": 3
+    },
+    {
+      "qid": "Q21069010",
+      "name": "James Henry Van Alen",
+      "description": "Union Army general (1819-1886)",
+      "birth": "1819-08-17T00:00:00Z",
+      "death": "1886-07-22T00:00:00Z",
+      "wikipedia": "https://en.wikipedia.org/wiki/James_Henry_Van_Alen",
+      "sitelinks": 2
+    },
+    {
+      "qid": "Q25902922",
+      "name": "Donald W. Fisher",
+      "description": "American geologist (1922-2012)",
+      "birth": "1922-09-08T00:00:00Z",
+      "death": "2012-12-24T00:00:00Z",
+      "wikipedia": null,
+      "sitelinks": 2
     },
     {
       "qid": "Q5075929",
@@ -221,24 +293,6 @@
       "sitelinks": 2
     },
     {
-      "qid": "Q21069010",
-      "name": "James Henry Van Alen",
-      "description": "Union Army general (1819-1886)",
-      "birth": "1819-08-17T00:00:00Z",
-      "death": "1886-07-22T00:00:00Z",
-      "wikipedia": "https://en.wikipedia.org/wiki/James_Henry_Van_Alen",
-      "sitelinks": 2
-    },
-    {
-      "qid": "Q29261511",
-      "name": "Jesse Merwin",
-      "description": "American school teacher (1783-1852)",
-      "birth": "1783-04-03T00:00:00Z",
-      "death": "1852-11-08T00:00:00Z",
-      "wikipedia": "https://en.wikipedia.org/wiki/Jesse_Merwin",
-      "sitelinks": 2
-    },
-    {
       "qid": "Q18911921",
       "name": "Samuel Hanna Frisbee",
       "description": "American clergyman (1840-1907)",
@@ -249,7 +303,7 @@
     },
     {
       "qid": "Q24169858",
-      "name": "Henry Mandeville",
+      "name": "Q24169858",
       "description": "American clergyman",
       "birth": "1804-03-08T00:00:00Z",
       "death": "1858-10-02T00:00:00Z",
@@ -258,7 +312,7 @@
     },
     {
       "qid": "Q24169858",
-      "name": "Henry Mandeville",
+      "name": "Q24169858",
       "description": "American clergyman",
       "birth": "1804-03-06T00:00:00Z",
       "death": "1858-10-02T00:00:00Z",
@@ -285,7 +339,7 @@
     },
     {
       "qid": "Q7791270",
-      "name": "Thomas Jefferson Hubbard",
+      "name": "Q7791270",
       "description": "American politician",
       "birth": "1806-01-01T00:00:00Z",
       "death": "1877-04-24T00:00:00Z",

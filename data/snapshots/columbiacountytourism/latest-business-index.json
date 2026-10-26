@@ -1,9 +1,9 @@
 {
   "source": "https://columbiacountytourism.org/business-sitemap.xml",
-  "fetchedAt": "2026-04-24T15:56:23.694Z",
+  "fetchedAt": "2026-10-26T10:39:38.223Z",
   "fetcher": "tools/fetch-cct-business-index.mjs",
   "attribution": "Columbia County Tourism — public Yoast sitemap. Index only; detail pages not fetched.",
-  "totalBusinessUrls": 594,
+  "totalBusinessUrls": 607,
   "kinderhookBySlugCount": 4,
   "kinderhookBySlug": [
     {
@@ -23,5 +23,5 @@
       "url": "https://columbiacountytourism.org/business/old-kinderhook-auction-company/"
     }
   ],
-  "note": "Slug-only match. Many Kinderhook businesses have slugs that do not contain the town name (the-aviary, old-dutch-inn, isola-wine-tapas). Full enumeration would require fetching each of the 594 detail pages — held as an open posture decision."
+  "note": "Slug-only match. Many Kinderhook businesses have slugs that do not contain the town name (the-aviary, old-dutch-inn, isola-wine-tapas). Full enumeration would require fetching each of the 607 detail pages — held as an open posture decision."
 }
