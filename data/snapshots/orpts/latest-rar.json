@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-25T19:06:13.894Z",
+  "fetchedAt": "2026-11-16T13:50:46.505Z",
   "fetcher": "tools/fetch-orpts.mjs",
   "source": "https://data.ny.gov/resource/bsmp-6um6.json?$where=swis_code in(\"104401\",\"104489\",\"104400\")",
   "swis": {
@@ -186,6 +186,10 @@
       {
         "year": 2025,
         "ratio": 60
+      },
+      {
+        "year": 2026,
+        "ratio": 56
       }
     ],
     "104401": [
@@ -277,8 +281,8 @@
   },
   "latest": {
     "104400": {
-      "year": 2025,
-      "ratio": 60
+      "year": 2026,
+      "ratio": 56
     },
     "104401": {
       "year": 2004,
